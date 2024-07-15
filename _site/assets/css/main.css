@@ -47,7 +47,6 @@
     color: white;
     text-decoration: none;
     opacity: 0.6;
-    font-size: 1.3em
 }
 
 .footer-block a:hover {
@@ -132,9 +131,7 @@ html {
     border-radius: 1rem !important;
 }
 
-.header .logo {
-    font-size: 24px;
-}
+
 
 .quote-icon {
     width: 40px;
@@ -206,9 +203,7 @@ html {
     transform: translateY(-50%);
 }
 
-.blog p {
-    font-size: 1.2em !important;
-}
+
 
 .blog figure {
     width: 100%
@@ -240,7 +235,7 @@ html {
 }
 
 .list-group-item {
-    border: 1px solid #00000010 !important;
+    border: 1px solid transparent !important;
 }
 
 .list-group-item::before {
@@ -284,13 +279,10 @@ html {
     padding: 4rem;
 }
 
-.cover h1 {
-    font-size: 48px;
-    margin: 0;
-}
+
 
 .content {
-    padding: 2em 2em;
+    padding: 1em;
 	
 }
 
