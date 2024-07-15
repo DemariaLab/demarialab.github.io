@@ -48,24 +48,15 @@ jobs:
           ' | sudo tee /etc/apt/preferences.d/mozilla
           sudo apt update && sudo apt install -y firefox
 
-      - name: Set up Ruby and Jekyll
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev
-          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
-          echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
-          gem install jekyll bundler --user-install
 
-      - name: Verify Ruby installation
-        run: |
-          ruby --version
-          gem --version
-          bundle --version   # Check if bundle command is available
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: false 
+          cache-version: 0 
 
-      - name: Debug PATH
-        run: echo $PATH
+
 
       - name: Run Python generator
         env:
@@ -77,11 +68,11 @@ jobs:
         run: |
           python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --research_doc_id $RESEARCH_DOC_ID
 
-      - name: Build Jekyll site
-        run: |
-          bundle install
-          bundle exec jekyll build -s ./ -d ./_site
-
+      - name: Build with Jekyll
+        run: bundle exec jekyll build -s ./ -d ./_site
+        env:
+          JEKYLL_ENV: production
+          
       - name: Upload generated files
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
