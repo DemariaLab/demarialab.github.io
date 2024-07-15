@@ -144,8 +144,8 @@ order: 0
     <div class="gradientBg noPadding">
         <div class="container-xl ">
             <div class="pageTitleContainer">
-                <div class="row">
-                    <h1 class="poppins  px-4 px-md-0 text-center text-black" >Our mission is to extend human
+                <div class="row noPadding noMargin">
+                    <h1 class="poppins  px-3 text-center text-black" >Our mission is to extend human
                         healthspan by pioneering discoveries in
                         <span class="highlight highlight-bold" id="tissue-repair">tissue repair</span>,
                         <span class="highlight highlight-bold" id="aging">aging</span>, and
@@ -155,7 +155,7 @@ order: 0
             </div>
         </div>
     </div>
-    <div class="container-xl">
+    <div class="container-xl py-3">
         <br>
         <h3 class="text-center ">
             We investigate how cellular senescence alters tissue microenvironments and contributes to aging, tissue
@@ -177,15 +177,15 @@ order: 0
                 </svg>
                 Latest news
             </h2>
-            <div class="latest-news mt-5">
+            <div class="latest-news mt-3">
                 <div class="list-group news-block">
                     {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                     {% for post in sorted_posts limit: 5 %}
-                    <a href="{{ post.url }}" class="rounded list-group-item list-group-item-action">
+                    <a href="{{ post.url }}" class=" list-group-item list-group-item-action">
                         <div class="d-flex flex-column flex-md-row p-0">
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
                             <div class="col-12 col-md-2 p-0">
-                                <div class="rounded news-thumbnail w-100"
+                                <div class=" news-thumbnail w-100"
                                      style="background-image:url('{{formatted_thumb | reduced}}');">
                                 </div>
                             </div>
@@ -202,7 +202,7 @@ order: 0
                             </div>
                         </div>
                     </a>
-                    <div class="  {% unless forloop.last %} my-3 news-divider {% endunless  %}"></div>
+                    {% unless forloop.last %}  <hr class=""></hr> {% endunless  %}
                     {% endfor %}
                 </div>
                 <a href="/news/" class="list-group-item list-group-item-action">
@@ -244,7 +244,7 @@ order: 0
     </section>
     <div class="b-divider"></div>
     <section class="container-xl pb-5">
-        <h2 class="poppins  mt-5 mb-5">
+        <h2 class="poppins  mt-3 mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="40px" viewBox="0 0 20 20"
                  width="40px" fill="currentColor" opacity="0.5">
                 <path d="m9 6.88.85 2.62h2.86l-2.38 1.89.8 2.58L9 12.36l-2.12 1.61.8-2.58L5.3 9.5h2.86L9 6.88zM7.06 8H1l4.94 3.93L4.06 18 9 14.25 13.94 18l-1.88-6.07L17 8h-6.06L9 2 7.06 8zm4.3-3.56.67 2.06h1.58L12.15 2l-.79 2.44zM16.9 10l-3.1 2.47 1.23 3.97L17.08 18l-1.55-5 3.77-3h-2.4z"/>
@@ -320,7 +320,7 @@ order: 0
     </section>
     <div class="b-divider"></div>
     <section class="container-xl mb-5">
-        <h2 class="poppins  mt-5 mb-5">
+        <h2 class="poppins  mt-3 mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="currentColor"
                  opacity="0.5">
                 <path d="M20 4v12H8V4h12m0-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 9.67l1.69 2.26 2.48-3.1L19 15H9zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/>
