@@ -1,31 +1,37 @@
 name: build-website
 
 on:
+  # Runs on pushes targeting the default branch
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
   
 permissions:
-      contents: write
-      pages: write
-      
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
 jobs:
   run-generator:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-      - uses: actions/cache@v2
+        uses: actions/checkout@v4
+      - uses: actions/cache@v4.0.2
         with:
          path: ~/gems
          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
          restore-keys: |
           ${{ runner.os }}-gems-
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -55,9 +61,9 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: false 
           cache-version: 0 
-
-
-
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
       - name: Run Python generator
         env:
           CUSTOM_NEWS_ARTICLES_DOC_ID: ${{ secrets.CUSTOM_NEWS_ARTICLES_DOC_ID }}
@@ -68,14 +74,7 @@ jobs:
         run: |
           python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --research_doc_id $RESEARCH_DOC_ID
 
-      - name: Build with Jekyll
-        run: |
-          bundle install
-          bundle exec jekyll build -s ./ -d ./_site
-        env:
-          JEKYLL_ENV: production
-          
-      - name: Upload generated files
+      - name: Upload generated python files
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
@@ -85,3 +84,11 @@ jobs:
           git add .
           git commit -m 'Add generated files'
           git push origin main
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
