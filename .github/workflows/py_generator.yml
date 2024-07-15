@@ -41,9 +41,12 @@ jobs:
           python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --research_doc_id $RESEARCH_DOC_ID
 
       - name: Upload generated files
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
           git add .
-          git commit -m 'Refreshed data'
+          git commit -m 'Add generated files'
           git push origin main
