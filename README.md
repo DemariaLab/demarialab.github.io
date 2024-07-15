@@ -1,2 +1,2 @@
 # demarialab.github.io
-DemariaLab website
+This is the repository hosting the DemariaLab website
