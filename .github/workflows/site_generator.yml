@@ -87,9 +87,11 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
-          git add repo/
+          cd repo
+          git add .
           git commit -m 'Add generated files'
           git push origin main
+          cd ..
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
