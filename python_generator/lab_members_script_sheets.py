@@ -60,7 +60,7 @@ def generate_profile_post(data: dict, site_dir):
                          remove_accents(entry.get('authors', ''))
                          or research_name.lower() in remove_accents(entry.get('authors', '')).lower())
                         ]
-    publications = "; ".join(entry['pubmed_id'] for entry in filtered_entries)
+    publications = "; ".join(str(entry['pubmed_id']) for entry in filtered_entries)
 
     role_template = f'role: "{role}"' if role else ""
     date_in_template = f'date_joined: "{date_joined}"' if date_joined else ""
