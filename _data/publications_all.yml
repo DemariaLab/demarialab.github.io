@@ -285,3 +285,55 @@
   title: An essential role for senescent cells in optimal wound healing through secretion
     of PDGF-AA.
   year: 2014 Dec 22
+- authors: Volders ELD, Meijer C, Steeneken LS, Lubberts S, Zwart N, van Roon AM,
+    Lefrandt JD, de Jong IJ, Demaria M, Nuver J, Gietema JA
+  is_selected: false
+  journal: Urol Oncol
+  pubmed_id: '38052712'
+  title: Change in telomere length and cardiovascular risk factors in testicular cancer
+    survivors.
+  year: 2024 Jan
+- authors: Lin Y, Postma DF, Steeneken LS, Melo Dos Santos LS, Kirkland JL, Espindola-Netto
+    JM, Tchkonia T, Borghesan M, Bouma HR, Demaria M
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '37969056'
+  title: Circulating monocytes expressing senescence-associated features are enriched
+    in COVID-19 patients with severe disease.
+  year: 2023 Dec
+- authors: "Grillini A, Hern\xE1ndez-Garc\xEDa A, Renken RJ, Demaria G, Cornelissen\
+    \ FW"
+  is_selected: false
+  journal: Front Neurosci
+  pubmed_id: '33994927'
+  title: Computational Methods for Continuous Eye-Tracking Perimetry Based on Spatio-Temporal
+    Integration and a Deep Recurrent Neural Network.
+  year: 2021
+- authors: "Mkrtchyan GV, Abdelmohsen K, Andreux P, Bagdonaite I, Barzilai N, Brunak\
+    \ S, Cabreiro F, de Cabo R, Campisi J, Cuervo AM, Demaria M, Ewald CY, Fang EF,\
+    \ Faragher R, Ferrucci L, Freund A, Silva-Garc\xEDa CG, Georgievskaya A, Gladyshev\
+    \ VN, Glass DJ, Gorbunova V, de Grey A, He WW, Hoeijmakers J, Hoffmann E, Horvath\
+    \ S, Houtkooper RH, Jensen MK, Jensen MB, Kane A, Kassem M, de Keizer P, Kennedy\
+    \ B, Karsenty G, Lamming DW, Lee KF, MacAulay N, Mamoshina P, Mellon J, Molenaars\
+    \ M, Moskalev A, Mund A, Niedernhofer L, Osborne B, Pak HH, Parkhitko A, Raimundo\
+    \ N, Rando TA, Rasmussen LJ, Reis C, Riedel CG, Franco-Romero A, Schumacher B,\
+    \ Sinclair DA, Suh Y, Taub PR, Toiber D, Treebak JT, Valenzano DR, Verdin E, Vijg\
+    \ J, Young S, Zhang L, Bakula D, Zhavoronkov A, Scheibye-Knudsen M"
+  is_selected: false
+  journal: Aging (Albany NY)
+  pubmed_id: '33378272'
+  title: 'ARDD 2020: from aging mechanisms to interventions.'
+  year: 2020 Dec 30
+- authors: Soto-Gamez A, Chen D, Nabuurs AGE, Quax WJ, Demaria M, Boersma YL
+  is_selected: true
+  journal: Cancers (Basel)
+  pubmed_id: '32050662'
+  title: A Bispecific Inhibitor of the EGFR/ADAM17 Axis Decreases Cell Proliferation
+    and Migration of EGFR-Dependent Cancer Cells.
+  year: 2020 Feb 10
+- authors: Demaria M
+  is_selected: false
+  journal: Mol Cell Oncol
+  pubmed_id: '28616578'
+  title: 'Senescent cells: New target for an old treatment?'
+  year: 2017

@@ -10,7 +10,7 @@ keywords: "calcium signaling"
 country: "Italy 🇮🇹"
 qualification: "PhD"
 
-publications: "33823141; 32955770; 32800659"
+publications: "37969056; 33823141; 32955770; 32800659"
 thumbnail: "/assets/members/member_Michela Borghesan.webp"
 is_alumni: true
 ---
