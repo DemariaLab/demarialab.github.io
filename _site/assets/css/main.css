@@ -26,8 +26,8 @@
 }
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    --bs-gutter-x: 5em !important;
-    --bs-gutter-y: 5em !important;
+    --bs-gutter-x: 2em !important;
+    --bs-gutter-y: 2em !important;
 }
 
 .news-thumbnail {
