@@ -26,8 +26,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          path: repo
       - uses: actions/cache@v4.0.2
         with:
          path: ~/gems
@@ -41,7 +39,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r repo/python_generator/requirements.txt
+          pip install -r python_generator/requirements.txt
 
       - name: Install Firefox
         run: |
@@ -75,11 +73,18 @@ jobs:
           SELECTED_PUBLICATIONS_SHEET_ID: ${{ secrets.SELECTED_PUBLICATIONS_SHEET_ID }}
           RESEARCH_DOC_ID: ${{ secrets.RESEARCH_DOC_ID }}
         run: |
-          cd repo
           python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --research_doc_id $RESEARCH_DOC_ID
-          cd ..
-      - name: List generated python files
-        run: find repo/
+      
+
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: |
+            bundle exec jekyll build --source . --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
       - name: Upload generated python files
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -87,25 +92,10 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
-          cd repo
           git add .
           git commit -m 'Add generated files'
           git push origin main
-          cd ..
-
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: |
-            cd repo
-            bundle exec jekyll build --source . --baseurl "${{ steps.pages.outputs.base_path }}"
-            cd ..
-        env:
-          JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: repo/_site
-        
+          
   deploy:
     environment:
       name: github-pages
