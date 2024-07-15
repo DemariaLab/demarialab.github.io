@@ -352,11 +352,12 @@ order: 0
                         </a>
                     </div>
                     {% endfor %}
+					
                     <div class="col picture-item animated-item">
                         <div class="grid-container">
                             {% for picture in latest_pictures_more %}
-                            {% assign latest_more_picture_path = picture.path | replace: "'", "\\'" %}
-                            <div class="grid-item item1"
+                            {% assign latest_more_picture_path = picture.path | replace: "'", "\\'" | reduced %}
+                            <div class="grid-item item1 "
                                  style="background-image: url('{{ latest_more_picture_path }}');"></div>
                             {% endfor %}
                         </div>
@@ -366,6 +367,8 @@ order: 0
                             </a>
                         </div>
                     </div>
+					
+					
                 </div>
             </div>
         </section>
