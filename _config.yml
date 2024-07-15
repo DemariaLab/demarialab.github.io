@@ -31,3 +31,5 @@ exclude:
   - python_generator
   - .github/workflows
   - README.md
+  - vendor
+  - .bundle
