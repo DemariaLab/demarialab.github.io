@@ -10,7 +10,7 @@ keywords: "UVB"
 country: "Greece 🇬🇷"
 qualification: "PhD"
 
-publications: "36564381; 33775830"
+publications: "36564381; 33775830; 33349436"
 thumbnail: "/assets/members/member_Eleni Fitsiou.webp"
 is_alumni: true
 ---

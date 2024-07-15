@@ -337,3 +337,66 @@
   pubmed_id: '28616578'
   title: 'Senescent cells: New target for an old treatment?'
   year: 2017
+- authors: Venz R, Goyala A, Soto-Gamez A, Yenice T, Demaria M, Ewald CY
+  is_selected: false
+  journal: Geroscience
+  pubmed_id: '37644339'
+  title: In-vivo screening implicates endoribonuclease Regnase-1 in modulating senescence-associated
+    lysosomal changes.
+  year: 2024 Apr
+- authors: Papaspyropoulos A, Hazapis O, Altulea A, Polyzou A, Verginis P, Evangelou
+    K, Fousteri M, Papantonis A, Demaria M, Gorgoulis V
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '37547972'
+  title: Decoding of translation-regulating entities reveals heterogeneous translation
+    deficiency patterns in cellular senescence.
+  year: 2023 Sep
+- authors: "Zampetidis CP, Galanos P, Angelopoulou A, Zhu Y, Polyzou A, Karamitros\
+    \ T, Kotsinas A, Lagopati N, Mourkioti I, Mirzazadeh R, Polyzos A, Garnerone S,\
+    \ Mizi A, Gusmao EG, Sofiadis K, G\xE1l Z, Larsen DH, Pefani DE, Demaria M, Tsirigos\
+    \ A, Crosetto N, Maya-Mendoza A, Papaspyropoulos A, Evangelou K, Bartek J, Papantonis\
+    \ A, Gorgoulis VG"
+  is_selected: false
+  journal: Mol Cell
+  pubmed_id: '34793711'
+  title: A recurrent chromosomal inversion suffices for driving escape from oncogene-induced
+    senescence via subTAD reorganization.
+  year: 2021 Dec 2
+- authors: van Vliet T, Casciaro F, Demaria M
+  is_selected: true
+  journal: Ageing Res Rev
+  pubmed_id: '33556549'
+  title: 'To breathe or not to breathe: Understanding how oxygen sensing contributes
+    to age-related phenotypes.'
+  year: 2021 May
+- authors: Fitsiou E, Pulido T, Campisi J, Alimirah F, Demaria M
+  is_selected: false
+  journal: J Invest Dermatol
+  pubmed_id: '33349436'
+  title: Cellular Senescence and the Senescence-Associated Secretory Phenotype as
+    Drivers of Skin Photoaging.
+  year: 2021 Apr
+- authors: Hernandez-Segura A, Brandenburg S, Demaria M
+  is_selected: true
+  journal: J Vis Exp
+  pubmed_id: '29985363'
+  title: Induction and Validation of Cellular Senescence in Primary Human Cells.
+  year: 2018 Jun 20
+- authors: Jeon OH, Kim C, Laberge RM, Demaria M, Rathod S, Vasserot AP, Chung JW,
+    Kim DH, Poon Y, David N, Baker DJ, van Deursen JM, Campisi J, Elisseeff JH
+  is_selected: true
+  journal: Nat Med
+  pubmed_id: '28436958'
+  title: Local clearance of senescent cells attenuates the development of post-traumatic
+    osteoarthritis and creates a pro-regenerative environment.
+  year: 2017 Jun
+- authors: Chang J, Wang Y, Shao L, Laberge RM, Demaria M, Campisi J, Janakiraman
+    K, Sharpless NE, Ding S, Feng W, Luo Y, Wang X, Aykin-Burns N, Krager K, Ponnappan
+    U, Hauer-Jensen M, Meng A, Zhou D
+  is_selected: true
+  journal: Nat Med
+  pubmed_id: '26657143'
+  title: Clearance of senescent cells by ABT263 rejuvenates aged hematopoietic stem
+    cells in mice.
+  year: 2016 Jan

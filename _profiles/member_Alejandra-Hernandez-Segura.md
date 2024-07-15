@@ -10,7 +10,7 @@ keywords: "heterogeneity of senescence"
 country: "Mexico 🇲🇽"
 qualification: "MSc"
 
-publications: "34985783"
+publications: "34985783; 29985363"
 thumbnail: "/assets/members/member_Alejandra Hernandez-Segura.webp"
 is_alumni: true
 ---
