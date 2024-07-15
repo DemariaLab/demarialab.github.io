@@ -400,3 +400,77 @@
   title: Clearance of senescent cells by ABT263 rejuvenates aged hematopoietic stem
     cells in mice.
   year: 2016 Jan
+- authors: Linders AN, Dias IB, Ovchinnikova ES, Vermeer MCSC, Hoes MF, Markousis
+    Mavrogenis G, Deiman FE, Arevalo Gomez KF, Bliley JM, Nehme J, Vink A, Gietema
+    J, de Boer RA, Westenbrink D, Sillje HHW, Hilfiker-Kleiner D, van Laake LW, Feinberg
+    AW, Demaria M, Bomer N, van der Meer P
+  is_selected: false
+  journal: JACC CardioOncol
+  pubmed_id: '37397084'
+  title: "Evaluation of Senescence and Its Prevention in Doxorubicin-Induced Cardiotoxicity\
+    \ Using Dynamic Engineered\_Heart Tissues."
+  year: 2023 Jun
+- authors: Nehme J, Altulea A, Gheorghe T, Demaria M
+  is_selected: false
+  journal: Biomed J
+  pubmed_id: '36801257'
+  title: The effects of macronutrients metabolism on cellular and organismal aging.
+  year: 2023 Jun
+- authors: Secomandi L, Borghesan M, Velarde M, Demaria M
+  is_selected: false
+  journal: Hum Reprod Update
+  pubmed_id: '34918084'
+  title: The role of cellular senescence in female reproductive aging and the potential
+    for senotherapeutic interventions.
+  year: 2022 Feb 28
+- authors: Nehme J, Yang D, Altulea A, Varela-Eirin M, Wang L, Hu S, Wu Y, Togo J,
+    Niu C, Speakman JR, Demaria M
+  is_selected: false
+  journal: FEBS J
+  pubmed_id: '34908245'
+  title: High dietary protein and fat contents exacerbate hepatic senescence and SASP
+    in mice.
+  year: 2023 Mar
+- authors: Kohli J, Wang B, Brandenburg SM, Basisty N, Evangelou K, Varela-Eirin M,
+    Campisi J, Schilling B, Gorgoulis V, Demaria M
+  is_selected: true
+  journal: Nat Protoc
+  pubmed_id: '33911261'
+  title: Algorithmic assessment of cellular senescence in experimental and clinical
+    specimens.
+  year: 2021 May
+- authors: Jones PR, Tigchelaar I, Demaria G, Wilson I, Bi W, Taylor DJ, Crabb DP
+  is_selected: false
+  journal: Ophthalmic Physiol Opt
+  pubmed_id: '31879994'
+  title: Refinement and preliminary evaluation of two tablet-based tests of real-world
+    visual function.
+  year: 2020 Jan
+- authors: Gorgoulis V, Adams PD, Alimonti A, Bennett DC, Bischof O, Bishop C, Campisi
+    J, Collado M, Evangelou K, Ferbeyre G, Gil J, Hara E, Krizhanovsky V, Jurk D,
+    Maier AB, Narita M, Niedernhofer L, Passos JF, Robbins PD, Schmitt CA, Sedivy
+    J, Vougas K, von Zglinicki T, Zhou D, Serrano M, Demaria M
+  is_selected: true
+  journal: Cell
+  pubmed_id: '31675495'
+  title: 'Cellular Senescence: Defining a Path Forward.'
+  year: 2019 Oct 31
+- authors: Hernandez-Segura A, Rubingh R, Demaria M
+  is_selected: true
+  journal: Aging Cell
+  pubmed_id: '30710410'
+  title: Identification of stable senescence-associated reference genes.
+  year: 2019 Apr
+- authors: Hernandez-Segura A, de Jong TV, Melov S, Guryev V, Campisi J, Demaria M
+  is_selected: true
+  journal: Curr Biol
+  pubmed_id: '28844647'
+  title: Unmasking Transcriptional Heterogeneity in Senescent Cells.
+  year: 2017 Sep 11
+- authors: Velarde MC, Demaria M, Melov S, Campisi J
+  is_selected: true
+  journal: Proc Natl Acad Sci U S A
+  pubmed_id: '26240345'
+  title: Pleiotropic age-dependent effects of mitochondrial dysfunction on epidermal
+    stem cells.
+  year: 2015 Aug 18

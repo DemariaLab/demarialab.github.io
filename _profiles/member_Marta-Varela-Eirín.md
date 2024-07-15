@@ -10,7 +10,7 @@ keywords: "osteoarthritis; purinergic signaling; dietary interventions"
 country: "Spain 🇪🇸"
 qualification: "PhD"
 
-publications: "38724734; 35609537; 34985783; 33823141; 32800659"
+publications: "38724734; 34908245; 35609537; 34985783; 33823141; 33911261; 32800659"
 thumbnail: "/assets/members/member_Marta Varela-Eirín.webp"
 is_alumni: true
 ---
