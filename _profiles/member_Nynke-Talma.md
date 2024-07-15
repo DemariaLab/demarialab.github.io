@@ -10,7 +10,7 @@ keywords: "aging brain; microglia"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"
 
-publications: "34598318"
+publications: "34598318; 32800659"
 thumbnail: "/assets/members/member_Nynke Talma.webp"
 is_alumni: true
 ---

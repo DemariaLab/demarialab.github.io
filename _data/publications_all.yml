@@ -236,3 +236,52 @@
   pubmed_id: '26845683'
   title: 'Cellular senescence and tumor promotion: Is aging the key?'
   year: 2016 Apr
+- authors: Magkouta S, Veroutis D, Pousias A, Papaspyropoulos A, Giannetti K, Pippa
+    N, Lougiakis N, Kambas K, Lagopati N, Polyzou A, Georgiou M, Chountoulesi M, Pispas
+    S, Foutadakis S, Kyrodimos E, Pouli N, Marakos P, Kotsinas A, Verginis P, Valakos
+    D, Vatsellas G, Petty R, Thanos D, Demaria M, Evangelou K, Di Micco R, Gorgoulis
+    VG
+  is_selected: false
+  journal: STAR Protoc
+  pubmed_id: '38460134'
+  title: One-step rapid tracking and isolation of senescent cells in cellular systems,
+    tissues, or animal models via GLF16.
+  year: 2024 Mar 15
+- authors: Quarta M, Demaria M
+  is_selected: false
+  journal: NPJ Aging
+  pubmed_id: '38310117'
+  title: On the past, present and future of senotherapeutics.
+  year: 2024 Feb 3
+- authors: van Vliet T, Varela-Eirin M, Wang B, Borghesan M, Brandenburg SM, Franzin
+    R, Evangelou K, Seelen M, Gorgoulis V, Demaria M
+  is_selected: true
+  journal: Mol Cell
+  pubmed_id: '33823141'
+  title: Physiological hypoxia restrains the senescence-associated secretory phenotype
+    via AMPK-mediated mTOR suppression.
+  year: 2021 May 6
+- authors: Borghesan M, Hoogaars WMH, Varela-Eirin M, Talma N, Demaria M
+  is_selected: true
+  journal: Trends Cell Biol
+  pubmed_id: '32800659'
+  title: 'A Senescence-Centric View of Aging: Implications for Longevity and Disease.'
+  year: 2020 Oct
+- authors: van der Feen DE, Bossers GPL, Hagdorn QAJ, Moonen JR, Kurakula K, Szulcek
+    R, Chappell J, Vallania F, Donato M, Kok K, Kohli JS, Petersen AH, van Leusden
+    T, Demaria M, Goumans MTH, De Boer RA, Khatri P, Rabinovitch M, Berger RMF, Bartelds
+    B
+  is_selected: false
+  journal: Sci Transl Med
+  pubmed_id: '32727916'
+  title: Cellular senescence impairs the reversibility of pulmonary arterial hypertension.
+  year: 2020 Jul 29
+- authors: "Demaria M, Ohtani N, Youssef SA, Rodier F, Toussaint W, Mitchell JR, Laberge\
+    \ RM, Vijg J, Van Steeg H, Doll\xE9 ME, Hoeijmakers JH, de Bruin A, Hara E, Campisi\
+    \ J"
+  is_selected: true
+  journal: Dev Cell
+  pubmed_id: '25499914'
+  title: An essential role for senescent cells in optimal wound healing through secretion
+    of PDGF-AA.
+  year: 2014 Dec 22
