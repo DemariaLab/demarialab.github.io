@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - uses: actions/cache@v2
+        with:
+         path: ~/gems
+         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+         restore-keys: |
+          ${{ runner.os }}-gems-
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -51,9 +57,16 @@ jobs:
           echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
           source ~/.bashrc
           gem install jekyll bundler --user-install
-
+      - name: Debug PATH
+        run: echo $PATH
+      - name: Verify Ruby installation
+        run: |
+          ruby --version
+          gem --version
+          bundle --version   
       - name: Set up environment for Jekyll
         run: |
+          echo 'export GEM_HOME="$HOME/gems"' >> $GITHUB_ENV
           echo 'export PATH="$HOME/gems/bin:$PATH"' >> $GITHUB_ENV
 
       - name: Run Python generator
@@ -68,8 +81,8 @@ jobs:
 
       - name: Build Jekyll site
         run: |
-          bundle install
-          bundle exec jekyll build -s ./ -d ./_site
+          $HOME/gems/bin/bundle install
+          $HOME/gems/bin/bundle exec jekyll build -s ./ -d ./_site
           
 
       - name: Upload generated files
