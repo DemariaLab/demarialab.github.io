@@ -15,14 +15,14 @@ order: 6
         <div class="container-xl line-container ">
             <h3 class="poppins no-text-selection text-orange" style=" margin-top:1em">{{ year.name }}</h3>
         </div>
-        <div class="latest-news mt-3 container-xl">
+        <div class="latest-news mt-3 container-xl px-0 px-md-2">
             <div class="list-group news-block">
                 {% for post in year.items %}
-                  <a href="{{ post.url }}" class="rounded list-group-item list-group-item-action">
+                  <a href="{{ post.url }}" class=" list-group-item list-group-item-action">
                         <div class="d-flex flex-column flex-md-row p-0">
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
                             <div class="col-12 col-md-2 p-0">
-                                <div class="rounded news-thumbnail w-100"
+                                <div class=" news-thumbnail w-100"
                                      style="background-image:url('{{formatted_thumb | reduced}}');">
                                 </div>
                             </div>
@@ -39,7 +39,8 @@ order: 6
                             </div>
                         </div>
                     </a>
-                <div class="my-3  {% unless forloop.last %} news-divider {% endunless  %}"></div>
+                <div class="d-none d-md-block {% unless forloop.last %} news-divider {% endunless  %}"></div>
+				 {% unless forloop.last %} <hr class="d-block d-md-none "></hr> {% endunless  %}
                 {% endfor %}
             </div>
         </div>
