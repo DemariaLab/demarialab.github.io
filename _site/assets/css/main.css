@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --bs-navbar-brand-margin-end: 0px !important;
+    --bs-primary:orange !important;
+    --bs-secondary:#0d6efd !important;
+    --bs-secondary-rgb: 13, 110, 253 !important;
+    --bs-primary-rgb: 255, 165, 0 !important;
+}
+
+.accordion-button {
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem var(--bs-primary);
+    --bs-accordion-active-color: initial !important;
+    --bs-accordion-active-bg: #ffa5000f !important;
+}
+
+.no-text-selection {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.animated {
+    transition: all 0.2s ease-out !important;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 5em !important;
+    --bs-gutter-y: 5em !important;
+}
+
+.news-thumbnail {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-block .footer-heading {
+    margin-bottom: 1em
+}
+
+.footer-block a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+    font-size: 1.3em
+}
+
+.footer-block a:hover {
+    opacity: 1;
+}
+
+.poppins {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+svg {
+    vertical-align: text-bottom !important;
+}
+
+hr {
+    opacity: 0.12 !important;
+    margin: 0 !important
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pageTitleContainer {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+footer iframe {
+    border-radius: 1rem; /* Adjust the radius value as per your design */
+    overflow: hidden; /* Ensures content within the div doesn't protrude past the rounded corners */
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.content p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+header {
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.05s ease;
+    /* Fully transparent initially */
+}
+
+.logo {
+    background-image: url('/assets/icon/logo.svg');
+    background-repeat: no-repeat;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.bold, .card-title {
+    font-weight: bold
+}
+
+.card {
+    background-color: #fafafa !important;
+    border-radius: 1rem !important;
+}
+
+.header .logo {
+    font-size: 24px;
+}
+
+.quote-icon {
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB3aWR0aD0iMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNODMyIDk2MHYzODRxMCA4MC01NiAxMzZ0LTEzNiA1NmgtMzg0cS04MCAwLTEzNi01NnQtNTYtMTM2di03MDRxMC0xMDQgNDAuNS0xOTguNXQxMDkuNS0xNjMuNSAxNjMuNS0xMDkuNSAxOTguNS00MC41aDY0cTI2IDAgNDUgMTl0MTkgNDV2MTI4cTAgMjYtMTkgNDV0LTQ1IDE5aC02NHEtMTA2IDAtMTgxIDc1dC03NSAxODF2MzJxMCA0MCAyOCA2OHQ2OCAyOGgyMjRxODAgMCAxMzYgNTZ0NTYgMTM2em04OTYgMHYzODRxMCA4MC01NiAxMzZ0LTEzNiA1NmgtMzg0cS04MCAwLTEzNi01NnQtNTYtMTM2di03MDRxMC0xMDQgNDAuNS0xOTguNXQxMDkuNS0xNjMuNSAxNjMuNS0xMDkuNSAxOTguNS00MC41aDY0cTI2IDAgNDUgMTl0MTkgNDV2MTI4cTAgMjYtMTkgNDV0LTQ1IDE5aC02NHEtMTA2IDAtMTgxIDc1dC03NSAxODF2MzJxMCA0MCAyOCA2OHQ2OCAyOGgyMjRxODAgMCAxMzYgNTZ0NTYgMTM2eiIvPjwvc3ZnPg==');
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.quote-block {
+}
+
+.quote-text {
+    font-style: italic;
+    display: inline;
+}
+
+.quote-author {
+    margin-top: 10px;
+    color: #6c757d;
+    display: block;
+}
+
+.header nav {
+    font-size: 1.15em;
+    display: flex;
+}
+
+#logo {
+    --bs-navbar-brand-margin-end: 0px !important;
+    --bs-navbar-brand-margin-start: 0px !important;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative; /* Add this for positioning pseudo-elements */
+}
+
+.line-container h3 {
+    width: 100%;
+    display: inline-block; /* Make the h3 inline-block so it only takes the necessary width */
+    position: relative; /* Ensure relative positioning for pseudo-elements */
+    padding: 0 1em; /* Space between the lines and the text */
+    text-align: center;
+}
+
+.line-container h3::before,
+.line-container h3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 2em); /* Adjust the width of the lines */
+    height: 4px;
+    background-color: var(--bs-primary); /* Change color as needed */
+}
+
+.heading-block {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.line-container h3::before {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.blog p {
+    font-size: 1.2em !important;
+}
+
+.blog figure {
+    width: 100%
+}
+
+.blog img {
+    border: 1px solid #e0e0e0;
+    width: 100%
+}
+
+.badge {
+    max-width: 100%;
+    --bs-badge-font-weight: 400 !important;
+    --bs-badge-font-size: 1em !important;
+}
+
+.line-container h3::after {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.no-underline {
+    text-decoration: none
+}
+
+.header nav a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.list-group-item {
+    border: 1px solid #00000010 !important;
+}
+
+.list-group-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .35;
+    z-index: -10;
+}
+
+.list-group-item:hover {
+    border: 1px solid #00000022 !important;
+}
+
+.nav-item.active * {
+    color: black !important;
+}
+
+.gradientBg, .nav-item.active, .list-group-item:hover:before {
+    background-attachment: fixed;
+    background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
+    radial-gradient(circle at 80% 20%, #ff99ff, transparent),
+    radial-gradient(circle at 20% 80%, #3399ff, #d95c1f),
+    radial-gradient(circle at 80% 80%, #99ffcc, transparent);
+    background-blend-mode: overlay;
+    background-size: 100vw 100vh;
+    background-attachment: fixed !important;
+}
+
+.landingCover {
+    /*background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
+                  radial-gradient(circle at 80% 20%, #ff99ff, transparent),
+                  radial-gradient(circle at 20% 80%, #3399ff, transparent),
+                  radial-gradient(circle at 80% 80%, #99ffcc, transparent);
+      background-blend-mode: screen;*/
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    padding: 4rem;
+}
+
+.cover h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.content {
+    padding: 40px 20px;
+}
+
+.noPadding {
+    padding: 0 !important;
+}
+
+.noMargin {
+    margin-bottom: 0 !important;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+}
+
+a .nav-item {
+    z-index: 1;
+    text-decoration: none;
+    color: black;
+}
+
+a .nav-item.active {
+    z-index: 99;
+}
+
+.monospace, .text-monospace {
+    font-family: monospace;
+}
+
+.underline {
+    transform-origin: 50% 50%;
+    background-color: black;
+    z-index: -10;
+    position: absolute;
+    height: 0.3em;
+    border-radius: 0 0 20px 20px;
+    bottom: 0;
+    opacity: 1;
+    left: 40%;
+    transition: all 0.15s ease-out;
+    width: 0; /* Initially hide the underline */
+}
+
+@media (min-width: 992px) {
+    .underline {
+        opacity: 1;
+    }
+}
+
+nav:hover .underline {
+    display: block;
+}
+
+.b-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .02);
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .05);
+}
+
+.news-divider {
+    width: 3em;
+    background: var(--bs-primary);
+    height: 4px;
+    margin: 0 auto
+}
+
+.news-block {
+    --bs-list-group-item-padding-y: 0 !important;
+    --bs-list-group-item-padding-x: 0 !important
+}
+
+.text-orange {
+    color: var(--bs-primary);
+}
+
+.bg-orange {
+    background-color: var(--bs-primary);
+}
