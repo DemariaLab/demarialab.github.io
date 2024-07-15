@@ -54,9 +54,9 @@ jobs:
           sudo apt-get install -y ruby-full build-essential zlib1g-dev
           echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
           echo 'export GEM_HOME="$HOME/.local/share/gem"' >> ~/.bashrc
-          echo 'export PATH="$GEM_HOME/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
+          echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc
           source ~/.bashrc
-          gem install jekyll bundler
+          gem install jekyll bundler --user-install
 
       - name: Verify Ruby installation
         run: |
