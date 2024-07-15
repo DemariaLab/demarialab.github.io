@@ -274,11 +274,6 @@ html {
 }
 
 .landingCover {
-    /*background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
-                  radial-gradient(circle at 80% 20%, #ff99ff, transparent),
-                  radial-gradient(circle at 20% 80%, #3399ff, transparent),
-                  radial-gradient(circle at 80% 80%, #99ffcc, transparent);
-      background-blend-mode: screen;*/
     background-size: cover;
     background-position: center;
     display: flex;
@@ -295,7 +290,8 @@ html {
 }
 
 .content {
-    padding: 40px 20px;
+    padding: 2em 2em;
+	
 }
 
 .noPadding {
