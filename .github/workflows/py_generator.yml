@@ -7,7 +7,11 @@ on:
   pull_request:
     branches:
       - main
-
+  
+permissions:
+      contents: write
+      pages: write
+      
 jobs:
   run-generator:
     runs-on: ubuntu-latest
