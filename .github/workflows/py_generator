@@ -1,0 +1,49 @@
+name: Run Python Generator
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-generator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r python_generator/requirements.txt
+
+      - name: Install Firefox
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox
+
+      - name: Run Python generator
+        env:
+          CUSTOM_NEWS_ARTICLES_DOC_ID: ${{ secrets.CUSTOM_NEWS_ARTICLES_DOC_ID }}
+          MEMBERS_SHEET_ID: ${{ secrets.MEMBERS_SHEET_ID }}
+          PHOTOS_SHEET_ID: ${{ secrets.PHOTOS_SHEET_ID }}
+          SELECTED_PUBLICATIONS_SHEET_ID: ${{ secrets.SELECTED_PUBLICATIONS_SHEET_ID }}
+          RESEARCH_DOC_ID: ${{ secrets.RESEARCH_DOC_ID }}
+        run: |
+          python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --research_doc_id $RESEARCH_DOC_ID
+
+      - name: Upload generated files
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add .
+          git commit -m 'Refreshed data'
+          git push origin main
