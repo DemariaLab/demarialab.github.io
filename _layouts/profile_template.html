@@ -1,0 +1,155 @@
+---
+layout: modal_post
+---
+<style>
+    .publications-counter {
+        width: 1.8em;
+        height: 1.8em;
+        color: #0000008a !important;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        --bs-primary-rgb: 255, 165, 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .member-info svg {
+        opacity: 0.5;
+    }
+</style>
+<div>
+    <div class="container-xl noPadding">
+        <div class="double-column mt-5 mb-5 d-block d-md-flex">
+            <div class="col">
+                <div class="image-content">
+                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}"/>
+                </div>
+            </div>
+            <div class="col ms-0 ms-md-5">
+                <div class="sticky-title">
+                    <h2><strong>{{ page.name }}</strong>{% if page.qualification and is_alumni==false %}, {{
+                        page.qualification }}{% endif %}</h2>
+                    <p class="card-text">
+                        {% if page.role and is_alumni==false %}{{ page.role }}<br>
+                        {% endif %}
+                        {% if page.is_alumni == true %}
+                    <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
+                    <br>
+                    {% endif %}
+                    <ul class="member-info list-unstyled">
+                        {% if page.date_joined and page.is_alumni == false %}
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
+                                 fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                            Joined {{ page.date_joined | date: "%d %B %Y"}}
+                        </li>
+                        {% endif %}
+                        {% if page.is_alumni == true and page.date_leaving %}
+                        {% assign start_year_alumni = page.date_joined | date: "%Y" | plus: 0 %}
+                        {% assign end_year_alumni = page.date_leaving | date: "%Y" | plus: 0 %}
+                        {% assign years_spent = end_year_alumni | minus: start_year_alumni %}
+                        {% assign start_month_alumni = page.date_joined | date: "%m" | plus: 0 %}
+                        {% assign end_month_alumni = page.date_leaving | date: "%m" | plus: 0 %}
+                        {% assign total_months = end_month_alumni | minus: start_month_alumni %}
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
+                                 fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                            Spent {{years_spent}} years {% if total_months > 0 %} and {{total_months}} months {% endif
+                            %} in the lab, from {{ page.date_joined | date: "%B %Y"}} until {{ page.date_leaving | date:
+                            "%B %Y"}}
+                        </li>
+                        {% endif %}
+                        {% if page.country %}
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
+                                 fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"/>
+                            </svg>
+                            From {{page.country}}
+                        </li>
+                        {% endif %}
+                        </p>
+                    </ul>
+                    {% if page.keywords %}
+                    {% assign cleaned_keywords = page.keywords | replace: 'and', ',' %}
+                    {% assign keywords = cleaned_keywords | split: ';' %}
+                    {% for keyword in keywords %}
+                    {% assign keyword = keyword | strip %}
+                    {% if keyword != ' ' %}
+                    <div class="badge rounded-pill gradientBg text-black mt-1 mb-1 mr-1">{{ keyword }}</div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% if page.biography %}
+                    <div class="text-content">
+                        <div class="container-xl noPadding mt-3">
+                            <div class="quote-block card p-3">
+                                <div class="quote-icon"></div>
+                                <div>
+                                    <p class="quote-text">
+                                        {{page.biography}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if page.publications %}
+    {% assign publication_ids = page.publications | split: "; " %}
+    <div class="container-xl mb-5 noPadding">
+        <h2 class="poppins">Publications with the lab <span class="badge text-bg-primary publications-counter">{{publication_ids.size}}</span>
+        </h2>
+        {% assign publications_all = site.data.publications_all %}
+        {% assign published_articles = "" %}
+        {% for publication in publications_all %}
+        {% assign pubmed_id = publication.pubmed_id | append: "" %}
+        {% if publication_ids contains pubmed_id %}
+        {% assign published_articles = published_articles | append: publication.title | append: "||" | append:
+        publication.authors | append: "||" | append: publication.year | append: "||" |append: publication.pubmed_id |
+        append: "||"| append: publication.journal | append: ";;;" %}
+        {% endif %}
+        {% endfor %}
+        <div class="list-group ">
+            {% assign articles = published_articles | split: ";;;" %}
+            {% for article in articles %}
+            {% assign article_data = article | split: "||" %}
+            <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
+               class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ article_data[0] }}</h5>
+                    <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
+                </div>
+                <div class="mb-1">
+                    {% assign authors = article_data[1] | split: ", " %}
+                    {% for author in authors %}
+                    {% assign name_parts = page.unaccented_name | split: " " %}
+                    {% assign last_name = name_parts[1] %}
+                    {% assign first_initial = name_parts[0] | slice: 0 %}
+                    {% assign name_parts_loop = author | split: " " %}
+                    {% assign last_name_loop = name_parts_loop[0] %}
+                    {% assign first_initial_loop = name_parts_loop[1] | slice: 0 %}
+                    {% assign author_last_name = author | remove: author_initial %}
+                    {% if last_name == last_name_loop and first_initial == first_initial_loop %}
+                    <b class="text-orange"><i>{{ last_name_loop }} {{ first_initial_loop }}</i></b>{% else %}{{
+                    last_name_loop }} {{ first_initial_loop }}{% endif %}{% if forloop.last == false %},{% endif %}{%
+                    endfor %}
+                </div>
+                <small class="text-body-secondary">{{ article_data[4]}}</small>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,87 @@
+---
+layout: default
+title: Team
+header-title: Lab members
+permalink: /members/
+order: 2
+---
+<style>
+    .team-card {
+        width: 100%;
+        height: 350px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+</style>
+<div class="container-flex">
+    {% assign roles = site.profiles | map: 'role' | uniq %}
+    {% for role in roles %}
+    <div class="container-xl">
+        <div class="col-12 mt-4">
+            <h2 class="poppins mt-5 mb-5">{{role}}s</h2>
+            <div class="row g-1">
+                {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", false | sort:
+                "date_joined" | reverse %}
+                {% for profile in sorted_profiles %}
+                <div class="col-md-4  mb-4">
+                    <a href="{{profile.url}}" class="no-underline text-black">
+                        <div style="background-image: url('{{ profile.thumbnail | reduced}}')"
+                             class="team-card card-img-top grid-img"></div>
+                        <div class="mt-2 mb-3">
+                            <h4 class="poppins noMargin">{{ profile.name }}</h4>
+                            <h6 class="mt-2 mb-2">Since {{ profile.date_joined | date: "%Y" }}</h6>
+                            {% if profile.keywords %}
+                            {% assign cleaned_keywords = profile.keywords | replace: 'and ', ',' %}
+                            {% assign keywords = cleaned_keywords | split: ';' %}
+                            {% for keyword in keywords %}
+                            {% assign keyword = keyword | strip %}
+                            {% if keyword != ' ' %}
+                            <div class="badge rounded-pill mt-1 py-2 px-3 gradientBg text-black ">{{ keyword }}
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="b-divider"></div>
+    {% endfor %}
+</div>
+<div class="container-flex">
+    <div class="container-xl">
+        <div class="col-12 mt-4">
+            <h2 class="poppins mt-5 mb-5">Alumni</h2>
+            <div class="row g-1">
+                {% assign sorted_alumni = site.profiles | where: "is_alumni", true | sort: "date_leaving" | reverse %}
+                {% for profile in sorted_alumni %}
+                <div class="col-md-4  mb-4">
+                    <a href="{{profile.url}}" class="no-underline text-black">
+                        <div style="background-image: url('{{ profile.thumbnail }}')"
+                             class="team-card card-img-top grid-img"></div>
+                        <div class="mt-2 mb-3">
+                            <h4 class="poppins noMargin">{{ profile.name }}</h4>
+                            <h6 class="mt-2 mb-2">{{ profile.role }}</h6>
+                            {% if profile.keywords %}
+                            {% assign cleaned_keywords = profile.keywords | replace: 'and ', ',' %}
+                            {% assign keywords = cleaned_keywords | split: ';' %}
+                            {% for keyword in keywords %}
+                            {% assign keyword = keyword | strip %}
+                            {% if keyword != ' ' %}
+                            <div class="badge rounded-pill mt-1 py-2 px-3 gradientBg text-black ">{{ keyword }}</div>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="b-divider"></div>
+</div>

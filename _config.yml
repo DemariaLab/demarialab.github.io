@@ -1,0 +1,30 @@
+title: DemariaLab
+baseurl: ""
+url: "" 
+year: 2015
+repository: DemariaLab/demarialab.github.io
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+permalink: /:categories/:year/:month/:day/:title:output_ext
+paginate: 10
+paginate_path: "/_posts/:num/"
+
+collections:
+  profiles:
+    people: true
+    output: true
+    permalink: /profiles/:path.html
+
+defaults:
+  - scope:
+      path: "_profiles"
+      type: "profiles"
+    values:
+      title: "{{name}}"
+
+exclude:
+  - .idea
