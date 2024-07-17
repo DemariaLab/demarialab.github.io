@@ -7,7 +7,7 @@ order: 3
 ---
 <div class="container-flex">
     <div class="container-xl">
-        <div class="col-12 my-5">
+        <div class="col-12 my-3">
             {% assign publications = site.data.publications_all %}
             {% assign years = "" %}
             {% assign years_selected = "" %}
@@ -41,7 +41,8 @@ order: 3
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionBlock">
                         <div class="accordion-body p-0">
                             {% for year in years_selected %}
-                            <h2 class="poppins w-100 px-3 py-3 m-0 gradientBg no-text-selection text-black">{{year}}</h2>
+                            <h2 class="poppins w-100 px-3 py-3 m-0 gradientBg no-text-selection text-black">
+                                {{year}}</h2>
                             <hr>
                             {% for item in selected_items %}
                             {% assign item_year = item.year | split: ' ' %}
@@ -49,10 +50,11 @@ order: 3
                             {% if item_year == year %}
                             {% if item.is_selected %}
                             <a href="https://pubmed.ncbi.nlm.nih.gov/{{ item.pubmed_id }}"
-                               class="w-100 m-0 list-group-item list-group-item-action" style="border:0px !important">
+                               class="w-100 m-0 list-group-item list-group-item-action dynamic-highlight"
+                               style="border:0px !important">
                                 <div class="d-flex flex-column flex-md-row p-0">
-                                    <div class="d-flex ps-3 pe-3 py-0">
-                                        <div class="my-auto py-3">
+                                    <div class="d-flex px-2 py-0">
+                                        <div class="my-auto py-2">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h4 class="text-secondary m-0 poppins">{{ item.title }}</h4>
                                             </div>
@@ -101,10 +103,10 @@ order: 3
                             {% assign item_year = item_date_segments[0] %}
                             {% if item_year == year %}
                             <a href="https://pubmed.ncbi.nlm.nih.gov/{{ item.pubmed_id }}"
-                               class="w-100 m-0 list-group-item list-group-item-action" style="border:0px !important">
+                               class="w-100 m-0 list-group-item list-group-item-action dynamic-highlight" style="border:0px !important">
                                 <div class="d-flex flex-column flex-md-row p-0">
-                                    <div class="d-flex ps-3 pe-3 py-0">
-                                        <div class="my-auto py-3">
+                                       <div class="d-flex px-2 py-0">
+                                        <div class="my-auto py-2">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <h4 class="text-secondary m-0 poppins">{{ item.title }}</h4>
                                             </div>
