@@ -328,7 +328,7 @@ h5.poppins {
     font-size: 1.15rem;
 }
 
-.gradientBg, .nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active:before, .dynamic-highlight:focus:before {
+.gradientBg, .nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before , .dynamic-highlight:focus::before  {
     background-attachment: fixed;
     background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
     radial-gradient(circle at 80% 20%, #ff99ff, transparent),
