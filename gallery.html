@@ -174,7 +174,7 @@ order: 5
     </div>
     {% for year in years %}
     {% if year != "" %}
-    <div class="container-xl  mt-2 mb-2">
+    <div class="container-xl text-center text-danger mt-2 mb-2">
         <h3 class="poppins  py-3" >{{ year }}</h3>
     </div>
     <div class="container-xl ">
@@ -184,7 +184,16 @@ order: 5
             {% if filename_parts[0] == year %}
             <div class="item mb-3">
                 {% assign full_image_path = site.baseurl | append: image.path %}
-                <img class="gridItem" src="{{image.path | reduced}}" alt="{{ image.name | split: '.' | first }}"
+
+                {% assign formatted_thumb = full_image_path | remove: "'" %}
+                {% assign path_parts = formatted_thumb | split: '/' %}
+                {% assign filename = path_parts | last %}
+                {% assign directory = formatted_thumb | remove: filename %}
+                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                '.webp' %}
+                {% assign new_url = directory | append: new_filename %}
+
+                <img class="gridItem" src="{{new_url}}" alt="{{ image.name | split: '.' | first }}"
                      data-full="{{full_image_path }}">
                 <p class="imgTitle poppins noMargin">
                     {% assign image_title = filename_parts[3] | split: '.' | first %}

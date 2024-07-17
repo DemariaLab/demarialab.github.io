@@ -1,6 +1,6 @@
-.bundle/
-.idea/
-vendor/
+.bundle
+.idea
+vendor
 python_generator/__pycache__
 Gemfile.lock
-_site/
+_site

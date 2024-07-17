@@ -61,11 +61,20 @@
 /*    position: absolute;*/
 /*}*/
 
-
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    --bs-gutter-x: 1em !important;
-    --bs-gutter-y: 1em !important;
+@media (min-width: 992px) {
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 2em !important;
+        --bs-gutter-y: 2em !important;
+    }
 }
+
+@media (max-width: 991.98px) {
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        --bs-gutter-x: 1em !important;
+        --bs-gutter-y: 1em !important;
+    }
+}
+
 
 .news-thumbnail {
     width: 100%;
@@ -233,7 +242,7 @@ html {
     top: 50%;
     width: calc(50% - 2em); /* Adjust the width of the lines */
     height: 4px;
-    background-color: var(--bs-primary); /* Change color as needed */
+    background-attachment: fixed;
 }
 
 .heading-block {
@@ -301,6 +310,9 @@ html {
 .list-group-item {
     border: 1px solid transparent !important;
 }
+.list-group-item:hover,.list-group-item:active {
+    border: 1px solid transparent !important;
+}
 .blog .list-group-item {
     border: 1px solid #00000010 !important;
 }
@@ -316,10 +328,6 @@ html {
     z-index: -10;
 }
 
-.list-group-item:hover {
-    border: 1px solid #00000022 !important;
-}
-
 .nav-item.active * {
     color: black !important;
 }
@@ -328,7 +336,9 @@ h5.poppins {
     font-size: 1.15rem;
 }
 
-.gradientBg, .nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before , .dynamic-highlight:focus::before  {
+.gradientBg,
+.line-container h3::before,
+.line-container h3::after,.nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before, .dynamic-highlight:focus::before {
     background-attachment: fixed;
     background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
     radial-gradient(circle at 80% 20%, #ff99ff, transparent),
@@ -407,7 +417,11 @@ a .nav-item.active {
         opacity: 1;
     }
 }
-
+@media (max-width: 500px) {
+    .team-circle  {
+        max-height:250px;
+    }
+}
 nav:hover .underline {
     display: block;
 }

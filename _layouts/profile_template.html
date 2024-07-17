@@ -20,18 +20,18 @@ layout: modal_post
 </style>
 <div>
     <div class="container-xl noPadding">
-        <div class="double-column mt-5 mb-5 d-block d-md-flex">
+        <div class="double-column my-3 d-block d-md-flex">
             <div class="col">
                 <div class="image-content">
                     <img src="{{ page.thumbnail }}" alt="{{ page.name }}"/>
                 </div>
             </div>
-            <div class="col ms-0 ms-md-5">
+            <div class="col ms-0 ms-md-3">
                 <div class="sticky-title">
-                    <h2><strong>{{ page.name }}</strong>{% if page.qualification and is_alumni==false %}, {{
-                        page.qualification }}{% endif %}</h2>
+                    <h2 class="poppins"><strong>{{ page.name }}</strong><p class="text-black-50 d-inline">{% if page.qualification && is_alumni==false %}, {{
+                        page.qualification }}{% endif %}</p></h2>
                     <p class="card-text">
-                        {% if page.role and is_alumni==false %}{{ page.role }}<br>
+                        {% if page.role && is_alumni==false %}{{ page.role }}<br>
                         {% endif %}
                         {% if page.is_alumni == true %}
                     <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
@@ -91,7 +91,7 @@ layout: modal_post
                     {% if page.biography %}
                     <div class="text-content">
                         <div class="container-xl noPadding mt-3">
-                            <div class="quote-block card p-3">
+                            <div class="quote-block border-semi-transparent rounded-1em card p-3">
                                 <div class="quote-icon"></div>
                                 <div>
                                     <p class="quote-text">
@@ -109,8 +109,8 @@ layout: modal_post
     {% if page.publications %}
     {% assign publication_ids = page.publications | split: "; " %}
     <div class="container-xl mb-5 noPadding">
-        <h2 class="poppins">Publications with the lab <span class="badge text-bg-primary publications-counter">{{publication_ids.size}}</span>
-        </h2>
+        <h4 class="poppins">Publications with the lab <span class="badge bg-warning publications-counter">{{publication_ids.size}}</span>
+        </h4>
         {% assign publications_all = site.data.publications_all %}
         {% assign published_articles = "" %}
         {% for publication in publications_all %}
@@ -126,7 +126,7 @@ layout: modal_post
             {% for article in articles %}
             {% assign article_data = article | split: "||" %}
             <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-               class="list-group-item list-group-item-action">
+               class="list-group-item list-group-item-action dynamic-highlight p-2">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{ article_data[0] }}</h5>
                     <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
@@ -142,7 +142,7 @@ layout: modal_post
                     {% assign first_initial_loop = name_parts_loop[1] | slice: 0 %}
                     {% assign author_last_name = author | remove: author_initial %}
                     {% if last_name == last_name_loop and first_initial == first_initial_loop %}
-                    <b class="text-orange"><i>{{ last_name_loop }} {{ first_initial_loop }}</i></b>{% else %}{{
+                    <b class="text-bold"><i>{{ last_name_loop }} {{ first_initial_loop }}</i></b>{% else %}{{
                     last_name_loop }} {{ first_initial_loop }}{% endif %}{% if forloop.last == false %},{% endif %}{%
                     endfor %}
                 </div>

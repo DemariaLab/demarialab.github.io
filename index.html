@@ -133,7 +133,6 @@ order: 0
         border: none; /* Remove table cell borders */
     }
     .team-circle {
-        margin-left: 2px;
         height: 22em;
         background-position: center;
         background-size: cover;
@@ -167,8 +166,8 @@ order: 0
     </div>
     <div class="b-divider"></div>
     <div class="container-flex">
-        <section class="container-xl content p-0 " id="section1">
-            <h3 class="poppins p-3 m-0">
+        <section class="container-xl content p-0 mt-1 " id="section1">
+            <h3 class="poppins px-2 pt-3 m-0">
                 Latest news
             </h3>
             <div class="latest-news rounded-0">
@@ -178,19 +177,26 @@ order: 0
                     {% for post in sorted_posts limit: 5 %}
                     <a href="{{ post.url }}" class="rounded-0 list-group-item dynamic-highlight list-group-item-action  py-2 p-0 p-md-2 ">
                         <div class="d-flex flex-row px-2 px-md-0">
+
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
+                            {% assign path_parts = formatted_thumb | split: '/' %}
+                            {% assign filename = path_parts | last %}
+                            {% assign directory = formatted_thumb | remove: filename %}
+                            {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                            '.webp' %}
+                            {% assign new_url = directory | append: new_filename %}
 
                             <div class="col-9 col-md-10 d-flex flex-column pe-2">
                                 <div class="my-auto py-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
                                     </div>
-                                    <div class="text-body-secondary text-nowrap">{{ post.date | days_ago }}</div>
+                                    <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}</div>
                                 </div>
                             </div>
                                 <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
                                 <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                     style="background-image:url('{{formatted_thumb | reduced}}');">
+                                     style="background-image:url('{{new_url}}');">
                                 </div>
                             </div>
                         </div>
@@ -207,15 +213,15 @@ order: 0
             </div>
         </section>
     <div class="b-divider"></div>
-    <section class=" container-xl" id="section2">
+    <section class=" container-xl noPadding" id="section2">
         <div class="noPadding">
-            <h3 class="poppins d-flex d-md-none mt-3 mb-3 mx-3 text-body">
+            <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-1 text-body">
                 Meet the lab members
             </h3>
             <a class="no-underline" href="/members/">
-                <div class="row g-0 " id="teamSection">
+                <div class="row g-1 " id="teamSection">
                     <div class="team-circle animated-item col d-none d-md-flex align-items-center justify-content-center ">
-                        <h3 class="poppins text-left text-body" style="margin-right: 0.8em; ">
+                        <h3 class="poppins text-left text-body px-1" style="margin-right: 0.8em; ">
                             Meet the lab members
                         </h3>
                     </div>
@@ -224,11 +230,11 @@ order: 0
             </a></div>
     </section>
     <div class="b-divider"></div>
-    <section class="container-xl pb-5">
-        <h3 class="poppins  my-4">
+    <section class="container-xl p-0">
+        <h3 class="poppins px-1 my-3">
             Our lab in numbers
         </h3>
-        <div class="row g-3">
+        <div class="row g-2 px-sm-2 pb-2 pt-0">
             {% assign team = site.profiles | where: "is_alumni", false %}
             <div class="col  ">
                 <a class="no-underline" href="/members/">
@@ -296,13 +302,13 @@ order: 0
         </div>
     </section>
     <div class="b-divider"></div>
-    <section class="container-xl mb-5">
-        <h3 class="poppins  my-4">
+    <section class="container-xl mb-5 noPadding noMargin">
+        <h3 class="poppins px-1 my-4">
             Latest pictures
         </h3>
         <section id="latest-pictures" class="section">
             <div class="container-xl noPadding noMargin">
-                <div class="row" style="--bs-gutter-x: 2px">
+                <div class="row g-1">
                     {% assign gallery_files = site.static_files | sort: 'path' | reverse %}
                     {% assign latest_pictures = '' | split: ',' %}
                     {% for file in gallery_files %}
@@ -317,7 +323,7 @@ order: 0
                     {% assign latest_pictures_more = latest_pictures | slice: 4, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="col ">
+                    <div class="col-6 col-md">
                         <a href="/gallery/">
                             <div class="square-container picture-item animated-item"
                                  style="background-image: url('{{ latest_picture_path }}');">
@@ -329,9 +335,18 @@ order: 0
                     <div class="col picture-item animated-item">
                         <div class="grid-container">
                             {% for picture in latest_pictures_more %}
-                            {% assign latest_more_picture_path = picture.path | replace: "'", "\\'" | reduced %}
+                            {% assign latest_more_picture_path = picture.path | replace: "'", "\\'"  %}
+
+                            {% assign formatted_thumb = latest_more_picture_path | remove: "'" %}
+                            {% assign path_parts = formatted_thumb | split: '/' %}
+                            {% assign filename = path_parts | last %}
+                            {% assign directory = formatted_thumb | remove: filename %}
+                            {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                            '.webp' %}
+                            {% assign new_url = directory | append: new_filename %}
+
                             <div class="grid-item item1 "
-                                 style="background-image: url('{{ latest_more_picture_path }}');"></div>
+                                 style="background-image: url('{{ new_url }}');"></div>
                             {% endfor %}
                         </div>
                         <div class="poppins noPadding view-all ">
@@ -382,7 +397,14 @@ order: 0
     const members = [
 	{% assign team = site.profiles | where: "is_alumni", false %}
                 {% for member in team %}
-                    { photo: "{{ member.thumbnail | reduced }}" }{% if forloop.last == false %},{% endif %}
+               {% assign formatted_thumb = member.thumbnail | remove: "'" %}
+                                {% assign path_parts = formatted_thumb | split: '/' %}
+                                {% assign filename = path_parts | last %}
+                                {% assign directory = formatted_thumb | remove: filename %}
+                                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                                '.webp' %}
+                                {% assign new_url = directory | append: new_filename %}
+                    { photo: "{{ new_url }}" }{% if forloop.last == false %},{% endif %}
                 {% endfor %}
             ].filter(member => member.photo !== "");
       function getRandomMembers(members, count) {
@@ -402,7 +424,7 @@ order: 0
               .addClass(`team-circle ${circle.class}`)
               .css('background-image', `url('${circle.member.photo}')`);
           const wrappedDiv = $('<div></div>')
-              .addClass('col')
+              .addClass('col-6 col-md')
               .append(div);
           teamSection.append(wrappedDiv);
       });

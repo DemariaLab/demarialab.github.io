@@ -26,7 +26,15 @@ order: 2
                 {% for profile in sorted_profiles %}
                 <div class="col-md-4 mb-4">
                     <a href="{{profile.url}}" class="no-underline text-black text-underline-interactive">
-                        <div style="background-image: url('{{ profile.thumbnail | reduced}}')"
+                               {% assign formatted_thumb = profile.thumbnail |  remove: "'" %}
+                               {% assign path_parts = formatted_thumb | split: '/' %}
+                                {% assign filename = path_parts | last %}
+                                {% assign directory = formatted_thumb | remove: filename %}
+                                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                                '.webp' %}
+                                {% assign new_url = directory | append: new_filename %}
+
+                        <div style="background-image: url('{{ new_url}}')"
                              class="team-card card-img-top grid-img"></div>
                         <div class="mt-2 mb-3">
                             <h4 class="poppins noMargin">{{ profile.name }}</h4>

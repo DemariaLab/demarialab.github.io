@@ -5,42 +5,43 @@ header-title: Lab news
 permalink: /news/
 order: 6
 ---
-<script>
-    $('.navbar li#News').addClass('active');
-</script>
 <div class="blog-home container-flex">
     <div class="post-list">
         {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" | reverse%}
         {% for year in posts_by_year reversed %}
-        <div class="container-xl line-container ">
-            <h3 class="poppins no-text-selection text-orange" style=" margin-top:1em">{{ year.name }}</h3>
+        <div class="container-xl text-center text-danger">
+            <h3 class="poppins no-text-selection " style=" margin-top:1em">{{ year.name }}</h3>
         </div>
         <div class="latest-news mt-3 container-xl ">
             <div class="list-group news-block">
                 {% for post in year.items %}
-                  <a href="{{ post.url }}" class=" list-group-item list-group-item-action">
-                        <div class="d-flex flex-column flex-md-row p-0">
+                     <a href="{{ post.url }}" class="rounded-0 list-group-item dynamic-highlight list-group-item-action  py-2 p-0 p-md-2 ">
+                        <div class="d-flex flex-row px-2 px-md-0">
+
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
-                            <div class="col-12 col-md-2 p-0">
-                                <div class=" news-thumbnail w-100"
-                                     style="background-image:url('{{formatted_thumb | reduced}}');">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-10 d-flex flex-column ps-3 pe-3 py-0">
+                            {% assign path_parts = formatted_thumb | split: '/' %}
+                            {% assign filename = path_parts | last %}
+                            {% assign directory = formatted_thumb | remove: filename %}
+                            {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                            '.webp' %}
+                            {% assign new_url = directory | append: new_filename %}
+
+                            <div class="col-9 col-md-10 d-flex flex-column pe-2">
                                 <div class="my-auto py-3">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h4 class="text-secondary m-0 poppins">{{ post.title }}</h4>
+                                        <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
                                     </div>
-                                    <div class="truncate">
-                                        {{ post.excerpt | markdownify | strip_html | truncatewords: 20 }}
-                                    </div>
-                                    <small class="text-body-secondary text-nowrap">{{ post.date | days_ago }}</small>
+                                    <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}</div>
+                                </div>
+                            </div>
+                                <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
+                                <div class="news-thumbnail w-100 border-semi-transparent my-auto"
+                                     style="background-image:url('{{new_url}}');">
                                 </div>
                             </div>
                         </div>
                     </a>
-                <div class="d-none d-md-block {% unless forloop.last %} news-divider {% endunless  %}"></div>
-				 {% unless forloop.last %} <hr class="d-block d-md-none "></hr> {% endunless  %}
+                <div class="d-none d-md-block {% unless forloop.last %} news-hr {% endunless  %}"></div>
                 {% endfor %}
             </div>
         </div>
