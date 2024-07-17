@@ -293,13 +293,6 @@ html {
     text-decoration: none;
 }
 
-.text-underline-interactive:hover {
-    text-decoration: underline!important;
-}
-
-.text-underline-interactive {
-    text-decoration: none !important;
-}
 
 .rounded-1em {
     border-radius: 1em !important;
@@ -432,6 +425,7 @@ nav:hover .underline {
     height: 4px;
     margin: 0 auto
 }
+
 
 .news-block {
     --bs-list-group-item-padding-y: 0 !important;
