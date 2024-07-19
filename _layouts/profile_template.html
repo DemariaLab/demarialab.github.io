@@ -21,19 +21,18 @@ layout: modal_post
 <div>
     <div class="container-xl noPadding">
         <div class="double-column my-3 d-block d-md-flex">
-            <div class="col">
+            <div class="col d-flex align-items-center">
                 <div class="image-content">
-                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}"/>
+                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}" class="rounded-4"/>
                 </div>
             </div>
-            <div class="col ms-0 ms-md-3">
+            <div class="col ms-0 ms-md-3 mb-0 mb-lg-4">
                 <div class="sticky-title">
-                    <h2 class="poppins"><strong>{{ page.name }}</strong><p class="text-black-50 d-inline">{% if page.qualification && is_alumni==false %}, {{
-                        page.qualification }}{% endif %}</p></h2>
+                    <h2 class="poppins">{{ page.name }}<p class="text-black-50 d-inline">{% if page.is_alumni %} {% else %}, {{page.qualification}}{% endif %}</p></h2>
                     <p class="card-text">
-                        {% if page.role && is_alumni==false %}{{ page.role }}<br>
+                        {% if page.is_alumni %} {% else %}{{ page.role }}<br>
                         {% endif %}
-                        {% if page.is_alumni == true %}
+                        {% if page.is_alumni %}
                     <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
                     <br>
                     {% endif %}

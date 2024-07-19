@@ -61,20 +61,35 @@
 /*    position: absolute;*/
 /*}*/
 
-@media (min-width: 992px) {
-    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        --bs-gutter-x: 2em !important;
-        --bs-gutter-y: 2em !important;
-    }
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 2em !important;
+    --bs-gutter-y: 2em !important;
 }
 
-@media (max-width: 991.98px) {
-    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        --bs-gutter-x: 1em !important;
-        --bs-gutter-y: 1em !important;
-    }
+.team-card {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s linear;
+    background-blend-mode: exclusion;
 }
 
+.team-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 55;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 60, 255, 0.25));
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.team-card:hover::before {
+    opacity: 1;
+
+}
 
 .news-thumbnail {
     width: 100%;
@@ -295,11 +310,11 @@ html {
 }
 
 .text-underline-interactive:hover h5 {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 .text-underline-interactive h5 {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 
@@ -310,9 +325,11 @@ html {
 .list-group-item {
     border: 1px solid transparent !important;
 }
-.list-group-item:hover,.list-group-item:active {
+
+.list-group-item:hover, .list-group-item:active {
     border: 1px solid transparent !important;
 }
+
 .blog .list-group-item {
     border: 1px solid #00000010 !important;
 }
@@ -338,7 +355,7 @@ h5.poppins {
 
 .gradientBg,
 .line-container h3::before,
-.line-container h3::after,.nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before, .dynamic-highlight:focus::before {
+.line-container h3::after, .nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before, .dynamic-highlight:focus::before {
     background-attachment: fixed;
     background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
     radial-gradient(circle at 80% 20%, #ff99ff, transparent),
@@ -417,11 +434,13 @@ a .nav-item.active {
         opacity: 1;
     }
 }
+
 @media (max-width: 500px) {
-    .team-circle  {
-        max-height:250px;
+    .team-circle {
+        max-height: 250px;
     }
 }
+
 nav:hover .underline {
     display: block;
 }

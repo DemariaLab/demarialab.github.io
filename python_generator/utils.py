@@ -34,11 +34,14 @@ def safe_file_name(input_string, replacement_char='_'):
 
     return safe_string
 
+import os
+from PIL import Image, ImageFilter
 
 def reduce_images_in_dir(input_dir):
     if not os.path.isdir(input_dir):
         return
-        # Valid image extensions
+
+    # Valid image extensions
     valid_extensions = ('.png', '.jpg', '.jpeg', '.webp')
 
     # Loop through all files in the directory
@@ -54,11 +57,14 @@ def reduce_images_in_dir(input_dir):
                 reduced_width, reduced_height = original_width * 2 // 3, original_height * 2 // 3
                 # Reduce the size of the image
                 reduced_img = img.resize((reduced_width, reduced_height))
+                # Apply sharpening filter
+                sharpened_img = reduced_img.filter(ImageFilter.SHARPEN)
                 # Prepare the output file path
                 reduced_filename = f'reduced_{os.path.splitext(filename)[0]}.webp'
                 reduced_filepath = os.path.join(input_dir, reduced_filename)
-                # Save the reduced image in WebP format with medium quality
-                reduced_img.save(reduced_filepath, format='WEBP', quality=60)
+                # Save the reduced and sharpened image in WebP format with medium quality
+                sharpened_img.save(reduced_filepath, format='WEBP', quality=60)
+
 
 
 def read_published_google_sheet(sheet_id):

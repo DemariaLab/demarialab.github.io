@@ -25,17 +25,19 @@ order: 2
                 "date_joined" | reverse %}
                 {% for profile in sorted_profiles %}
                 <div class="col-md-4 mb-4">
-                    <a href="{{profile.url}}" class="no-underline text-black text-underline-interactive">
-                               {% assign formatted_thumb = profile.thumbnail |  remove: "'" %}
-                               {% assign path_parts = formatted_thumb | split: '/' %}
-                                {% assign filename = path_parts | last %}
-                                {% assign directory = formatted_thumb | remove: filename %}
-                                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                                '.webp' %}
-                                {% assign new_url = directory | append: new_filename %}
+                    <a href="{{profile.url}}" class=" no-underline text-black text-underline-interactive">
+                        {% assign formatted_thumb = profile.thumbnail | remove: "'" %}
+                        {% assign path_parts = formatted_thumb | split: '/' %}
+                        {% assign filename = path_parts | last %}
+                        {% assign directory = formatted_thumb | remove: filename %}
+                        {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                        '.webp' %}
+                        {% assign new_url = directory | append: new_filename %}
+                        <div class="">
+                            <div style="background-image: url('{{ new_url}}')"
+                                 class="team-card card-img-top grid-img "></div>
+                        </div>
 
-                        <div style="background-image: url('{{ new_url}}')"
-                             class="team-card card-img-top grid-img"></div>
                         <div class="mt-2 mb-3">
                             <h4 class="poppins noMargin">{{ profile.name }}</h4>
                             <h6 class="mt-2 mb-2">Since {{ profile.date_joined | date: "%B %Y" }}</h6>
