@@ -306,7 +306,7 @@ html {
 
 .news-hr {
     height: 1px;
-    background: #00000010;
+    border-color: #000000aa;
 }
 
 .text-underline-interactive:hover {
@@ -355,7 +355,7 @@ h5.poppins {
 
 .gradientBg,
 .line-container h3::before,
-.line-container h3::after, .nav-item.active, .dynamic-highlight:hover:before, .dynamic-highlight:active::before, .dynamic-highlight:focus::before {
+.line-container h3::after, .nav-item.active, .dynamic-highlight::before {
     background-attachment: fixed;
     background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
     radial-gradient(circle at 80% 20%, #ff99ff, transparent),
