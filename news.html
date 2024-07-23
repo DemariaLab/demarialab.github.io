@@ -12,10 +12,10 @@ order: 6
         <div class="container-xl text-center text-danger">
             <h3 class="poppins no-text-selection " style=" margin-top:1em">{{ year.name }}</h3>
         </div>
-        <div class="latest-news mt-3 container-xl ">
+        <div class="latest-news mt-3 container-xl p-3 p-md-0 ">
             <div class="list-group news-block">
                 {% for post in year.items %}
-                     <a href="{{ post.url }}" class="rounded-0 list-group-item dynamic-highlight list-group-item-action  py-2 p-0 p-md-2 ">
+                     <a href="{{ post.url }}" class="rounded-0 list-group-item dynamic-highlight list-group-item-action py-2 px-0 px-md-2 ">
                         <div class="d-flex flex-row px-2 px-md-0">
 
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
@@ -27,9 +27,9 @@ order: 6
                             {% assign new_url = directory | append: new_filename %}
 
                             <div class="col-9 col-md-10 d-flex flex-column pe-2">
-                                <div class="my-auto py-3">
+                                <div class="my-auto py-3 px-0 px-md-2">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
+                                        <h5 class="text-body m-0 poppins  ">{{ post.title }}</h5>
                                     </div>
                                     <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}</div>
                                 </div>
