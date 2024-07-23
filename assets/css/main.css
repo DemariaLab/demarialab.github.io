@@ -24,9 +24,11 @@
 .animated {
     transition: all 0.2s ease-out !important;
 }
-.header-front-most{
+
+.header-front-most {
     z-index: 999;
 }
+
 /* CSS to make #navbarSupportedContent fixed on medium and lower but block for large devices */
 @media (max-width: 991.98px) {
     #navbarSupportedContent {
@@ -307,11 +309,11 @@ html {
     background: #00000010;
 }
 
-.text-underline-interactive:hover h5 {
+.text-underline-interactive:hover {
     text-decoration: underline !important;
 }
 
-.text-underline-interactive h5 {
+.text-underline-interactive {
     text-decoration: none !important;
 }
 

@@ -174,10 +174,7 @@ order: 5
     </div>
     {% for year in years %}
     {% if year != "" %}
-    <div class="container-xl text-center text-danger mt-2 mb-2">
-        <h3 class="poppins  py-3" >{{ year }}</h3>
-    </div>
-    <div class="container-xl ">
+    <div class="container-xl pt-3">
         <div class="masonry ">
             {% for image in images %}
             {% assign filename_parts = image.name | split: '-' %}
@@ -185,7 +182,7 @@ order: 5
             <div class="item mb-3">
                 {% assign full_image_path = site.baseurl | append: image.path %}
 
-                {% assign formatted_thumb = full_image_path | remove: "'" %}
+                {% assign formatted_thumb = full_image_path  %}
                 {% assign path_parts = formatted_thumb | split: '/' %}
                 {% assign filename = path_parts | last %}
                 {% assign directory = formatted_thumb | remove: filename %}
@@ -230,7 +227,7 @@ order: 5
                         </div>
                         <h6>
                             {% assign news_post = matching_posts[0] %}
-                            <a href="{{news_post.url}}" class="text-underline-interactive" style="color:orange">View all
+                            <a href="{{news_post.url}}" class="text-underline-interactive" >View all
                                 {{ news_post.title }}
                                 pictures </a>
                         </h6>

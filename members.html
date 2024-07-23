@@ -25,7 +25,7 @@ order: 2
                 "date_joined" | reverse %}
                 {% for profile in sorted_profiles %}
                 <div class="col-md-4 mb-4">
-                    <a href="{{profile.url}}" class=" no-underline text-black text-underline-interactive">
+                    <a href="{{profile.url}}" class=" no-underline text-black ">
                         {% assign formatted_thumb = profile.thumbnail | remove: "'" %}
                         {% assign path_parts = formatted_thumb | split: '/' %}
                         {% assign filename = path_parts | last %}
