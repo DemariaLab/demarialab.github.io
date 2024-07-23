@@ -125,13 +125,15 @@ order: 5
     .scaled {
         transform: scale(1) !important;
     }
-  .item {
+
+    .item {
         display: inline-block;
         margin: 0 0 3.5em;
         width: 100%;
         -webkit-transition: 1s ease all;
         box-sizing: border-box;
     }
+
     @media (max-width: 768px) {
         .galleryContent {
             flex-direction: column;
@@ -182,7 +184,7 @@ order: 5
             <div class="item mb-3">
                 {% assign full_image_path = site.baseurl | append: image.path %}
 
-                {% assign formatted_thumb = full_image_path  %}
+                {% assign formatted_thumb = full_image_path %}
                 {% assign path_parts = formatted_thumb | split: '/' %}
                 {% assign filename = path_parts | last %}
                 {% assign directory = formatted_thumb | remove: filename %}
@@ -196,7 +198,7 @@ order: 5
                     {% assign image_title = filename_parts[3] | split: '.' | first %}
                     {{ image_title }}
                 </p>
-                <div class="monospace">
+                <div class="">
                     {% assign year = filename_parts[0] %}
                     {% assign month = filename_parts[1] %}
                     {% assign day = filename_parts[2] %}
@@ -207,7 +209,7 @@ order: 5
                             <path d="M0 0h24v24H0V0z" fill="none"/>
                             <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
                         </svg>
-                        <h6>{{ date | date : "%Y %B %d" }} </h6>
+                        <h6 class="">{{ date | date : "%d %B, %Y" }} </h6>
                     </div>
 
                     {% assign locationInfo = filename_parts[4] | split: '.' | first %}
@@ -217,31 +219,25 @@ order: 5
                              fill="currentColor">
                             <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
                         </svg>
-                        <h6>{{ locationInfo }}</h6>
+                        <h6 class="">{{ locationInfo }}</h6>
                     </div>
                     {% endif %}
                     {% assign matching_posts = site.posts | where: "title", image_title %}
                     {% if matching_posts.size ==1 %}
-                    <div class="wrapper iconContainer">
-                        <div class="icon" style="width:20px; height:20px;vertical-align: middle; margin-left: 5px;">
-                        </div>
-                        <h6>
-                            {% assign news_post = matching_posts[0] %}
-                            <a href="{{news_post.url}}" class="text-underline-interactive" >View all
-                                {{ news_post.title }}
-                                pictures </a>
-                        </h6>
-                    </div>
-                    {% endif %}
+                    {% assign news_post = matching_posts[0] %}
+                    <a class="badge rounded-pill gradientBg mt-1 text-black no-underline px-3 py-2 poppins  interaction-background-blend-color interaction-black-border" href="{{news_post.url}}" >View all {{ news_post.title }}
+                        pictures</a>
                 </div>
+                {% endif %}
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    <div class="b-divider"></div>
-    {% endif %}
-    {% endfor %}
+</div>
+<div class="b-divider"></div>
+{% endif %}
+{% endfor %}
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
