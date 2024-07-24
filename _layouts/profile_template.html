@@ -88,7 +88,7 @@ layout: modal_post
                     {% endfor %}
                     {% endif %}
                     {% if page.biography %}
-                    <div class="text-content">
+                    <div class="text-content ">
                         <div class="container-xl noPadding mt-3">
                             <div class="quote-block border-semi-transparent rounded-1em card p-3">
                                 <div class="quote-icon"></div>
@@ -130,7 +130,7 @@ layout: modal_post
                     <h5 class="mb-1">{{ article_data[0] }}</h5>
                     <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
                 </div>
-                <div class="mb-1">
+                <div class="mb-1 member-highlight-parent">
                     {% assign authors = article_data[1] | split: ", " %}
                     {% for author in authors %}
                     {% assign name_parts = page.unaccented_name | split: " " %}
@@ -141,7 +141,7 @@ layout: modal_post
                     {% assign first_initial_loop = name_parts_loop[1] | slice: 0 %}
                     {% assign author_last_name = author | remove: author_initial %}
                     {% if last_name == last_name_loop and first_initial == first_initial_loop %}
-                    <b class="text-bold"><i>{{ last_name_loop }} {{ first_initial_loop }}</i></b>{% else %}{{
+                    <b class="text-bold">{{ last_name_loop }} {{ first_initial_loop }}</b>{% else %}{{
                     last_name_loop }} {{ first_initial_loop }}{% endif %}{% if forloop.last == false %},{% endif %}{%
                     endfor %}
                 </div>

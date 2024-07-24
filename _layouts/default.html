@@ -162,4 +162,17 @@ layout: default
         });
     });
 </script>
+
+{% assign members = site.profiles %}
+{% assign member = "Demaria M" %}
+{% for profile in members %}
+    {% assign member = profile.last_name_initials | append: "," | append: profile.unaccented_name |append: ";" | append:member %}
+{% endfor %}
+<script>
+  window.membersData = {% if page.last_name_initials %}
+    "{{ page.last_name_initials }}"
+  {% else %}
+    {{ member | jsonify }}
+  {% endif %};
+</script>
 </html>

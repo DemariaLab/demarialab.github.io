@@ -24,6 +24,7 @@ layout: default
         font-size: 2.5em;
         margin-bottom: 0.5em;
     }
+
     .modal-body {
         position: relative;
         padding: 0;
@@ -32,17 +33,18 @@ layout: default
 <div class="container-xl blog">
 
     <nav class="navbar mt-3">
-        <button  onclick="window.location.href='{% if page.role  %}/members/{% else %}/news/{% endif %}';" class="navbar-toggler " type="button">
+        <button onclick="window.location.href='{% if page.role  %}/members/{% else %}/news/{% endif %}';"
+                class="navbar-toggler " type="button">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                  fill="currentColor"
                  style="margin-right: 8px;">
                 <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
             </svg>
-{% if page.role %}
-  All members
-{% else %}
-  All news
-{% endif %}
+            {% if page.role %}
+            All members
+            {% else %}
+            All news
+            {% endif %}
 
         </button>
     </nav>
@@ -70,6 +72,8 @@ layout: default
         </div>
     </div>
 </div>
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var images = document.querySelectorAll('.blog img');

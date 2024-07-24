@@ -4,45 +4,46 @@ layout: modal_post
 
 
 {% assign sections = content | split:"<img" %}
-    <div class="blog row">
-          <div class="double-column mt-3 mb-3 d-block d-lg-flex">
-            <!-- Right column (order 1 on small, 2 on large) -->
-            <div class="right-column col-12 col-lg-5 ps-0 ps-lg-3 order-2">
-                <div class="sticky-title">
-                    <h2 class="poppins">{{ page.title }}</h2>
-                    <p class="card-text"><small class="text-body-secondary">{{ page.date | date: "%d %B %Y" }}</small></p>
+<div class="blog row">
+    <div class="double-column mt-3 mb-3 d-block d-lg-flex">
+        <!-- Right column (order 1 on small, 2 on large) -->
+        <div class="right-column col-12 col-lg-5 ps-0 ps-lg-3 order-2">
+            <div class="sticky-title">
+                <h3 class="poppins">{{ page.title }}</h3>
+                <p class="card-text"><small class="text-body-secondary">{{ page.date | date: "%d %B %Y" }}</small></p>
 
-                    {% for section in sections %}
-                        {% if forloop.first %}
-                            <!-- This is the initial text content before any images -->
-                            <div class="text-content">
-                                {{ section }}
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <!-- Left column (order 2 on small, 1 on large) -->
-            <div class="left-column col-12 col-lg-7 order-1">
                 {% for section in sections %}
-                    {% assign img_parts = section | split:'src="' %}
-                    {% if img_parts.size > 1 %}
-                        {% assign img_src_parts = img_parts[1] | split:'"' %}
-                        {% assign img_src = img_src_parts[0] %}
-                        {% assign img_alt_parts = section | split:'alt="' %}
-                        {% if img_alt_parts.size > 1 %}
-                            {% assign img_alt_parts = img_alt_parts[1] | split:'"' %}
-                            {% assign img_alt = img_alt_parts[0] %}
-                        {% else %}
-                            {% assign img_alt = '' %}
-                        {% endif %}
-                        <div class="image-content">
-                            <img src="{{ img_src }}" alt="{{ img_alt }}" class="img-fluid" />
-                        </div>
-                    {% endif %}
+                {% if forloop.first %}
+                <!-- This is the initial text content before any images -->
+                <div class="text-content member-highlight-parent">
+                    {{ section }}
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
 
+        <!-- Left column (order 2 on small, 1 on large) -->
+        <div class="left-column col-12 col-lg-7 order-1">
+            {% for section in sections %}
+            {% assign img_parts = section | split:'src="' %}
+            {% if img_parts.size > 1 %}
+            {% assign img_src_parts = img_parts[1] | split:'"' %}
+            {% assign img_src = img_src_parts[0] %}
+            {% assign img_alt_parts = section | split:'alt="' %}
+            {% if img_alt_parts.size > 1 %}
+            {% assign img_alt_parts = img_alt_parts[1] | split:'"' %}
+            {% assign img_alt = img_alt_parts[0] %}
+            {% else %}
+            {% assign img_alt = '' %}
+            {% endif %}
+            <div class="image-content">
+                <img src="{{ img_src }}" alt="{{ img_alt }}" class="img-fluid"/>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
+
+</div>
+

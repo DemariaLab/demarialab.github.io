@@ -225,7 +225,7 @@ order: 5
                     {% assign matching_posts = site.posts | where: "title", image_title %}
                     {% if matching_posts.size ==1 %}
                     {% assign news_post = matching_posts[0] %}
-                    <a class="badge rounded-pill gradientBg mt-1 text-black no-underline px-3 py-2 poppins  interaction-background-blend-color interaction-black-border" href="{{news_post.url}}" >View all {{ news_post.title }}
+                    <a class="  gradientBg mt-1 text-black no-underline px-2 d-inline-block mt-1 py-1 poppins  member-chip" href="{{news_post.url}}" >View all {{ news_post.title }}
                         pictures</a>
                 </div>
                 {% endif %}
