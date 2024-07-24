@@ -35,7 +35,7 @@ def generate_profile_post(data: dict, site_dir):
     keywords = data.get("keywords", None)
     biography = data.get("biography", None)
     is_alumni = is_date_older_than_now(date_leaving)
-    research_name = generate_last_name_initials(remove_accents(name)).replace("-", " ")
+    research_name = generate_last_name_initials(remove_accents(name))
     if country:
         country_input = country.replace("the ", "")
         country = country + (
