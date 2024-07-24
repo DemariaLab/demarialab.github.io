@@ -2,7 +2,7 @@
 layout: profile_template
 name: "Marta Varela-Eirín"
 unaccented_name: "Marta Varela-Eirin"
-last_name_initials: Varela Eirin M
+last_name_initials: Varela-Eirin M
 role: "PostDoc"
 date_joined: "2019-11-01"
 date_leaving: "2022-06-29"

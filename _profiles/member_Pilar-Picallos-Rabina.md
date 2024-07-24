@@ -2,7 +2,7 @@
 layout: profile_template
 name: "Pilar Picallos-Rabina"
 unaccented_name: "Pilar Picallos-Rabina"
-last_name_initials: Picallos Rabina P
+last_name_initials: Picallos-Rabina P
 role: "PostDoc"
 date_joined: "2024-03-01"
 

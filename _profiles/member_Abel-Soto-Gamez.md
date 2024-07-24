@@ -2,7 +2,7 @@
 layout: profile_template
 name: "Abel Soto-Gamez"
 unaccented_name: "Abel Soto-Gamez"
-last_name_initials: Soto Gamez A
+last_name_initials: Soto-Gamez A
 role: "PostDoc"
 date_joined: "2016-10-01"
 date_leaving: "2024-09-30"
