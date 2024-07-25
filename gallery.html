@@ -152,7 +152,7 @@ order: 5
     }
 </style>
 
-<div class="noPadding container-fluid gallery mt-2 py-3">
+<div class="container-flex">
     {% assign images = site.static_files | sort: 'path' | reverse %}
     {% assign years = "" %}
     {% for image in images %}
@@ -176,69 +176,81 @@ order: 5
     </div>
     {% for year in years %}
     {% if year != "" %}
-    <div class="container-xl ">
-        <h3 class=" poppins mb-3">{{year}}</h3>
+    <div class="container-xl">
+        <div class="col-12">
 
-        <div class="masonry ">
-            {% for image in images %}
-            {% assign filename_parts = image.name | split: '-' %}
-            {% if filename_parts[0] == year %}
-            <div class="item mb-3">
-                {% assign full_image_path = site.baseurl | append: image.path %}
+            <h3 class="my-3 poppins">{{year}}</h3>
 
-                {% assign formatted_thumb = full_image_path %}
-                {% assign path_parts = formatted_thumb | split: '/' %}
-                {% assign filename = path_parts | last %}
-                {% assign directory = formatted_thumb | remove: filename %}
-                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                '.webp' %}
-                {% assign new_url = directory | append: new_filename %}
+            <div class="row g-1">
+                {% for image in images %}
+                {% assign filename_parts = image.name | split: '-' %}
+                {% if filename_parts[0] == year %}
+                <div class="col-md-4 mb-4">
+                    {% assign full_image_path = site.baseurl | append: image.path %}
 
-                <img class="gridItem" src="{{new_url}}" alt="{{ image.name | split: '.' | first }}"
-                     data-full="{{full_image_path }}">
-                <p class="imgTitle poppins noMargin">
-                    {% assign image_title = filename_parts[3] | split: '.' | first %}
-                    {{ image_title }}
-                </p>
-                <div class="">
-                    {% assign year = filename_parts[0] %}
-                    {% assign month = filename_parts[1] %}
-                    {% assign day = filename_parts[2] %}
-                    {% assign date = year | append: '-' | append: month | append: '-' | append: day %}
-                    <div class="wrapper iconContainer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
-                             fill="currentColor">
-                            <path d="M0 0h24v24H0V0z" fill="none"/>
-                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
-                        </svg>
-                        <h6 class="">{{ date | date : "%d %B, %Y" }} </h6>
-                    </div>
+                    {% assign formatted_thumb = full_image_path %}
+                    {% assign path_parts = formatted_thumb | split: '/' %}
+                    {% assign filename = path_parts | last %}
+                    {% assign directory = formatted_thumb | remove: filename %}
+                    {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                    '.webp' %}
+                    {% assign new_url = directory | append: new_filename %}
+                    <a href="{{full_image_path}}" class=" no-underline text-black ">
 
-                    {% assign locationInfo = filename_parts[4] | split: '.' | first %}
-                    {% if locationInfo.size >= 1 %}
-                    <div class="wrapper iconContainer">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                             fill="currentColor">
-                            <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
-                        </svg>
-                        <h6 class="">{{ locationInfo }}</h6>
-                    </div>
+                        <div class="">
+                           <div style="background-image: url('{{ new_url | replace: "'", "%27" }}')" class="team-card interaction-gradient-fade card-img-top grid-img"></div>
+
+                        </div>
+
+
+                        <p class="imgTitle poppins noMargin">
+                            {% assign image_title = filename_parts[3] | split: '.' | first %}
+                            {{ image_title }}
+                        </p>
+                        <div class="">
+                            {% assign year = filename_parts[0] %}
+                            {% assign month = filename_parts[1] %}
+                            {% assign day = filename_parts[2] %}
+                            {% assign date = year | append: '-' | append: month | append: '-' | append: day %}
+                            <div class="wrapper iconContainer">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
+                                     fill="currentColor">
+                                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+                                </svg>
+                                <h6 class="">{{ date | date : "%d %B, %Y" }} </h6>
+                            </div>
+
+                            {% assign locationInfo = filename_parts[4] | split: '.' | first %}
+                            {% if locationInfo.size >= 1 %}
+                            <div class="wrapper iconContainer">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                     width="20px"
+                                     fill="currentColor">
+                                    <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
+                                </svg>
+                                <h6 class="">{{ locationInfo }}</h6>
+                            </div>
+                            {% endif %}
+                            {% assign matching_posts = site.posts | where: "title", image_title %}
+                            {% if matching_posts.size ==1 %}
+                            {% assign news_post = matching_posts[0] %}
+                            <a class="  gradientBg mt-1 text-black no-underline px-2 d-inline-block mt-1 py-1 poppins  member-chip"
+                               href="{{news_post.url}}">View all {{ news_post.title }}
+                                pictures</a>
+                        </div>
+                    </a>
                     {% endif %}
-                    {% assign matching_posts = site.posts | where: "title", image_title %}
-                    {% if matching_posts.size ==1 %}
-                    {% assign news_post = matching_posts[0] %}
-                    <a class="  gradientBg mt-1 text-black no-underline px-2 d-inline-block mt-1 py-1 poppins  member-chip"
-                       href="{{news_post.url}}">View all {{ news_post.title }}
-                        pictures</a>
                 </div>
-                {% endif %}
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
 
-        {% unless forloop.last %} <div class="b-divider"></div> {% endunless  %}
+    {% unless forloop.last %}
+    <div class="b-divider"></div>
+    {% endunless %}
     {% endif %}
     {% endfor %}
 </div>

@@ -490,7 +490,13 @@ a .nav-item.active {
         max-height: 250px;
     }
 }
-
+ .team-card {
+        width: 100%;
+        height: 350px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
 nav:hover .underline {
     display: block;
 }
