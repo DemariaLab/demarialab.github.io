@@ -79,25 +79,23 @@ layout: default
         </div>
         {{ content }}
     </main>
-    <footer class="bg-light py-2" style="border-top: 1px solid #00000010;">
+    <footer class="bg-light py-2 mt-5 mt-lg-0" style="border-top: 1px solid #00000010;">
         <div class="container-xl ">
             <div class="row">
-
-
-                <div class="col-lg-4 col-12 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
+                <div class="col-lg-4 col-12 p-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
                     <div class="poppins d-flex flex-column align-items-center mx-5 mx-md-2" style="opacity:0.7">
                         <img src="/assets/icon/logo.svg" alt="Logo" class="w-100 px-5 img-fluid mb-3">
                         <div class="text-center">Cellular Senescence ● Aging ● Cancer ● Tissue Repair</div>
                         <div class="text-center mt-2">Est. {{ site.year }}</div>
                     </div>
                 </div>
-
-                 <div class="col-lg-4 col-md-6 col-12 footer-block mt-5  mt-lg-3">
+                <div class="col-lg-4 col-md-6 p-0 col-12 footer-block mt-5  mt-lg-3">
                     <div class="p-3 p-md-0 ">
                         <h4 class="footer-heading poppins">Address</h4>
                         <ul class="list-unstyled">
                             <li><a href="https://maps.app.goo.gl/nwqgWRHfNp7D2uEs6" target="_blank" class="d-block">
-                                <img src="/assets/icon/map_location.png" class="w-100 border-semi-transparent rounded mb-2" alt="Lab location on map"/>
+                                <img src="/assets/icon/map_location.png"
+                                     class="w-100 border-semi-transparent rounded mb-2" alt="Lab location on map"/>
                                 Ground floor<br>
                                 European Research Institute for the Biology of Ageing<br>
                                 9713 AV Groningen<br>
@@ -105,10 +103,8 @@ layout: default
                             </a></li>
                         </ul>
                     </div>
-
                 </div>
-
-                <div class="col-lg-4 col-md-6 col-12 footer-block mt-5 mt-lg-3">
+                <div class="col-lg-4 col-md-6 col-12 p-0 footer-block mt-5 mt-lg-3">
                     <div class="p-3 p-md-0 ">
                         <h4 class="footer-heading poppins">Connect with us</h4>
                         <ul class="list-unstyled">
@@ -118,7 +114,8 @@ layout: default
                                 Demaria on X</a></li>
                             <li><a href="https://www.linkedin.com/in/marcodemariabiotech" target="_blank"
                                    class="d-block">Follow Marco Demaria on LinkedIn</a></li>
-                            <li><a href="javascript:linkTo_UnCryptMailto('ZGVtYXJpYWxhYkBnbWFpbC5jb20=');"  id="emailLink"  class="d-block">Send us an
+                            <li><a href="javascript:linkTo_UnCryptMailto('ZGVtYXJpYWxhYkBnbWFpbC5jb20=');"
+                                   id="emailLink" class="d-block">Send us an
                                 email (click to show address)</a></li>
                         </ul>
                     </div>
@@ -127,7 +124,8 @@ layout: default
                             <h4 class="footer-heading ">Menu</h4>
                             <ul class="list-unstyled">
                                 {% for sitePage in site.pages %}
-                                {% if sitePage.title and sitePage.url and sitePage.url != '/' and sitePage.title != 'Home' %}
+                                {% if sitePage.title and sitePage.url and sitePage.url != '/' and sitePage.title !=
+                                'Home' %}
                                 <li><a href="{{ sitePage.url }}" class="d-block">
                                     {{ sitePage.title }}
                                 </a></li>
@@ -137,8 +135,6 @@ layout: default
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </footer>
