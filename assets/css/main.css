@@ -111,13 +111,13 @@
 }
 
 .footer-block .footer-heading {
-    margin-bottom: 1em
+    margin-bottom: 0.5em
 }
 
 .footer-block a {
-    color: white;
+    color: currentColor;
     text-decoration: none;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .footer-block a:hover {
@@ -307,7 +307,7 @@ html {
     font-weight: 500;
 }
 
-.border-semi-transparent {
+.border-semi-transparent, .b-divider {
     border: 1px solid #00000010 !important;
 }
 
@@ -363,7 +363,7 @@ h5.poppins {
 .gradientBg,
 .member-chip:hover, .member-chip:active,
 .line-container h3::before,
-.line-container h3::after, .nav-item.active, .dynamic-highlight::before {
+.line-container h3::after, .nav-item.active, .dynamic-highlight:hover::before {
     background: radial-gradient(circle at 20% 20%, #ffdbdb, transparent),
     radial-gradient(circle at 80% 20%, #ff99ff, transparent),
     radial-gradient(circle at 20% 80%, #3399ff, #d95c1f),
@@ -475,9 +475,10 @@ nav:hover .underline {
 
 .b-divider {
     width: 100%;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .01);
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .05);
+    height: 1px;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .news-divider {

@@ -152,7 +152,7 @@ order: 5
     }
 </style>
 
-<div class="noPadding container-fluid gallery ">
+<div class="noPadding container-fluid gallery mt-2 pt-3">
     {% assign images = site.static_files | sort: 'path' | reverse %}
     {% assign years = "" %}
     {% for image in images %}
@@ -176,7 +176,9 @@ order: 5
     </div>
     {% for year in years %}
     {% if year != "" %}
-    <div class="container-xl pt-3">
+    <div class="container-xl ">
+        <h3 class=" poppins mb-3">{{year}}</h3>
+
         <div class="masonry ">
             {% for image in images %}
             {% assign filename_parts = image.name | split: '-' %}
@@ -225,7 +227,8 @@ order: 5
                     {% assign matching_posts = site.posts | where: "title", image_title %}
                     {% if matching_posts.size ==1 %}
                     {% assign news_post = matching_posts[0] %}
-                    <a class="  gradientBg mt-1 text-black no-underline px-2 d-inline-block mt-1 py-1 poppins  member-chip" href="{{news_post.url}}" >View all {{ news_post.title }}
+                    <a class="  gradientBg mt-1 text-black no-underline px-2 d-inline-block mt-1 py-1 poppins  member-chip"
+                       href="{{news_post.url}}">View all {{ news_post.title }}
                         pictures</a>
                 </div>
                 {% endif %}
@@ -234,11 +237,12 @@ order: 5
         {% endif %}
         {% endfor %}
     </div>
+
+        {% unless forloop.last %} <div class="b-divider"></div> {% endunless  %}
+    {% endif %}
+    {% endfor %}
 </div>
-<div class="b-divider"></div>
-{% endif %}
-{% endfor %}
-</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const gridItems = document.querySelectorAll('.gridItem');
