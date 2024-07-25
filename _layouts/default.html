@@ -79,17 +79,17 @@ layout: default
         </div>
         {{ content }}
     </main>
-    <footer class="bg-light py-2 mt-5 mt-lg-0" style="border-top: 1px solid #00000010;">
+    <footer class="bg-light py-2 mt-5 mt-lg-auto" style="border-top: 1px solid #00000010;">
         <div class="container-xl ">
-            <div class="row">
-                <div class="col-lg-4 col-12 p-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
+            <div class="row g-0">
+                <div class="col-lg-4 col-12 px-0 py-0 px-md-2 mb-3 mb-lg-0 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
                     <div class="poppins d-flex flex-column align-items-center mx-5 mx-md-2" style="opacity:0.7">
                         <img src="/assets/icon/logo.svg" alt="Logo" class="w-100 px-5 img-fluid mb-3">
                         <div class="text-center">Cellular Senescence ● Aging ● Cancer ● Tissue Repair</div>
                         <div class="text-center mt-2">Est. {{ site.year }}</div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 p-0 col-12 footer-block mt-5  mt-lg-3">
+                <div class="col-lg-4 col-md-6 px-0 py-0 px-md-2 col-12 footer-block mt-2  mt-lg-3">
                     <div class="p-3 p-md-0 ">
                         <h4 class="footer-heading poppins">Address</h4>
                         <ul class="list-unstyled">
@@ -104,18 +104,18 @@ layout: default
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12 p-0 footer-block mt-5 mt-lg-3">
+                <div class="col-lg-4 col-md-6 col-12 px-0 py-0 px-md-2 footer-block mt-2 mt-lg-3">
                     <div class="p-3 p-md-0 ">
                         <h4 class="footer-heading poppins">Connect with us</h4>
                         <ul class="list-unstyled">
-                            <li><a href="https://twitter.com/demarialab1" target="_blank" class="d-block">Follow
+                            <li><a href="https://twitter.com/demarialab1" target="_blank" class="d-block py-2 py-lg-0">Follow
                                 DemariaLab on X</a></li>
-                            <li><a href="https://twitter.com/marc_dema" target="_blank" class="d-block">Follow Marco
+                            <li><a href="https://twitter.com/marc_dema" target="_blank" class="d-block py-2 py-lg-0">Follow Marco
                                 Demaria on X</a></li>
                             <li><a href="https://www.linkedin.com/in/marcodemariabiotech" target="_blank"
-                                   class="d-block">Follow Marco Demaria on LinkedIn</a></li>
+                                   class="d-block py-2 py-lg-0">Follow Marco Demaria on LinkedIn</a></li>
                             <li><a href="javascript:linkTo_UnCryptMailto('ZGVtYXJpYWxhYkBnbWFpbC5jb20=');"
-                                   id="emailLink" class="d-block">Send us an
+                                   id="emailLink" class="d-block py-2 py-lg-0">Send us an
                                 email (click to show address)</a></li>
                         </ul>
                     </div>
@@ -126,7 +126,7 @@ layout: default
                                 {% for sitePage in site.pages %}
                                 {% if sitePage.title and sitePage.url and sitePage.url != '/' and sitePage.title !=
                                 'Home' %}
-                                <li><a href="{{ sitePage.url }}" class="d-block">
+                                <li><a href="{{ sitePage.url }}" class="d-block py-2 py-lg-0">
                                     {{ sitePage.title }}
                                 </a></li>
                                 {% endif %}
