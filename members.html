@@ -10,12 +10,12 @@ order: 2
     {% for role in roles %}
     <div class="container-xl">
         <div class="col-12">
-            <h3 class="my-3 poppins">{{role}}s</h3>
+            <h3 class="poppins my-3 ">{{role}}s</h3>
             <div class="row g-1">
                 {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", false | sort:
                 "date_joined" | reverse %}
                 {% for profile in sorted_profiles %}
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-3">
                     <a href="{{profile.url}}" class=" no-underline text-black ">
                         {% assign formatted_thumb = profile.thumbnail | remove: "'" %}
                         {% assign path_parts = formatted_thumb | split: '/' %}
@@ -50,18 +50,17 @@ order: 2
             </div>
         </div>
     </div>
-    <div class="b-divider"></div>
+    <div class="b-divider m-0"></div>
     {% endfor %}
 </div>
 <div class="container-flex">
     <div class="container-xl">
         <div class="col-12">
-
-            <h3 class=" my-2 poppins">Alumni</h3>
+            <h3 class="poppins my-3">Alumni</h3>
             <div class="row g-1">
                 {% assign sorted_alumni = site.profiles | where: "is_alumni", true | sort: "date_leaving" | reverse %}
                 {% for profile in sorted_alumni %}
-                <div class="col-md-4  mb-4">
+                <div class="col-md-4  mb-3">
                     <a href="{{profile.url}}" class="no-underline text-black">
                         <div style="background-image: url('{{ profile.thumbnail }}')"
                              class="team-card interaction-gradient-fade card-img-top grid-img"></div>
@@ -85,5 +84,4 @@ order: 2
             </div>
         </div>
     </div>
-    <div class="b-divider"></div>
 </div>

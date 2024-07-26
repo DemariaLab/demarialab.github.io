@@ -14,7 +14,7 @@ def process(args):
         site_dir = args[constants.ARG_SITE_DIR]
         data = utils.read_published_google_sheet(args[constants.ARG_GRANTS_SHEET_ID])["data"]
         current_year = datetime.now().year
-        data = [d for d in data if d.get("title") and int(d.get("until", 0)) < current_year]
+        data = [d for d in data if d.get("title") and int(d.get("until", 0)) >= current_year]
 
         img_output_folder = utils.get_dir_path(os.path.join(site_dir, 'assets', "icon"))
         os.makedirs(img_output_folder, exist_ok=True)
