@@ -46,6 +46,8 @@ def run():
                         help="ID of the research document")
     parser.add_argument("--grants_sheet_id", required=True, type=str,
                         help="ID of the grants sheet")
+    parser.add_argument("--hero_accordion_id", required=True, type=str,
+                        help="ID of the hero accordion sheet")
     args = parser.parse_args()
 
     main(vars(args))

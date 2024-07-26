@@ -32,5 +32,5 @@ def process(args):
             yaml.dump(data, file)
 
     except:
-        print("An error occurred in photos processor")
+        print("An error occurred in grants processor")
         traceback.print_exc()
