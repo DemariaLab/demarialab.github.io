@@ -12,6 +12,7 @@ def main(args_dict: dict):
     from python_generator.publications import process as process_publications
     from python_generator.research_page import process as process_research_page
     from python_generator.grants_processor import process as process_grants
+    from python_generator.hero_accordion_processor import process as process_hero
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
     print("Outputting to", args_dict[constants.ARG_SITE_DIR])
@@ -22,6 +23,7 @@ def main(args_dict: dict):
     process_photos(args_dict)
     process_research_page(args_dict)
     process_grants(args_dict)
+    process_hero(args_dict)
 
     site_dir = args_dict[constants.ARG_SITE_DIR]
 
