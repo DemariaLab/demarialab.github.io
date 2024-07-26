@@ -11,6 +11,7 @@ def main(args_dict: dict):
     from python_generator.lab_photos_from_sheet import process as process_photos
     from python_generator.publications import process as process_publications
     from python_generator.research_page import process as process_research_page
+    from python_generator.grants_processor import process as process_grants
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
     print("Outputting to", args_dict[constants.ARG_SITE_DIR])
@@ -20,6 +21,7 @@ def main(args_dict: dict):
     process_custom_news(args_dict)
     process_photos(args_dict)
     process_research_page(args_dict)
+    process_grants(args_dict)
 
     site_dir = args_dict[constants.ARG_SITE_DIR]
 
@@ -42,7 +44,8 @@ def run():
                         help="ID of the selected papers sheet")
     parser.add_argument("--research_doc_id", required=True, type=str,
                         help="ID of the research document")
-
+    parser.add_argument("--grants_sheet_id", required=True, type=str,
+                        help="ID of the grants sheet")
     args = parser.parse_args()
 
     main(vars(args))

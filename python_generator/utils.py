@@ -1,5 +1,4 @@
 import hashlib
-import os
 import random
 import re
 import shutil
@@ -11,7 +10,6 @@ from urllib.parse import urlparse, unquote
 import html2text
 import requests
 import unicodedata
-from PIL import Image
 from bs4 import BeautifulSoup
 
 
@@ -34,11 +32,10 @@ def safe_file_name(input_string, replacement_char='_'):
 
     return safe_string
 
-import os
-from PIL import Image, ImageFilter
 
 import os
 from PIL import Image, ImageEnhance
+
 
 def reduce_images_in_dir(input_dir, sharpness_factor=0.6):
     if not os.path.isdir(input_dir):
@@ -197,6 +194,7 @@ def download_pic(img_url, formatted_title, img_suffix, img_folder):
     if not img_data:
         return None
     try:
+        img_folder = get_dir_path(img_folder)
         img_obj = Image.open(BytesIO(img_data))
 
         # Determine the best format based on the image format
