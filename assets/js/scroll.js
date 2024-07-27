@@ -111,12 +111,12 @@ function linkTo_UnCryptMailto(encoded) {
     let decoded = atob(encoded); // Decode the email address
     let linkElement = document.getElementById('emailLink'); // Get the link element by ID
     linkElement.innerHTML = "Email: " + decoded; // Replace the link text with the email address
+    linkElement.removeAttribute('href');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     onDOMReady();
 
 });
-
 
 

@@ -42,6 +42,9 @@ order: 0
         transform: translateX(2em);
         transition: opacity 0.25s ease, transform 0.25s ease;
     }
+    .animated{
+        transition: all 0.25s ease-in-out;
+    }
     .square-container {
         position: relative;
         width: 100%; /* Adjust as needed */
@@ -138,6 +141,28 @@ order: 0
         background-size: cover;
         background-repeat: no-repeat;
     }
+.hero-card{
+    cursor: pointer;
+}
+ .showcase-cover {
+    position: relative;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.showcase-cover::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+    pointer-events: none;
+    z-index: 0;
+}
+
 </style>
 <div>
     <div class="gradientBg noPadding">
@@ -165,6 +190,80 @@ order: 0
         <br>
     </div>
     <div class="b-divider"></div>
+
+ {% assign hero_accordion = site.data.hero_accordion %}
+{% if hero_accordion.size > 0 %}
+<div class="container-flex">
+    <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
+
+
+        <div class="container p-0 p-lg-3">
+            <div class="row g-5">
+            <div class="col-12 col-lg-8 ">
+                <h2 class="poppins showcase-title text-white front">Our research</h2>
+                <div class="showcase-text text-white  front">
+                    We employ advanced techniques and cutting-edge technologies to explore the molecular mechanisms that
+                    drive cellular aging and associated diseases. Through innovative studies and collaborative efforts,
+                    we aim to translate our findings into novel therapeutic strategies and improve overall health
+                    outcomes.
+
+                    {% assign keywords = '' %}
+                    {% for item in site.profiles %}
+                     {% if item.role == "PhD student" or item.role == "PostDoc" %}
+                    {% assign keywords = keywords | append: item.keywords | append: ';' %}
+                    {% endif %}
+                    {% endfor %}
+                    {% assign keywords = keywords | split: ';' | uniq |sort %}
+                    <br>
+                    <br>
+                    We deal with:
+                    {% for item in keywords %}
+                    <div class="d-inline-block pill bg-success rounded mb-1 px-1">{{item}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 ">
+                <div class="row gy-3">
+                    {% for item in hero_accordion %}
+                    <div class="col-12">
+                        <div class="front rounded-3 no-text-selection p-3 member-chip hero-card h-100" data-title="{{item.title}}" data-description="{{item.description}}" data-photo="{{item.photo}}">
+                            <div class="card-body">
+                                <h5 class="poppins m-0">{{item.title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+</div>
+<div class="b-divider"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.hero-card');
+        const showcaseTitle = document.querySelector('.showcase-title');
+        const showcaseText = document.querySelector('.showcase-text');
+        const showcaseCover = document.querySelector('.showcase-cover');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function () {
+                const title = card.getAttribute('data-title');
+                const description = card.getAttribute('data-description');
+                const photo = card.getAttribute('data-photo');
+
+                showcaseTitle.textContent = title;
+                showcaseText.textContent = description;
+                showcaseCover.style.backgroundImage = `url('${photo}')`;
+            });
+        });
+    });
+</script>
+{% endif %}
+
     <div class="container-flex">
         <section class="container-xl content p-0 mt-1 " id="section1">
             <h3 class="poppins px-3 pt-3 m-0">
@@ -302,6 +401,49 @@ order: 0
         </div>
     </section>
     <div class="b-divider"></div>
+
+        {% assign grants = site.data.grants %}
+        {% assign unique_photos = grants | map: 'photo' | uniq %}
+        {% assign unique_grants = "" | split: "" %}
+
+        {% for photo in unique_photos %}
+        {% for grant in grants %}
+        {% if grant.photo == photo %}
+        {% assign unique_grants = unique_grants | push: grant %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% assign grants = unique_grants %}
+
+
+        {% if grants.size>0 %}
+        <section class="py-3 py-md-5 py-xl-8">
+            <div class="container overflow-hidden">
+                {% assign chunk_size = 4 %}
+                {% assign chunks = grants | size | divided_by: chunk_size | ceil %}
+                {% for chunk_index in (0..chunks) %}
+                <div class="chunk row gy-4 mb-4">
+                    {% assign start_index = chunk_index | times: chunk_size %}
+                    {% assign end_index = start_index | plus: chunk_size | minus: 1 %}
+                    {% for grant in grants %}
+                    {% if forloop.index0 >= start_index and forloop.index0 <= end_index %}
+                    <div class="grant col text-center h-100" >
+                        <div class="bg-light rounded px-4 py-3 px-md-6 py-md-4 px-lg-8 py-lg-5 h-100">
+                               <div class="text-secondary grant-logo w-100" style="background-image: url('{{ grant.photo }}')">
+                        </div>
+                        </div>
+
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    <div class="b-divider"></div>
+
     <section class="container-xl mb-5 noPadding noMargin">
         <h3 class="poppins px-3 my-4">
             Latest pictures
