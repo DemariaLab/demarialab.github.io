@@ -382,24 +382,26 @@ order: 0
     </div>
     <div class="b-divider"></div>
 
-
-
-        <section class=" container-xl noPadding" id="section2">
-            <div class="noPadding">
-                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
-                    Meet the lab members
-                </h3>
-                <a class="no-underline" href="/members/">
-                    <div class="row g-1 " id="teamSection">
-                        <div class="team-circle animated-item col d-none d-md-flex align-items-center justify-content-center ">
-                            <h3 class="poppins text-left text-body px-3" style="margin-right: 0.8em; ">
-                                Meet the lab members
-                            </h3>
+<div class="container-fluid py-3"  style="background-color: #e2efcf">
+    <section class=" container-xl noPadding" id="section2">
+        <div class="noPadding">
+            <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
+                Meet the lab members
+            </h3>
+            <a class="no-underline" href="/members/">
+                <div class="row g-1 " id="teamSection">
+                    <div class="team-circle col d-none d-md-flex align-items-center justify-content-center ">
+                        <div class="text-left text-body px-3">
+                        <h3 class="poppins " style="margin-right: 0.8em; ">
+                            Meet the lab members
+                        </h3>
+                            <h5> View all →</h5>
                         </div>
-                        <!-- Circles will be injected here by JavaScript -->
                     </div>
-                </a></div>
-        </section>
+                    <!-- Circles will be injected here by JavaScript -->
+                </div>
+            </a></div>
+    </section></div>
     <div class="b-divider"></div>
     <section class="container-xl p-0">
         <h3 class="poppins px-3 my-3">
@@ -539,14 +541,14 @@ order: 0
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
                     <div class="col-6 col-md">
                         <a href="/gallery/">
-                            <div class="square-container picture-item animated-item"
+                            <div class="square-container picture-item "
                                  style="background-image: url('{{ latest_picture_path }}');">
                             </div>
                         </a>
                     </div>
                     {% endfor %}
 
-                    <div class="col picture-item animated-item">
+                    <div class="col picture-item ">
                         <div class="grid-container">
                             {% for picture in latest_pictures_more %}
                             {% assign latest_more_picture_path = picture.path | replace: "'", "\\'"  %}
@@ -628,17 +630,17 @@ order: 0
       const randomMembers = getRandomMembers(members, 7);
       const teamSection = $('#teamSection');
       const circles = [
-          {class: 'animated-item circle-1', member: randomMembers[0]},
-          {class: 'animated-item circle-2', member: randomMembers[1]},
-          {class: 'animated-item circle-3', member: randomMembers[2]},
-          {class: 'animated-item circle-6', member: randomMembers[5]}
+          {class: 'rounded-5  circle-1 rounded-end', member: randomMembers[0]},
+          {class: 'rounded-5  circle-2 rounded-start rounded-end', member: randomMembers[1]},
+          {class: 'rounded-5  circle-3 rounded-start rounded-end', member: randomMembers[2]},
+          {class: 'rounded-5  circle-4 rounded-start', member: randomMembers[5]}
       ];
       circles.forEach(circle => {
           const div = $('<div><div></div>')
               .addClass(`team-circle ${circle.class}`)
               .css('background-image', `url('${circle.member.photo}')`);
           const wrappedDiv = $('<div></div>')
-              .addClass('col-6 col-md')
+              .addClass('col-3 col-md-2 ')
               .append(div);
           teamSection.append(wrappedDiv);
       });
