@@ -196,48 +196,75 @@ order: 0
 <div class="container-flex">
     <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
 
-
         <div class="container p-0 p-lg-3">
-            <div class="row g-5">
-            <div class="col-12 col-lg-8 ">
-                <h2 class="poppins showcase-title text-white front">Our research</h2>
-                <div class="showcase-text text-white  front">
-                    We employ advanced techniques and cutting-edge technologies to explore the molecular mechanisms that
-                    drive cellular aging and associated diseases. Through innovative studies and collaborative efforts,
-                    we aim to translate our findings into novel therapeutic strategies and improve overall health
-                    outcomes.
-
-                    {% assign keywords = '' %}
-                    {% for item in site.profiles %}
-                     {% if item.role == "PhD student" or item.role == "PostDoc" %}
-                    {% assign keywords = keywords | append: item.keywords | append: ';' %}
-                    {% endif %}
-                    {% endfor %}
-                    {% assign keywords = keywords | split: ';' | uniq |sort %}
-                    <br>
-                    <br>
-                    We deal with:
-                    {% for item in keywords %}
-                    <div class="d-inline-block pill bg-success rounded mb-1 px-1">{{item}}</div>
-                    {% endfor %}
+             <div class="row g-5 d-none d-lg-flex">
+                <div class="col-12 col-lg-8 ">
+                    <h2 class="poppins showcase-title text-white front">Our research</h2>
+                    <div class="showcase-text text-white  front">
+                        We employ advanced techniques and cutting-edge technologies to explore the molecular mechanisms
+                        that
+                        drive cellular aging and associated diseases. Through innovative studies and collaborative
+                        efforts,
+                        we aim to translate our findings into novel therapeutic strategies and improve overall health
+                        outcomes.
+                        {% assign keywords = '' %}
+                        {% for item in site.profiles %}
+                        {% if item.role == "PhD student" or item.role == "PostDoc" %}
+                        {% assign keywords = keywords | append: item.keywords | append: ';' %}
+                        {% endif %}
+                        {% endfor %}
+                        {% assign keywords = keywords | split: ';' | uniq |sort %}
+                        <br>
+                        <br>
+                        We deal with:
+                        {% for item in keywords %}
+                        <div class="d-inline-block pill bg-success rounded mb-1 px-1">{{item}}</div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-lg-4 ">
-                <div class="row gy-3">
-                    {% for item in hero_accordion %}
-                    <div class="col-12">
-                        <div class="front rounded-3 no-text-selection p-3 member-chip hero-card h-100" data-title="{{item.title}}" data-description="{{item.description}}" data-photo="{{item.photo}}">
-                            <div class="card-body">
-                                <h5 class="poppins m-0">{{item.title}}</h5>
+                <div class="col-12 col-lg-4 ">
+                    <div class="row gy-3">
+                        {% for item in hero_accordion %}
+                        <div class="col-12">
+                            <div class="front rounded-3 no-text-selection p-3 member-chip hero-card h-100"
+                                 data-title="{{item.title}}" data-description="{{item.description}}"
+                                 data-photo="{{item.photo}}">
+                                <div class="card-body">
+                                    <h5 class="poppins m-0">{{item.title}}</h5>
+                                </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
-       </div>
+
+
+        <div class="d-block d-lg-none my-5 py-5 ">
+            <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
+        </div>
+
+        <div class="accordion front accordion-flush bg-light d-block d-lg-none mt-5 " id="accordionFlush">
+            {% for item in hero_accordion %}
+            {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', ''  | replace: '-', '' | replace: '_', ''   %}
+            <div class="accordion-item">
+            <h5 class="accordion-header">
+                    <button class="accordion-button collapsed hero-card" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false" aria-controls="flush-collapse{{cleaned_title}}"  data-title="{{item.title}}" data-description="{{item.description}}"
+                                 data-photo="{{item.photo}}">
+                        {{item.title}}
+                    </button>
+                </h5>
+                <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">{{item.description}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </section>
 </div>
 <div class="b-divider"></div>
