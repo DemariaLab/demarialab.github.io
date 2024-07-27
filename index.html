@@ -411,7 +411,7 @@ order: 0
             {% if grants.size > 0 %}
             <div class="col ">
                 <a class="no-underline" href="/grants/">
-                    <div class="counter gradientBg" >
+                    <div class="counter gradientBg">
                         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-dark bg-gradient fs-2 mb-3 p-3">
                             <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="55px"
                                  opacity="0.8" viewBox="0 0 20 20" width="55px" fill="currentColor">
@@ -455,7 +455,7 @@ order: 0
                     {% assign end_index = start_index | plus: chunk_size | minus: 1 %}
                     {% for grant in grants %}
                     {% if forloop.index0 >= start_index and forloop.index0 <= end_index %}
-                    <div class="grant col text-center h-100" >
+                    <div class="grant col-6 col-lg text-center h-100" >
                         <div class="bg-light rounded px-4 py-3 px-md-6 py-md-4 px-lg-8 py-lg-5 h-100">
                                <div class="text-secondary grant-logo w-100" style="background-image: url('{{ grant.photo }}')">
                         </div>
