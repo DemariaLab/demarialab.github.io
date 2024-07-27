@@ -218,23 +218,23 @@ order: 0
     <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
 
         <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
-             <div class="row g-5 d-none d-lg-flex">
+             <div class="row g-5 d-none d-lg-flex ">
 
-                  <div class="col-12 col-lg-3 ">
+                  <div class="col-12 col-lg-4 ms-0 ps-0">
                     <div class="row gy-1">
                         {% for item in hero_accordion %}
                         {% assign border_radius = "border-radius: 5px" %}
                         {% if forloop.first %}
-                        {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px;" %}
+                        {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
                         {% endif %}
                         {% if forloop.last %}
-                        {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;" %}
+                        {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px; border-top-left-radius:5px;border-top-right-radius: 5px;" %}
                         {% endif %}
-                        <div class="col-12">
+                        <div class="col-12 mx-0 px-0">
                             <div class="front no-text-selection py-3 member-chip hero-card h-100"
                                  data-title="{{item.title}}" data-description="{{item.description}}"
                                  data-photo="{{item.photo}}"
-                            style="{{border_radius}} ">
+                                 style="{{border_radius}} ">
                                 <div class="card-body">
                                     <h5 class="poppins m-0">{{item.title}}</h5>
                                 </div>
@@ -244,7 +244,7 @@ order: 0
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-9 ">
+                <div class="col-12 col-lg-8 ">
                     <h2 class="poppins showcase-title text-white front">Our research</h2>
                     <div class="showcase-text text-white  front">
                         We employ advanced techniques and cutting-edge technologies to explore the molecular mechanisms
@@ -269,16 +269,11 @@ order: 0
                         {% endfor %}
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
         <div class="d-block d-lg-none my-5 py-5 ">
             <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
         </div>
-
         <div class="accordion front accordion-flush bg-light d-block d-lg-none mt-5 " id="accordionFlush">
             {% for item in hero_accordion %}
             {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', ''  | replace: '-', '' | replace: '_', ''   %}
@@ -297,7 +292,6 @@ order: 0
             </div>
             {% endfor %}
         </div>
-
     </section>
 </div>
 <div class="b-divider"></div>
@@ -307,20 +301,13 @@ order: 0
         const showcaseTitle = document.querySelector('.showcase-title');
         const showcaseText = document.querySelector('.showcase-text');
         const showcaseCover = document.querySelector('.showcase-cover');
-
         cards.forEach(card => {
             card.addEventListener('click', function () {
-                // Remove .active class from all cards
                 cards.forEach(card => card.classList.remove('active'));
-
-                // Add .active class to the clicked card
                 card.classList.add('active');
-
                 const title = card.getAttribute('data-title');
                 const description = card.getAttribute('data-description');
                 const photo = card.getAttribute('data-photo');
-
-                // Preload the image
                 const img = new Image();
                 img.src = photo;
                 showcaseTitle.textContent = title;
@@ -333,21 +320,30 @@ order: 0
         });
     });
 </script>
-
-
 {% endif %}
-
-    <div class="container-flex">
-        <section class="container-xl content p-0 mt-1 " id="section1">
-            <h3 class="poppins px-3 pt-3 m-0">
+    <div class="container-flex bg-light" >
+        <section class="container-xl content p-0 ">
+            <h3 class="poppins p-3 m-0">
                 Latest news
             </h3>
             <div class="latest-news rounded-0">
-
-                <div class="list-group news-block rounded-0 ">
-                    {% assign sorted_posts = site.posts |  sort: 'date' | reverse %}
+                <div class="row gy-1 ">
+                    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                     {% for post in sorted_posts limit: 5 %}
-                    <a href="{{ post.url }}" class="rounded-0 list-group-item dynamic-highlight list-group-item-action  py-2 p-0 p-md-2 ">
+
+                    {% assign border_radius = "border-radius: 5px" %}
+                    {% assign border_radius_thumbnail = "border-radius: 5px" %}
+                    {% if forloop.first %}
+                    {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                    {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 15px;  border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                    {% endif %}
+                    {% if forloop.last %}
+                    {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px; border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                    {% assign border_radius_thumbnail = "border-bottom-right-radius: 15px;border-bottom-left-radius:  5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                    {% endif %}
+
+                    <a href="{{ post.url }}"
+                       class="col-12 no-underline py-2 p-0 p-md-2 bg-white interaction-bg-color" style="{{border_radius}}">
                         <div class="d-flex flex-row px-3 px-md-0">
 
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
@@ -359,48 +355,51 @@ order: 0
                             {% assign new_url = directory | append: new_filename %}
 
                             <div class="col-9 col-md-10 d-flex flex-column pe-2">
-                                <div class="my-auto py-3">
+                                <div class="my-auto py-3 px-3">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
                                     </div>
-                                    <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}</div>
+                                    <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}
+                                    </div>
                                 </div>
                             </div>
-                                <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
+                            <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
                                 <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                     style="background-image:url('{{new_url}}');">
+                                     style="background-image:url('{{new_url}}');{{border_radius_thumbnail}};">
                                 </div>
                             </div>
                         </div>
                     </a>
-                    {% unless forloop.last %}  <hr class="news-hr"> {% endunless  %}
-
                     {% endfor %}
                 </div>
-                <a href="/news/" class="list-group-item list-group-item-action dynamic-highlight">
+                <a href="/news/" class="no-underline no-text-selection">
                     <div class="d-flex w-100 justify-content-end p-3">
                         <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
                     </div>
                 </a>
             </div>
         </section>
+    </div>
     <div class="b-divider"></div>
-    <section class=" container-xl noPadding" id="section2">
-        <div class="noPadding">
-            <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
-                Meet the lab members
-            </h3>
-            <a class="no-underline" href="/members/">
-                <div class="row g-1 " id="teamSection">
-                    <div class="team-circle animated-item col d-none d-md-flex align-items-center justify-content-center ">
-                        <h3 class="poppins text-left text-body px-3" style="margin-right: 0.8em; ">
-                            Meet the lab members
-                        </h3>
+
+
+
+        <section class=" container-xl noPadding" id="section2">
+            <div class="noPadding">
+                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
+                    Meet the lab members
+                </h3>
+                <a class="no-underline" href="/members/">
+                    <div class="row g-1 " id="teamSection">
+                        <div class="team-circle animated-item col d-none d-md-flex align-items-center justify-content-center ">
+                            <h3 class="poppins text-left text-body px-3" style="margin-right: 0.8em; ">
+                                Meet the lab members
+                            </h3>
+                        </div>
+                        <!-- Circles will be injected here by JavaScript -->
                     </div>
-                    <!-- Circles will be injected here by JavaScript -->
-                </div>
-            </a></div>
-    </section>
+                </a></div>
+        </section>
     <div class="b-divider"></div>
     <section class="container-xl p-0">
         <h3 class="poppins px-3 my-3">

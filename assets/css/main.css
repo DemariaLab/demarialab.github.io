@@ -433,6 +433,10 @@ h5.poppins {
     border: 1px solid currentColor;
 }
 
+.interaction-bg-color:hover {
+    background-color:#00000005 !important;
+}
+
 .noPadding {
     padding: 0 !important;
 }
