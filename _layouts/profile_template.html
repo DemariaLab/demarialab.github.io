@@ -5,7 +5,6 @@ layout: modal_post
     .publications-counter {
         width: 1.8em;
         height: 1.8em;
-        color: #0000008a !important;
         border-radius: 50%;
         aspect-ratio: 1;
         --bs-primary-rgb: 255, 165, 0;
@@ -28,7 +27,8 @@ layout: modal_post
             </div>
             <div class="col ms-0 ms-md-3 mb-0 mb-lg-4">
                 <div class="sticky-title">
-                    <h2 class="poppins">{{ page.name }}<p class="text-black-50 d-inline">{% if page.is_alumni %} {% else %}, {{page.qualification}}{% endif %}</p></h2>
+                    <h2 class="poppins">{{ page.name }}<p class="text-black-50 d-inline">{% if page.is_alumni %} {% else
+                        %}, {{page.qualification}}{% endif %}</p></h2>
                     <p class="card-text">
                         {% if page.is_alumni %} {% else %}{{ page.role }}<br>
                         {% endif %}
@@ -107,47 +107,51 @@ layout: modal_post
     </div>
     {% if page.publications %}
     {% assign publication_ids = page.publications | split: "; " %}
-    <div class="container-xl mb-5 noPadding">
-        <h4 class="poppins">Publications with the lab <span class="badge bg-warning publications-counter">{{publication_ids.size}}</span>
-        </h4>
-        {% assign publications_all = site.data.publications_all %}
-        {% assign published_articles = "" %}
-        {% for publication in publications_all %}
-        {% assign pubmed_id = publication.pubmed_id | append: "" %}
-        {% if publication_ids contains pubmed_id %}
-        {% assign published_articles = published_articles | append: publication.title | append: "||" | append:
-        publication.authors | append: "||" | append: publication.year | append: "||" |append: publication.pubmed_id |
-        append: "||"| append: publication.journal | append: ";;;" %}
-        {% endif %}
-        {% endfor %}
-        <div class="list-group ">
-            {% assign articles = published_articles | split: ";;;" %}
-            {% for article in articles %}
-            {% assign article_data = article | split: "||" %}
-            <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-               class="list-group-item list-group-item-action dynamic-highlight p-2">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{ article_data[0] }}</h5>
-                    <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
-                </div>
-                <div class="mb-1 member-highlight-parent">
-                    {% assign authors = article_data[1] | split: ", " %}
-                    {% for author in authors %}
-                    {% assign name_parts = page.unaccented_name | split: " " %}
-                    {% assign last_name = name_parts[1] %}
-                    {% assign first_initial = name_parts[0] | slice: 0 %}
-                    {% assign name_parts_loop = author | split: " " %}
-                    {% assign last_name_loop = name_parts_loop[0] %}
-                    {% assign first_initial_loop = name_parts_loop[1] | slice: 0 %}
-                    {% assign author_last_name = author | remove: author_initial %}
-                    {% if last_name == last_name_loop and first_initial == first_initial_loop %}
-                    <b class="text-bold">{{ last_name_loop }} {{ first_initial_loop }}</b>{% else %}{{
-                    last_name_loop }} {{ first_initial_loop }}{% endif %}{% if forloop.last == false %},{% endif %}{%
-                    endfor %}
-                </div>
-                <small class="text-body-secondary">{{ article_data[4]}}</small>
-            </a>
+    <div class="container-fluid pb-3 bg-light">
+        <div class="container-xl mb-5 noPadding">
+            <h4 class="poppins py-3">Publications with the lab <span class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
+            </h4>
+            {% assign publications_all = site.data.publications_all %}
+            {% assign published_articles = "" %}
+            {% for publication in publications_all %}
+            {% assign pubmed_id = publication.pubmed_id | append: "" %}
+            {% if publication_ids contains pubmed_id %}
+            {% assign published_articles = published_articles | append: publication.title | append: "||" | append:
+            publication.authors | append: "||" | append: publication.year | append: "||" |append: publication.pubmed_id
+            |
+            append: "||"| append: publication.journal | append: ";;;" %}
+            {% endif %}
             {% endfor %}
+            <div class="row g-1 rounded-5 overflow-hidden">
+                {% assign articles = published_articles | split: ";;;" %}
+                {% for article in articles %}
+                {% assign article_data = article | split: "||" %}
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
+                   class="col-12 no-underline py-2 p-0 p-md-3 bg-white interaction-bg-color text-current-color ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ article_data[0] }}</h5>
+                        <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
+                    </div>
+                    <div class="mb-1 member-highlight-parent">
+                        {% assign authors = article_data[1] | split: ", " %}
+                        {% for author in authors %}
+                        {% assign name_parts = page.unaccented_name | split: " " %}
+                        {% assign last_name = name_parts[1] %}
+                        {% assign first_initial = name_parts[0] | slice: 0 %}
+                        {% assign name_parts_loop = author | split: " " %}
+                        {% assign last_name_loop = name_parts_loop[0] %}
+                        {% assign first_initial_loop = name_parts_loop[1] | slice: 0 %}
+                        {% assign author_last_name = author | remove: author_initial %}
+                        {% if last_name == last_name_loop and first_initial == first_initial_loop %}
+                        <b class="text-bold">{{ last_name_loop }} {{ first_initial_loop }}</b>{% else %}{{
+                        last_name_loop }} {{ first_initial_loop }}{% endif %}{% if forloop.last == false %},{% endif
+                        %}{%
+                        endfor %}
+                    </div>
+                    <small class="text-body-secondary">{{ article_data[4]}}</small>
+                </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
     {% endif %}

@@ -30,8 +30,7 @@ layout: default
         padding: 0;
     }
 </style>
-<div class="container-xl blog">
-
+<div class="container-xl ">
     <nav class="navbar mt-3">
         <button onclick="window.location.href='{% if page.role  %}/members/{% else %}/news/{% endif %}';"
                 class="navbar-toggler " type="button">
@@ -45,10 +44,10 @@ layout: default
             {% else %}
             All news
             {% endif %}
-
         </button>
     </nav>
-
+</div>
+<div class="container-fluid blog">
     {{ content }}
 </div>
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
