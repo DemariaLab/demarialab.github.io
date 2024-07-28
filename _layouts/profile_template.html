@@ -113,13 +113,13 @@ layout: modal_post
             </h4>
             {% assign publications_all = site.data.publications_all %}
             {% assign published_articles = "" %}
-            {% for publication in publications_all %}
-            {% assign pubmed_id = publication.pubmed_id | append: "" %}
-            {% if publication_ids contains pubmed_id %}
+
+            {% for id in publication_ids %}
+            {% assign publication = publications_all | where: "pubmed_id", id | first %}
+            {% if publication %}
             {% assign published_articles = published_articles | append: publication.title | append: "||" | append:
-            publication.authors | append: "||" | append: publication.year | append: "||" |append: publication.pubmed_id
-            |
-            append: "||"| append: publication.journal | append: ";;;" %}
+            publication.authors | append: "||" | append: publication.year | append: "||" | append: publication.pubmed_id
+            | append: "||" | append: publication.journal | append: ";;;" %}
             {% endif %}
             {% endfor %}
             <div class="row g-1 rounded-5 overflow-hidden">
@@ -129,7 +129,7 @@ layout: modal_post
                     <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
                    class="col-12 no-underline py-2 p-0 p-md-3 bg-white interaction-bg-color text-current-color ">
                     <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ article_data[0] }}</h5>
+                        <h5 class="mb-1 poppins">{{ article_data[0] }}</h5>
                         <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
                     </div>
                     <div class="mb-1 member-highlight-parent">
