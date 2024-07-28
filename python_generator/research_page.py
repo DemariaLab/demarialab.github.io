@@ -29,11 +29,12 @@ permalink: /research/
 
 
 def process(args):
-    try:
-        print("Processing research document")
-        site_dir = args[constants.ARG_SITE_DIR]
-        doc_id = args[constants.ARG_RESEARCH_DOC_ID]
-        save_research_doc_as_markdown(site_dir=site_dir, doc_id=doc_id)
-    except Exception:
-        print("An error occurred in research document processor")
-        traceback.print_exc()
+    passr
+    # try:
+    #     print("Processing research document")
+    #     site_dir = args[constants.ARG_SITE_DIR]
+    #     doc_id = args[constants.ARG_RESEARCH_DOC_ID]
+    #     save_research_doc_as_markdown(site_dir=site_dir, doc_id=doc_id)
+    # except Exception:
+    #     print("An error occurred in research document processor")
+    #     traceback.print_exc()

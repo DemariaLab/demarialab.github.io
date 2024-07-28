@@ -8,6 +8,7 @@ order: 0
         display: inline-block;
         position: relative;
     }
+
     .highlight:before {
         content: '';
         position: absolute;
@@ -21,10 +22,12 @@ order: 0
         transform-origin: 0% 100%;
         z-index: -1;
     }
+
     .animate-underline:before {
         visibility: visible;
         animation: underlineAnimation 0.6s forwards;
     }
+
     @keyframes underlineAnimation {
         from {
             transform: scaleX(0);
@@ -33,10 +36,12 @@ order: 0
             transform: scaleX(1);
         }
     }
+
     .highlight-bold {
         z-index: 1;
         font-weight: bold;
     }
+
     .animated-item {
         opacity: 0;
         transform: translateX(2em);
@@ -51,14 +56,17 @@ order: 0
         background-size: cover;
         background-position: center;
     }
+
     .animated-item.active {
         opacity: 1;
         transform: translateX(0);
     }
+
     .view-all a {
         color: black;
         text-decoration: none;
     }
+
     .view-all h3 {
         color: white;
         text-shadow: #000 1px 0 10px;
@@ -74,13 +82,16 @@ order: 0
         opacity: 1;
         transition: opacity 0.3s ease;
     }
+
     .view-all {
         align-items: center;
         justify-content: center;
     }
+
     section#latest-pictures.section div.container div.row div.col-md-3.mb-4 {
         padding-left: 0px !important;
     }
+
     .grid-container {
         filter: grayscale(80%);
         display: grid;
@@ -90,6 +101,7 @@ order: 0
         height: 100%;
         background-color: black;
     }
+
     .grid-item {
         width: 100%;
         height: 100%;
@@ -108,6 +120,7 @@ order: 0
         width: 100%;
         border-collapse: collapse; /* Remove table dividers */
     }
+
     .latest-news td {
         padding-left: 0px;
         padding-right: 0px;
@@ -116,56 +129,60 @@ order: 0
         vertical-align: top;
         border: none; /* Remove table cell borders */
     }
+
     .team-circle {
         height: 22em;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
     }
-.hero-card{
-    cursor: pointer;
-    position: relative;
-    padding-left:0.85em;
-    padding-right:0.85em;
-}
 
-.hero-card.active{
-     padding-left:28px;
-}
- .showcase-cover {
-    position: relative;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-}
+    .hero-card {
+        cursor: pointer;
+        position: relative;
+        padding-left: 0.85em;
+        padding-right: 0.85em;
+    }
 
-.showcase-cover::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
-    pointer-events: none;
-    z-index: 0;
-}
+    .hero-card.active {
+        padding-left: 28px;
+    }
 
-.hero-card.active::after {
-    content: '';
-    position: absolute;
-    left: 10px; /* Adjust the right position as needed */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px; /* Adjust width as needed */
-    height: 20px; /* Adjust height as needed */
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg height='1024' width='511.825' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.088 512c0-141.5 114.5-256 256-256 141.438 0 256 114.5 256 256s-114.562 256-256 256C114.413 768-0.088 653.5-0.088 512z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.carousel-item-next, .carousel-item-prev, .carousel-item.active{
-    display: flex!important;;
-}
+    .showcase-cover {
+        position: relative;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+
+    .showcase-cover::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .hero-card.active::after {
+        content: '';
+        position: absolute;
+        left: 10px; /* Adjust the right position as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px; /* Adjust width as needed */
+        height: 20px; /* Adjust height as needed */
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg height='1024' width='511.825' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.088 512c0-141.5 114.5-256 256-256 141.438 0 256 114.5 256 256s-114.562 256-256 256C114.413 768-0.088 653.5-0.088 512z'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+        display: flex !important;;
+    }
 
 </style>
 <section>
@@ -173,7 +190,7 @@ order: 0
         <div class="container-xl ">
             <div class="pageTitleContainer">
                 <div class="row noPadding noMargin">
-                    <h2 class="poppins  px-3 text-center text-black" >Our mission is to extend human
+                    <h2 class="poppins  px-3 text-center text-black">Our mission is to extend human
                         healthspan by pioneering discoveries in
                         <span class="highlight highlight-bold" id="tissue-repair">tissue repair</span>,
                         <span class="highlight highlight-bold" id="aging">aging</span>, and
@@ -195,116 +212,124 @@ order: 0
     </div>
     <div class="b-divider"></div>
 
- {% assign hero_accordion = site.data.hero_accordion %}
-{% if hero_accordion.size > 0 %}
-<div class="container-flex">
-    <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
+    {% assign hero_accordion = site.data.hero_accordion %}
+    {% if hero_accordion.size > 0 %}
+    <div class="container-flex">
+        <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
 
-        <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
-             <div class="row g-5 d-none d-lg-flex ">
+            <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
+                <div class="row g-5 d-none d-lg-flex ">
 
-                  <div class="col-12 col-lg-4 ms-0 ps-0">
-                    <div class="row gy-1">
-                        {% for item in hero_accordion %}
-                        {% assign border_radius = "border-radius: 5px" %}
-                        {% if forloop.first %}
-                        {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
-                        {% endif %}
-                        {% if forloop.last %}
-                        {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px; border-top-left-radius:5px;border-top-right-radius: 5px;" %}
-                        {% endif %}
-                        <div class="col-12 mx-0 px-0">
-                            <div class="front no-text-selection py-3 animated bg-light hero-card h-100"
-                                 data-title="{{item.title}}" data-description="{{item.description}}"
-                                 data-photo="{{item.photo}}"
-                                 style="{{border_radius}} ">
-                                <div class="card-body">
-                                    <h5 class="poppins m-0">{{item.title}}</h5>
+                    <div class="col-12 col-lg-4 ms-0 ps-0">
+                        <div class="row gy-1">
+                            {% for item in hero_accordion %}
+                            {% assign border_radius = "border-radius: 5px" %}
+                            {% if forloop.first %}
+                            {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px;
+                            border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                            {% endif %}
+                            {% if forloop.last %}
+                            {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;
+                            border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                            {% endif %}
+                            <div class="col-12 mx-0 px-0">
+                                <div class="front no-text-selection py-3 animated bg-light hero-card h-100"
+                                     data-title="{{item.title}}" data-description="{{item.description}}"
+                                     data-photo="{{item.photo}}"
+                                     style="{{border_radius}} ">
+                                    <div class="card-body">
+                                        <h5 class="poppins m-0">{{item.title}}</h5>
+                                    </div>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
                     </div>
-                </div>
 
-                <div class="col-12 col-lg-8 ">
-                    <h2 class="poppins showcase-title text-white front">Our research</h2>
-                    <div class="showcase-text text-white  front">
-                        We employ advanced techniques and cutting-edge technologies to explore the molecular mechanisms
-                        that
-                        drive cellular aging and associated diseases. Through innovative studies and collaborative
-                        efforts,
-                        we aim to translate our findings into novel therapeutic strategies and improve overall health
-                        outcomes.
-                        {% assign keywords = '' %}
-                        {% assign profiles = site.profiles | where: "is_alumni", false %}
-                        {% for item in profiles %}
-                        {% if item.role == "PhD student" or item.role == "PostDoc" %}
-                        {% assign keywords = keywords | append: item.keywords | append: ';' %}
-                        {% endif %}
-                        {% endfor %}
-                        {% assign keywords = keywords | split: ';' | uniq |sort %}
-                        <br>
-                        <br>
-                        We deal with:
-                        {% for item in keywords %}
-                        <div class="d-inline-block pill bg-success rounded mb-1 px-1">{{item}}</div>
-                        {% endfor %}
+                    <div class="col-12 col-lg-8 ">
+                        <h2 class="poppins showcase-title text-white front">Our research</h2>
+                        <div class="showcase-text text-white  front">
+                            We employ advanced techniques and cutting-edge technologies to explore the molecular
+                            mechanisms
+                            that
+                            drive cellular aging and associated diseases. Through innovative studies and collaborative
+                            efforts,
+                            we aim to translate our findings into novel therapeutic strategies and improve overall
+                            health
+                            outcomes.
+                            {% assign keywords = '' %}
+                            {% assign profiles = site.profiles | where: "is_alumni", false %}
+                            {% for item in profiles %}
+                            {% if item.role == "PhD student" or item.role == "PostDoc" %}
+                            {% assign keywords = keywords | append: item.keywords | append: ';' %}
+                            {% endif %}
+                            {% endfor %}
+                            {% assign keywords = keywords | split: ';' | uniq |sort %}
+                            <br>
+                            <br>
+                            We deal with:
+                            {% for item in keywords %}
+                            <div class="d-inline-block pill bg-success rounded mb-1 px-1">{{item}}</div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="d-block d-lg-none my-5 py-5 ">
-            <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
-        </div>
-        <div class="accordion front accordion-flush bg-light d-block d-lg-none mt-5 " id="accordionFlush">
-            {% for item in hero_accordion %}
-            {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', ''  | replace: '-', '' | replace: '_', ''   %}
-            <div class="accordion-item">
-            <h5 class="accordion-header">
-                    <button class="accordion-button collapsed hero-card" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false" aria-controls="flush-collapse{{cleaned_title}}"  data-title="{{item.title}}" data-description="{{item.description}}"
-                                 data-photo="{{item.photo}}">
-                        {{item.title}}
-                    </button>
-                </h5>
-                <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-                    <div class="accordion-body">{{item.description}}
+            <div class="d-block d-lg-none my-5 py-5 ">
+                <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
+            </div>
+            <div class="accordion front accordion-flush bg-light d-block d-lg-none mt-5 " id="accordionFlush">
+                {% for item in hero_accordion %}
+                {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', '' | replace:
+                '-', '' | replace: '_', '' %}
+                <div class="accordion-item">
+                    <h5 class="accordion-header">
+                        <button class="accordion-button collapsed hero-card" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false"
+                                aria-controls="flush-collapse{{cleaned_title}}" data-title="{{item.title}}"
+                                data-description="{{item.description}}"
+                                data-photo="{{item.photo}}">
+                            {{item.title}}
+                        </button>
+                    </h5>
+                    <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse"
+                         data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">{{item.description}}
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-    </section>
-</div>
-<div class="b-divider"></div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const cards = document.querySelectorAll('.hero-card');
-        const showcaseTitle = document.querySelector('.showcase-title');
-        const showcaseText = document.querySelector('.showcase-text');
-        const showcaseCover = document.querySelector('.showcase-cover');
-        cards.forEach(card => {
-            card.addEventListener('click', function () {
-                cards.forEach(card => card.classList.remove('active'));
-                card.classList.add('active');
-                const title = card.getAttribute('data-title');
-                const description = card.getAttribute('data-description');
-                const photo = card.getAttribute('data-photo');
-                const img = new Image();
-                img.src = photo;
-                showcaseTitle.textContent = title;
-                showcaseText.textContent = description;
-                showcaseCover.style.opacity = 1;
-                img.onload = function () {
-                    showcaseCover.style.backgroundImage = `url('${photo}')`;
-                };
+        </section>
+    </div>
+    <div class="b-divider"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.hero-card');
+            const showcaseTitle = document.querySelector('.showcase-title');
+            const showcaseText = document.querySelector('.showcase-text');
+            const showcaseCover = document.querySelector('.showcase-cover');
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    cards.forEach(card => card.classList.remove('active'));
+                    card.classList.add('active');
+                    const title = card.getAttribute('data-title');
+                    const description = card.getAttribute('data-description');
+                    const photo = card.getAttribute('data-photo');
+                    const img = new Image();
+                    img.src = photo;
+                    showcaseTitle.textContent = title;
+                    showcaseText.textContent = description;
+                    showcaseCover.style.opacity = 1;
+                    img.onload = function () {
+                        showcaseCover.style.backgroundImage = `url('${photo}')`;
+                    };
+                });
             });
         });
-    });
-</script>
-{% endif %}
-    <div class="container-flex bg-light" >
+    </script>
+    {% endif %}
+    <div class="container-flex bg-light">
         <section class="container-xl  content p-0 ">
             <h3 class="poppins p-3 m-0">
                 Latest news
@@ -371,34 +396,35 @@ order: 0
 
 
             <a href="/news/" class="no-underline no-text-selection">
-                    <div class="d-flex w-100 justify-content-end p-3">
-                        <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
-                    </div>
-                </a>
+                <div class="d-flex w-100 justify-content-end p-3">
+                    <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
+                </div>
+            </a>
         </section>
     </div>
     <div class="b-divider"></div>
 
-<div class="container-fluid py-3"  style="background-color: #e2efcf">
-    <section class=" container-xl noPadding" id="section2">
-        <div class="noPadding">
-            <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
-                Meet the lab members
-            </h3>
-            <a class="no-underline" href="/members/">
-                <div class="row g-1 " id="teamSection">
-                    <div class="team-circle col d-none d-md-flex align-items-center justify-content-center ">
-                        <div class="text-left text-body px-3">
-                        <h3 class="poppins " style="margin-right: 0.8em; ">
-                            Meet the lab members
-                        </h3>
-                            <h5> View all →</h5>
+    <div class="container-fluid py-3" style="background-color: #e2efcf">
+        <section class=" container-xl noPadding" id="section2">
+            <div class="noPadding">
+                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
+                    Meet the lab members
+                </h3>
+                <a class="no-underline" href="/members/">
+                    <div class="row g-1 " id="teamSection">
+                        <div class="team-circle col d-none d-md-flex align-items-center justify-content-center ">
+                            <div class="text-left text-body px-3">
+                                <h3 class="poppins " style="margin-right: 0.8em; ">
+                                    Meet the lab members
+                                </h3>
+                                <h5> View all →</h5>
+                            </div>
                         </div>
+                        <!-- Circles will be injected here by JavaScript -->
                     </div>
-                    <!-- Circles will be injected here by JavaScript -->
-                </div>
-            </a></div>
-    </section></div>
+                </a></div>
+        </section>
+    </div>
     <div class="b-divider"></div>
 
     {% assign grants = site.data.grants %}
@@ -449,48 +475,45 @@ order: 0
     {% endif %}
 
 
+    <style>
+        .slideshow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            text-align: center;
+            line-height: 0.5rem;
+        }
 
+        .slideshow-button.prev {
+            left: 1rem;
+        }
 
+        .slideshow-button.next {
+            right: 1rem;
+        }
 
+        .slideshow-item {
+            overflow: hidden;
+        }
 
-<style>
-    .slideshow-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        border: none;
-        cursor: pointer;
-        z-index: 1;
-        border-radius: 50%;
-        aspect-ratio: 1;
-        text-align: center;
-        line-height: 0.5rem;
-    }
-
-    .slideshow-button.prev {
-        left: 1rem;
-    }
-
-    .slideshow-button.next {
-        right: 1rem;
-    }
-
-    .slideshow-item {
-        transition: width 0.5s ease, margin 0.5s ease;
-        overflow: hidden;
-    }
-
-    .slideshow-inner {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-</style>
+        .slideshow-inner {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    </style>
     <div class="container-fluid p-3 m-0">
-         <h3 class="poppins px-3 pb-3 m-0">
+        <div class="container-xl">
+            <h3 class="poppins px-3 pb-3 m-0">
                 Latest photos
             </h3>
+        </div>
         <div id="carouselPhotos" class="carousel slide container-fluid p-0 m-0  rounded-5 overflow-hidden">
             <div class="photos-container m-0 p-0 w-100  position-relative">
                 <button class="slideshow-button p-3 p-lg-5 prev" onclick="prevSlide()">❮</button>
@@ -513,7 +536,7 @@ order: 0
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
                     <div class="slideshow-item animated-relaxed " onclick="scrollToSlide({{forloop.index0}})">
                         <div class="rounded "
-                             style="background-image: url('{{ latest_picture_path }}');background-position:center; height: 40vw; background-repeat: no-repeat; background-size: cover;">
+                             style="background: #242527 no-repeat center url('{{ latest_picture_path }}'); height:25rem; background-size: auto 25rem ">
                         </div>
                     </div>
                     {% endfor %}
@@ -522,104 +545,105 @@ order: 0
         </div>
 
         <div class="container-xl">
-              <a href="/gallery/" class="no-underline no-text-selection">
-                    <div class="d-flex w-100 justify-content-end px-3 pt-3">
-                        <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
-                    </div>
-                </a>
+            <a href="/gallery/" class="no-underline no-text-selection">
+                <div class="d-flex w-100 justify-content-end px-3 pt-3">
+                    <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
+                </div>
+            </a>
         </div>
 
     </div>
-<script>
+    <script>
 
-    function getItemsToShow() {
-        const width = window.innerWidth;
-        if (width >= 1400) return 5;
-        if (width >= 1200) return 5;
-        if (width >= 992) return 5;
-        if (width >= 768) return 3;
-        return 1;
-    }
-    let currentIndex =0;
-
-    function scrollToSlide(index_abs) {
-        // const items = document.querySelectorAll('.slideshow-item');
-        // const itemsToShow = getItemsToShow();
-        // showSlides(1 + index_abs - Math.round(itemsToShow / 2))
-    }
-    function showSlides(index) {
-        const items = document.querySelectorAll('.slideshow-item');
-        const totalItems = items.length;
-        let itemsToShow = getItemsToShow();
-        if (totalItems <= itemsToShow) {
-            itemsToShow = Math.floor(itemsToShow / 2)
-            if(itemsToShow%2===0){
-                itemsToShow+=1
-            }
+        function getItemsToShow() {
+            const width = window.innerWidth;
+            if (width >= 1400) return 5;
+            if (width >= 1200) return 5;
+            if (width >= 992) return 5;
+            if (width >= 768) return 3;
+            return 1;
         }
-        if (index >= totalItems - itemsToShow + 1) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = totalItems - itemsToShow;
-        } else {
-            currentIndex = index;
+
+        let currentIndex = 0;
+
+        function scrollToSlide(index_abs) {
+            // const items = document.querySelectorAll('.slideshow-item');
+            // const itemsToShow = getItemsToShow();
+            // showSlides(1 + index_abs - Math.round(itemsToShow / 2))
         }
-        console.log(index, "currentIndex", currentIndex)
 
-        const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
-
-        items.forEach((item, idx) => {
-            item.classList.add('col-auto');
-            item.classList.remove(...colClasses);
-            item.style.width = '0%';
-        });
-
-        const halfItemsToShow = Math.floor(itemsToShow / 2);
-        for (let i = 0; i < itemsToShow; i++) {
-            const itemIdx = (currentIndex + i) % totalItems;
-            const item = items[itemIdx];
-            item.classList.remove('col-auto');
-
-            item.classList.remove('mx-1');
-            if (itemsToShow === 1) {
-                item.classList.add('col-12');
-                item.style.width = '100%';
-            } else if (itemsToShow === 3) {
-                if (i === halfItemsToShow) {
-                    item.classList.add('col-6');
-                    item.style.width = '50%';
-                    item.classList.add('mx-1');
-                } else {
-                    item.classList.add('col-3');
-                    item.style.width = '25%';
-                }
-            } else if (itemsToShow === 5) {
-                if (i === halfItemsToShow) {
-                    item.classList.add('col-6');
-                    item.style.width = '50%';
-                } else if (Math.abs(i - halfItemsToShow) === 1) {
-                    item.classList.add('col-2');
-                    item.style.width = '16.66%';
-                    item.classList.add('mx-1');
-                } else {
-                    item.classList.add('col-1');
-                    item.style.width = '8.33%';
+        function showSlides(index) {
+            const items = document.querySelectorAll('.slideshow-item');
+            const totalItems = items.length;
+            let itemsToShow = getItemsToShow();
+            if (totalItems <= itemsToShow) {
+                itemsToShow = Math.floor(itemsToShow / 2)
+                if (itemsToShow % 2 === 0) {
+                    itemsToShow += 1
                 }
             }
+            if (index >= totalItems - itemsToShow + 1) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalItems - itemsToShow;
+            } else {
+                currentIndex = index;
+            }
+            console.log(index, "currentIndex", currentIndex)
+
+            const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
+
+            items.forEach((item, idx) => {
+                item.classList.add('col-auto');
+                item.classList.remove(...colClasses);
+                item.style.width = '0%';
+            });
+
+            const halfItemsToShow = Math.floor(itemsToShow / 2);
+            for (let i = 0; i < itemsToShow; i++) {
+                const itemIdx = (currentIndex + i) % totalItems;
+                const item = items[itemIdx];
+                item.classList.remove('col-auto');
+                item.classList.remove('mx-1');
+                if (itemsToShow === 1) {
+                    item.classList.add('col-12');
+                    item.style.width = '100%';
+                } else if (itemsToShow === 3) {
+                    if (i === halfItemsToShow) {
+                        item.classList.add('col-6');
+                        item.style.width = '50%';
+                        item.classList.add('mx-1');
+                    } else {
+                        item.classList.add('col-3');
+                        item.style.width = '25%';
+                    }
+                } else if (itemsToShow === 5) {
+                    if (i === halfItemsToShow) {
+                        item.classList.add('col-6');
+                        item.style.width = '50%';
+                    } else if (Math.abs(i - halfItemsToShow) === 1) {
+                        item.classList.add('col-2');
+                        item.style.width = '16.66%';
+                        item.classList.add('mx-1');
+                    } else {
+                        item.classList.add('col-1');
+                        item.style.width = '8.33%';
+                    }
+                }
+            }
         }
-    }
 
-    function nextSlide() {
-        showSlides(currentIndex + 1);
-    }
+        function nextSlide() {
+            showSlides(currentIndex + 1);
+        }
 
-    function prevSlide() {
-        showSlides(currentIndex - 1);
-    }
+        function prevSlide() {
+            showSlides(currentIndex - 1);
+        }
 
-    window.addEventListener('resize', () => showSlides(currentIndex));
-    showSlides(currentIndex);
-</script>
+        window.addEventListener('resize', () => showSlides(currentIndex));
+        showSlides(currentIndex);
+    </script>
 
 
     <div class="container-fluid " style="background-color: #ffd6d3">
@@ -726,7 +750,7 @@ order: 0
                         {% endif %}
 
                         {% assign years_since_2015 = current_year | minus: 2015 %}
-                        <div class="col d-flex flex-column" >
+                        <div class="col d-flex flex-column">
                             <div class="d-flex rounded text-center justify-content-center "
                                  style="flex: 1; align-items: center; background-color: #fff9f8    ">
                                 <div class="d-block p-3  py-lg-4 px-lg-5">
@@ -742,90 +766,31 @@ order: 0
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    let carouselPhotosItems = document.querySelectorAll('.carousel .carousel-item')
-    carouselPhotosItems.forEach((el) => {
-        const minPerSlide = 3
-        let next = el.nextElementSibling
-        for (var i = 1; i < minPerSlide; i++) {
-            if (!next) {
-                next = carouselPhotosItems[0]
+    <script>
+        let carouselPhotosItems = document.querySelectorAll('.carousel .carousel-item')
+        carouselPhotosItems.forEach((el) => {
+            const minPerSlide = 3
+            let next = el.nextElementSibling
+            for (let i = 1; i < minPerSlide; i++) {
+                if (!next) {
+                    next = carouselPhotosItems[0]
+                }
+                let cloneChild = next.cloneNode(true)
+                el.appendChild(cloneChild.children[0])
+                next = next.nextElementSibling
             }
-            let cloneChild = next.cloneNode(true)
-            el.appendChild(cloneChild.children[0])
-            next = next.nextElementSibling
-        }
-    })
-    $(document).ready(function () {
-        // Function to check if element is in viewport
-        function isElementInViewport(elem) {
-            var $elem = $(elem);
-            var windowTop = $(window).scrollTop();
-            var windowBottom = windowTop + $(window).height();
-            var elemTop = $elem.offset().top;
-            var elemBottom = elemTop + $elem.height();
-            return elemBottom >= windowTop && elemTop <= windowBottom;
-        }
-      // Function to add animation class with delay based on index
-      function animateElementIfVisible() {
-          $('.animated-item').each(function (index) {
-              if (isElementInViewport(this)) {
-                  var delay = Math.max((index - 1), 0) * 200; // Adjust the delay time as needed
-                  $(this).delay(delay).queue(function (next) {
-                      $(this).addClass('active');
-                      next();
-                  });
-              }
-          });
-      }
-      // Initial check on page load
-      animateElementIfVisible();
-      // Check on scroll
-      $(window).scroll(function () {
-          animateElementIfVisible();
-      });
-      setTimeout(() => animateElementIfVisible(), 500);
-    const members = [
-	{% assign team = site.profiles | where: "is_alumni", false %}
-                {% for member in team %}
-               {% assign formatted_thumb = member.thumbnail | remove: "'" %}
-                                {% assign path_parts = formatted_thumb | split: '/' %}
-                                {% assign filename = path_parts | last %}
-                                {% assign directory = formatted_thumb | remove: filename %}
-                                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                                '.webp' %}
-                                {% assign new_url = directory | append: new_filename %}
-                    { photo: "{{ new_url }}" }{% if forloop.last == false %},{% endif %}
-                {% endfor %}
-            ].filter(member => member.photo !== "");
-      function getRandomMembers(members, count) {
-          let shuffled = members.sort(() => 0.5 - Math.random());
-          return shuffled.slice(0, count);
-      }
-      const randomMembers = getRandomMembers(members, 7);
-      const teamSection = $('#teamSection');
-      const circles = [
-          {class: 'rounded-5  circle-1 rounded-end', member: randomMembers[0]},
-          {class: 'rounded-5  circle-2 rounded-start rounded-end', member: randomMembers[1]},
-          {class: 'rounded-5  circle-3 rounded-start rounded-end', member: randomMembers[2]},
-          {class: 'rounded-5  circle-4 rounded-start', member: randomMembers[5]}
-      ];
-      circles.forEach(circle => {
-          const div = $('<div><div></div>')
-              .addClass(`team-circle ${circle.class}`)
-              .css('background-image', `url('${circle.member.photo}')`);
-          const wrappedDiv = $('<div></div>')
-              .addClass('col-3 col-md-2 ')
-              .append(div);
-          teamSection.append(wrappedDiv);
-      });
-  });
-  const items = document.querySelectorAll("span.highlight"); // Select all span elements with the class 'highlight'
-  const delay = 700; // Base delay
-  items.forEach((item, index) => {
-      setTimeout(() => {
-          item.classList.add("animate-underline");
-      }, delay * (index + 1)); // Increase delay for each subsequent item
-  });
-  </script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        })
+
+        const items = document.querySelectorAll("span.highlight"); // Select all span elements with the class 'highlight'
+        const delay = 700; // Base delay
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add("animate-underline");
+            }, delay * (index + 1)); // Increase delay for each subsequent item
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script type="text/javascript">
+         {% include member_randomizer.js %}
+    </script>
+</section>
