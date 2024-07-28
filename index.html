@@ -99,30 +99,13 @@ order: 0
         opacity: 0.5;
         background-position: center;
     }
-    .counter .feature-icon {
-        border-radius: 0.24em;
-        padding: 0.5em
-    }
-    .counter {
-        height: 100%;
-        border: 0.2em solid #00000005;
-        padding: 2em;
-        border-radius: 1em;
-        color: black;
-    }
-    .count-title {
-        font-size: 1.5em;
-        font-weight: normal;
-        margin-top: 10px;
-        margin-bottom: 0;
-        color: black;
-    }
+
     .count-text {
-        font-size: 3em;
+        color: #3e2828;
+        font-size: 3rem;
         margin-bottom: 0;
     }
-    .latest-news {
-    }
+
     .latest-news table {
         width: 100%;
         border-collapse: collapse; /* Remove table dividers */
@@ -326,58 +309,72 @@ order: 0
             <h3 class="poppins p-3 m-0">
                 Latest news
             </h3>
-            <div class="latest-news  rounded-0">
-                <div class="row gy-1 m-0">
-                    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-                    {% for post in sorted_posts limit: 5 %}
 
-                    {% assign border_radius = "border-radius: 5px" %}
-                    {% assign border_radius_thumbnail = "border-radius: 5px" %}
-                    {% if forloop.first %}
-                    {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
-                    {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 15px;  border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
-                    {% endif %}
-                    {% if forloop.last %}
-                    {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px; border-top-left-radius:5px;border-top-right-radius: 5px;" %}
-                    {% assign border_radius_thumbnail = "border-bottom-right-radius: 15px;border-bottom-left-radius:  5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
-                    {% endif %}
+            <div class="row rounded-5 overflow-hidden news-block">
+                {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+                {% for post in sorted_posts limit: 5 %}
 
-                    <a href="{{ post.url }}"
-                       class="col-12 no-underline py-2 p-0 p-md-2 bg-white interaction-bg-color " style="{{border_radius}}">
-                        <div class="d-flex flex-row px-3 px-md-0">
-
-                            {% assign formatted_thumb = post.thumbnail | remove: "'" %}
-                            {% assign path_parts = formatted_thumb | split: '/' %}
-                            {% assign filename = path_parts | last %}
-                            {% assign directory = formatted_thumb | remove: filename %}
-                            {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                            '.webp' %}
-                            {% assign new_url = directory | append: new_filename %}
-
-                            <div class="col-9 col-md-10 d-flex flex-column pe-2">
-                                <div class="my-auto py-3  px-2 ">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
-                                    </div>
-                                    <div class="text-body-secondary text-nowrap">{{ post.date | date: "%d %B, %Y " }}
-                                    </div>
+                {% assign border_radius = "border-radius: 5px" %}
+                {% assign border_radius_thumbnail = "border-radius: 5px" %}
+                {% if forloop.first %}
+                {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px;
+                border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 18px;
+                border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                {% endif %}
+                {% if forloop.last %}
+                {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;
+                border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                {% assign border_radius_thumbnail = "border-bottom-right-radius: 18px;border-bottom-left-radius:
+                5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                {% endif %}
+                {% assign formatted_thumb = post.thumbnail | remove: "'" %}
+                {% assign path_parts = formatted_thumb | split: '/' %}
+                {% assign filename = path_parts | last %}
+                {% assign directory = formatted_thumb | remove: filename %}
+                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
+                '.webp' %}
+                {% assign new_url = directory | append: new_filename %}
+                <a href="{{ post.url }}"
+                   class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %} no-underline py-3 px-2 px-md-3  interaction-bg-color text-current-color bg-white">
+                    <div class="d-flex flex-row px-2 px-md-0">
+                        <div class="col-9 col-md-10 d-flex flex-column px-2">
+                            <div class="my-auto ">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 poppins">{{ post.title }}</h5>
                                 </div>
-                            </div>
-                            <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
-                                <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                     style="background-image:url('{{new_url}}');{{border_radius_thumbnail}};">
-                                </div>
+                                <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                             </div>
                         </div>
-                    </a>
-                    {% endfor %}
-                </div>
-                <a href="/news/" class="no-underline no-text-selection">
+                        {% assign border_radius_thumbnail = "border-radius: 5px;" %}
+                        {% if forloop.first %}
+                        {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 18px;
+                        border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                        {% endif %}
+                        {% if forloop.last %}
+                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
+                        5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                        {% endif %}
+                        {% if forloop.last and forloop.first %}
+                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
+                        5px;border-top-left-radius:5px;border-top-right-radius:18px;" %}
+                        {% endif %}
+                        <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
+                            <div class="news-thumbnail w-100 border-semi-transparent my-auto"
+                                 style="{{border_radius_thumbnail}}background-image:url('{{new_url}}');">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+
+            <a href="/news/" class="no-underline no-text-selection">
                     <div class="d-flex w-100 justify-content-end p-3">
                         <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
                     </div>
                 </a>
-            </div>
         </section>
     </div>
     <div class="b-divider"></div>
@@ -402,78 +399,6 @@ order: 0
                 </div>
             </a></div>
     </section></div>
-    <div class="b-divider"></div>
-    <section class="container-xl p-0">
-        <h3 class="poppins px-3 my-3">
-            Our lab in numbers
-        </h3>
-        <div class="row g-2 px-sm-2 pb-2 pt-0">
-            {% assign team = site.profiles | where: "is_alumni", false %}
-            <div class="col  ">
-                <a class="no-underline" href="/members/">
-                    <div class="counter gradientBg" >
-                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-dark bg-gradient fs-2 mb-3 p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="55px"
-                                 opacity="0.8" viewBox="0 0 20 20" width="55px" fill="currentColor">
-                                <g>
-                                    <g/>
-                                    <g>
-                                        <g>
-                                            <path d="M8.5,6C9.33,6,10,6.67,10,7.5S9.33,9,8.5,9S7,8.33,7,7.5S7.67,6,8.5,6 M8.5,5C7.12,5,6,6.12,6,7.5C6,8.88,7.12,10,8.5,10 S11,8.88,11,7.5C11,6.12,9.88,5,8.5,5L8.5,5z"/>
-                                        </g>
-                                        <g>
-                                            <path d="M10.99,9.95C11.16,9.98,11.33,10,11.5,10c1.38,0,2.5-1.12,2.5-2.5 C14,6.12,12.88,5,11.5,5c-0.17,0-0.34,0.02-0.51,0.05C11.61,5.68,12,6.55,12,7.5S11.61,9.32,10.99,9.95z"
-                                                  fill-rule="evenodd"/>
-                                        </g>
-                                        <g>
-                                            <path d="M8.5,12c2.15,0,4.38,0.77,4.5,1.23V14H4l0-0.77C4.12,12.77,6.35,12,8.5,12 M8.5,11C6.66,11,3,11.66,3,13.23V15h11v-1.77 C14,11.66,10.34,11,8.5,11L8.5,11z"/>
-                                        </g>
-                                        <g>
-                                            <path d="M13.73,11.23c0.75,0.48,1.27,1.12,1.27,2V15h2v-1.77 C17,12.18,15.36,11.54,13.73,11.23z"
-                                                  fill-rule="evenodd"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <h2 class="timer count-title count-number poppins">Current members</h2>
-                        <div class="count-text ">{{ team.size }}</div>
-                    </div>
-                </a></div>
-            {% assign number_of_papers = site.data.publications_all %}
-            <div class="col ">
-                <a class="no-underline" href="/publications/">
-                    <div class="counter  gradientBg" >
-                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-dark bg-gradient fs-2 mb-3 p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="55px" viewBox="0 0 24 24" width="55px"
-                                 opacity="0.8" fill="currentColor">
-                                <path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
-                            </svg>
-                        </div>
-                        <h2 class="timer count-title count-number poppins"> Publications</h2>
-                        <div class="count-text ">{{number_of_papers.size}}</div>
-                    </div>
-                </a></div>
-            {% assign grants = site.data.grants %}
-            {% if grants.size > 0 %}
-            <div class="col ">
-                <a class="no-underline" href="/grants/">
-                    <div class="counter gradientBg">
-                        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-dark bg-gradient fs-2 mb-3 p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="55px"
-                                 opacity="0.8" viewBox="0 0 20 20" width="55px" fill="currentColor">
-                                <g>
-                                    <path d="M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7s7-3.13,7-7C17,6.13,13.87,3,10,3z M12.16,4.41c1.57,0.61,2.82,1.85,3.43,3.42 l-2.78,1.15c-0.3-0.83-0.96-1.49-1.79-1.79L12.16,4.41z M7.84,4.41L9,7.18c-0.85,0.3-1.51,0.96-1.82,1.81v0L4.41,7.84 C5.02,6.27,6.27,5.02,7.84,4.41z M7.83,15.59c-1.57-0.61-2.82-1.86-3.43-3.43l2.78-1.15v0c0.3,0.84,0.97,1.51,1.81,1.81L7.83,15.59 z M8,10c0-1.1,0.9-2,2-2s2,0.9,2,2c0,1.1-0.9,2-2,2S8,11.1,8,10z M12.17,15.59l-1.15-2.78c0.84-0.3,1.5-0.97,1.79-1.81l2.77,1.16 C14.98,13.74,13.74,14.98,12.17,15.59z"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h2 class="timer count-title count-number poppins"> Grants</h2>
-                        <div class="count-text ">{{ grants.size }}</div>
-                    </div>
-                </a></div>
-            {% endif %}
-        </div>
-    </section>
     <div class="b-divider"></div>
 
     {% assign grants = site.data.grants %}
@@ -582,8 +507,124 @@ order: 0
             </div>
         </section>
     </section>
-</div>
-</div>
+
+
+
+       <div class="container-fluid " style="background-color: #ffd6d3">
+        <section class="container-xl  content px-0 pt-0 pb-3 ">
+            <h3 class="poppins p-3 m-0">
+                Our lab in numbers
+            </h3>
+
+            <div class="container-xl no-text-selection ">
+                <div class="rounded-5 overflow-hidden d-flex">
+                <div class="row g-1 " style="display: flex; align-items: stretch;">
+                     {% assign alumni = site.profiles | where: "is_alumni", "true" %}
+                     <div class="col" style="display: flex; flex-direction: column;">
+                        <div class="d-flex rounded justify-content-center text-center text-lg-start" style="flex: 1; align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3  py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{alumni.size}}</div>
+                                <h5 class="poppins m-0">Alumni</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% assign current_year = site.time | date: "%Y" %}
+
+                    {% assign phd_students = site.profiles | where: "role", "PhD student" | where: "is_alumni", "false"
+                    %}
+                    {% assign postdocs = site.profiles | where: "role", "PostDoc" | where: "is_alumni", "false" %}
+
+                    <div class="col" style="display: flex; flex-direction: column;">
+                        <div class="d-flex rounded mb-1 text-center text-lg-start"
+                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3 py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{phd_students.size}}</div>
+                                <h5 class="poppins m-0">Current PhD students</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex rounded text-center text-lg-start"
+                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3 py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{postdocs.size}}</div>
+                                <h5 class="poppins m-0">Current PostDocs</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% assign previous_year = current_year | minus: 1 %}
+                    {% assign all_publications = site.data.publications_all %}
+                    {% assign current_year_publications = "" | split: "" %}
+                    {% assign year_status = "Publications this year" %}
+
+                    {% for item in all_publications %}
+                    {% assign item_year_int = item.year | plus: 0 %}
+                    {% assign item_year_str = item.year | slice: 0, 4 %}
+
+                    {% if item_year_int == current_year or item_year_str == current_year %}
+                    {% assign current_year_publications = current_year_publications | push: item %}
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if current_year_publications.size == 0 %}
+                    {% assign year_status = "Publications last year" %}
+                    {% assign current_year_publications = "" | split: "" %}
+
+                    {% for item in all_publications %}
+                    {% assign item_year_int = item.year | plus: 0 %}
+                    {% assign item_year_str = item.year | slice: 0, 4 %}
+
+                    {% if item_year_int == previous_year or item_year_str == previous_year %}
+                    {% assign current_year_publications = current_year_publications | push: item %}
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    <div class="col" style="display: flex; flex-direction: column;">
+                        <div class="d-flex  justify-content-center rounded text-center text-lg-start mb-1"
+                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3  py-lg-4 px-lg-5 ">
+                                <div class="poppins count-text ">{{current_year_publications.size}}</div>
+                                 <h5 class="poppins m-0">{{year_status}}</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center rounded text-center text-lg-start"
+                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3  py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{all_publications.size}}</div>
+                                 <h5 class="poppins m-0">All-time publications</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% assign grants = site.data.grants %}
+                    {% if grants.size > 0 %}
+                    <div class="col" style="display: flex; flex-direction: column;">
+                        <div class="d-flex rounded text-center text-lg-start justify-content-center" style="flex: 1; align-items: center; background-color: #fff9f8   ">
+                            <div class="d-block p-3  py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{grants.size}}</div>
+                                <h5 class="poppins m-0">Active grants</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% assign years_since_2015 = current_year | minus: 2015 %}
+                     <div class="col" style="display: flex; flex-direction: column;">
+                        <div class="d-flex rounded text-center text-lg-start"  style="flex: 1; align-items: center; background-color: #fff9f8    ">
+                            <div class="d-block p-3  py-lg-4 px-lg-5">
+                                <div class="poppins count-text ">{{years_since_2015}}</div>
+                                <h5 class="poppins m-0">Years in research</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+            </div>
+        </section>
+    </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {

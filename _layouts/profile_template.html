@@ -16,9 +16,12 @@ layout: modal_post
     .member-info svg {
         opacity: 0.5;
     }
+    .container-fluid{
+        --bs-gutter-x:0 !important
+    }
 </style>
 <div>
-    <div class="container-xl noPadding">
+    <div class="container-xl noPadding px-3">
         <div class="double-column my-3 d-block d-md-flex">
             <div class="col d-flex align-items-center">
                 <div class="image-content w-100">
@@ -107,9 +110,9 @@ layout: modal_post
     </div>
     {% if page.publications %}
     {% assign publication_ids = page.publications | split: "; " %}
-    <div class="container-fluid pb-3 bg-light">
-        <div class="container-xl mb-5 noPadding">
-            <h4 class="poppins py-3">Publications with the lab <span class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
+    <div class="container-fluid pb-3 bg-light m-0">
+        <div class="container-xl mb-5 px-2 px-lg-3">
+            <h4 class="poppins py-3 px-2 px-md-3">Publications with the lab <span class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
             </h4>
             {% assign publications_all = site.data.publications_all %}
             {% assign published_articles = "" %}
@@ -122,12 +125,13 @@ layout: modal_post
             | append: "||" | append: publication.journal | append: ";;;" %}
             {% endif %}
             {% endfor %}
-            <div class="row g-1 rounded-5 overflow-hidden">
+            <div class="row rounded-5 overflow-hidden">
                 {% assign articles = published_articles | split: ";;;" %}
                 {% for article in articles %}
                 {% assign article_data = article | split: "||" %}
+
                     <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-                   class="col-12 no-underline py-2 p-0 p-md-3 bg-white interaction-bg-color text-current-color ">
+                   class="col-12 no-underline py-3 px-2 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %}">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 poppins">{{ article_data[0] }}</h5>
                         <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
