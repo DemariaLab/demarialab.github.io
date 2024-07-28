@@ -42,9 +42,7 @@ order: 0
         transform: translateX(2em);
         transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .animated{
-        transition: all 0.25s ease-in-out;
-    }
+
     .square-container {
         position: relative;
         width: 100%; /* Adjust as needed */
@@ -165,7 +163,9 @@ order: 0
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+    display: flex!important;;
+}
 
 </style>
 <section>
@@ -448,185 +448,314 @@ order: 0
 
     {% endif %}
 
-    <section class="container-xl mb-5 noPadding noMargin">
-        <h3 class="poppins px-3 my-4">
-            Latest pictures
-        </h3>
-        <section id="latest-pictures" class="section">
-            <div class="container-xl noPadding noMargin">
-                <div class="row g-1">
+
+
+
+
+
+<style>
+    .slideshow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        text-align: center;
+        line-height: 0.5rem;
+    }
+
+    .slideshow-button.prev {
+        left: 1rem;
+    }
+
+    .slideshow-button.next {
+        right: 1rem;
+    }
+
+    .slideshow-item {
+        transition: width 0.5s ease, margin 0.5s ease;
+        overflow: hidden;
+    }
+
+    .slideshow-inner {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+</style>
+    <div class="container-fluid p-3 m-0">
+         <h3 class="poppins px-3 pb-3 m-0">
+                Latest photos
+            </h3>
+        <div id="carouselPhotos" class="carousel slide container-fluid p-0 m-0  rounded-5 overflow-hidden">
+            <div class="photos-container m-0 p-0 w-100  position-relative">
+                <button class="slideshow-button p-3 p-lg-5 prev" onclick="prevSlide()">❮</button>
+                <button class="slideshow-button p-3 p-lg-5 next" onclick="nextSlide()">❯</button>
+                <div class="slideshow-inner">
                     {% assign gallery_files = site.static_files | sort: 'path' | reverse %}
                     {% assign latest_pictures = '' | split: ',' %}
                     {% for file in gallery_files %}
                     {% if file.path contains '/gallery/' %}
+                    {% unless file.path contains 'reduced_' %}
                     {% assign latest_pictures = latest_pictures | push: file %}
+                    {% endunless %}
                     {% endif %}
                     {% if latest_pictures.size >= 8 %}
                     {% break %}
                     {% endif %}
                     {% endfor %}
-                    {% assign latest_pictures_main = latest_pictures | slice: 0, 3 %}
-                    {% assign latest_pictures_more = latest_pictures | slice: 4, 8 %}
+                    {% assign latest_pictures_main = latest_pictures | slice: 0, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="col-6 col-md">
-                        <a href="/gallery/">
-                            <div class="square-container picture-item "
-                                 style="background-image: url('{{ latest_picture_path }}');">
-                            </div>
-                        </a>
+                    <div class="slideshow-item animated-relaxed " onclick="scrollToSlide({{forloop.index0}})">
+                        <div class="rounded "
+                             style="background-image: url('{{ latest_picture_path }}');background-position:center; height: 40vw; background-repeat: no-repeat; background-size: cover;">
+                        </div>
                     </div>
                     {% endfor %}
-
-                    <div class="col picture-item ">
-                        <div class="grid-container">
-                            {% for picture in latest_pictures_more %}
-                            {% assign latest_more_picture_path = picture.path | replace: "'", "\\'"  %}
-
-                            {% assign formatted_thumb = latest_more_picture_path | remove: "'" %}
-                            {% assign path_parts = formatted_thumb | split: '/' %}
-                            {% assign filename = path_parts | last %}
-                            {% assign directory = formatted_thumb | remove: filename %}
-                            {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                            '.webp' %}
-                            {% assign new_url = directory | append: new_filename %}
-
-                            <div class="grid-item item1 "
-                                 style="background-image: url('{{ new_url }}');"></div>
-                            {% endfor %}
-                        </div>
-                        <div class="poppins noPadding view-all ">
-                            <a href="/gallery/">
-                                <h3>View All<br>→</h3>
-                            </a>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
-        </section>
-    </section>
+        </div>
+
+        <div class="container-xl">
+              <a href="/gallery/" class="no-underline no-text-selection">
+                    <div class="d-flex w-100 justify-content-end px-3 pt-3">
+                        <h4 class="mb-1 mx-1 ms-auto poppins ">View all → </h4>
+                    </div>
+                </a>
+        </div>
+
+    </div>
+<script>
+
+    function getItemsToShow() {
+        const width = window.innerWidth;
+        if (width >= 1400) return 5;
+        if (width >= 1200) return 5;
+        if (width >= 992) return 5;
+        if (width >= 768) return 3;
+        return 1;
+    }
+    let currentIndex =0;
+
+    function scrollToSlide(index_abs) {
+        // const items = document.querySelectorAll('.slideshow-item');
+        // const itemsToShow = getItemsToShow();
+        // showSlides(1 + index_abs - Math.round(itemsToShow / 2))
+    }
+    function showSlides(index) {
+        const items = document.querySelectorAll('.slideshow-item');
+        const totalItems = items.length;
+        let itemsToShow = getItemsToShow();
+        if (totalItems <= itemsToShow) {
+            itemsToShow = Math.floor(itemsToShow / 2)
+            if(itemsToShow%2===0){
+                itemsToShow+=1
+            }
+        }
+        if (index >= totalItems - itemsToShow + 1) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalItems - itemsToShow;
+        } else {
+            currentIndex = index;
+        }
+        console.log(index, "currentIndex", currentIndex)
+
+        const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
+
+        items.forEach((item, idx) => {
+            item.classList.add('col-auto');
+            item.classList.remove(...colClasses);
+            item.style.width = '0%';
+        });
+
+        const halfItemsToShow = Math.floor(itemsToShow / 2);
+        for (let i = 0; i < itemsToShow; i++) {
+            const itemIdx = (currentIndex + i) % totalItems;
+            const item = items[itemIdx];
+            item.classList.remove('col-auto');
+
+            item.classList.remove('mx-1');
+            if (itemsToShow === 1) {
+                item.classList.add('col-12');
+                item.style.width = '100%';
+            } else if (itemsToShow === 3) {
+                if (i === halfItemsToShow) {
+                    item.classList.add('col-6');
+                    item.style.width = '50%';
+                    item.classList.add('mx-1');
+                } else {
+                    item.classList.add('col-3');
+                    item.style.width = '25%';
+                }
+            } else if (itemsToShow === 5) {
+                if (i === halfItemsToShow) {
+                    item.classList.add('col-6');
+                    item.style.width = '50%';
+                } else if (Math.abs(i - halfItemsToShow) === 1) {
+                    item.classList.add('col-2');
+                    item.style.width = '16.66%';
+                    item.classList.add('mx-1');
+                } else {
+                    item.classList.add('col-1');
+                    item.style.width = '8.33%';
+                }
+            }
+        }
+    }
+
+    function nextSlide() {
+        showSlides(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlides(currentIndex - 1);
+    }
+
+    window.addEventListener('resize', () => showSlides(currentIndex));
+    showSlides(currentIndex);
+</script>
 
 
-
-       <div class="container-fluid " style="background-color: #ffd6d3">
+    <div class="container-fluid " style="background-color: #ffd6d3">
         <section class="container-xl  content px-0 pt-0 pb-3 ">
             <h3 class="poppins p-3 m-0">
                 Our lab in numbers
             </h3>
 
             <div class="container-xl no-text-selection ">
-                <div class="rounded-5 overflow-hidden d-flex">
-                <div class="row g-1 " style="display: flex; align-items: stretch;">
-                     {% assign alumni = site.profiles | where: "is_alumni", "true" %}
-                     <div class="col" style="display: flex; flex-direction: column;">
-                        <div class="d-flex rounded justify-content-center text-center text-lg-start" style="flex: 1; align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3  py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{alumni.size}}</div>
-                                <h5 class="poppins m-0">Alumni</h5>
+                <div class="rounded-5 overflow-auto d-flex w-100 ">
+                    <div class="row translate-children-y g-1 m-0 w-100" style="display: flex; align-items: stretch">
+                        {% assign alumni = site.profiles | where: "is_alumni", "true" %}
+                        <div class="col d-flex flex-column">
+                            <div class="d-flex rounded justify-content-center text-center "
+                                 style="flex: 1; align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3  py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{alumni.size}}</div>
+                                    <h5 class="poppins m-0">Alumni</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    {% assign current_year = site.time | date: "%Y" %}
+                        {% assign current_year = site.time | date: "%Y" %}
 
-                    {% assign phd_students = site.profiles | where: "role", "PhD student" | where: "is_alumni", "false"
-                    %}
-                    {% assign postdocs = site.profiles | where: "role", "PostDoc" | where: "is_alumni", "false" %}
+                        {% assign phd_students = site.profiles | where: "role", "PhD student" | where: "is_alumni",
+                        "false"
+                        %}
+                        {% assign postdocs = site.profiles | where: "role", "PostDoc" | where: "is_alumni", "false" %}
 
-                    <div class="col" style="display: flex; flex-direction: column;">
-                        <div class="d-flex rounded mb-1 text-center text-lg-start"
-                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3 py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{phd_students.size}}</div>
-                                <h5 class="poppins m-0">Current PhD students</h5>
+                        <div class="col d-flex flex-column">
+                            <div class="d-flex rounded mb-1 text-center text-lg-start"
+                                 style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3 py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{phd_students.size}}</div>
+                                    <h5 class="poppins m-0">Current PhD students</h5>
+                                </div>
+                            </div>
+                            <div class="d-flex rounded text-center text-lg-start"
+                                 style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3 py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{postdocs.size}}</div>
+                                    <h5 class="poppins m-0">Current PostDocs</h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex rounded text-center text-lg-start"
-                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3 py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{postdocs.size}}</div>
-                                <h5 class="poppins m-0">Current PostDocs</h5>
+
+
+                        {% assign previous_year = current_year | minus: 1 %}
+                        {% assign all_publications = site.data.publications_all %}
+                        {% assign current_year_publications = "" | split: "" %}
+                        {% assign year_status = "Publications this year" %}
+
+                        {% for item in all_publications %}
+                        {% assign item_year_int = item.year | plus: 0 %}
+                        {% assign item_year_str = item.year | slice: 0, 4 %}
+
+                        {% if item_year_int == current_year or item_year_str == current_year %}
+                        {% assign current_year_publications = current_year_publications | push: item %}
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if current_year_publications.size == 0 %}
+                        {% assign year_status = "Publications last year" %}
+                        {% assign current_year_publications = "" | split: "" %}
+
+                        {% for item in all_publications %}
+                        {% assign item_year_int = item.year | plus: 0 %}
+                        {% assign item_year_str = item.year | slice: 0, 4 %}
+
+                        {% if item_year_int == previous_year or item_year_str == previous_year %}
+                        {% assign current_year_publications = current_year_publications | push: item %}
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        <div class="col d-flex flex-column">
+                            <div class="d-flex  justify-content-center rounded text-center text-lg-start mb-1"
+                                 style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3  py-lg-4 px-lg-5 ">
+                                    <div class="poppins count-text ">{{current_year_publications.size}}</div>
+                                    <h5 class="poppins m-0">{{year_status}}</h5>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center rounded text-center text-lg-start"
+                                 style="flex: 1;  align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3  py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{all_publications.size}}</div>
+                                    <h5 class="poppins m-0">All-time publications</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-
-                    {% assign previous_year = current_year | minus: 1 %}
-                    {% assign all_publications = site.data.publications_all %}
-                    {% assign current_year_publications = "" | split: "" %}
-                    {% assign year_status = "Publications this year" %}
-
-                    {% for item in all_publications %}
-                    {% assign item_year_int = item.year | plus: 0 %}
-                    {% assign item_year_str = item.year | slice: 0, 4 %}
-
-                    {% if item_year_int == current_year or item_year_str == current_year %}
-                    {% assign current_year_publications = current_year_publications | push: item %}
-                    {% endif %}
-                    {% endfor %}
-
-                    {% if current_year_publications.size == 0 %}
-                    {% assign year_status = "Publications last year" %}
-                    {% assign current_year_publications = "" | split: "" %}
-
-                    {% for item in all_publications %}
-                    {% assign item_year_int = item.year | plus: 0 %}
-                    {% assign item_year_str = item.year | slice: 0, 4 %}
-
-                    {% if item_year_int == previous_year or item_year_str == previous_year %}
-                    {% assign current_year_publications = current_year_publications | push: item %}
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
-                    <div class="col" style="display: flex; flex-direction: column;">
-                        <div class="d-flex  justify-content-center rounded text-center text-lg-start mb-1"
-                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3  py-lg-4 px-lg-5 ">
-                                <div class="poppins count-text ">{{current_year_publications.size}}</div>
-                                 <h5 class="poppins m-0">{{year_status}}</h5>
+                        {% assign grants = site.data.grants %}
+                        {% if grants.size > 0 %}
+                        <div class="col d-flex flex-column">
+                            <div class="d-flex rounded text-center justify-content-center"
+                                 style="flex: 1; align-items: center; background-color: #fff9f8   ">
+                                <div class="d-block p-3  py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{grants.size}}</div>
+                                    <h5 class="poppins m-0">Active grants</h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center rounded text-center text-lg-start"
-                             style="flex: 1;  align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3  py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{all_publications.size}}</div>
-                                 <h5 class="poppins m-0">All-time publications</h5>
-                            </div>
-                        </div>
-                    </div>
+                        {% endif %}
 
-                    {% assign grants = site.data.grants %}
-                    {% if grants.size > 0 %}
-                    <div class="col" style="display: flex; flex-direction: column;">
-                        <div class="d-flex rounded text-center text-lg-start justify-content-center" style="flex: 1; align-items: center; background-color: #fff9f8   ">
-                            <div class="d-block p-3  py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{grants.size}}</div>
-                                <h5 class="poppins m-0">Active grants</h5>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% assign years_since_2015 = current_year | minus: 2015 %}
-                     <div class="col" style="display: flex; flex-direction: column;">
-                        <div class="d-flex rounded text-center text-lg-start"  style="flex: 1; align-items: center; background-color: #fff9f8    ">
-                            <div class="d-block p-3  py-lg-4 px-lg-5">
-                                <div class="poppins count-text ">{{years_since_2015}}</div>
-                                <h5 class="poppins m-0">Years in research</h5>
+                        {% assign years_since_2015 = current_year | minus: 2015 %}
+                        <div class="col d-flex flex-column" >
+                            <div class="d-flex rounded text-center justify-content-center "
+                                 style="flex: 1; align-items: center; background-color: #fff9f8    ">
+                                <div class="d-block p-3  py-lg-4 px-lg-5">
+                                    <div class="poppins count-text ">{{years_since_2015}}</div>
+                                    <h5 class="poppins m-0">Years in research</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                    </div>
             </div>
         </section>
     </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    let carouselPhotosItems = document.querySelectorAll('.carousel .carousel-item')
+    carouselPhotosItems.forEach((el) => {
+        const minPerSlide = 3
+        let next = el.nextElementSibling
+        for (var i = 1; i < minPerSlide; i++) {
+            if (!next) {
+                next = carouselPhotosItems[0]
+            }
+            let cloneChild = next.cloneNode(true)
+            el.appendChild(cloneChild.children[0])
+            next = next.nextElementSibling
+        }
+    })
     $(document).ready(function () {
         // Function to check if element is in viewport
         function isElementInViewport(elem) {

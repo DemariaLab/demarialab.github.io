@@ -434,7 +434,7 @@ h5.poppins {
 }
 
 .interaction-bg-color:hover {
-    background-color:#00000005 !important;
+    background-color: #00000005 !important;
 }
 
 .noPadding {
@@ -502,6 +502,16 @@ a .nav-item.active {
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+.translate-children-y div{
+    transform: translateY(-0.075rem);
+}
+.animated {
+    transition: all 0.25s ease-in-out;
+}
+
+.animated-relaxed {
+    transition: all 0.5s ease-in-out;
+}
 
 nav:hover .underline {
     display: block;
@@ -519,10 +529,11 @@ nav:hover .underline {
     margin: 0 auto
 }
 
-.front{
+.front {
     z-index: 50;
     position: relative;
 }
+
 .news-block {
     --bs-list-group-item-padding-y: 0 !important;
     --bs-list-group-item-padding-x: 0 !important
