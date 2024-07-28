@@ -185,7 +185,7 @@ order: 0
 
 
 </style>
-<div>
+<section>
     <div class="gradientBg noPadding">
         <div class="container-xl ">
             <div class="pageTitleContainer">
@@ -231,7 +231,7 @@ order: 0
                         {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px; border-top-left-radius:5px;border-top-right-radius: 5px;" %}
                         {% endif %}
                         <div class="col-12 mx-0 px-0">
-                            <div class="front no-text-selection py-3 member-chip hero-card h-100"
+                            <div class="front no-text-selection py-3 animated bg-light hero-card h-100"
                                  data-title="{{item.title}}" data-description="{{item.description}}"
                                  data-photo="{{item.photo}}"
                                  style="{{border_radius}} ">
@@ -322,12 +322,12 @@ order: 0
 </script>
 {% endif %}
     <div class="container-flex bg-light" >
-        <section class="container-xl content p-0 ">
+        <section class="container-xl  content p-0 ">
             <h3 class="poppins p-3 m-0">
                 Latest news
             </h3>
-            <div class="latest-news rounded-0">
-                <div class="row gy-1 ">
+            <div class="latest-news  rounded-0">
+                <div class="row gy-1 m-0">
                     {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                     {% for post in sorted_posts limit: 5 %}
 
@@ -343,7 +343,7 @@ order: 0
                     {% endif %}
 
                     <a href="{{ post.url }}"
-                       class="col-12 no-underline py-2 p-0 p-md-2 bg-white interaction-bg-color" style="{{border_radius}}">
+                       class="col-12 no-underline py-2 p-0 p-md-2 bg-white interaction-bg-color " style="{{border_radius}}">
                         <div class="d-flex flex-row px-3 px-md-0">
 
                             {% assign formatted_thumb = post.thumbnail | remove: "'" %}
@@ -355,7 +355,7 @@ order: 0
                             {% assign new_url = directory | append: new_filename %}
 
                             <div class="col-9 col-md-10 d-flex flex-column pe-2">
-                                <div class="my-auto py-3 px-3">
+                                <div class="my-auto py-3  px-2 ">
                                     <div class="d-flex w-100 justify-content-between">
                                         <h5 class="text-body m-0 poppins">{{ post.title }}</h5>
                                     </div>
@@ -476,47 +476,52 @@ order: 0
     </section>
     <div class="b-divider"></div>
 
-        {% assign grants = site.data.grants %}
-        {% assign unique_photos = grants | map: 'photo' | uniq %}
-        {% assign unique_grants = "" | split: "" %}
+    {% assign grants = site.data.grants %}
+    {% assign unique_photos = grants | map: 'photo' | uniq %}
+    {% assign unique_grants = "" | split: "" %}
 
-        {% for photo in unique_photos %}
-        {% for grant in grants %}
-        {% if grant.photo == photo %}
-        {% assign unique_grants = unique_grants | push: grant %}
-        {% break %}
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-        {% assign grants = unique_grants %}
-
-
-        {% if grants.size>0 %}
-        <section class="py-3 py-md-5 py-xl-8">
-            <div class="container overflow-hidden">
+    {% for photo in unique_photos %}
+    {% for grant in grants %}
+    {% if grant.photo == photo %}
+    {% assign unique_grants = unique_grants | push: grant %}
+    {% break %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    {% assign grants = unique_grants %}
+    {% if grants.size>10000 %}
+    <div class="container-fluid bg-light">
+        <section class="container-xl  content px-0 pt-0 pb-3 ">
+            <h3 class="poppins p-3 m-0">
+                Grant providers
+            </h3>
+            <div class="container-xl rounded-5 px-0 overflow-hidden ">
                 {% assign chunk_size = 4 %}
                 {% assign chunks = grants | size | divided_by: chunk_size | ceil %}
                 {% for chunk_index in (0..chunks) %}
-                <div class="chunk row gy-4 mb-4">
+                <div class="chunk row gx-1">
                     {% assign start_index = chunk_index | times: chunk_size %}
                     {% assign end_index = start_index | plus: chunk_size | minus: 1 %}
                     {% for grant in grants %}
                     {% if forloop.index0 >= start_index and forloop.index0 <= end_index %}
-                    <div class="grant col-6 col-lg text-center h-100" >
-                        <div class="bg-light rounded px-4 py-3 px-md-6 py-md-4 px-lg-8 py-lg-5 h-100">
-                               <div class="text-secondary grant-logo w-100" style="background-image: url('{{ grant.photo }}')">
+                    <div class="col-6 col-lg">
+                        <div class="bg-white rounded text-center">
+                            <div class="text-secondary grant-logo w-100 poppins">
+                                {{grant.source}}
+                            </div>
                         </div>
-                        </div>
-
                     </div>
                     {% endif %}
                     {% endfor %}
                 </div>
+
                 {% endfor %}
             </div>
         </section>
-        {% endif %}
+    </div>
     <div class="b-divider"></div>
+
+    {% endif %}
 
     <section class="container-xl mb-5 noPadding noMargin">
         <h3 class="poppins px-3 my-4">
