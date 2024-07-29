@@ -578,7 +578,7 @@ order: 0
 
         function getItemsToShow() {
             const width = window.innerWidth;
-            if (width >= 1400) return 5;
+            if (width >= 2200) return 7;
             if (width >= 1200) return 5;
             if (width >= 992) return 5;
             if (width >= 768) return 3;
@@ -623,36 +623,26 @@ order: 0
                 item.classList.remove(...colClasses);
                 item.style.width = '0%';
             });
-
+            const main_image_width = 60;
             for (let i = 0; i < itemsToShow; i++) {
-                const x = ((currentIndex ) + i) % totalItems;
+                const x = ((currentIndex) + i) % totalItems;
                 const item = Array.from(items).find(item => item.getAttribute('data-slide-index') === x.toString());
 
                 item.classList.remove('col-auto');
-                item.classList.remove('mx-1');
+                item.classList.remove('ms-1');
                 if (itemsToShow === 1) {
                     item.classList.add('col-12');
                     item.style.width = '100%';
-                } else if (itemsToShow === 3) {
+                } else {
                     if (i === halfItemsToShow) {
                         item.classList.add('col-6');
-                        item.style.width = '50%';
-                        item.classList.add('mx-1');
+                        item.style.width = `${main_image_width}%`;
+                        item.classList.add('ms-1');
                     } else {
                         item.classList.add('col-3');
-                        item.style.width = '25%';
-                    }
-                } else if (itemsToShow === 5) {
-                    if (i === halfItemsToShow) {
-                        item.classList.add('col-6');
-                        item.style.width = '50%';
-                    } else if (Math.abs(i - halfItemsToShow) === 1) {
-                        item.classList.add('col-2');
-                        item.style.width = '16.66%';
-                        item.classList.add('mx-1');
-                    } else {
-                        item.classList.add('col-1');
-                        item.style.width = '8.33%';
+                        if (i !== 0 && i !== (itemsToShow))
+                            item.classList.add('ms-1');
+                        item.style.width = `${(100 - main_image_width) / (itemsToShow - 1)}%`;
                     }
                 }
             }
