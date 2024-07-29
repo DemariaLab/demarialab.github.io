@@ -158,7 +158,7 @@ order: 5
             {% assign filename = path_parts | last %}
             {% assign directory = formatted_thumb | remove: filename %}
             {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-            '.webp' %}
+            '.webp' | replace: "'", "\\'" %}
             {% assign new_url = directory | append: new_filename %}
 
             <div class="col-md-4 mb-4">

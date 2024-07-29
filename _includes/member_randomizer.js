@@ -2,12 +2,20 @@ $(document).ready(function () {
     const members = [
 	{% assign team = site.profiles | where: "is_alumni", false %}
                 {% for member in team %}
-               {% assign formatted_thumb = member.thumbnail | remove: "'" %}
+               {% assign formatted_thumb = member.thumbnail  %}
+
+                {% assign thumb_size = formatted_thumb.size %}
+                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                {% assign first_char = formatted_thumb | slice: 0 %}
+                {% if first_char == "'" %}
+                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                {% endif %}
+
                                 {% assign path_parts = formatted_thumb | split: '/' %}
                                 {% assign filename = path_parts | last %}
                                 {% assign directory = formatted_thumb | remove: filename %}
                                 {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                                '.webp' %}
+                                '.webp' | replace: "'", "\\'" %}
                                 {% assign new_url = directory | append: new_filename %}
                     { photo: "{{ new_url }}" }{% if forloop.last == false %},{% endif %}
                 {% endfor %}

@@ -10,26 +10,35 @@ order: 6
         {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" | reverse%}
         {% for year in posts_by_year reversed %}
         <div class="latest-news  container-xl px-0 py-0 mb-1 ">
-             <h4 class="poppins py-3 px-3 px-md-3">{{year.name}}
+            <h4 class="poppins py-3 px-3 px-md-3">{{year.name}}
             </h4>
-            <div class="row rounded-5 overflow-hidden news-block">
+            <div class="row g-0 rounded-5 overflow-hidden news-block">
                 {% for post in year.items %}
+
+                {% assign formatted_thumb = post.thumbnail %}
+
+                {% assign thumb_size = formatted_thumb.size %}
+                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                {% assign first_char = formatted_thumb | slice: 0 %}
+                {% if first_char == "'" %}
+                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                {% endif %}
+
+                {% assign path_parts = formatted_thumb | split: '/' %}
+                {% assign filename = path_parts | last %}
+                {% assign directory = formatted_thumb | remove: filename %}
+               {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append: '.webp' | replace: "'", "\\'" %}
+                {% assign new_url = directory | append: new_filename %}
+
                 <a href="{{ post.url }}"
-                   class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %} no-underline py-3 px-2 px-md-3  interaction-bg-color text-current-color bg-white">
+                   class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %} no-underline interaction-bg-color text-current-color bg-white">
                     <div class="d-flex flex-row px-2 px-md-0">
-                        {% assign formatted_thumb = post.thumbnail | remove: "'" %}
-                        {% assign path_parts = formatted_thumb | split: '/' %}
-                        {% assign filename = path_parts | last %}
-                        {% assign directory = formatted_thumb | remove: filename %}
-                        {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                        '.webp' %}
-                        {% assign new_url = directory | append: new_filename %}
-                        <div class="col-9 col-md-10 d-flex flex-column px-2">
-                            <div class="my-auto ">
-                                <div class="d-flex w-100 justify-content-between">
+                        <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
+                            <div class="my-auto px-2 px-md-3 py-3 ">
+                                <div class="d-flex w-100 justify-content-between  ">
                                     <h5 class="mb-1 poppins">{{ post.title }}</h5>
                                 </div>
-                                    <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
+                                <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                             </div>
                         </div>
                         {% assign border_radius_thumbnail = "border-radius: 5px;" %}
@@ -46,12 +55,14 @@ order: 6
                         5px;border-top-left-radius:5px;border-top-right-radius:18px;" %}
                         {% endif %}
                         <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
+
                             <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                 style="{{border_radius_thumbnail}}background-image:url('{{new_url}}');">
+                                 style="{{border_radius_thumbnail}}background-image:url('{{new_url }}');">
                             </div>
                         </div>
                     </div>
                 </a>
+
                 {% endfor %}
             </div>
         </div>

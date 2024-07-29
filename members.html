@@ -17,12 +17,20 @@ order: 2
                 {% for profile in sorted_profiles %}
                 <div class="col-md-4 mb-3">
                     <a href="{{profile.url}}" class=" no-underline text-black ">
-                        {% assign formatted_thumb = profile.thumbnail | remove: "'" %}
+                        {% assign formatted_thumb = profile.thumbnail  %}
+                        {% assign thumb_size = formatted_thumb.size %}
+                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                {% assign first_char = formatted_thumb | slice: 0 %}
+                {% if first_char == "'" %}
+                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                {% endif %}
+
+
                         {% assign path_parts = formatted_thumb | split: '/' %}
                         {% assign filename = path_parts | last %}
                         {% assign directory = formatted_thumb | remove: filename %}
                         {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                        '.webp' %}
+                        '.webp' | replace: "'", "\\'" %}
                         {% assign new_url = directory | append: new_filename %}
                         <div class="">
                             <div style="background-image: url('{{ new_url}}')"
@@ -62,12 +70,18 @@ order: 2
                 {% for profile in sorted_alumni %}
                 <div class="col-md-4  mb-3">
                     <a href="{{profile.url}}" class="no-underline text-black">
-                         {% assign formatted_thumb = profile.thumbnail | remove: "'" %}
+                         {% assign formatted_thumb = profile.thumbnail  %}
+                        {% assign thumb_size = formatted_thumb.size %}
+                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                {% assign first_char = formatted_thumb | slice: 0 %}
+                {% if first_char == "'" %}
+                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                {% endif %}
                         {% assign path_parts = formatted_thumb | split: '/' %}
                         {% assign filename = path_parts | last %}
                         {% assign directory = formatted_thumb | remove: filename %}
                         {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                        '.webp' %}
+                        '.webp' | replace: "'", "\\'" %}
                         {% assign new_url = directory | append: new_filename %}
 
                         <div style="background-image: url('{{ new_url }}')"
