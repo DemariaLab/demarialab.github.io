@@ -552,3 +552,9 @@ nav:hover .underline {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.research-accordion *{
+    --bs-border-width:0!important;
+    --bs-accordion-btn-focus-box-shadow: none!important;
+    --bs-accordion-active-bg:white !important
+}

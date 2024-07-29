@@ -140,13 +140,13 @@ order: 0
     .hero-card {
         cursor: pointer;
         position: relative;
-        padding-left: 0.85em;
-        padding-right: 0.85em;
+        /*padding-left: 0.85em;*/
+        /*padding-right: 0.85em;*/
     }
 
-    .hero-card.active {
-        padding-left: 28px;
-    }
+    /*.hero-card.active {*/
+    /*    padding-left: 28px;*/
+    /*}*/
 
     .showcase-cover {
         position: relative;
@@ -167,18 +167,18 @@ order: 0
         z-index: 0;
     }
 
-    .hero-card.active::after {
-        content: '';
-        position: absolute;
-        left: 10px; /* Adjust the right position as needed */
-        top: 50%;
-        transform: translateY(-50%);
-        width: 20px; /* Adjust width as needed */
-        height: 20px; /* Adjust height as needed */
-        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg height='1024' width='511.825' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.088 512c0-141.5 114.5-256 256-256 141.438 0 256 114.5 256 256s-114.562 256-256 256C114.413 768-0.088 653.5-0.088 512z'/%3E%3C/svg%3E");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+    /*.hero-card.active::after {*/
+    /*    content: '';*/
+    /*    position: absolute;*/
+    /*    left: 10px; !* Adjust the right position as needed *!*/
+    /*    top: 50%;*/
+    /*    transform: translateY(-50%);*/
+    /*    width: 20px; !* Adjust width as needed *!*/
+    /*    height: 20px; !* Adjust height as needed *!*/
+    /*    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg height='1024' width='511.825' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.088 512c0-141.5 114.5-256 256-256 141.438 0 256 114.5 256 256s-114.562 256-256 256C114.413 768-0.088 653.5-0.088 512z'/%3E%3C/svg%3E");*/
+    /*    background-size: contain;*/
+    /*    background-repeat: no-repeat;*/
+    /*}*/
 
     .carousel-item-next, .carousel-item-prev, .carousel-item.active {
         display: flex !important;;
@@ -215,7 +215,7 @@ order: 0
     {% assign hero_accordion = site.data.hero_accordion %}
     {% if hero_accordion.size > 0 %}
     <div class="container-flex">
-        <section class="bg-dark px-3 py-3 p-lg-5 animated showcase-cover ">
+        <section class="bg-dark py-3 p-lg-5 animated showcase-cover px-0 px-lg-3 m-0">
 
             <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
                 <div class="row g-5 d-none d-lg-flex ">
@@ -278,11 +278,11 @@ order: 0
             <div class="d-block d-lg-none my-5 py-5 ">
                 <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
             </div>
-            <div class="accordion front accordion-flush bg-light d-block d-lg-none mt-5 " id="accordionFlush">
+            <div class="accordion research-accordion front accordion-flush  d-block d-lg-none mt-5 overflow-hidden rounded-5 " id="accordionFlush">
                 {% for item in hero_accordion %}
                 {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', '' | replace:
                 '-', '' | replace: '_', '' %}
-                <div class="accordion-item">
+                <div class="accordion-item  {% unless forloop.last %} mb-1 {% endunless %} px-1">
                     <h5 class="accordion-header">
                         <button class="accordion-button collapsed hero-card" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false"
@@ -292,8 +292,9 @@ order: 0
                             {{item.title}}
                         </button>
                     </h5>
-                    <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse"
+                    <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse "
                          data-bs-parent="#accordionFlush">
+    <div class="b-divider"></div>
                         <div class="accordion-body">{{item.description}}
                         </div>
                     </div>
@@ -330,12 +331,12 @@ order: 0
     </script>
     {% endif %}
     <div class="container-flex bg-light">
-        <section class="container-xl  content p-0 ">
+        <section class="container-xl content p-0 ">
             <h3 class="poppins p-3 m-0">
                 Latest news
             </h3>
 
-            <div class="row rounded-5 overflow-hidden news-block">
+            <div class="row g-0 rounded-5 overflow-hidden news-block">
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                 {% for post in sorted_posts limit: 5 %}
 
@@ -407,7 +408,7 @@ order: 0
     <div class="container-fluid py-3" style="background-color: #e2efcf">
         <section class=" container-xl noPadding" id="section2">
             <div class="noPadding">
-                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-3 text-body">
+                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-1 px-lg-3 text-body">
                     Meet the lab members
                 </h3>
                 <a class="no-underline" href="/members/">
@@ -652,7 +653,7 @@ order: 0
                 Our lab in numbers
             </h3>
 
-            <div class="container-xl no-text-selection ">
+            <div class="container-xl no-text-selection p-0 ">
                 <div class="rounded-5 overflow-auto d-flex w-100 ">
                     <div class="row translate-children-y g-1 m-0 w-100" style="display: flex; align-items: stretch">
                         {% assign alumni = site.profiles | where: "is_alumni", "true" %}
