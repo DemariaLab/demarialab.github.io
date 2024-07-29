@@ -552,7 +552,12 @@ order: 0
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
                     <div class="slideshow-item animated-relaxed bg-dark"  data-slide-index="{{forloop.index0}}">
-                        <div   class="w-100 h-100 float-start " style="opacity:0.3;filter: blur(10px);background: black  center url('{{ latest_picture_path }}')"></div>
+                        <div   class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);
+                        background-size:cover;
+                        background-color:black;
+                         background-position: center;
+                          background-repeat: no-repeat;
+                           background-image: url('{{ latest_picture_path }}');"></div>
                         <div class="rounded position-relative"
                              style="z-index:1; background: no-repeat center url('{{ latest_picture_path }}'); height:50vh; background-size: auto 50vh ">
                         </div>
@@ -562,7 +567,7 @@ order: 0
             </div>
         </div>
 
-        <div class="container-xl p-0 m-0">
+        <div class="container-xl p-0 ">
             <a href="/gallery/" class="no-underline no-text-selection">
                 <div class="d-flex w-100 justify-content-end  pt-3">
                     <h4 class="mb-1 ms-auto poppins ">View all → </h4>
