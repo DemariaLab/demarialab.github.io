@@ -3,6 +3,7 @@ import os
 
 from python_generator import constants
 from python_generator.utils import reduce_images_in_dir
+from python_generator.utils import blur_images_in_dir
 
 
 def main(args_dict: dict):
@@ -15,7 +16,6 @@ def main(args_dict: dict):
     from python_generator.hero_accordion_processor import process as process_hero
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
-    print("Outputting to", args_dict[constants.ARG_SITE_DIR])
 
     process_publications(args_dict)
     process_members(args_dict)
@@ -30,6 +30,8 @@ def main(args_dict: dict):
     reduce_images_in_dir(os.path.join(site_dir, constants.GALLERY_DIR))
     reduce_images_in_dir(os.path.join(site_dir, "assets", "posts"))
     reduce_images_in_dir(os.path.join(site_dir, "assets", "members"))
+
+    blur_images_in_dir(os.path.join(site_dir, "gallery"))
 
 
 def run():

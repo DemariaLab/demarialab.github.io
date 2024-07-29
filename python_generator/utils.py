@@ -36,6 +36,35 @@ def safe_file_name(input_string, replacement_char='_'):
 import os
 from PIL import Image, ImageEnhance
 
+from PIL import Image, ImageFilter
+import os
+
+
+def blur_images_in_dir(input_dir, blur_radius=20, reduced_size=(64, 64)):
+    if not os.path.isdir(input_dir):
+        return
+
+    # Valid image extensions
+    valid_extensions = ('.png', '.jpg', '.jpeg', '.webp')
+
+    # Loop through all files in the directory
+    for filename in os.listdir(input_dir):
+        # Check if the file has a valid image extension
+        if not filename.startswith("blurred_") and not filename.startswith("reduced_") and filename.lower().endswith(
+                valid_extensions):
+            filepath = os.path.join(input_dir, filename)
+            # Open an image file
+            with Image.open(filepath) as img:
+                # Apply blur
+                blurred_img = img.filter(ImageFilter.GaussianBlur(blur_radius))
+                # Reduce the size of the image
+                reduced_blurred_img = blurred_img.resize(reduced_size)
+                # Prepare the output file path
+                blurred_filename = f'blurred_{os.path.splitext(filename)[0]}.webp'
+                blurred_filepath = os.path.join(input_dir, blurred_filename)
+                # Save the blurred and reduced image in WebP format with medium quality
+                reduced_blurred_img.save(blurred_filepath, format='WEBP', quality=50)
+
 
 def reduce_images_in_dir(input_dir, sharpness_factor=0.6):
     if not os.path.isdir(input_dir):
@@ -91,6 +120,8 @@ def read_published_google_sheet(sheet_id):
                 "_separated_by_", "").lower()
             if "photo" in column_name and "additional" not in column_name:
                 column_name = "photo"
+            if column_name.lower().startswith("keyword"):
+                column_name = "keyword"
             if column_name:
                 record[column_name] = extract_cell_data(cell)
         data.append(record)
