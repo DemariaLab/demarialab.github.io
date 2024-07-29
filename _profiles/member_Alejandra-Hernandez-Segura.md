@@ -6,7 +6,7 @@ last_name_initials: Hernandez-Segura A
 role: "PhD student"
 date_joined: "2016-02-01"
 date_leaving: "2019-01-31"
-keywords: "heterogeneity of senescence"
+keywords: "None"
 country: "Mexico 🇲🇽"
 qualification: "MSc"
 

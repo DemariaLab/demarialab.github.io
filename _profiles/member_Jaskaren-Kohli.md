@@ -6,7 +6,7 @@ last_name_initials: Kohli J
 role: "PostDoc"
 date_joined: "2017-01-01"
 date_leaving: "2020-12-31"
-keywords: "nevi; melanocytes"
+keywords: "None"
 country: "the United Kingdom 🇬🇧"
 qualification: "PhD"
 
