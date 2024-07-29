@@ -492,40 +492,6 @@ order: 0
 
     {% endif %}
 
-
-    <style>
-        .slideshow-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 50%;
-            aspect-ratio: 1;
-            text-align: center;
-            line-height: 0.5rem;
-        }
-
-        .slideshow-button.prev {
-            left: 1rem;
-        }
-
-        .slideshow-button.next {
-            right: 1rem;
-        }
-
-        .slideshow-item {
-            overflow: hidden;
-        }
-
-        .slideshow-inner {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-    </style>
     <div class="container-fluid p-3 m-0">
         <div class="container-xl p-0 m-0">
             <h3 class="poppins px-0 px-lg-3 pb-3 m-0">
@@ -534,9 +500,9 @@ order: 0
         </div>
         <div id="carouselPhotos" class="carousel slide container-fluid p-0 m-0  rounded-5 overflow-hidden">
             <div class="photos-container m-0 p-0 w-100  position-relative">
-                                <button class="slideshow-button p-3 p-lg-5 prev" onclick="prevSlide()">❮</button>
+                <button class="slideshow-button p-3 p-lg-5 prev" onclick="prevSlide()">❮</button>
                 <button class="slideshow-button p-4 p-lg-5 next" onclick="nextSlide()">❯</button>
-                <div class="slideshow-inner">
+                <div class="slideshow-inner d-flex flex-nowrap">
                     {% assign gallery_files = site.static_files | sort: 'path' | reverse %}
                     {% assign latest_pictures = '' | split: ',' %}
                     {% for file in gallery_files %}
@@ -552,11 +518,8 @@ order: 0
                     {% assign latest_pictures_main = latest_pictures | slice: 0, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="slideshow-item cursor-pointer animated-relaxed bg-dark rounded" onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
-<!--                        <div class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);-->
-<!--                        background-color:black;-->
-<!--                         background-position: center;-->
-<!--                           background-image: url('{{ latest_picture_path }}');"></div>-->
+                    <div class="slideshow-item cursor-pointer animated-relaxed bg-dark rounded overflow-hidden"
+                         onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
                         <div class="rounded position-relative"
                              style="z-index:1; background: no-repeat center url('{{ latest_picture_path }}'); height:50vh; background-size: auto 50vh ">
                         </div>
@@ -565,7 +528,6 @@ order: 0
                 </div>
             </div>
         </div>
-
         <div class="container-xl p-0 ">
             <a href="/gallery/" class="no-underline no-text-selection">
                 <div class="d-flex w-100 justify-content-end  pt-3">
@@ -573,91 +535,7 @@ order: 0
                 </div>
             </a>
         </div>
-
     </div>
-    <script>
-        function getItemsToShow() {
-            const width = window.innerWidth;
-            if (width >= 2199) return 7;
-            if (width >= 1200) return 5;
-            if (width >= 992) return 5;
-            if (width >= 768) return 3;
-            return 1;
-        }
-        let currentIndex = 0;
-        function scrollToSlide(index_abs) {
-            showSlides(index_abs)
-        }
-        function showSlides(index) {
-            if(window.isAnimating){
-                return
-            }
-            window.isAnimating=true;
-            const items = document.querySelectorAll('div.slideshow-inner div.slideshow-item');
-            const totalItems = items.length;
-            let itemsToShow = getItemsToShow();
-            if (totalItems <= itemsToShow) {
-                itemsToShow = Math.floor(itemsToShow / 2)
-                if (itemsToShow % 2 === 0) {
-                    itemsToShow += 1
-                }
-            }
-            const halfItemsToShow = Math.floor(itemsToShow / 2);
-            if (index < 0) {
-                currentIndex = totalItems -Math.abs(index)
-            } else {
-                currentIndex = index;
-            }
-            const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
-            items.forEach((item, idx) => {
-                item.classList.add('col-auto');
-                item.classList.remove(...colClasses);
-                item.classList.remove('me-1');
-                item.classList.add('me-1');
-                item.style.width = '0%';
-            });
-            const main_image_width = 60;
-            const actual_main_item_index= (currentIndex % totalItems)
-            const itemMain = Array.from(items).find(item => item.getAttribute('data-slide-index') ===actual_main_item_index.toString());
-            if (itemsToShow === 1)
-                itemMain.style.width = '100%';
-            else
-                itemMain.style.width = `${main_image_width}%`;
-
-            const sideItems = Array.from(items).filter(item => {
-                const slideIndex = parseInt(item.getAttribute('data-slide-index'));
-                let lower_limit = actual_main_item_index-halfItemsToShow
-                const upper_limit =  actual_main_item_index+halfItemsToShow - Math.min(lower_limit,0)
-                if (upper_limit >= totalItems) {
-                    lower_limit = Math.min(totalItems, upper_limit) - itemsToShow
-                }
-                const isMain=slideIndex === actual_main_item_index
-                const is_side_item=slideIndex >= lower_limit && slideIndex <= upper_limit && !isMain;
-                if(!is_side_item && !isMain){
-                    item.classList.remove('me-1');
-                    item.style.width="0%"
-                }
-                return is_side_item
-            });
-            sideItems.forEach((item, idx) => {
-                item.style.width = `${(100-main_image_width)/sideItems.length}%`;
-            });
-            setTimeout(() => {
-                window.isAnimating = false;
-            }, 500);
-        }
-
-        function nextSlide() {
-            showSlides(currentIndex + 1);
-        }
-  function prevSlide() {
-            showSlides(currentIndex - 1);
-        }
-
-        window.addEventListener('resize', () => showSlides(currentIndex));
-        showSlides(currentIndex);
-    </script>
-
 
     <div class="container-fluid " style="background-color: #ffd6d3">
         <section class="container-xl  content px-0 pt-0 pb-3 ">
@@ -777,6 +655,7 @@ order: 0
             </div>
         </section>
     </div>
+    <script src="/assets/js/gallery_script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

@@ -533,15 +533,41 @@ nav:hover .underline {
     z-index: 50;
     position: relative;
 }
+
 .news-block {
     --bs-list-group-item-padding-y: 0 !important;
     --bs-list-group-item-padding-x: 0 !important
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
+
 .text-orange {
     color: var(--bs-primary);
+}
+
+.slideshow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    text-align: center;
+    line-height: 0.5rem;
+}
+
+.slideshow-button.prev {
+    left: 1rem;
+}
+
+.slideshow-button.next {
+    right: 1rem;
 }
 
 .bg-orange {
