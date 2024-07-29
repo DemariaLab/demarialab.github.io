@@ -40,7 +40,7 @@ from PIL import Image, ImageFilter
 import os
 
 
-def blur_images_in_dir(input_dir, blur_radius=20, reduced_size=(64, 64)):
+def blur_images_in_dir(input_dir, blur_radius=30, reduced_size=(56, 56)):
     if not os.path.isdir(input_dir):
         return
 
