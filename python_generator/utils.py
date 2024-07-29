@@ -121,7 +121,7 @@ def read_published_google_sheet(sheet_id):
             if "photo" in column_name and "additional" not in column_name:
                 column_name = "photo"
             if column_name.lower().startswith("keyword"):
-                column_name = "keyword"
+                column_name = "keywords"
             if column_name:
                 record[column_name] = extract_cell_data(cell)
         data.append(record)

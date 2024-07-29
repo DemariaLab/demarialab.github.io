@@ -110,18 +110,20 @@ order: 5
 </style>
 {% assign images = site.static_files | sort: 'path' | reverse %}
 {% assign years = "" %}
-    {% for image in images %}
-    {% if image.path contains 'gallery' %}
-    {% assign filename_parts = image.name | split: '-' %}
-    {% if filename_parts.size >= 4 %}
-    {% assign year = filename_parts[0] | replace: 'reduced_','' %}
-    {% unless years contains year %}
-    {% assign years = years | append: year | append: "," %}
-    {% endunless %}
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-    {% assign years = years | split: ',' | sort | reverse %}
+{% for image in images %}
+{% unless image.path contains 'reduced_' or image.path contains 'blurred_'  %}
+{% if image.path contains 'gallery'  %}
+{% assign filename_parts = image.name | split: '-' %}
+{% if filename_parts.size >= 4 %}
+{% assign year = filename_parts[0] | replace: 'reduced_','' %}
+{% unless years contains year %}
+{% assign years = years | append: year | append: "," %}
+{% endunless %}
+{% endif %}
+{% endif %}
+{% endunless %}
+{% endfor %}
+{% assign years = years | split: ',' | sort | reverse %}
 
 <div class="container-fluid bg-light py-3">
 
@@ -138,14 +140,19 @@ order: 5
                 {% assign full_image_path = site.baseurl | append: image.path %}
                 {% assign formatted_thumb = full_image_path %}
                 {% assign path_parts = formatted_thumb | split: '/' %}
-                {% assign filename = path_parts | last %}
+                {% assign filename = path_parts | last | remove: "reduced_" | remove: "blurred_" %}
                 {% assign directory = formatted_thumb | remove: filename %}
                 {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
                 '.webp' | replace: "'", "\\'" %}
-                {% assign new_url = directory | append: new_filename %}
-                {% assign new_url = new_url | replace: "'", "%27" %}
+                {% assign new_url = directory | append: new_filename | replace: "'", "%27" %}
+                {% assign new_url_blurred = new_url | replace: "reduced_", "blurred_" %}
                 <div class="slideshow-item cursor-pointer animated-relaxed bg-black rounded overflow-hidden"
                      onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
+                                            <div class="w-100 h-100 float-start " style="opacity:0.4;
+                                            background-color:black;
+                                            background-size:cover;
+                                             background-position: center;
+                                               background-image: url('{{ new_url_blurred }}');"></div>
                     <div class="rounded position-relative"
                          style="z-index:1; background: no-repeat center url('{{ new_url }}'); height:80vh; background-size: auto 80vh ">
                     </div>
@@ -181,7 +188,7 @@ order: 5
             {% assign full_image_path = site.baseurl | append: image.path %}
             {% assign formatted_thumb = full_image_path %}
             {% assign path_parts = formatted_thumb | split: '/' %}
-            {% assign filename = path_parts | last %}
+            {% assign filename = path_parts | last | remove: "reduced_" | remove: "blurred_" %}
             {% assign directory = formatted_thumb | remove: filename %}
             {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
             '.webp' | replace: "'", "\\'" %}
