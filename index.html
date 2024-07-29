@@ -551,8 +551,8 @@ order: 0
                     {% assign latest_pictures_main = latest_pictures | slice: 0, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="slideshow-item animated-relaxed bg-dark"  data-slide-index="{{forloop.index0}}">
-                        <div   class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);
+                    <div class="slideshow-item animated-relaxed bg-dark rounded" data-slide-index="{{forloop.index0}}">
+                        <div class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);
                         background-color:black;
                          background-position: center;
                            background-image: url('{{ latest_picture_path }}');"></div>
