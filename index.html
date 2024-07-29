@@ -283,7 +283,7 @@ order: 0
                 {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', '' | replace:
                 '-', '' | replace: '_', '' %}
                 <div class="accordion-item  {% unless forloop.last %} mb-1 {% endunless %} px-1">
-                    <h5 class="accordion-header">
+                    <h5 class="accordion-header poppins">
                         <button class="accordion-button collapsed hero-card" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false"
                                 aria-controls="flush-collapse{{cleaned_title}}" data-title="{{item.title}}"
