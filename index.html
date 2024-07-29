@@ -553,10 +553,9 @@ order: 0
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
                     <div class="slideshow-item animated-relaxed bg-dark"  data-slide-index="{{forloop.index0}}">
                         <div   class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);
-                        background-size:cover;
+                        background-size:200%;
                         background-color:black;
                          background-position: center;
-                          background-repeat: no-repeat;
                            background-image: url('{{ latest_picture_path }}');"></div>
                         <div class="rounded position-relative"
                              style="z-index:1; background: no-repeat center url('{{ latest_picture_path }}'); height:50vh; background-size: auto 50vh ">
