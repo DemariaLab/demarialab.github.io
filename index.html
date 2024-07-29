@@ -552,7 +552,7 @@ order: 0
                     {% assign latest_pictures_main = latest_pictures | slice: 0, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="slideshow-item animated-relaxed bg-dark rounded" data-slide-index="{{forloop.index0}}">
+                    <div class="slideshow-item cursor-pointer animated-relaxed bg-dark rounded" onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
 <!--                        <div class="w-100 h-100 float-start " style="opacity:0.4;filter: blur(20px);-->
 <!--                        background-color:black;-->
 <!--                         background-position: center;-->
@@ -576,7 +576,6 @@ order: 0
 
     </div>
     <script>
-
         function getItemsToShow() {
             const width = window.innerWidth;
             if (width >= 2199) return 7;
@@ -585,22 +584,16 @@ order: 0
             if (width >= 768) return 3;
             return 1;
         }
-
         let currentIndex = 0;
-
         function scrollToSlide(index_abs) {
-            // const items = document.querySelectorAll('.slideshow-item');
-            // const itemsToShow = getItemsToShow();
-            // showSlides(1 + index_abs - Math.round(itemsToShow / 2))
+            showSlides(index_abs)
         }
-
         function showSlides(index) {
             if(window.isAnimating){
                 return
             }
             window.isAnimating=true;
-            const parent = document.querySelector('.slideshow-inner');
-            const items = document.querySelectorAll('.slideshow-item');
+            const items = document.querySelectorAll('div.slideshow-inner div.slideshow-item');
             const totalItems = items.length;
             let itemsToShow = getItemsToShow();
             if (totalItems <= itemsToShow) {
@@ -610,13 +603,11 @@ order: 0
                 }
             }
             const halfItemsToShow = Math.floor(itemsToShow / 2);
-
-            if(index<0){
-                currentIndex=0
-            }else{
-            currentIndex = index;
+            if (index < 0) {
+                currentIndex = totalItems -Math.abs(index)
+            } else {
+                currentIndex = index;
             }
-
             const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
             items.forEach((item, idx) => {
                 item.classList.add('col-auto');
@@ -635,32 +626,25 @@ order: 0
 
             const sideItems = Array.from(items).filter(item => {
                 const slideIndex = parseInt(item.getAttribute('data-slide-index'));
-                const lower_limit = actual_main_item_index-halfItemsToShow
-                const upper_limit = actual_main_item_index+halfItemsToShow - Math.min(lower_limit,0)
+                let lower_limit = actual_main_item_index-halfItemsToShow
+                const upper_limit =  actual_main_item_index+halfItemsToShow - Math.min(lower_limit,0)
+                if (upper_limit >= totalItems) {
+                    lower_limit = Math.min(totalItems, upper_limit) - itemsToShow
+                }
                 const isMain=slideIndex === actual_main_item_index
                 const is_side_item=slideIndex >= lower_limit && slideIndex <= upper_limit && !isMain;
-                console.log("slideIndex", slideIndex, "lower_limit", lower_limit, "upper_limit", upper_limit,"is_side_item",is_side_item)
                 if(!is_side_item && !isMain){
                     item.classList.remove('me-1');
                     item.style.width="0%"
                 }
                 return is_side_item
             });
-
             sideItems.forEach((item, idx) => {
                 item.style.width = `${(100-main_image_width)/sideItems.length}%`;
             });
-
             setTimeout(() => {
-                //  items.forEach((item, idx) => {
-                //     if (item.style.width === '0%') {
-                //         parent.appendChild(item)
-                //     }
-                // });
                 window.isAnimating = false;
             }, 500);
-
-
         }
 
         function nextSlide() {
