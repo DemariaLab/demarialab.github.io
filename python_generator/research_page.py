@@ -29,7 +29,7 @@ permalink: /research/
 
 
 def process(args):
-    passr
+    pass
     # try:
     #     print("Processing research document")
     #     site_dir = args[constants.ARG_SITE_DIR]
