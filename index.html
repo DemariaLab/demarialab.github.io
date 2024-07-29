@@ -502,7 +502,7 @@ order: 0
             color: white;
             border: none;
             cursor: pointer;
-            z-index: 1;
+            z-index: 10;
             border-radius: 50%;
             aspect-ratio: 1;
             text-align: center;
@@ -551,9 +551,10 @@ order: 0
                     {% assign latest_pictures_main = latest_pictures | slice: 0, 8 %}
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
-                    <div class="slideshow-item animated-relaxed " data-slide-index="{{forloop.index0}}">
-                        <div class="rounded "
-                             style="background: #242527 no-repeat center url('{{ latest_picture_path }}'); height:25rem; background-size: auto 25rem ">
+                    <div class="slideshow-item animated-relaxed bg-dark"  data-slide-index="{{forloop.index0}}">
+                        <div   class="w-100 h-100 float-start " style="opacity:0.3;filter: blur(10px);background: black  center url('{{ latest_picture_path }}')"></div>
+                        <div class="rounded position-relative"
+                             style="z-index:1; background: no-repeat center url('{{ latest_picture_path }}'); height:25rem; background-size: auto 25rem ">
                         </div>
                     </div>
                     {% endfor %}
@@ -590,6 +591,10 @@ order: 0
         }
 
         function showSlides(index) {
+            if(window.isAnimating){
+                return
+            }
+            window.isAnimating=true;
             const parent = document.querySelector('.slideshow-inner');
             const items = document.querySelectorAll('.slideshow-item');
             const totalItems = items.length;
@@ -602,13 +607,11 @@ order: 0
             }
             const halfItemsToShow = Math.floor(itemsToShow / 2);
 
-            console.log("totalItems:",totalItems)
             if(index<0){
                 currentIndex=0
             }else{
             currentIndex = index;
             }
-
 
             const colClasses = ['col-1', 'col-2', 'col-3', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-10', 'col-11', 'col-12'];
 
@@ -621,7 +624,6 @@ order: 0
             for (let i = 0; i < itemsToShow; i++) {
                 const x = ((currentIndex ) + i) % totalItems;
                 const item = Array.from(items).find(item => item.getAttribute('data-slide-index') === x.toString());
-                console.log("index",index, "currentIndex", currentIndex, currentIndex % itemsToShow,"x",x,"targetItem",item)
 
                 item.classList.remove('col-auto');
                 item.classList.remove('mx-1');
@@ -657,6 +659,7 @@ order: 0
                 if (item.style.width === '0%') {
                     parent.appendChild(item)
                 }
+                window.isAnimating=false;
             });
             },500);
 
