@@ -16,30 +16,39 @@ layout: modal_post
     .member-info svg {
         opacity: 0.5;
     }
-    .container-fluid{
-        --bs-gutter-x:0 !important
+
+    .container-fluid {
+        --bs-gutter-x: 0 !important
+    }
+
+    .figure-caption {
+        display: none;
     }
 </style>
 <div>
-    <div class="container-xl noPadding px-3">
+    <div class="container-xl noPadding  px-0 px-md-3">
         <div class="double-column my-3 d-block d-md-flex">
             <div class="col d-flex align-items-center">
-                <div class="image-content w-100">
-                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}" class="rounded-4 "/>
+                <div class="image-content w-100 ">
+                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}" class="border-0"/>
                 </div>
             </div>
             <div class="col ms-0 ms-md-3 mb-0 mb-lg-4">
-                <div class="sticky-title">
-                    <h2 class="poppins">{{ page.name }}<p class="text-black-50 d-inline">{% if page.is_alumni %} {% else
+                <div class="sticky-title ">
+                    <h2 class="poppins px-3 px-lg-0">{{ page.name }}<p class="text-black-50 d-inline">{% if
+                        page.is_alumni %} {% else
                         %}, {{page.qualification}}{% endif %}</p></h2>
-                    <p class="card-text">
+                    <p class="card-text px-3 px-lg-0">
                         {% if page.is_alumni %} {% else %}{{ page.role }}<br>
                         {% endif %}
                         {% if page.is_alumni %}
-                    <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
+                    <div class="px-3 px-lg-0">
+                        <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
+                    </div>
+
                     <br>
                     {% endif %}
-                    <ul class="member-info list-unstyled">
+                    <ul class="member-info list-unstyled px-3 px-lg-0">
                         {% if page.date_joined and page.is_alumni == false %}
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
@@ -78,22 +87,23 @@ layout: modal_post
                             From {{page.country}}
                         </li>
                         {% endif %}
-                        </p>
                     </ul>
                     {% if page.keywords %}
                     {% assign cleaned_keywords = page.keywords | replace: 'and', ',' %}
                     {% assign keywords = cleaned_keywords | split: ';' %}
-                    {% for keyword in keywords %}
-                    {% assign keyword = keyword | strip %}
-                    {% if keyword != ' ' %}
-                    <div class="badge rounded-pill gradientBg text-black mt-1 mb-1 mr-1">{{ keyword }}</div>
-                    {% endif %}
-                    {% endfor %}
+                    <div class="px-3 px-lg-0  ">
+                        {% for keyword in keywords %}
+                        {% assign keyword = keyword | strip %}
+                        {% if keyword != ' ' %}
+                        <div class="badge rounded-pill gradientBg text-black mt-1 mb-1 mr-1">{{ keyword }}</div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                     {% endif %}
                     {% if page.biography %}
                     <div class="text-content ">
                         <div class="container-xl noPadding mt-3">
-                            <div class="quote-block border-semi-transparent rounded-1em card p-3">
+                            <div class="quote-block  rounded-5 bg-light p-3">
                                 <div class="quote-icon"></div>
                                 <div>
                                     <p class="quote-text">
@@ -108,11 +118,14 @@ layout: modal_post
             </div>
         </div>
     </div>
+
+
     {% if page.publications %}
     {% assign publication_ids = page.publications | split: "; " %}
     <div class="container-fluid pb-3 bg-light m-0">
         <div class="container-xl mb-5 px-2 px-lg-3">
-            <h4 class="poppins py-3 px-2 px-md-3">Publications with the lab <span class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
+            <h4 class="poppins py-3 px-2 px-md-3">Publications with the lab <span
+                    class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
             </h4>
             {% assign publications_all = site.data.publications_all %}
             {% assign published_articles = "" %}
@@ -130,8 +143,8 @@ layout: modal_post
                 {% for article in articles %}
                 {% assign article_data = article | split: "||" %}
 
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-                   class="col-12 no-underline py-3 px-2 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %}">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
+                   class="col-12 no-underline py-3 px-3 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %}">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 poppins">{{ article_data[0] }}</h5>
                         <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>

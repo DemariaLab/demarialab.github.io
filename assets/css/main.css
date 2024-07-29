@@ -229,9 +229,7 @@ html {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-}
-
-.quote-block {
+    opacity: 0.7;
 }
 
 .quote-text {
@@ -502,9 +500,11 @@ a .nav-item.active {
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-.translate-children-y div{
+
+.translate-children-y div {
     transform: translateY(-0.075rem);
 }
+
 .animated {
     transition: all 0.25s ease-in-out;
 }
@@ -553,8 +553,10 @@ nav:hover .underline {
     background-repeat: no-repeat;
 }
 
-.research-accordion *{
-    --bs-border-width:0!important;
-    --bs-accordion-btn-focus-box-shadow: none!important;
-    --bs-accordion-active-bg:white !important
+.research-accordion * {
+    --bs-border-width: 0 !important;
+    --bs-accordion-btn-focus-box-shadow: none !important;
+    --bs-accordion-active-bg: white !important;
+    --bs-border-color: transparent !important;
+    --bs-accordion-border-color: transparent !important;
 }

@@ -140,13 +140,8 @@ order: 0
     .hero-card {
         cursor: pointer;
         position: relative;
-        /*padding-left: 0.85em;*/
-        /*padding-right: 0.85em;*/
     }
 
-    /*.hero-card.active {*/
-    /*    padding-left: 28px;*/
-    /*}*/
 
     .showcase-cover {
         position: relative;
@@ -166,8 +161,11 @@ order: 0
         pointer-events: none;
         z-index: 0;
     }
+ .hero-card-indicator{
+     position: relative;
+ }
 
-    .hero-card.active::after {
+    .hero-card-indicator.active::after {
         content: '';
         position: absolute;
         left: -15px; /* Adjust the right position as needed */
@@ -232,7 +230,7 @@ order: 0
                             border-top-left-radius:5px;border-top-right-radius: 5px;" %}
                             {% endif %}
                             <div class="col-12 mx-0 px-0">
-                                <div class="front no-text-selection py-3 px-3 animated bg-light hero-card h-100"
+                                <div class="front no-text-selection py-3 px-3 animated bg-light hero-card hero-card-indicator h-100"
                                      data-title="{{item.title}}" data-description="{{item.description}}"
                                      data-photo="{{item.photo}}"
                                      style="{{border_radius}} ">
@@ -277,13 +275,25 @@ order: 0
             <div class="d-block d-lg-none my-5 py-5 ">
                 <h2 class="poppins showcase-title text-white front text-center">Our research</h2>
             </div>
-            <div class="accordion research-accordion front accordion-flush  d-block d-lg-none mt-5 overflow-hidden rounded-5 " id="accordionFlush">
+            <div class="accordion research-accordion front accordion-flush d-block d-lg-none mt-5 " id="accordionFlush">
                 {% for item in hero_accordion %}
                 {% assign cleaned_title = item.title | replace: ' ', '' | replace: ',', '' | replace: '.', '' | replace:
                 '-', '' | replace: '_', '' %}
-                <div class="accordion-item  {% unless forloop.last %} mb-1 {% endunless %} px-1 py-2 rounded">
+
+                {% assign border_radius = "border-radius: 5px" %}
+                {% if forloop.first %}
+                {% assign border_radius = "border-top-left-radius:var(--bs-border-radius-xxl);border-top-right-radius: var(--bs-border-radius-xxl);
+                border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                {% endif %}
+                {% if forloop.last %}
+                {% assign border_radius = "border-bottom-left-radius:var(--bs-border-radius-xxl);border-bottom-right-radius: var(--bs-border-radius-xxl);
+                border-top-left-radius:5px;border-top-right-radius: var(--bs-border-radius);" %}
+                {% endif %}
+
+
+                <div class="accordion-item  {% unless forloop.last %} mb-1 {% endunless %} px-1 py-2 " style="{{border_radius}}">
                     <h5 class="accordion-header poppins px-1">
-                        <button class="accordion-button collapsed hero-card p-2" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed hero-card p-2 bg-transparent" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false"
                                 aria-controls="flush-collapse{{cleaned_title}}" data-title="{{item.title}}"
                                 data-description="{{item.description}}"
@@ -293,7 +303,7 @@ order: 0
                     </h5>
                     <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse"
                          data-bs-parent="#accordionFlush">
-                        <div class="b-divider mt-1"></div>
+                        <div class="b-divider "></div>
                         <div class=" px-1">
                             <div class="accordion-body p-2">{{item.description}}
                             </div>
@@ -341,19 +351,19 @@ order: 0
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                 {% for post in sorted_posts limit: 5 %}
 
-                {% assign border_radius = "border-radius: 5px" %}
-                {% assign border_radius_thumbnail = "border-radius: 5px" %}
+                {% assign border_radius = "border-radius: var(--bs-border-radius)" %}
+                {% assign border_radius_thumbnail = "border-radius: var(--bs-border-radius)" %}
                 {% if forloop.first %}
                 {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px;
-                border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
-                {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 18px;
-                border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
+                {% assign border_radius_thumbnail = "border-top-left-radius: var(--bs-border-radius);border-top-right-radius: 18px;
+                border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
                 {% endif %}
                 {% if forloop.last %}
                 {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;
-                border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
                 {% assign border_radius_thumbnail = "border-bottom-right-radius: 18px;border-bottom-left-radius:
-                5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
                 {% endif %}
                 {% assign formatted_thumb = post.thumbnail  %}
                 {% assign thumb_size = formatted_thumb.size %}
@@ -379,18 +389,18 @@ order: 0
                                 <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                             </div>
                         </div>
-                        {% assign border_radius_thumbnail = "border-radius: 5px;" %}
+                        {% assign border_radius_thumbnail = "border-radius: var(--bs-border-radius);" %}
                         {% if forloop.first %}
-                        {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 18px;
-                        border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
+                        {% assign border_radius_thumbnail = "border-top-left-radius: var(--bs-border-radius);border-top-right-radius: 18px;
+                        border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
                         {% endif %}
                         {% if forloop.last %}
                         {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
+                        var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
                         {% endif %}
                         {% if forloop.last and forloop.first %}
                         {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        5px;border-top-left-radius:5px;border-top-right-radius:18px;" %}
+                        var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius:18px;" %}
                         {% endif %}
                         <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
                             <div class="news-thumbnail w-100 border-semi-transparent my-auto"

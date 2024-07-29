@@ -30,7 +30,7 @@ layout: default
         padding: 0;
     }
 </style>
-<div class="container-xl ">
+<div class="container-xl px-3 ">
     <nav class="navbar mt-3">
         <button onclick="window.location.href='{% if page.role  %}/members/{% else %}/news/{% endif %}';"
                 class="navbar-toggler " type="button">
@@ -50,65 +50,4 @@ layout: default
 <div class="container-fluid blog">
     {{ content }}
 </div>
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div id="carouselExample" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-inner">
-                        <!-- Carousel items will be populated dynamically -->
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var images = document.querySelectorAll('.blog img');
-        var modalBody = document.querySelector('#imageModal .carousel-inner');
-        var carousel = document.querySelector('#imageModal .carousel');
-        images.forEach(function (img, index) {
-            img.setAttribute('data-bs-toggle', 'modal');
-            img.setAttribute('data-bs-target', '#imageModal');
-            img.setAttribute('data-bs-slide-to', index.toString());
-            var carouselItem = document.createElement('div');
-            carouselItem.classList.add('carousel-item');
-            if (index === 0) {
-                carouselItem.classList.add('active');
-            }
-            var imgClone = img.cloneNode(true);
-            imgClone.classList.remove('img-fluid');
-            imgClone.classList.add('d-block', 'w-100');
-            carouselItem.appendChild(imgClone);
-            modalBody.appendChild(carouselItem);
-            img.addEventListener('click', function () {
-                var activeItem = document.querySelector('#imageModal .carousel-item.active');
-                if (activeItem) {
-                    activeItem.classList.remove('active');
-                }
-                carouselItem.classList.add('active');
-                var carouselInstance = new bootstrap.Carousel(carousel);
-                carouselInstance.to(index);
-            });
-        });
-        var imageModal = document.getElementById('imageModal');
-        var carousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
-            interval: false, // Disable auto sliding
-            keyboard: true, // Enable keyboard navigation
-        });
-        imageModal.addEventListener('show.bs.modal', function () {
-            carousel.to(0); // Reset carousel to first slide when modal is shown
-        });
-    });
-</script>
