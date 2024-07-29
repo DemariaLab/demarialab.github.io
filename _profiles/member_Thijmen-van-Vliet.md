@@ -6,7 +6,7 @@ last_name_initials: Vliet T
 role: "PhD student"
 date_joined: "2016-09-01"
 date_leaving: "2020-08-31"
-keywords: "None"
+keywords: "hypoxia; hypoxia compounds"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"
 

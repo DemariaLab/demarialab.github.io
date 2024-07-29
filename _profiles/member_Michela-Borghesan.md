@@ -6,7 +6,7 @@ last_name_initials: Borghesan M
 role: "PostDoc"
 date_joined: "2019-01-01"
 date_leaving: "2021-06-30"
-keywords: "None"
+keywords: "calcium signaling"
 country: "Italy 🇮🇹"
 qualification: "PhD"
 

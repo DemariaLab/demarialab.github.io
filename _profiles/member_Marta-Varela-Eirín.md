@@ -6,7 +6,7 @@ last_name_initials: Varela-Eirin M
 role: "PostDoc"
 date_joined: "2019-11-01"
 date_leaving: "2022-06-29"
-keywords: "None"
+keywords: "osteoarthritis; purinergic signaling; dietary interventions"
 country: "Spain 🇪🇸"
 qualification: "PhD"
 
