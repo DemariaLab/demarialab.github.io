@@ -144,7 +144,7 @@ layout: modal_post
                 {% assign article_data = article | split: "||" %}
 
                 <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-                   class="col-12 no-underline py-3 px-3 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %}">
+                   class="col-12 no-underline py-3 px-3 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 mb-lg-2 {% endunless %}">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 poppins">{{ article_data[0] }}</h5>
                         <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>

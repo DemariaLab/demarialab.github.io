@@ -218,7 +218,7 @@ order: 0
                 <div class="row g-5 d-none d-lg-flex ">
 
                     <div class="col-12 col-lg-4 ms-0 ps-0">
-                        <div class="row gy-1">
+                        <div class="row gy-1 gy-lg-2">
                             {% for item in hero_accordion %}
                             {% assign border_radius = "border-radius: 5px" %}
                             {% if forloop.first %}
@@ -379,7 +379,7 @@ order: 0
                 '.webp' | replace: "'", "\\'" %}
                 {% assign new_url = directory | append: new_filename %}
                 <a href="{{ post.url }}"
-                   class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 {% endunless %} no-underline interaction-bg-color text-current-color bg-white">
+                   class="col-12 mx-0 mt-0 {% unless forloop.last %}mb-1 mb-lg-2 {% endunless %} no-underline interaction-bg-color text-current-color bg-white">
                     <div class="d-flex flex-row px-2 px-md-0">
                         <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
                             <div class="my-auto px-2 px-md-3 py-3 ">
@@ -426,14 +426,14 @@ order: 0
         <section class=" container-xl noPadding" id="section2">
             <div class="noPadding">
                 <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-0 px-lg-3 text-body">
-                    Meet the lab members
+                    Meet our members
                 </h3>
                 <a class="no-underline" href="/members/">
-                    <div class="row g-1 " id="teamSection">
+                    <div class="row g-1 g-lg-2 " id="teamSection">
                         <div class="team-circle col d-none d-md-flex align-items-center justify-content-center ">
                             <div class="text-left text-body px-3">
                                 <h3 class="poppins " style="margin-right: 0.8em; ">
-                                    Meet the lab members
+                                    Meet our members
                                 </h3>
                                 <h5> View all →</h5>
                             </div>

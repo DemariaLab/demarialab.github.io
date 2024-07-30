@@ -27,7 +27,7 @@ order: 3
             {% assign years = years | split: ',' | uniq | sort | reverse %}
             {% assign years_selected = years_selected | split: ',' | uniq | sort | reverse %}
             <div class="accordion research-accordion accordion-flush rounded-5 overflow-hidden " id="accordionBlock">
-                <div class="accordion-item mb-1 ">
+                <div class="accordion-item {% unless forloop.last %} mb-1 mb-lg-2{% endunless %}">
                     <div class="accordion-header ">
                         <h4 class="m-0">
                             <button class="accordion-button poppins" type="button" data-bs-toggle="collapse"
@@ -75,8 +75,9 @@ order: 3
                                     </div>
                                 </div>
                             </a>
-                            <hr>
-                            {% assign pub_count = pub_count | plus: 1 %}
+                            {% unless forloop.last %}
+                            <div class="b-divider"></div>
+                            {% endunless %}
                             {% endif %}
                             {% endif %}
                             {% endfor %}
@@ -130,7 +131,10 @@ order: 3
                                     </div>
                                 </div>
                             </a>
-                            <hr>
+                            {% unless forloop.last %}
+                            <div class="b-divider"></div>
+                            {% endunless %}
+
                             {% endif %}
                             {% endfor %}
                             {% endfor %}

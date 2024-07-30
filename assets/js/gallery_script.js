@@ -38,9 +38,9 @@ function showSlides(index) {
     const halfItemsToShow = Math.floor(itemsToShow / 2);
     currentIndex = (index < 0) ? totalItems - Math.abs(index) : index;
 
-    const colClasses = Array.from({ length: 12 }, (_, i) => `col-${i + 1}`);
+    const colClasses = Array.from({length: 12}, (_, i) => `col-${i + 1}`);
     items.forEach(item => {
-        item.classList.add('col-auto', 'me-1');
+        item.classList.add('col-auto', 'me-1', 'me-lg-2');
         item.classList.remove(...colClasses);
         item.style.width = '0%';
     });
@@ -72,7 +72,7 @@ function showSlides(index) {
 
         const isSideItem = slideIndex >= adjustedLowerLimit && slideIndex <= upperLimit && slideIndex !== actualMainItemIndex;
         if (!isSideItem && slideIndex !== actualMainItemIndex) {
-            item.classList.remove('me-1');
+            item.classList.remove('me-1', "me-lg-2");
             item.style.width = "0%";
         }
         return isSideItem;
