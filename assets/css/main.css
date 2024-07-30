@@ -501,8 +501,8 @@ a .nav-item.active {
     background-position: 50% 50%;
 }
 
-.translate-children-y div {
-    transform: translateY(-0.075rem);
+.translate-children-y * {
+    transform: translateY(-0.10rem) scaleY(100.8%);
 }
 
 .animated {
