@@ -493,15 +493,14 @@ order: 0
     {% endif %}
 
     <div class="container-fluid p-3 m-0">
-        <div class="container-xl p-0 m-0">
+        <div class="container-xl content p-0 ">
             <h3 class="poppins px-0 px-lg-3 pb-3 m-0">
                 Latest photos
             </h3>
         </div>
         <div id="carouselPhotos" class="carousel slide container-fluid p-0 m-0  rounded-5 overflow-hidden">
             <div class="photos-container m-0 p-0 w-100  position-relative">
-                <button class="slideshow-button p-3 p-lg-5 prev" onclick="prevSlide()">❮</button>
-                <button class="slideshow-button p-4 p-lg-5 next" onclick="nextSlide()">❯</button>
+
                 <div class="slideshow-inner d-flex flex-nowrap">
                     {% assign gallery_files = site.static_files | sort: 'path' | reverse %}
                     {% assign latest_pictures = '' | split: ',' %}
@@ -528,12 +527,28 @@ order: 0
                 </div>
             </div>
         </div>
-        <div class="container-xl p-0 ">
-            <a href="/gallery/" class="no-underline no-text-selection">
-                <div class="d-flex w-100 justify-content-end  pt-3">
-                    <h4 class="mb-1 ms-auto poppins ">View all → </h4>
+        <div class="container-xl p-0 mx-auto mt-3">
+            <div class="row g-0 align-items-center">
+                <div class="col p-0 m-0 d-flex justify-content-start align-items-center">
+                    <a href="/gallery/" class="no-underline no-text-selection h-100 d-flex align-items-center">
+                        <h4 class="px-3 ms-auto poppins">View all →</h4>
+                    </a>
                 </div>
-            </a>
+
+                <div class="col p-0 m-0 justify-content-end d-flex align-items-center">
+                    <div class="row g-0 overflow-hidden rounded-5 p-0 m-0 w-100" style="max-width:200px;">
+                        <div class="col p-0 my-0 ms-0 me-1 me-lg-2 ">
+                            <button class="w-100 slideshow-button py-2 py-lg-4 prev rounded" onclick="prevSlide()">❮
+                            </button>
+                        </div>
+                        <div class="col p-0 m-0 ">
+                            <button class="w-100 slideshow-button py-2 py-lg-4 next rounded" onclick="nextSlide()">❯
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 

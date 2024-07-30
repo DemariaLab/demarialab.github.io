@@ -327,8 +327,8 @@ html {
     font-weight: 500;
 }
 
-.border-semi-transparent, .b-divider {
-    border: 1px solid rgb(248, 249, 250)  !important;
+.border-semi-transparent {
+    border: 1px solid #00000010 !important;
 }
 
 .news-hr {
@@ -502,7 +502,7 @@ a .nav-item.active {
 }
 
 .translate-children-y * {
-    transform: translateY(-0.10rem) scaleY(100.8%);
+    transform: translateY(-0.10rem);
 }
 
 .animated {
@@ -520,6 +520,7 @@ nav:hover .underline {
 .b-divider {
     width: 100%;
     display: block;
+    border: 0.15em solid rgb(248, 249, 250) !important;
 }
 
 .news-divider {
@@ -548,27 +549,15 @@ nav:hover .underline {
 }
 
 .slideshow-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(229, 113, 124);
     color: white;
     border: none;
     cursor: pointer;
     z-index: 10;
-    border-radius: 50%;
-    aspect-ratio: 1;
     text-align: center;
-    line-height: 0.5rem;
+    font-size: 1.3rem;
 }
 
-.slideshow-button.prev {
-    left: 1rem;
-}
-
-.slideshow-button.next {
-    right: 1rem;
-}
 
 .bg-orange {
     background-color: var(--bs-primary);
