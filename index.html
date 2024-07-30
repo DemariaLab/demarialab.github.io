@@ -301,9 +301,9 @@ order: 0
                             {{item.title}}
                         </button>
                     </h5>
-                    <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse"
+                    <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse py-0"
                          data-bs-parent="#accordionFlush">
-                        <div class="b-divider "></div>
+                        <div class="b-divider mt-2 "></div>
                         <div class=" px-1">
                             <div class="accordion-body p-2">{{item.description}}
                             </div>
@@ -430,8 +430,8 @@ order: 0
                 </h3>
                 <a class="no-underline" href="/members/">
                     <div class="row g-1 g-lg-2 " id="teamSection">
-                        <div class="team-circle col d-none d-md-flex align-items-center justify-content-center ">
-                            <div class="text-left text-body px-3">
+                        <div class="team-circle col d-none d-md-flex align-items-center justify-content-start ">
+                            <div class="text-start text-body px-3">
                                 <h3 class="poppins " style="margin-right: 0.8em; ">
                                     Meet our members
                                 </h3>
@@ -441,6 +441,12 @@ order: 0
                         <!-- Circles will be injected here by JavaScript -->
                     </div>
                 </a></div>
+
+               <div class="d-block d-lg-none mt-3 text-body d-md-block col p-0 m-0 justify-content-end align-items-center">
+                    <a href="/members/" class="text-body no-underline no-text-selection h-100 d-flex align-items-center">
+                        <h4 class="px-3 ms-auto poppins">View all →</h4>
+                    </a>
+                </div>
         </section>
     </div>
 
@@ -537,13 +543,9 @@ order: 0
         </div>
         <div class="container-xl p-0 mx-auto mt-3">
             <div class="row g-0 align-items-center">
-                <div class="col p-0 m-0 d-flex justify-content-start align-items-center">
-                    <a href="/gallery/" class="no-underline no-text-selection h-100 d-flex align-items-center">
-                        <h4 class="px-3 ms-auto poppins">View all →</h4>
-                    </a>
-                </div>
 
-                <div class="col p-0 m-0 justify-content-end d-flex align-items-center">
+
+                <div class="col p-0 m-0 justify-content-start d-flex align-items-center">
                     <div class="row g-0 overflow-hidden rounded-5 p-0 m-0 w-100" style="max-width:200px;">
                         <div class="col p-0 my-0 ms-0 me-1 me-lg-2 ">
                             <button class="w-100 slideshow-button py-2 py-lg-4 prev rounded" onclick="prevSlide()">❮
@@ -554,6 +556,13 @@ order: 0
                             </button>
                         </div>
                     </div>
+                </div>
+
+
+                  <div class="col p-0 m-0 d-flex justify-content-end align-items-center">
+                    <a href="/gallery/" class="no-underline no-text-selection h-100 d-flex align-items-center">
+                        <h4 class="px-3 ms-auto poppins">View all →</h4>
+                    </a>
                 </div>
             </div>
 
