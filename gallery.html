@@ -146,14 +146,14 @@ order: 5
                 {% assign new_url_blurred = new_url | replace: "reduced_", "blurred_" %}
                 <div class="slideshow-item cursor-pointer animated-relaxed bg-black rounded overflow-hidden"
                      onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
-                                            <div class="w-100 h-100 float-start " style="opacity:0.4;
+                    <div class="w-100 h-100 float-start " style="opacity:0.4;
                                             background-color:black;
                                             background-repeat: no-repeat;
                                             background-size:100vw 100vw;
                                              background-position: center;
                                                background-image: url('{{ new_url_blurred }}');"></div>
                     <div class="rounded position-relative"
-                         style="z-index:1; background: no-repeat center url('{{ new_url }}'); height:80vh; background-size: auto 80vh ">
+                         style="z-index:1; background: no-repeat center url('{{ new_url }}'); height:70vh; background-size: auto 70vh ">
                     </div>
                 </div>
                 {% endif %}
@@ -202,7 +202,7 @@ order: 5
     <div class="container-xl">
         <h3 class="my-3 poppins">{{year}}</h3>
 
-        <div class="row g-1">
+        <div class="row g-1 g-lg-2">
             {% for image in images %}
             {% assign filename_parts = image.name | split: '-' %}
             {% if filename_parts[0] == year %}

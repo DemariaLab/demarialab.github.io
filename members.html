@@ -11,7 +11,7 @@ order: 2
     <div class="container-xl">
         <div class="col-12">
             <h3 class="poppins my-3 ">{{role}}s</h3>
-            <div class="row g-1">
+            <div class="row g-1 g-lg-2">
                 {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", false | sort:
                 "date_joined" | reverse %}
                 {% for profile in sorted_profiles %}
@@ -65,7 +65,7 @@ order: 2
     <div class="container-xl">
         <div class="col-12">
             <h3 class="poppins my-3">Alumni</h3>
-            <div class="row g-1">
+            <div class="row g-1 g-lg-2">
                 {% assign sorted_alumni = site.profiles | where: "is_alumni", true | sort: "date_leaving" | reverse %}
                 {% for profile in sorted_alumni %}
                 <div class="col-md-4  mb-3">
