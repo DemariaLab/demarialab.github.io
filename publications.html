@@ -14,6 +14,7 @@ order: 3
     <div class="container-xl px-0">
         <div class="col-12 py-3">
             {% assign publications = site.data.publications_all %}
+            {% assign selected_publications = site.data.publications_all | where: "role", role %}
             {% assign years = "" %}
             {% assign years_selected = "" %}
             {% for item in publications %}
@@ -26,23 +27,25 @@ order: 3
             {% endfor %}
             {% assign years = years | split: ',' | uniq | sort | reverse %}
             {% assign years_selected = years_selected | split: ',' | uniq | sort | reverse %}
+            {% assign selected_items = site.data.publications_all | where: "is_selected", true | sort: "year" |
+            reverse %}
             <div class="accordion research-accordion accordion-flush rounded-5 overflow-hidden " id="accordionBlock">
                 <div class="accordion-item {% unless forloop.last %} mb-1 mb-lg-2{% endunless %}">
                     <div class="accordion-header ">
                         <h4 class="m-0">
-                            <button class="accordion-button poppins" type="button" data-bs-toggle="collapse"
+                            <button class="accordion-button poppins rounded " type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                      class="me-2" viewBox="0 0 16 16">
                                     <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.18.18 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.18.18 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.18.18 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.18.18 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.18.18 0 0 0 .134-.098z"/>
                                     <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
                                 </svg>
-                                Selected papers
+                                Selected publications
+                                <span class="badge ms-2 bg-dark text-light publications-counter">{{selected_items.size}}</span>
                             </button>
                         </h4>
                     </div>
-                    {% assign selected_items = site.data.publications_all | where: "is_selected", true | sort: "year" |
-                    reverse %}
+
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionBlock">
                         <div class="accordion-body p-0">
                             {% for year in years_selected %}
@@ -88,7 +91,7 @@ order: 3
                 <div class="accordion-item">
                     <div class="accordion-header" id="disappearingAccordionHeader">
                         <h4 class="m-0">
-                            <button class="accordion-button disappearing-accordion-button collapsed poppins"
+                            <button class="accordion-button disappearing-accordion-button collapsed poppins rounded"
                                     type="button"
                                     data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                                     aria-controls="collapseTwo">
@@ -97,6 +100,8 @@ order: 3
                                     <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
                                 </svg>
                                 All publications
+                                <span class="badge ms-2 bg-dark text-light publications-counter">{{publications.size}}</span>
+
                             </button>
                         </h4>
                     </div>

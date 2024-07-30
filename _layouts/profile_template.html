@@ -2,16 +2,7 @@
 layout: modal_post
 ---
 <style>
-    .publications-counter {
-        width: 1.8em;
-        height: 1.8em;
-        border-radius: 50%;
-        aspect-ratio: 1;
-        --bs-primary-rgb: 255, 165, 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
+
 
     .member-info svg {
         opacity: 0.5;
@@ -125,7 +116,7 @@ layout: modal_post
     <div class="container-fluid pb-3 bg-light m-0">
         <div class="container-xl mb-5 px-2 px-lg-3">
             <h4 class="poppins py-3 px-2 mb-0">Publications with the lab <span
-                    class="badge bg-dark text-light publications-counter">{{publication_ids.size}}</span>
+                    class="badge bg-dark text-light ">{{publication_ids.size}}</span>
             </h4>
             {% assign publications_all = site.data.publications_all %}
             {% assign published_articles = "" %}
