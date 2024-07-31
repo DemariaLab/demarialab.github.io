@@ -379,7 +379,7 @@ order: 0
                 '.webp' | replace: "'", "\\'" %}
                 {% assign new_url = directory | append: new_filename %}
                 <a href="{{ post.url }}"
-                   class="col-12 mx-0 mt-0 {% unless forloop.last %}mb-1 mb-lg-2 {% endunless %} no-underline interaction-bg-color text-current-color bg-white">
+                   class="col-12 mx-0 mt-0 {% unless forloop.last %}mb-1 mb-lg-2 {% endunless %} no-underline rounded interaction-bg-color text-current-color bg-white">
                     <div class="d-flex flex-row px-2 px-md-0">
                         <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
                             <div class="my-auto px-2 px-md-3 py-3 ">
@@ -430,12 +430,11 @@ order: 0
                 </h3>
                 <a class="no-underline" href="/members/">
                     <div class="row g-1 g-lg-2 " id="teamSection">
-                        <div class="team-circle col d-none d-md-flex align-items-center justify-content-start ">
-                            <div class="text-start text-body px-3">
-                                <h3 class="poppins " style="margin-right: 0.8em; ">
+                        <div class="team-circle col-auto d-none d-md-flex align-items-center justify-content-start ">
+                            <div class="text-start text-body">
+                                <h3 class="poppins me-3"  >
                                     Meet our members
                                 </h3>
-                                <h5> View all →</h5>
                             </div>
                         </div>
                         <!-- Circles will be injected here by JavaScript -->

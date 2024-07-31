@@ -27,17 +27,17 @@ $(document).ready(function () {
       const randomMembers = getRandomMembers(members, 7);
       const teamSection = $('#teamSection');
       const circles = [
-          {class: 'rounded-5  circle-1 rounded-end', member: randomMembers[0]},
-          {class: 'rounded-5  circle-2 rounded-start rounded-end', member: randomMembers[1]},
-          {class: 'rounded-5  circle-3 rounded-start rounded-end', member: randomMembers[2]},
-          {class: 'rounded-5  circle-4 rounded-start', member: randomMembers[5]}
+          {class: 'rounded-5 circle-1 rounded-end', member: randomMembers[0]},
+          {class: 'rounded-5 circle-2 rounded-start rounded-end', member: randomMembers[1]},
+          {class: 'rounded-5 circle-3 rounded-start rounded-end', member: randomMembers[2]},
+          {class: 'rounded-5 circle-4 rounded-start', member: randomMembers[5]}
       ];
       circles.forEach(circle => {
           const div = $('<div><div></div>')
               .addClass(`team-circle ${circle.class}`)
               .css('background-image', `url('${circle.member.photo}')`);
           const wrappedDiv = $('<div></div>')
-              .addClass('col-3 col-md-2 ')
+              .addClass('col-3 col-md ')
               .append(div);
           teamSection.append(wrappedDiv);
       });
