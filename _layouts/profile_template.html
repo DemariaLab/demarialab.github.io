@@ -47,7 +47,7 @@ layout: modal_post
                                 <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                             </svg>
-                            Joined {{ page.date_joined | date: "%d %B %Y"}}
+                            Joined {{ page.date_joined | date: "%B %Y"}}
                         </li>
                         {% endif %}
                         {% if page.is_alumni == true and page.date_leaving %}
@@ -114,7 +114,7 @@ layout: modal_post
     {% if page.publications %}
     {% assign publication_ids = page.publications | split: "; " %}
     <div class="container-fluid pb-3 bg-light m-0">
-        <div class="container-xl mb-5 px-2 px-lg-3">
+        <div class="container-xl mb-3 px-2 px-lg-3">
             <h4 class="poppins py-3 px-2 mb-0">Publications with the lab <span
                     class="badge bg-dark text-light ">{{publication_ids.size}}</span>
             </h4>
@@ -135,7 +135,7 @@ layout: modal_post
                 {% assign article_data = article | split: "||" %}
 
                 <a href="https://pubmed.ncbi.nlm.nih.gov/{{article_data[3]}}/" target="_blank"
-                   class="col-12 no-underline py-3 px-3 px-md-3  interaction-bg-color text-current-color bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 mb-lg-2 {% endunless %}">
+                   class="col-12 no-underline py-3 px-3 px-md-3  interaction-bg-color text-current-color rounded bg-white mx-0 mt-0 {% unless forloop.last %} mb-1 mb-lg-2 {% endunless %}">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 poppins">{{ article_data[0] }}</h5>
                         <small class="text-body-secondary">{{ article_data[2] | date: "%Y" }}</small>
