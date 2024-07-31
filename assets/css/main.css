@@ -147,7 +147,7 @@
     opacity: 1;
 }
 
-.poppins,.captioned-div {
+.poppins, .captioned-div {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -516,6 +516,7 @@ a .nav-item.active {
 nav:hover .underline {
     display: block;
 }
+
 .captioned-div {
     position: relative !important;
 }
@@ -543,7 +544,14 @@ nav:hover .underline {
     text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
-.captioned-div:hover::after ,.captioned-div:active::after,.captioned-div:focus::after  {
+.team-circle {
+    height: 22em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.captioned-div:hover::after, .captioned-div:active::after, .captioned-div:focus::after {
     opacity: 1;
 }
 

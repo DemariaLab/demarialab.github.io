@@ -16,7 +16,6 @@ layout: default
     </title>
     <link rel="icon" type="image/svg+xml" href="/assets/icon/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/icon/favicon.png">
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -25,7 +24,7 @@ layout: default
 <div class="d-flex flex-column min-vh-100">
     <header class="header ">
         <div class="container-xl px-0  navbar-parent ">
-            <nav class="navbar navbar-expand-lg poppins noPadding noMargin " >
+            <nav class="navbar navbar-expand-lg poppins noPadding noMargin ">
                 <div class="container-fluid noPadding noMargin noPadding  ">
                     <div class="row align-items-center w-100">
                         <div class="col-9 justify-content-start header-front-most">
@@ -110,7 +109,8 @@ layout: default
                         <ul class="list-unstyled">
                             <li><a href="https://twitter.com/demarialab1" target="_blank" class="d-block py-2 py-lg-0">Follow
                                 DemariaLab on X</a></li>
-                            <li><a href="https://twitter.com/marc_dema" target="_blank" class="d-block py-2 py-lg-0">Follow Marco
+                            <li><a href="https://twitter.com/marc_dema" target="_blank" class="d-block py-2 py-lg-0">Follow
+                                Marco
                                 Demaria on X</a></li>
                             <li><a href="https://www.linkedin.com/in/marcodemariabiotech" target="_blank"
                                    class="d-block py-2 py-lg-0">Follow Marco Demaria on LinkedIn</a></li>
@@ -138,10 +138,11 @@ layout: default
         </div>
     </footer>
 </div>
-</body>
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+<!--    <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>-->
 <script src="/assets/js/scroll.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/jquery-3.7.1.slim.min.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const images = document.querySelectorAll('.blog img');
@@ -164,9 +165,25 @@ layout: default
 {% assign members = site.profiles %}
 {% assign member = "Demaria M" %}
 {% for profile in members %}
-    {% assign member = profile.last_name_initials | append: "," | append: profile.unaccented_name |append: ";" | append:member %}
+{% assign member = profile.last_name_initials | append: "," | append: profile.unaccented_name |append: ";" |
+append:member %}
 {% endfor %}
 <script>
   window.membersData =  {{ member | jsonify }};
 </script>
+<script src="/assets/js/gallery_script.js"></script>
+<script>
+    const items = document.querySelectorAll("span.highlight");
+    const delay = 700; // Base delay
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add("animate-underline");
+        }, delay * (index + 1));
+    });
+
+</script>
+<script type="text/javascript">
+    {% include member_randomizer.js %}
+</script>
+</body>
 </html>
