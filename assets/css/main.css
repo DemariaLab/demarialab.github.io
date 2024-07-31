@@ -147,7 +147,7 @@
     opacity: 1;
 }
 
-.poppins {
+.poppins,.captioned-div {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -516,12 +516,12 @@ a .nav-item.active {
 nav:hover .underline {
     display: block;
 }
-.team-circle {
-    position: relative;
+.captioned-div {
+    position: relative !important;
 }
 
-.team-circle::after {
-    content: attr(data-name); /* Use the data-name attribute to display the member's name */
+.captioned-div::after {
+    content: attr(data-caption); /* Use the data-name attribute to display the member's name */
     position: absolute;
     width: 100%;
     bottom: 0px; /* Adjust as needed */
@@ -536,16 +536,17 @@ nav:hover .underline {
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none; /* Prevent hover on the pseudo-element itself */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%); /* Gradient background */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Gradient background */
     white-space: nowrap; /* Ensure the text stays on one line */
     text-align: center; /* Center the text horizontally */
     overflow: hidden; /* Prevent overflow text */
     text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
-.team-circle:hover::after {
+.captioned-div:hover::after ,.captioned-div:active::after,.captioned-div:focus::after  {
     opacity: 1;
 }
+
 .b-divider {
     width: 100%;
     display: block;

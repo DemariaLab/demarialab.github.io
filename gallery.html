@@ -144,6 +144,7 @@ order: 5
                 '.webp' | replace: "'", "\\'" %}
                 {% assign new_url = directory | append: new_filename | replace: "'", "%27" %}
                 {% assign new_url_blurred = new_url | replace: "reduced_", "blurred_" %}
+                {% assign image_title = filename_parts[3] | split: '.' | first %}
                 <div class="slideshow-item cursor-pointer animated-relaxed bg-black rounded overflow-hidden"
                      onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
                     <div class="w-100 h-100 float-start " style="opacity:0.4;
@@ -152,7 +153,8 @@ order: 5
                                             background-size:100vw 100vw;
                                              background-position: center;
                                                background-image: url('{{ new_url_blurred }}');"></div>
-                    <div class="rounded position-relative"
+                    <div class="rounded position-relative captioned-div"
+                         data-caption="{{image_title}}"
                          style="z-index:1; background: no-repeat center url('{{ new_url }}'); height:70vh; background-size: auto 70vh ">
                     </div>
                 </div>

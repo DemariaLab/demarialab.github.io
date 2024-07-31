@@ -522,7 +522,8 @@ order: 0
                     {% for picture in latest_pictures_main %}
                     {% assign latest_picture_path = picture.path | replace: "'", "\\'" %}
                     {% assign new_url_blurred = latest_picture_path | replace: "reduced_", "blurred_" %}
-
+                    {% assign filename_parts = picture.name | split: '-' %}
+                    {% assign image_title = filename_parts[3] | split: '.' | first %}
                     <div class="slideshow-item cursor-pointer animated-relaxed bg-dark rounded overflow-hidden"
                          onclick="scrollToSlide({{forloop.index0}})" data-slide-index="{{forloop.index0}}">
 
@@ -532,7 +533,8 @@ order: 0
                                             background-size:100vw 100vw;
                                              background-position: center;
                                                background-image: url('{{ new_url_blurred }}');"></div>
-                        <div class="rounded position-relative"
+                        <div class="rounded position-relative captioned-div"
+                             data-caption="{{image_title}}"
                              style="z-index:1; background: no-repeat center url('{{ latest_picture_path }}'); height:50vh; background-size: auto 50vh ">
                         </div>
                     </div>

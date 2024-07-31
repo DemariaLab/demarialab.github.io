@@ -42,9 +42,9 @@ $(document).ready(function () {
         const flagEmoji = extractFlagEmoji(circle.member.country);
         const div = $('<div></div>')
             .addClass(`team-circle ${circle.class}`)
-            .addClass(`poppins`)
+            .addClass(`captioned-div`)
             .css('background-image', `url('${circle.member.photo}')`)
-            .attr('data-name', `${circle.member.name} ${flagEmoji}`); // Add member name and flag emoji as data attribute
+            .attr('data-caption', `${circle.member.name} ${flagEmoji}`); // Add member name and flag emoji as data attribute
         const wrappedDiv = $('<div></div>')
             .addClass('col-3 col-md')
             .append(div);
