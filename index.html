@@ -206,10 +206,11 @@ order: 0
                     <h5 class="accordion-header poppins px-1">
                         <button class="accordion-button collapsed hero-card p-2 bg-transparent" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapse{{cleaned_title}}" aria-expanded="false"
-                                aria-controls="flush-collapse{{cleaned_title}}" data-title="{{item.title}}"
+                                aria-controls="flush-collapse{{cleaned_title}}"
+                                data-title="{{item.title}}"
                                 data-description="{{item.description}}"
                                 data-photo="{{item.photo}}">
-                            {{item.title}}
+                            {{item.short_title}}
                         </button>
                     </h5>
                     <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse py-0"
