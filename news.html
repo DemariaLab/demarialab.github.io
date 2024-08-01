@@ -32,32 +32,18 @@ order: 6
 
                 <a href="{{ post.url }}"
                    class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 mb-lg-2{% endunless %} no-underline interaction-bg-color rounded text-current-color bg-white">
-                    <div class="d-flex flex-row px-2 px-md-0">
+                    <div class="d-flex flex-row px-0">
                         <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
-                            <div class="my-auto px-2 px-md-3 py-3 ">
+                            <div class="my-auto px-3 py-3 ">
                                 <div class="d-flex w-100 justify-content-between  ">
                                     <h5 class="mb-1 poppins">{{ post.title }}</h5>
                                 </div>
                                 <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                             </div>
                         </div>
-                        {% assign border_radius_thumbnail = "border-radius: 5px;" %}
-                        {% if forloop.first %}
-                        {% assign border_radius_thumbnail = "border-top-left-radius: 5px;border-top-right-radius: 18px;
-                        border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;" %}
-                        {% endif %}
-                        {% if forloop.last %}
-                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        5px;border-top-left-radius:5px;border-top-right-radius: 5px;" %}
-                        {% endif %}
-                        {% if forloop.last and forloop.first %}
-                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        5px;border-top-left-radius:5px;border-top-right-radius:18px;" %}
-                        {% endif %}
                         <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
-
-                            <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                 style="{{border_radius_thumbnail}}background-image:url('{{new_url }}');">
+                            <div class="news-thumbnail w-100 border-semi-transparent  rounded-end"
+                                 style="border-radius:inherit; background-image:url('{{new_url }}');">
                             </div>
                         </div>
                     </div>

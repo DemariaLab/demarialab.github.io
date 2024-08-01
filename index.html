@@ -261,21 +261,6 @@ order: 0
             <div class="row g-0 rounded-5 overflow-hidden news-block">
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                 {% for post in sorted_posts limit: 5 %}
-
-                {% assign border_radius = "border-radius: var(--bs-border-radius)" %}
-                {% assign border_radius_thumbnail = "border-radius: var(--bs-border-radius)" %}
-                {% if forloop.first %}
-                {% assign border_radius = "border-top-left-radius: 20px;border-top-right-radius: 20px;
-                border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
-                {% assign border_radius_thumbnail = "border-top-left-radius: var(--bs-border-radius);border-top-right-radius: 18px;
-                border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
-                {% endif %}
-                {% if forloop.last %}
-                {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;
-                border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
-                {% assign border_radius_thumbnail = "border-bottom-right-radius: 18px;border-bottom-left-radius:
-                var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
-                {% endif %}
                 {% assign formatted_thumb = post.thumbnail  %}
                 {% assign thumb_size = formatted_thumb.size %}
                 {% assign thumb_size_minus_two = thumb_size | minus:2 %}
@@ -291,31 +276,18 @@ order: 0
                 {% assign new_url = directory | append: new_filename %}
                 <a href="{{ post.url }}"
                    class="col-12 mx-0 mt-0 {% unless forloop.last %}mb-1 mb-lg-2 {% endunless %} no-underline rounded interaction-bg-color text-current-color bg-white">
-                    <div class="d-flex flex-row px-2 px-md-0">
+                    <div class="d-flex flex-row px-0 ">
                         <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
-                            <div class="my-auto px-2 px-md-3 py-3 ">
+                            <div class="my-auto px-3 py-3 ">
                                 <div class="d-flex w-100 justify-content-between  ">
                                     <h5 class="mb-1 poppins">{{ post.title }}</h5>
                                 </div>
                                 <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                             </div>
                         </div>
-                        {% assign border_radius_thumbnail = "border-radius: var(--bs-border-radius);" %}
-                        {% if forloop.first %}
-                        {% assign border_radius_thumbnail = "border-top-left-radius: var(--bs-border-radius);border-top-right-radius: 18px;
-                        border-bottom-left-radius: var(--bs-border-radius); border-bottom-right-radius: var(--bs-border-radius);" %}
-                        {% endif %}
-                        {% if forloop.last %}
-                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius: var(--bs-border-radius);" %}
-                        {% endif %}
-                        {% if forloop.last and forloop.first %}
-                        {% assign border_radius_thumbnail = "border-bottom-right-radius:18px;border-bottom-left-radius:
-                        var(--bs-border-radius);border-top-left-radius:var(--bs-border-radius);border-top-right-radius:18px;" %}
-                        {% endif %}
-                        <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
-                            <div class="news-thumbnail w-100 border-semi-transparent my-auto"
-                                 style="{{border_radius_thumbnail}}background-image:url('{{new_url}}');">
+                        <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-lg-center">
+                            <div class="news-thumbnail w-100 border-semi-transparent  rounded-end"
+                                 style="background-image:url('{{new_url}}')">
                             </div>
                         </div>
                     </div>

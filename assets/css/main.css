@@ -97,19 +97,14 @@
 
 
 .news-thumbnail {
-    width: 100%;
-    aspect-ratio: 1;
+    margin: 0;
+    height: 100%;
+    min-height:150px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-@media (min-width: 780px) {
-    .news-thumbnail {
-        height: 100%;
-        max-height: 120px;
-    }
-}
 
 .footer-block .footer-heading {
     margin-bottom: 0.5em
@@ -543,12 +538,6 @@ nav:hover .underline {
     text-align: center; /* Center the text horizontally */
     overflow: hidden; /* Prevent overflow text */
     text-overflow: ellipsis; /* Add ellipsis for overflow text */
-}
-
-.image-content {
-    border-radius: var(--bs-border-radius) !important;
-    margin-bottom: 0.5em;
-    overflow: hidden;
 }
 
 .team-circle {
