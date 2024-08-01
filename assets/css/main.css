@@ -90,7 +90,22 @@
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
+/* Class to show as block */
+.js-required-d-block {
+  display: none;
+}
 
+/* Class to show as flex */
+.js-required-d-flex {
+  display: none;
+}
+/* Class to show as flex */
+.js-missing-d-flex {
+  display: flex;
+}
+.js-missing-d-block {
+  display: block;
+}
 .interaction-gradient-fade:hover::before {
     opacity: 1;
 }

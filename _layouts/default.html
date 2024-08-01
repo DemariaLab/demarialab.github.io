@@ -185,5 +185,18 @@ append:member %}
 <script type="text/javascript">
     {% include member_randomizer.js %}
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.js-required-d-block').forEach(function (element) {
+            element.style.display = 'block';
+        });
+        document.querySelectorAll('.js-required-d-flex').forEach(function (element) {
+            element.style.display = 'flex';
+        });
+       [...document.querySelectorAll('.js-missing-d-flex'), ...document.querySelectorAll('.js-missing-d-block')].forEach(function (element) {
+            element.style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>

@@ -128,7 +128,7 @@ order: 0
             <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
                 <div class="row g-5 d-none d-lg-flex ">
 
-                    <div class="col-12 col-lg-3 ms-0 ps-0">
+                    <div class="col-12 col-lg-3 ms-0 ps-0 js-required-d-block">
                         <div class="row gy-1 gy-lg-2">
                             {% for item in hero_accordion %}
                             {% assign border_radius = "border-radius: 5px" %}
@@ -140,7 +140,7 @@ order: 0
                             {% assign border_radius = "border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;
                             border-top-left-radius:5px;border-top-right-radius: 5px;" %}
                             {% endif %}
-                            <div class="col-12 mx-0 px-0">
+                            <div class="col-12 mx-0 px-0 ">
                                 <div class="front no-text-selection py-3 px-3 animated bg-light hero-card hero-card-indicator h-100"
                                      data-title="{{item.title}}"
                                      data-description="{{item.description}}"
@@ -295,8 +295,6 @@ order: 0
                 </a>
                 {% endfor %}
             </div>
-
-
             <a href="/news/" class="no-underline no-text-selection">
                 <div class="d-flex w-100 justify-content-end p-3">
                     <h4 class="mb-1 ms-auto poppins  ">View all → </h4>
@@ -306,14 +304,14 @@ order: 0
     </div>
     <div class="b-divider"></div>
 
-    <div class="container-fluid py-3 " style="background-color: #e2efcf">
+    <div class="container-fluid py-3  " style="background-color: #e2efcf">
         <section class=" container-xl noPadding" id="section2">
             <div class="noPadding">
                 <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-0 px-lg-3 text-body">
                     Meet our members
                 </h3>
                 <a class="no-underline " href="/members/">
-                    <div class="row g-1 g-lg-2  " id="teamSection">
+                    <div class="row g-1 g-lg-2 " id="teamSection">
                         <div class=" col-auto d-none d-md-flex align-items-center justify-content-start ">
                             <div class="text-start text-body">
                                 <h3 class="poppins me-3 ms-0 ms-lg-3"  >
@@ -321,7 +319,36 @@ order: 0
                                 </h3>
                             </div>
                         </div>
-                        <!-- Circles will be injected here by JavaScript -->
+
+                        {% assign members_slice = '' | split: ',' %}
+                        {% assign team = site.profiles | where: "is_alumni", false | sort: "date_joined" | reverse %}
+                        {% for member in team %}
+                        {% assign formatted_thumb = member.thumbnail %}
+                        {% assign thumb_size = formatted_thumb.size %}
+                        {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                        {% assign first_char = formatted_thumb | slice: 0 %}
+                        {% if first_char == "'" %}
+                        {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                        {% endif %}
+                        {% assign path_parts = formatted_thumb | split: '/' %}
+                        {% assign filename = path_parts | last %}
+                        {% assign directory = formatted_thumb | remove: filename %}
+                        {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append: '.webp' |
+                        replace: "'", "\\'" %}
+                        {% assign new_url = directory | append: new_filename %}
+                        {% assign members_slice = members_slice | push: member.name %}
+                        <div class="col-3 col-md js-missing-d-block">
+                            <div data-caption="{{member.name}} {{member.country}}"
+                                 class=" {% if forloop.first %}   rounded-5 rounded-end {% else %}   {% if forloop.last or members_slice.size>=4 %}     rounded-5 rounded-start   {% else %}     rounded   {% endif %} {% endif %}  team-circle captioned-div"
+                                 style="background-image: url('{{new_url}}')"></div>
+                        </div>
+                        {% if members_slice.size >= 4 %}
+                        {% break %}
+                        {% endif %}
+                        {% endfor %}
+
+
+                        <!-- profiles will be injected here by JavaScript -->
                     </div>
                 </a></div>
 
@@ -380,7 +407,7 @@ order: 0
 
     {% endif %}
 
-    <div class="container-fluid p-3 m-0">
+    <div class="container-fluid p-3 m-0 js-required-d-block">
         <div class="container-xl content p-0 ">
             <h3 class="poppins px-0 px-lg-3 pb-3 m-0">
                 Latest photos
