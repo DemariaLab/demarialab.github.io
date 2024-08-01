@@ -1,47 +1,55 @@
-- description: Our mouse models are essential for understanding cellular senescence
-    and aging mechanisms. These models are engineered to allow us to study the impact
-    of cellular changes on health and disease. Our state-of-the-art facilities ensure
-    precise control over experimental conditions, enabling breakthroughs in the study
-    of aging and its related pathologies.
+- description: Our animal models are essential for understanding cellular senescence
+    and aging mechanisms. These models are engineered to study the impact of cellular
+    changes on health and disease, including natural aging and fibrosis. Our state-of-the-art
+    facilities ensure precise control over experimental conditions, enabling breakthroughs
+    in the study of aging, injury models, and related pathologies.
   photo: /assets/hero/Animal Models in Senescence Research-hero_photo.webp
+  short_title: Animal Models
   title: Animal Models in Senescence Research
 - description: Harnessing the power of multiomics, our research integrates genomics,
-    proteomics, and metabolomics to uncover novel biomarkers and druggable targets.
-    Our cutting-edge in-house facilities for mass spectrometry and RNA sequencing
-    provide the high-throughput data needed to drive discoveries in cellular senescence.
-    This comprehensive approach accelerates the identification of therapeutic opportunities
-    and enhances our understanding of molecular mechanisms.
+    proteomics, metabolomics, and snRNA-seq to uncover novel biomarkers and druggable
+    targets. Our cutting-edge in-house facilities for mass spectrometry and RNA sequencing
+    provide the high-throughput data needed to drive discoveries in cellular senescence,
+    liver cancer, and fibrosis. This comprehensive approach accelerates the identification
+    of therapeutic opportunities and enhances our understanding of molecular mechanisms.
   photo: /assets/hero/Multiomics Research-hero_photo.webp
+  short_title: Multiomics
   title: Multiomics Research
 - description: Our diverse, multinational team brings together a wealth of expertise
-    to tackle the complexities of cellular senescence. Through international collaboration
-    and partnerships with clinical institutions, we leverage global perspectives and
-    resources to advance research. This collaborative environment fosters innovative
-    solutions and drives progress in the field of molecular biology.
+    to tackle the complexities of cellular senescence and related conditions such
+    as COPD, systemic sclerosis, and idiopathic pulmonary fibrosis. Through international
+    collaboration and partnerships with clinical institutions, we leverage global
+    perspectives and resources to advance research. This collaborative environment
+    fosters innovative solutions and drives progress in the field of molecular biology.
   photo: /assets/hero/Collaboration with the Clinic-hero_photo.png
+  short_title: Clinic Collaboration
   title: Collaboration with the Clinic
 - description: Our research in cancer focuses on understanding the role of cellular
-    senescence in tumor development and progression. By exploring how senescence affects
-    cancer biology, we aim to uncover new therapeutic strategies and improve patient
+    senescence in tumor development and progression, including liver cancer and melanoma.
+    By exploring how senescence affects cancer biology, we aim to uncover new therapeutic
+    strategies, including chemotherapy and CDK4/6 inhibitors, and improve patient
     outcomes. Our cutting-edge approaches and technologies enable us to address the
     challenges of cancer treatment and advance the frontiers of oncology.
   photo: /assets/hero/Innovations in Cancer Research-hero_photo.png
+  short_title: Cancer Research
   title: Innovations in Cancer Research
 - description: Our research investigates the intricate role of senescent cells in
-    injury and tissue regeneration. We examine how these cells impact wound healing
-    by both facilitating and impeding the repair process. By understanding the dual
-    effects of senescence in regenerative contexts, we aim to develop targeted strategies
-    to optimize healing and enhance tissue repair, paving the way for advanced therapeutic
-    approaches.
+    injury and tissue regeneration under various conditions, such as hypoxia and UVB
+    exposure. We examine how these cells impact wound healing by both facilitating
+    and impeding the repair process. By understanding the dual effects of senescence
+    in regenerative contexts, we aim to develop targeted strategies to optimize healing
+    and enhance tissue repair, paving the way for advanced therapeutic approaches.
   photo: /assets/hero/Injury, Regenerative Senescence, and Wound Healing-hero_photo.webp
+  short_title: Injury and Healing
   title: Injury, Regenerative Senescence, and Wound Healing
-- description: Our research focuses on the role of microglia in the aging mouse brain,
-    particularly how cellular senescence affects brain function and health. By studying
-    these immune cells, we aim to understand their contribution to age-related neurodegenerative
-    processes. Insights from this work are crucial for developing interventions to
-    preserve cognitive function and combat neurodegenerative diseases associated with
-    aging.
+- description: Our research focuses on the role of microglia in the aging brain, particularly
+    how cellular senescence and calcium signaling affect brain function and health.
+    By studying these immune cells, we aim to understand their contribution to age-related
+    neurodegenerative processes. Insights from this work are crucial for developing
+    interventions to preserve cognitive function and combat neurodegenerative diseases
+    associated with aging.
   photo: /assets/hero/Cellular Senescence in the Aging Brain-hero_photo.webp
+  short_title: Aging Brain
   title: Cellular Senescence in the Aging Brain
 - description: Our observational studies explore the impact of dietary variations
     and physical activity on aging. By monitoring natural behaviors and dietary patterns,
@@ -50,4 +58,5 @@
     underlying healthy aging and guide future research on lifestyle-based strategies
     for age-related health preservation.
   photo: /assets/hero/Diet and Physical Activity in Aging-hero_photo.webp
+  short_title: Diet and Aging
   title: Diet and Physical Activity in Aging
