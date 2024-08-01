@@ -9,17 +9,17 @@
 - description: Harnessing the power of multiomics, our research integrates genomics,
     proteomics, metabolomics, and snRNA-seq to uncover novel biomarkers and druggable
     targets. Our cutting-edge in-house facilities for mass spectrometry and RNA sequencing
-    provide the high-throughput data needed to drive discoveries in cellular senescence,
-    liver cancer, and fibrosis. This comprehensive approach accelerates the identification
-    of therapeutic opportunities and enhances our understanding of molecular mechanisms.
+    provide the high-throughput data needed to drive discoveries in cellular senescence.
+    This comprehensive approach accelerates the identification of therapeutic opportunities
+    and enhances our understanding of molecular mechanisms.
   photo: /assets/hero/Multiomics Research-hero_photo.webp
   short_title: Multiomics
   title: Multiomics Research
 - description: Our diverse, multinational team brings together a wealth of expertise
     to tackle the complexities of cellular senescence and related conditions such
-    as COPD, systemic sclerosis, and idiopathic pulmonary fibrosis. Through international
-    collaboration and partnerships with clinical institutions, we leverage global
-    perspectives and resources to advance research. This collaborative environment
+    as COPD, systemic sclerosis, cancer, and idiopathic pulmonary fibrosis. Through
+    international collaboration and partnerships with clinical institutions, we leverage
+    global perspectives and resources to advance research. This collaborative environment
     fosters innovative solutions and drives progress in the field of molecular biology.
   photo: /assets/hero/Collaboration with the Clinic-hero_photo.png
   short_title: Clinic Collaboration
@@ -34,8 +34,8 @@
   short_title: Cancer Research
   title: Innovations in Cancer Research
 - description: Our research investigates the intricate role of senescent cells in
-    injury and tissue regeneration under various conditions, such as hypoxia and UVB
-    exposure. We examine how these cells impact wound healing by both facilitating
+    injury and tissue regeneration under various conditions, such as skin wounds,
+    and UVB exposure. We examine how these cells impact regeneration by both facilitating
     and impeding the repair process. By understanding the dual effects of senescence
     in regenerative contexts, we aim to develop targeted strategies to optimize healing
     and enhance tissue repair, paving the way for advanced therapeutic approaches.
@@ -43,28 +43,28 @@
   short_title: Injury and Healing
   title: Injury, Regenerative Senescence, and Wound Healing
 - description: Our research focuses on the role of microglia in the aging brain, particularly
-    how cellular senescence and calcium signaling affect brain function and health.
-    By studying these immune cells, we aim to understand their contribution to age-related
-    neurodegenerative processes. Insights from this work are crucial for developing
-    interventions to preserve cognitive function and combat neurodegenerative diseases
-    associated with aging.
+    how cellular senescence affects brain function and health. By studying these immune
+    cells, we aim to understand their contribution to age-related neurodegenerative
+    processes. Insights from this work are crucial for developing interventions to
+    preserve cognitive function and combat neurodegenerative diseases associated with
+    aging.
   photo: /assets/hero/Cellular Senescence in the Aging Brain-hero_photo.webp
   short_title: Aging Brain
   title: Cellular Senescence in the Aging Brain
 - description: Our observational studies explore the impact of dietary variations
-    and physical activity on aging. By monitoring natural behaviors and dietary patterns,
+    and physical activity on aging. By monitoring behaviors and dietary patterns,
     we aim to understand how lifestyle factors influence cellular senescence and overall
     health during aging. These insights help to uncover the biological mechanisms
     underlying healthy aging and guide future research on lifestyle-based strategies
     for age-related health preservation.
-  photo: /assets/hero/Diet and Physical Activity in Aging-hero_photo.webp
+  photo: /assets/hero/Diet and Physical Activity in Aging-hero_photo.png
   short_title: Diet and Aging
   title: Diet and Physical Activity in Aging
 - description: Our research addresses sex disparities in aging and disease, investigating
     how different biological responses in males and females impact health outcomes.
-    By examining sex-specific variations in cellular senescence, fibrosis, and cancer,
-    we aim to develop personalized therapeutic strategies and enhance our understanding
-    of sex-based differences in disease progression and treatment efficacy.
+    By examining sex-specific variations in cellular senescence, and cancer, we aim
+    to develop personalized therapeutic strategies and enhance our understanding of
+    sex-based differences in disease progression and treatment efficacy.
   photo: /assets/hero/Sex Disparity in Aging and Disease-hero_photo.png
   short_title: Sex Disparity
   title: Sex Disparity in Aging and Disease
