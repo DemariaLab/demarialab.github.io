@@ -128,7 +128,7 @@ order: 0
             <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
                 <div class="row g-5 d-none d-lg-flex ">
 
-                    <div class="col-12 col-lg-4 ms-0 ps-0">
+                    <div class="col-12 col-lg-3 ms-0 ps-0">
                         <div class="row gy-1 gy-lg-2">
                             {% for item in hero_accordion %}
                             {% assign border_radius = "border-radius: 5px" %}
@@ -142,11 +142,12 @@ order: 0
                             {% endif %}
                             <div class="col-12 mx-0 px-0">
                                 <div class="front no-text-selection py-3 px-3 animated bg-light hero-card hero-card-indicator h-100"
-                                     data-title="{{item.title}}" data-description="{{item.description}}"
+                                     data-title="{{item.title}}"
+                                     data-description="{{item.description}}"
                                      data-photo="{{item.photo}}"
                                      style="{{border_radius}} ">
                                     <div class="card-body">
-                                        <h5 class="poppins m-0">{{item.title}}</h5>
+                                        <h5 class="poppins m-0">{{item.short_title}}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +155,7 @@ order: 0
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-8 ">
+                    <div class="col-12 col-lg ">
                         <h2 class="poppins showcase-title text-white front">Our research</h2>
                         <div class="showcase-text text-white  front">
                             We employ advanced techniques and cutting-edge technologies to explore the molecular
@@ -201,7 +202,6 @@ order: 0
                 border-top-left-radius:5px;border-top-right-radius: var(--bs-border-radius);" %}
                 {% endif %}
 
-
                 <div class="accordion-item  {% unless forloop.last %} mb-1 {% endunless %} px-1 py-2 " style="{{border_radius}}">
                     <h5 class="accordion-header poppins px-1">
                         <button class="accordion-button collapsed hero-card p-2 bg-transparent" type="button" data-bs-toggle="collapse"
@@ -210,7 +210,7 @@ order: 0
                                 data-title="{{item.title}}"
                                 data-description="{{item.description}}"
                                 data-photo="{{item.photo}}">
-                            {{item.short_title}}
+                            {{item.description}}
                         </button>
                     </h5>
                     <div id="flush-collapse{{cleaned_title}}" class="accordion-collapse collapse py-0"
