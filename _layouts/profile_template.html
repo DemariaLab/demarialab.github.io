@@ -21,7 +21,7 @@ layout: modal_post
         <div class="double-column my-3 d-block d-md-flex">
             <div class="col d-flex align-items-center">
                 <div class="image-content w-100 ">
-                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}" class="border-0"/>
+                    <img src="{{ page.thumbnail }}" alt="{{ page.name }}" class="border-0 rounded-on-desktop"/>
                 </div>
             </div>
             <div class="col ms-0 ms-md-3 mb-0 mb-lg-4">
@@ -30,14 +30,13 @@ layout: modal_post
                         page.is_alumni %} {% else
                         %} ● {{page.qualification}}{% endif %}</p></h2>
                     <p class="card-text px-3 px-lg-0">
-                        {% if page.is_alumni %} {% else %}{{ page.role }}<br>
+                        {% if page.is_alumni %} {% else %}{{ page.role }}
                         {% endif %}
                         {% if page.is_alumni %}
                     <div class="px-3 px-lg-0">
                         <div class="badge rounded-pill text-bg-danger mb-3">Lab alumni</div>
                     </div>
 
-                    <br>
                     {% endif %}
                     <ul class="member-info list-unstyled px-3 px-lg-0">
                         {% if page.date_joined and page.is_alumni == false %}

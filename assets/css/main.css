@@ -94,7 +94,24 @@
 .js-required-d-block {
   display: none;
 }
+/* Mobile first approach */
+.rounded-on-desktop {
+    border-radius: 0;
+}
 
+/* Medium devices and up */
+@media (min-width: 768px) {
+    .rounded-on-desktop {
+        border-radius: 0.3rem; /* Equivalent to .rounded */
+    }
+}
+
+/* Large devices and up */
+@media (min-width: 992px) {
+    .rounded-on-desktop {
+        border-radius: 0.5rem; /* Equivalent to .rounded-lg */
+    }
+}
 /* Class to show as flex */
 .js-required-d-flex {
   display: none;
