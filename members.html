@@ -16,7 +16,7 @@ order: 2
 
     <div class="container-xl">
         <div class="col-12">
-            <h3 class="poppins my-3 ">{{role}}{% unless is_alumni_category %}s{% endunless%}</h3>
+            <h3 class="poppins my-3 ">{{role}}{% unless is_alumni_category =="true" %}s{% endunless%}</h3>
             <div class="row g-1 g-lg-2">
                 {% if is_alumni_category == "true"%}
                 {% assign sorted_profiles = site.profiles | where: "is_alumni", is_alumni_category
