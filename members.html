@@ -7,23 +7,36 @@ order: 2
 ---
 <div class="container-flex">
     {% assign roles = site.profiles | map: 'role' | uniq %}
+    {% assign roles = roles | push: 'Alumni' %}
     {% for role in roles %}
+    {% assign is_alumni_category = "false" %}
+    {% if role == 'Alumni' %}
+    {% assign is_alumni_category = "true" %}
+    {% endif %}
+
     <div class="container-xl">
         <div class="col-12">
-            <h3 class="poppins my-3 ">{{role}}s</h3>
+            <h3 class="poppins my-3 ">{{role}}{% unless is_alumni_category %}s{% endunless%}</h3>
             <div class="row g-1 g-lg-2">
-                {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", false | sort:
-                "date_joined" | reverse %}
+                {% if is_alumni_category == "true"%}
+                {% assign sorted_profiles = site.profiles | where: "is_alumni", is_alumni_category
+                | sort: "date_joined" | reverse %}
+                {% endif %}
+                {% if is_alumni_category == "false" %}
+                {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", is_alumni_category
+                | sort: "date_joined" | reverse %}
+                {% endif %}
+
                 {% for profile in sorted_profiles %}
                 <div class="col-md-4 mb-3">
                     <a href="{{profile.url}}" class=" no-underline text-black ">
-                        {% assign formatted_thumb = profile.thumbnail  %}
+                        {% assign formatted_thumb = profile.thumbnail %}
                         {% assign thumb_size = formatted_thumb.size %}
-                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
-                {% assign first_char = formatted_thumb | slice: 0 %}
-                {% if first_char == "'" %}
-                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
-                {% endif %}
+                        {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                        {% assign first_char = formatted_thumb | slice: 0 %}
+                        {% if first_char == "'" %}
+                        {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                        {% endif %}
 
 
                         {% assign path_parts = formatted_thumb | split: '/' %}
@@ -39,7 +52,7 @@ order: 2
 
                         <div class="mt-2 mb-3">
                             <h4 class="poppins noMargin">{{ profile.name }}</h4>
-                            <h6 class="mt-2 mb-2">Since {{ profile.date_joined | date: "%B %Y" }}</h6>
+                            <h6 class="mt-2 mb-2">{%if is_alumni_category == "true" %} {{ profile.date_joined | date: "%Y" }} - {{ profile.date_leaving | date: "%Y" }} {% else %} Since {{ profile.date_joined | date: "%B %Y" }} {%endif%}</h6>
                             {% if profile.keywords %}
                             {% assign cleaned_keywords = profile.keywords | replace: 'and ', ',' %}
                             {% assign keywords = cleaned_keywords | split: ';' %}
@@ -60,50 +73,4 @@ order: 2
     </div>
     <div class="b-divider m-0"></div>
     {% endfor %}
-</div>
-<div class="container-flex">
-    <div class="container-xl">
-        <div class="col-12">
-            <h3 class="poppins my-3">Alumni</h3>
-            <div class="row g-1 g-lg-2">
-                {% assign sorted_alumni = site.profiles | where: "is_alumni", true | sort: "date_leaving" | reverse %}
-                {% for profile in sorted_alumni %}
-                <div class="col-md-4  mb-3">
-                    <a href="{{profile.url}}" class="no-underline text-black">
-                         {% assign formatted_thumb = profile.thumbnail  %}
-                        {% assign thumb_size = formatted_thumb.size %}
-                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
-                {% assign first_char = formatted_thumb | slice: 0 %}
-                {% if first_char == "'" %}
-                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
-                {% endif %}
-                        {% assign path_parts = formatted_thumb | split: '/' %}
-                        {% assign filename = path_parts | last %}
-                        {% assign directory = formatted_thumb | remove: filename %}
-                        {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                        '.webp' | replace: "'", "\\'" %}
-                        {% assign new_url = directory | append: new_filename %}
-
-                        <div style="background-image: url('{{ new_url }}')"
-                             class="team-card interaction-gradient-fade grid-img rounded"></div>
-                        <div class="mt-2 mb-3">
-                            <h4 class="poppins noMargin">{{ profile.name }}</h4>
-                            <h6 class="mt-2 mb-2">{{ profile.role }}</h6>
-                            {% if profile.keywords %}
-                            {% assign cleaned_keywords = profile.keywords | replace: 'and ', ',' %}
-                            {% assign keywords = cleaned_keywords | split: ';' %}
-                            {% for keyword in keywords %}
-                            {% assign keyword = keyword | strip %}
-                            {% if keyword != ' ' %}
-                            <div class="badge rounded-pill mt-1 py-2 px-3 gradientBg text-black ">{{ keyword }}</div>
-                            {% endif %}
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </div>
