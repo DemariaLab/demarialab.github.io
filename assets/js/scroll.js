@@ -59,7 +59,7 @@ function onDOMReady() {
 
         if (!url) {
             url = ""
-            link.className=link.className+" no-hover"
+            link.className = link.className + " no-hover"
         } else {
             link.href = '/profiles/member_' + url.replace(/\s+/g, '-') + '.html';
         }
@@ -106,7 +106,7 @@ function onDOMReady() {
     });
 
     applyCornerRadii();
-    
+
 }
 
 
@@ -116,79 +116,70 @@ function linkTo_UnCryptMailto(encoded) {
     linkElement.innerHTML = "Email: " + decoded; // Replace the link text with the email address
     linkElement.removeAttribute('href');
 }
-  function applyCornerRadii() {
-        const roundedPanel = document.querySelector('div.rounded-panel');
-        const chips = Array.from(roundedPanel.querySelectorAll('div.rounded-chip'));
 
-        if (chips.length === 0) return;
+function applyCornerRadii() {
+    const roundedPanel = document.querySelector('div.rounded-panel');
+    const chips = Array.from(roundedPanel.querySelectorAll('div.rounded-chip'));
 
-        // Initialize variables to find the extreme edges
-        let topLeftChip = chips[0];
-        let topRightChip = chips[0];
-        let bottomLeftChip = chips[0];
-        let bottomRightChip = chips[0];
+    if (chips.length === 0) return;
 
-        chips.forEach(chip => {
-            // Reset all border radii to 5px
-            chip.style.borderRadius = '5px';
+    // Initialize variables to find the extreme edges
+    let topLeftChip = chips[0];
+    let topRightChip = chips[0];
+    let bottomLeftChip = chips[0];
+    let bottomRightChip = chips[0];
 
-            const rect = chip.getBoundingClientRect();
+    chips.forEach(chip => {
+        // Reset all border radii to 5px
+        chip.style.borderRadius = '5px';
 
-            // Determine topmost, leftmost, bottommost, and rightmost chips
-            if (rect.top < topLeftChip.getBoundingClientRect().top ||
-                (rect.top === topLeftChip.getBoundingClientRect().top && rect.left < topLeftChip.getBoundingClientRect().left)) {
-                topLeftChip = chip;
-            }
+        const rect = chip.getBoundingClientRect();
 
-            if (rect.top < topRightChip.getBoundingClientRect().top ||
-                (rect.top === topRightChip.getBoundingClientRect().top && rect.right > topRightChip.getBoundingClientRect().right)) {
-                topRightChip = chip;
-            }
+        // Determine topmost, leftmost, bottommost, and rightmost chips
+        if (rect.top < topLeftChip.getBoundingClientRect().top ||
+            (rect.top === topLeftChip.getBoundingClientRect().top && rect.left < topLeftChip.getBoundingClientRect().left)) {
+            topLeftChip = chip;
+        }
 
-            if (rect.bottom > bottomLeftChip.getBoundingClientRect().bottom ||
-                (rect.bottom === bottomLeftChip.getBoundingClientRect().bottom && rect.left < bottomLeftChip.getBoundingClientRect().left)) {
-                bottomLeftChip = chip;
-            }
+        if (rect.top < topRightChip.getBoundingClientRect().top ||
+            (rect.top === topRightChip.getBoundingClientRect().top && rect.right > topRightChip.getBoundingClientRect().right)) {
+            topRightChip = chip;
+        }
 
-            if (rect.bottom > bottomRightChip.getBoundingClientRect().bottom ||
-                (rect.bottom === bottomRightChip.getBoundingClientRect().bottom && rect.right > bottomRightChip.getBoundingClientRect().right)) {
-                bottomRightChip = chip;
-            }
-        });
+        if (rect.bottom > bottomLeftChip.getBoundingClientRect().bottom ||
+            (rect.bottom === bottomLeftChip.getBoundingClientRect().bottom && rect.left < bottomLeftChip.getBoundingClientRect().left)) {
+            bottomLeftChip = chip;
+        }
 
-        // Apply the border radii to the corner chips
-        topLeftChip.style.borderTopLeftRadius = '20px';
-        topRightChip.style.borderTopRightRadius = '20px';
-        bottomLeftChip.style.borderBottomLeftRadius = '20px';
-        bottomRightChip.style.borderBottomRightRadius = '20px';
-        console.log("topLeftChip",topLeftChip)
-        console.log("topRightChip",topRightChip)
-        console.log("bottomLeftChip",bottomLeftChip)
-        console.log("bottomRightChip",bottomRightChip)
+        if (rect.bottom > bottomRightChip.getBoundingClientRect().bottom ||
+            (rect.bottom === bottomRightChip.getBoundingClientRect().bottom && rect.right > bottomRightChip.getBoundingClientRect().right)) {
+            bottomRightChip = chip;
+        }
+    });
 
-    }
+    // Apply the border radii to the corner chips
+    topLeftChip.style.borderTopLeftRadius = '20px';
+    topRightChip.style.borderTopRightRadius = '20px';
+    bottomLeftChip.style.borderBottomLeftRadius = '20px';
+    bottomRightChip.style.borderBottomRightRadius = '20px';
+
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-    onDOMReady();
-    // Re-apply corner radii on window resize
     window.addEventListener('resize', applyCornerRadii);
     window.addEventListener('load', applyCornerRadii);
-
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 applyCornerRadii();
+                observer.unobserve(entry.target); // Unobserve after the function is applied
             }
         });
-    });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
 
-    const roundedPanel = document.querySelector('div.rounded-panel');
+    const roundedPanel = document.querySelector('div.counting-panel');
     if (roundedPanel) {
         observer.observe(roundedPanel);
     }
-
 });
-
-
-
