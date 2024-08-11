@@ -560,3 +560,91 @@
   title: An essential role for senescent cells in optimal wound healing through secretion
     of PDGF-AA.
   year: 2014 Dec 22
+- authors: "Ogrodnik M, Carlos Acosta J, Adams PD, d'Adda di Fagagna F, Baker DJ,\
+    \ Bishop CL, Chandra T, Collado M, Gil J, Gorgoulis V, Gruber F, Hara E, Jansen-D\xFC\
+    rr P, Jurk D, Khosla S, Kirkland JL, Krizhanovsky V, Minamino T, Niedernhofer\
+    \ LJ, Passos JF, Ring NAR, Redl H, Robbins PD, Rodier F, Scharffetter-Kochanek\
+    \ K, Sedivy JM, Sikora E, Witwer K, von Zglinicki T, Yun MH, Grillari J, Demaria\
+    \ M"
+  is_selected: false
+  journal: Cell
+  pubmed_id: '39121846'
+  title: "Guidelines for minimal information on cellular senescence experimentation\
+    \ in\_vivo."
+  year: 2024 Aug 8
+- authors: Nehme J, Mesilmany L, Varela-Eirin M, Brandenburg S, Altulea A, Lin Y,
+    Gaya da Costa M, Seelen M, Hillebrands JL, van Goor H, Saab R, Akl H, Prevarskaya
+    N, Farfariello V, Demaria M
+  is_selected: true
+  journal: Nat Aging
+  pubmed_id: '38724734'
+  title: Converting cell death into senescence by PARP1 inhibition improves recovery
+    from acute oxidative injury.
+  year: 2024 Jun
+- authors: Evangelou K, Vasileiou PVS, Papaspyropoulos A, Hazapis O, Petty R, Demaria
+    M, Gorgoulis VG
+  is_selected: false
+  journal: Physiol Rev
+  pubmed_id: '36049114'
+  title: 'Cellular senescence and cardiovascular diseases: moving to the "heart" of
+    the problem.'
+  year: 2023 Jan 1
+- authors: Demaria G, Invernizzi A, Ombelet D, Carvalho JC, Renken RJ, Cornelissen
+    FW
+  is_selected: false
+  journal: Front Aging Neurosci
+  pubmed_id: '35095465'
+  title: 'Binocular Integrated Visual Field Deficits Are Associated With Changes in
+    Local Network Function in Primary Open-Angle Glaucoma: A Resting-State fMRI Study.'
+  year: 2021
+- authors: Wang B, Varela-Eirin M, Brandenburg SM, Hernandez-Segura A, van Vliet T,
+    Jongbloed EM, Wilting SM, Ohtani N, Jager A, Demaria M
+  is_selected: true
+  journal: EMBO J
+  pubmed_id: '34985783'
+  title: Pharmacological CDK4/6 inhibition reveals a p53-dependent senescent state
+    with restricted toxicity.
+  year: 2022 Mar 15
+- authors: Kohli J, Veenstra I, Demaria M
+  is_selected: false
+  journal: EMBO Rep
+  pubmed_id: '33734564'
+  title: 'The struggle of a good friend getting old: cellular senescence in viral
+    responses and therapy.'
+  year: 2021 Apr 7
+- authors: Peng X, Wu Y, Brouwer U, van Vliet T, Wang B, Demaria M, Barazzuol L, Coppes
+    RP
+  is_selected: false
+  journal: Cell Death Dis
+  pubmed_id: '33056980'
+  title: Cellular senescence contributes to radiation-induced hyposalivation by affecting
+    the stem/progenitor cell niche.
+  year: 2020 Oct 14
+- authors: Nehme J, Borghesan M, Mackedenski S, Bird TG, Demaria M
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '32955770'
+  title: Cellular senescence as a potential mediator of COVID-19 severity in the elderly.
+  year: 2020 Oct
+- authors: Palmer AK, Xu M, Zhu Y, Pirtskhalava T, Weivoda MM, Hachfeld CM, Prata
+    LG, van Dijk TH, Verkade E, Casaclang-Verzosa G, Johnson KO, Cubro H, Doornebal
+    EJ, Ogrodnik M, Jurk D, Jensen MD, Chini EN, Miller JD, Matveyenko A, Stout MB,
+    Schafer MJ, White TA, Hickson LJ, Demaria M, Garovic V, Grande J, Arriaga EA,
+    Kuipers F, von Zglinicki T, LeBrasseur NK, Campisi J, Tchkonia T, Kirkland JL
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '30907060'
+  title: Targeting senescent cells alleviates obesity-induced metabolic dysfunction.
+  year: 2019 Jun
+- authors: Calcinotto A, Kohli J, Zagato E, Pellegrini L, Demaria M, Alimonti A
+  is_selected: false
+  journal: Physiol Rev
+  pubmed_id: '30648461'
+  title: 'Cellular Senescence: Aging, Cancer, and Injury.'
+  year: 2019 Apr 1
+- authors: Hernandez-Segura A, Brandenburg S, Demaria M
+  is_selected: true
+  journal: J Vis Exp
+  pubmed_id: '29985363'
+  title: Induction and Validation of Cellular Senescence in Primary Human Cells.
+  year: 2018 Jun 20
