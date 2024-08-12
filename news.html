@@ -33,7 +33,6 @@ order: 6
                     {% assign new_url = directory | append: 'reduced_' | append: filename | replace: '.jpg', '.webp'|
                     replace: '.png', '.webp' %}
 
-
                     <a href="{{ post.url }}"
                        class="col-12 mx-0 mt-0 front {% unless forloop.last %} mb-1 mb-lg-2{% endunless %} no-underline rounded text-current-color">
                         <div class="d-flex flex-row px-0 bg-white interaction-bg-color  rounded {% unless forloop.last%}mb-2 {% endunless%}">
