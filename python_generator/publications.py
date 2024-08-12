@@ -36,7 +36,7 @@ def resolve_final_url(url):
 def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
     firefox_options = Options()
     firefox_options.add_argument('--headless')
-    firefox_options.set_preference("javascript.enabled", False)
+    # firefox_options.set_preference("javascript.enabled", False)
 
     driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
     driver.set_window_size(width, height)

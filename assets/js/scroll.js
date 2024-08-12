@@ -2,7 +2,6 @@ function onDOMReady() {
     const underline = document.querySelector('.underline');
     const navItems = document.querySelectorAll('.nav-item');
     const activeItem = document.querySelector('.nav-item.active d');
-    const header = document.querySelector("header");
 
     function updateUnderline(item) {
         if (item) {
@@ -119,8 +118,8 @@ function linkTo_UnCryptMailto(encoded) {
 
 function applyCornerRadii() {
     const roundedPanel = document.querySelector('div.rounded-panel');
+    if (roundedPanel == null) return;
     const chips = Array.from(roundedPanel.querySelectorAll('div.rounded-chip'));
-
     if (chips.length === 0) return;
 
     // Initialize variables to find the extreme edges
@@ -168,7 +167,7 @@ function applyCornerRadii() {
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', applyCornerRadii);
     window.addEventListener('load', applyCornerRadii);
-
+    onDOMReady();
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -176,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 observer.unobserve(entry.target); // Unobserve after the function is applied
             }
         });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
+    }, {threshold: 0.1}); // Trigger when 10% of the element is in view
 
     const roundedPanel = document.querySelector('div.counting-panel');
     if (roundedPanel) {
