@@ -10,7 +10,7 @@ keywords: "tetraspanins"
 country: "the Netherlands 🇳🇱"
 qualification: "PhD"
 
-publications: "32800659; 32800659"
+publications: "32800659"
 thumbnail: "/assets/members/member_Willem Hoogaars.webp"
 is_alumni: true
 ---

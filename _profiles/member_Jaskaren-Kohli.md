@@ -10,7 +10,7 @@ keywords: "nevi; melanocytes"
 country: "the United Kingdom 🇬🇧"
 qualification: "PhD"
 
-publications: "36564381; 36564381; 33911261; 33911261; 33734564; 33734564; 32482536; 32482536; 32727916; 32727916; 30648461; 30648461; 29484109; 29484109"
+publications: "36564381; 33911261; 33734564; 32482536; 32727916; 30648461; 29484109"
 thumbnail: "/assets/members/member_Jaskaren Kohli.webp"
 is_alumni: true
 ---
