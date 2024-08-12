@@ -86,6 +86,18 @@ def fetch_publications_by_term(search_term):
         return []
 
 
+def parse_year(year_str):
+    year_str = str(year_str)
+    try:
+        # Try to parse the date with different formats
+        return datetime.strptime(year_str, "%Y %b %d")
+    except ValueError:
+        try:
+            return datetime.strptime(year_str, "%Y %b")
+        except ValueError:
+            return datetime.strptime(year_str, "%Y")
+
+
 def get_publication_details(pubmed_id):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
     summary_url = f"{base_url}esummary.fcgi?db=pubmed&id={pubmed_id}&retmode=json"
@@ -164,8 +176,15 @@ def fetch_and_save_publications(data_dir, args):
     else:
         print("Publications: No new items to add. Checking selected publications")
 
-    existing_publications = [{**d, 'is_selected': str(d["pubmed_id"]) in selected_pubmed_ids} for d in
-                             existing_publications]
+    existing_publications = list({d["pubmed_id"]: {**d, 'is_selected': str(d["pubmed_id"]) in selected_pubmed_ids}
+                                  for d in existing_publications
+                                  }.values())
+
+    existing_publications = sorted(
+        existing_publications,
+        key=lambda d: parse_year(d['year']),
+        reverse=True  # Reverse to sort from newest to oldest
+    )
     # Write updated publications to YAML file
     with open(output_file, 'w', encoding="utf-8") as f:
         yaml.safe_dump(existing_publications, f, default_flow_style=False)
