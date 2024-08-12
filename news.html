@@ -22,7 +22,7 @@ order: 6
                     {{year.name}}
                 </button>
             </h4>
-            <div id="accordionNews-collapse{{year.name}}" class="accordion-collapse collapse {% if forloop.first %} show {% endif %}">
+            <div id="accordionNews-collapse{{year.name}}" class="accordion-collapse collapse {% if forloop.first %} show {% endif %}  rounded-5 overflow-hidden ">
                 <div class="accordion-body rounded-5 overflow-hidden bg-light">
 
                     {% for post in year.items %}
