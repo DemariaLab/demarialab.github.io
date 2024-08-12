@@ -176,14 +176,17 @@ def fetch_and_save_publications(data_dir, args):
     else:
         print("Publications: No new items to add. Checking selected publications")
 
-    existing_publications = list({d["pubmed_id"]: {**d, 'is_selected': str(d["pubmed_id"]) in selected_pubmed_ids}
-                                  for d in existing_publications
-                                  }.values())
+    existing_publications = list({
+                                     str(d["pubmed_id"]): {**d, 'pubmed_id': str(d["pubmed_id"]),
+                                                           'is_selected': str(d["pubmed_id"]) in selected_pubmed_ids}
+                                     for d in existing_publications
+                                 }.values())
 
+    # Sort by 'year' key
     existing_publications = sorted(
         existing_publications,
         key=lambda d: parse_year(d['year']),
-        reverse=True  # Reverse to sort from newest to oldest
+        reverse=True  # Sort from newest to oldest
     )
     # Write updated publications to YAML file
     with open(output_file, 'w', encoding="utf-8") as f:
