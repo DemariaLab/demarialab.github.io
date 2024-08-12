@@ -90,10 +90,12 @@
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
+
 /* Class to show as block */
 .js-required-d-block {
-  display: none;
+    display: none;
 }
+
 /* Mobile first approach */
 .rounded-on-desktop {
     border-radius: 0;
@@ -112,17 +114,21 @@
         border-radius: 0.5rem; /* Equivalent to .rounded-lg */
     }
 }
+
 /* Class to show as flex */
 .js-required-d-flex {
-  display: none;
+    display: none;
 }
+
 /* Class to show as flex */
 .js-missing-d-flex {
-  display: flex;
+    display: flex;
 }
+
 .js-missing-d-block {
-  display: block;
+    display: block;
 }
+
 .interaction-gradient-fade:hover::before {
     opacity: 1;
 }
@@ -131,7 +137,7 @@
 .news-thumbnail {
     margin: 0;
     height: 100%;
-    min-height:150px;
+    min-height: 150px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -146,6 +152,19 @@
     color: currentColor;
     text-decoration: none;
     opacity: 0.7;
+}
+
+.news-accordion * {
+    --bs-border-width: 0 !important;
+    --bs-accordion-btn-focus-box-shadow: none !important;
+    --bs-border-color: transparent !important;
+    --bs-accordion-border-color: transparent !important;
+    --bs-accordion-bg:rgb(248,249,250) !important;
+    --bs-accordion-body-padding-x: 0 !important;
+  --bs-accordion-body-padding-y: 0 !important;
+}
+.news-accordion button{
+    background-color: rgb(248,249,250) !important
 }
 
 /* Media query for small devices (sm) */

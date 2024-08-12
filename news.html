@@ -5,85 +5,62 @@ header-title: Lab news
 permalink: /news/
 order: 6
 ---
-<div class="blog-home container-fluid bg-light pt-0 px-0 pb-3 m-0">
-    <div class="post-list">
+<div class="blog-home container-fluid bg-light px-0 py-3 m-0">
+    <div class="accordion px-0 container-xl news-accordion accordion-flush " id="accordionNews">
+
+
         {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" | reverse%}
+
+
         {% for year in posts_by_year reversed %}
-        <div class="latest-news  container-xl px-0 py-0 mb-1 ">
-            <h4 class="poppins py-3 px-3 px-md-3">{{year.name}}
+
+        <div class="accordion-item">
+            <h4 class="accordion-header poppins">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#accordionNews-collapse{{year.name}}" aria-expanded="{{forloop.first}}"
+                        aria-controls="accordionNews-collapse{{year.name}}">
+                    {{year.name}}
+                </button>
             </h4>
-            <div class="row g-0 rounded-5 overflow-hidden news-block">
-                {% for post in year.items %}
+            <div id="accordionNews-collapse{{year.name}}" class="accordion-collapse collapse {% if forloop.first %} show {% endif %}">
+                <div class="accordion-body rounded-5 overflow-hidden bg-light">
 
-                {% assign formatted_thumb = post.thumbnail %}
+                    {% for post in year.items %}
+                    {% assign formatted_thumb = post.thumbnail | remove: "'" %}
+                    {% assign path_parts = formatted_thumb | split: '/' %}
+                    {% assign filename = path_parts | last %}
+                    {% assign directory = formatted_thumb | remove: filename %}
+                    {% assign new_url = directory | append: 'reduced_' | append: filename | replace: '.jpg', '.webp'|
+                    replace: '.png', '.webp' %}
 
-                {% assign thumb_size = formatted_thumb.size %}
-                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
-                {% assign first_char = formatted_thumb | slice: 0 %}
-                {% if first_char == "'" %}
-                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
-                {% endif %}
 
-                {% assign path_parts = formatted_thumb | split: '/' %}
-                {% assign filename = path_parts | last %}
-                {% assign directory = formatted_thumb | remove: filename %}
-               {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append: '.webp' | replace: "'", "\\'" %}
-                {% assign new_url = directory | append: new_filename %}
-
-                <a href="{{ post.url }}"
-                   class="col-12 mx-0 mt-0 {% unless forloop.last %} mb-1 mb-lg-2{% endunless %} no-underline interaction-bg-color rounded text-current-color bg-white">
-                    <div class="d-flex flex-row px-0">
-                        <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
-                            <div class="my-auto px-3 py-3 ">
-                                <div class="d-flex w-100 justify-content-between  ">
-                                    <h5 class="mb-1 poppins">{{ post.title }}</h5>
+                    <a href="{{ post.url }}"
+                       class="col-12 mx-0 mt-0 front {% unless forloop.last %} mb-1 mb-lg-2{% endunless %} no-underline rounded text-current-color">
+                        <div class="d-flex flex-row px-0 bg-white interaction-bg-color  rounded {% unless forloop.last%}mb-2 {% endunless%}">
+                            <div class="col-9 col-md-10 d-flex flex-column ps-0 ps-lg-2 pe-2">
+                                <div class="my-auto px-3 py-3 ">
+                                    <div class="d-flex w-100 justify-content-between  ">
+                                        <h5 class="mb-1 poppins">{{ post.title }}</h5>
+                                    </div>
+                                    <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
                                 </div>
-                                <small class="text-body-secondary">{{ post.date | date: "%d %B, %Y " }}</small>
+                            </div>
+                            <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
+                                <div class="news-thumbnail w-100 border-semi-transparent  rounded-end"
+                                     style="border-radius:inherit; background-image:url('{{new_url }}');">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3 col-md-2 p-0 d-flex align-items-center justify-content-center">
-                            <div class="news-thumbnail w-100 border-semi-transparent  rounded-end"
-                                 style="border-radius:inherit; background-image:url('{{new_url }}');">
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                {% endfor %}
+                    {% endfor %}
+
+
+                </div>
             </div>
         </div>
         {% endfor %}
-        <div id="loader" style="display: none;">Loading...</div>
+
+
     </div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let currentPage = 1;
-        const postsContainer = document.getElementById('posts-container');
-        const loader = document.getElementById('loader');
-        const loadMorePosts = () => {
-            loader.style.display = 'block';
-            fetch(`/page${currentPage + 1}.html`)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const htmlDocument = parser.parseFromString(data, 'text/html');
-                    const newPosts = htmlDocument.querySelectorAll('.post-item');
-                    newPosts.forEach(post => {
-                        postsContainer.appendChild(post);
-                    });
-                    currentPage++;
-                    loader.style.display = 'none';
-                })
-                .catch(error => {
-                    console.error('Error loading more posts:', error);
-                    loader.style.display = 'none';
-                });
-        };
-        window.addEventListener('scroll', () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-                loadMorePosts();
-            }
-        });
-    });
-</script>
