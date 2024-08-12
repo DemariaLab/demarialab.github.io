@@ -648,3 +648,215 @@
   pubmed_id: '29985363'
   title: Induction and Validation of Cellular Senescence in Primary Human Cells.
   year: 2018 Jun 20
+- authors: Wang B, Han J, Elisseeff JH, Demaria M
+  is_selected: true
+  journal: Nat Rev Mol Cell Biol
+  pubmed_id: '38654098'
+  title: The senescence-associated secretory phenotype and its physiological and pathological
+    implications.
+  year: 2024 Apr 23
+- authors: Magkouta S, Veroutis D, Pousias A, Papaspyropoulos A, Giannetti K, Pippa
+    N, Lougiakis N, Kambas K, Lagopati N, Polyzou A, Georgiou M, Chountoulesi M, Pispas
+    S, Foutadakis S, Kyrodimos E, Pouli N, Marakos P, Kotsinas A, Verginis P, Valakos
+    D, Vatsellas G, Petty R, Thanos D, Demaria M, Evangelou K, Di Micco R, Gorgoulis
+    VG
+  is_selected: false
+  journal: STAR Protoc
+  pubmed_id: '38460134'
+  title: One-step rapid tracking and isolation of senescent cells in cellular systems,
+    tissues, or animal models via GLF16.
+  year: 2024 Mar 15
+- authors: Lin Y, Postma DF, Steeneken LS, Melo Dos Santos LS, Kirkland JL, Espindola-Netto
+    JM, Tchkonia T, Borghesan M, Bouma HR, Demaria M
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '37969056'
+  title: Circulating monocytes expressing senescence-associated features are enriched
+    in COVID-19 patients with severe disease.
+  year: 2023 Dec
+- authors: Magkouta S, Veroutis D, Pousias A, Papaspyropoulos A, Pippa N, Lougiakis
+    N, Kambas K, Lagopati N, Polyzou A, Georgiou M, Chountoulesi M, Pispas S, Foutadakis
+    S, Pouli N, Marakos P, Kotsinas A, Verginis P, Valakos D, Mizi A, Papantonis A,
+    Vatsellas G, Galanos P, Bartek J, Petty R, Serrano M, Thanos D, Roussos C, Demaria
+    M, Evangelou K, Gorgoulis VG
+  is_selected: false
+  journal: Mol Cell
+  pubmed_id: '37802028'
+  title: A fluorophore-conjugated reagent enabling rapid detection, isolation and
+    live tracking of senescent cells.
+  year: 2023 Oct 5
+- authors: Venz R, Goyala A, Soto-Gamez A, Yenice T, Demaria M, Ewald CY
+  is_selected: false
+  journal: Geroscience
+  pubmed_id: '37644339'
+  title: In-vivo screening implicates endoribonuclease Regnase-1 in modulating senescence-associated
+    lysosomal changes.
+  year: 2024 Apr
+- authors: Nehme J, Altulea A, Gheorghe T, Demaria M
+  is_selected: false
+  journal: Biomed J
+  pubmed_id: '36801257'
+  title: The effects of macronutrients metabolism on cellular and organismal aging.
+  year: 2023 Jun
+- authors: Schmitt CA, Wang B, Demaria M
+  is_selected: true
+  journal: Nat Rev Clin Oncol
+  pubmed_id: '36045302'
+  title: Senescence and cancer - role and therapeutic opportunities.
+  year: 2022 Oct
+- authors: Malavolta M, Giacconi R, Piacenza F, Strizzi S, Cardelli M, Bigossi G,
+    Marcozzi S, Tiano L, Marcheggiani F, Matacchione G, Giuliani A, Olivieri F, Crivellari
+    I, Beltrami AP, Serra A, Demaria M, Provinciali M
+  is_selected: false
+  journal: Cells
+  pubmed_id: '36010584'
+  title: Simple Detection of Unstained Live Senescent Cells with Imaging Flow Cytometry.
+  year: 2022 Aug 12
+- authors: Wang B, Demaria M
+  is_selected: false
+  journal: Cancer Res
+  pubmed_id: '34911777'
+  title: The Quest to Define and Target Cellular Senescence in Cancer.
+  year: 2021 Dec 15
+- authors: "Zampetidis CP, Galanos P, Angelopoulou A, Zhu Y, Polyzou A, Karamitros\
+    \ T, Kotsinas A, Lagopati N, Mourkioti I, Mirzazadeh R, Polyzos A, Garnerone S,\
+    \ Mizi A, Gusmao EG, Sofiadis K, G\xE1l Z, Larsen DH, Pefani DE, Demaria M, Tsirigos\
+    \ A, Crosetto N, Maya-Mendoza A, Papaspyropoulos A, Evangelou K, Bartek J, Papantonis\
+    \ A, Gorgoulis VG"
+  is_selected: false
+  journal: Mol Cell
+  pubmed_id: '34793711'
+  title: A recurrent chromosomal inversion suffices for driving escape from oncogene-induced
+    senescence via subTAD reorganization.
+  year: 2021 Dec 2
+- authors: Soto-Gamez A, Wang Y, Zhou X, Seras L, Quax W, Demaria M
+  is_selected: false
+  journal: Cancer Lett
+  pubmed_id: '34728311'
+  title: Enhanced extrinsic apoptosis of therapy-induced senescent cancer cells using
+    a death receptor 5 (DR5) selective agonist.
+  year: 2022 Jan 28
+- authors: Varughese FM, Demaria M
+  is_selected: false
+  journal: Trends Cancer
+  pubmed_id: '34548270'
+  title: A novel transcriptomic-based classifier for senescent cancer cells.
+  year: 2021 Nov
+- authors: "Grillini A, Hern\xE1ndez-Garc\xEDa A, Renken RJ, Demaria G, Cornelissen\
+    \ FW"
+  is_selected: false
+  journal: Front Neurosci
+  pubmed_id: '33994927'
+  title: Computational Methods for Continuous Eye-Tracking Perimetry Based on Spatio-Temporal
+    Integration and a Deep Recurrent Neural Network.
+  year: 2021
+- authors: van Vliet T, Varela-Eirin M, Wang B, Borghesan M, Brandenburg SM, Franzin
+    R, Evangelou K, Seelen M, Gorgoulis V, Demaria M
+  is_selected: true
+  journal: Mol Cell
+  pubmed_id: '33823141'
+  title: Physiological hypoxia restrains the senescence-associated secretory phenotype
+    via AMPK-mediated mTOR suppression.
+  year: 2021 May 6
+- authors: van Vliet T, Casciaro F, Demaria M
+  is_selected: true
+  journal: Ageing Res Rev
+  pubmed_id: '33556549'
+  title: 'To breathe or not to breathe: Understanding how oxygen sensing contributes
+    to age-related phenotypes.'
+  year: 2021 May
+- authors: Fitsiou E, Pulido T, Campisi J, Alimirah F, Demaria M
+  is_selected: false
+  journal: J Invest Dermatol
+  pubmed_id: '33349436'
+  title: Cellular Senescence and the Senescence-Associated Secretory Phenotype as
+    Drivers of Skin Photoaging.
+  year: 2021 Apr
+- authors: Casciaro F, Borghesan M, Beretti F, Zavatti M, Bertucci E, Follo MY, Maraldi
+    T, Demaria M
+  is_selected: true
+  journal: Mech Ageing Dev
+  pubmed_id: '32800796'
+  title: Prolonged hypoxia delays aging and preserves functionality of human amniotic
+    fluid stem cells.
+  year: 2020 Oct
+- authors: Alimirah F, Pulido T, Valdovinos A, Alptekin S, Chang E, Jones E, Diaz
+    DA, Flores J, Velarde MC, Demaria M, Davalos AR, Wiley CD, Limbad C, Desprez PY,
+    Campisi J
+  is_selected: false
+  journal: Cancer Res
+  pubmed_id: '32641409'
+  title: Cellular Senescence Promotes Skin Carcinogenesis through p38MAPK and p44/42MAPK
+    Signaling.
+  year: 2020 Sep 1
+- authors: Lubberts S, Meijer C, Demaria M, Gietema JA
+  is_selected: false
+  journal: Crit Rev Oncol Hematol
+  pubmed_id: '32446180'
+  title: 'Early ageing after cytotoxic treatment for testicular cancer and cellular
+    senescence: Time to act.'
+  year: 2020 Jul
+- authors: Jones PR, Tigchelaar I, Demaria G, Wilson I, Bi W, Taylor DJ, Crabb DP
+  is_selected: false
+  journal: Ophthalmic Physiol Opt
+  pubmed_id: '31879994'
+  title: Refinement and preliminary evaluation of two tablet-based tests of real-world
+    visual function.
+  year: 2020 Jan
+- authors: Wiley CD, Liu S, Limbad C, Zawadzka AM, Beck J, Demaria M, Artwood R, Alimirah
+    F, Lopez-Dominguez JA, Kuehnemann C, Danielson SR, Basisty N, Kasler HG, Oron
+    TR, Desprez PY, Mooney SD, Gibson BW, Schilling B, Campisi J, Kapahi P
+  is_selected: false
+  journal: Cell Rep
+  pubmed_id: '31553904'
+  title: SILAC Analysis Reveals Increased Secretion of Hemostasis-Related Factors
+    by Senescent Cells.
+  year: 2019 Sep 24
+- authors: Hernandez-Segura A, Rubingh R, Demaria M
+  is_selected: true
+  journal: Aging Cell
+  pubmed_id: '30710410'
+  title: Identification of stable senescence-associated reference genes.
+  year: 2019 Apr
+- authors: Demaria M
+  is_selected: false
+  journal: Aging (Albany NY)
+  pubmed_id: '29686183'
+  title: Gene therapy for p16-overexpressing cells.
+  year: 2018 Apr 19
+- authors: Kohli J, Campisi J, Demaria M
+  is_selected: true
+  journal: Oncotarget
+  pubmed_id: '29484109'
+  title: A novel suicide gene therapy for the treatment of p16(Ink4a)-overexpressing
+    tumors.
+  year: 2018 Jan 26
+- authors: Demaria M
+  is_selected: false
+  journal: Mol Cell Oncol
+  pubmed_id: '28616578'
+  title: 'Senescent cells: New target for an old treatment?'
+  year: 2017
+- authors: Soto-Gamez A, Demaria M
+  is_selected: false
+  journal: Drug Discov Today
+  pubmed_id: '28111332'
+  title: 'Therapeutic interventions for aging: the case of cellular senescence.'
+  year: 2017 May
+- authors: Demaria M, O'Leary MN, Chang J, Shao L, Liu S, Alimirah F, Koenig K, Le
+    C, Mitin N, Deal AM, Alston S, Academia EC, Kilmarx S, Valdovinos A, Wang B, de
+    Bruin A, Kennedy BK, Melov S, Zhou D, Sharpless NE, Muss H, Campisi J
+  is_selected: true
+  journal: Cancer Discov
+  pubmed_id: '27979832'
+  title: Cellular Senescence Promotes Adverse Effects of Chemotherapy and Cancer Relapse.
+  year: 2017 Feb
+- authors: "Demaria M, Ohtani N, Youssef SA, Rodier F, Toussaint W, Mitchell JR, Laberge\
+    \ RM, Vijg J, Van Steeg H, Doll\xE9 ME, Hoeijmakers JH, de Bruin A, Hara E, Campisi\
+    \ J"
+  is_selected: true
+  journal: Dev Cell
+  pubmed_id: '25499914'
+  title: An essential role for senescent cells in optimal wound healing through secretion
+    of PDGF-AA.
+  year: 2014 Dec 22
