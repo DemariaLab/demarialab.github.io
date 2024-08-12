@@ -36,6 +36,7 @@ def resolve_final_url(url):
 def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
     firefox_options = Options()
     firefox_options.add_argument('--headless')
+
     # firefox_options.set_preference("javascript.enabled", False)
 
     driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
@@ -66,6 +67,7 @@ def produce_screenshots(site_dir):
 
 
 def extract_year(year_string):
+    year_string = str(year_string)
     match = re.search(r'\b(19|20)\d{2}\b', year_string)
     if match:
         return match.group(0).strip()
