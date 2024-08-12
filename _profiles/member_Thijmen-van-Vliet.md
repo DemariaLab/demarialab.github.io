@@ -10,7 +10,7 @@ keywords: "hypoxia; hypoxia compounds"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"
 
-publications: "34985783; 34985783; 33823141; 33556549; 33823141; 33556549; 33056980; 33056980; 29575469; 29575469"
+publications: "34985783; 34985783; 33823141; 33823141; 33556549; 33556549; 33056980; 33056980; 29575469; 29575469"
 thumbnail: "/assets/members/member_Thijmen van Vliet.webp"
 is_alumni: true
 ---
