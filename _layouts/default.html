@@ -278,7 +278,7 @@ layout: default
 </script>
 
 {% assign members = site.profiles %}
-{% assign member = "Demaria M" %}
+{% assign member = "" %}
 {% for profile in members %}
 {% assign member = profile.last_name_initials | append: "," | append: profile.unaccented_name |append: ";" |
 append:member %}
