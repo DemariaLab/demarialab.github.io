@@ -5,6 +5,34 @@ header-title: Lab members
 permalink: /members/
 order: 2
 ---
+<div class="container-fluid bg-light">
+    <div class="container">
+        <div class="col-12 py-2">
+            {% for profile in site.profiles %}
+            {% if profile.name contains "Marco Demaria" %}
+            {% assign macro_profile = profile%}
+            {% endif %}
+            {% endfor %}
+            <h3 class="poppins my-3 ">About {{macro_profile.name}}</h3>
+
+            <div class="row mb-1 mb-lg-4">
+                <div class="col-12 col-md-4">
+                    <img alt="" class="rounded w-100" src="{{macro_profile.thumbnail}}"/>
+                </div>
+
+                <div class="col">
+                    <div class="w-100 ">
+                        <div class="quote-block  rounded-5 bg-light p-3">
+                            <p class="quote-text">
+                                {{macro_profile.biography}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container-flex">
     {% assign roles = site.profiles | map: 'role' | uniq %}
     {% assign roles = roles | push: 'Alumni' %}
@@ -28,6 +56,7 @@ order: 2
                 {% endif %}
 
                 {% for profile in sorted_profiles %}
+                {% if profile.name != "Marco Demaria" %}
                 <div class="col-md-4 mb-3">
                     <a href="{{profile.url}}" class=" no-underline text-black ">
                         {% assign formatted_thumb = profile.thumbnail %}
@@ -52,7 +81,9 @@ order: 2
 
                         <div class="mt-2 mb-3">
                             <h4 class="poppins noMargin">{{ profile.name }}</h4>
-                            <h6 class="mt-2 mb-2">{%if is_alumni_category == "true" %} {{ profile.date_joined | date: "%Y" }} - {{ profile.date_leaving | date: "%Y" }} {% else %} Since {{ profile.date_joined | date: "%B %Y" }} {%endif%}</h6>
+                            <h6 class="mt-2 mb-2">{%if is_alumni_category == "true" %} {{ profile.date_joined | date:
+                                "%Y" }} - {{ profile.date_leaving | date: "%Y" }} {% else %} Since {{
+                                profile.date_joined | date: "%B %Y" }} {%endif%}</h6>
                             {% if profile.keywords %}
                             {% assign cleaned_keywords = profile.keywords | replace: 'and ', ',' %}
                             {% assign keywords = cleaned_keywords | split: ';' %}
@@ -67,6 +98,7 @@ order: 2
                         </div>
                     </a>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
