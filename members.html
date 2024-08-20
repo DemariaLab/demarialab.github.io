@@ -5,28 +5,27 @@ header-title: Lab members
 permalink: /members/
 order: 2
 ---
-<div class="container-fluid bg-light">
-    <div class="container">
-        <div class="col-12 py-2">
-            {% for profile in site.profiles %}
-            {% if profile.name contains "Marco Demaria" %}
-            {% assign macro_profile = profile%}
-            {% endif %}
-            {% endfor %}
-            <h3 class="poppins my-3 ">About {{macro_profile.name}}</h3>
-
-            <div class="row mb-1 mb-lg-4">
+{% for profile in site.profiles %}
+{% if profile.name contains "Marco Demaria" %}
+{% assign macro_profile = profile%}
+{% endif %}
+{% endfor %}
+<div class="container-flex bg-light">
+    <div class="container-xl pt-4 pb-4">
+        <div class="col-12 py-0">
+            <div class="row g-1 g-lg-2">
                 <div class="col-12 col-md-4">
-                    <img alt="" class="rounded w-100" src="{{macro_profile.thumbnail}}"/>
+                    <div class=" rounded w-100 team-card"
+                         style="background-position:center;background-size:cover; background-repeat:no-repeat; background-image:url('{{macro_profile.thumbnail}}')"></div>
                 </div>
 
                 <div class="col">
-                    <div class="w-100 ">
-                        <div class="quote-block  rounded-5 bg-light p-3">
-                            <p class="quote-text">
-                                {{macro_profile.biography}}
-                            </p>
-                        </div>
+                    <h3 class="poppins pt-2 pt-md-0 px-0 px-md-3">About {{macro_profile.name}}</h3>
+
+                    <div class="quote-block rounded-5 bg-light pt-0 pt-md-0 px-0 px-md-3">
+                        <p class="quote-text">
+                            {{macro_profile.biography}}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -42,21 +41,25 @@ order: 2
     {% assign is_alumni_category = "true" %}
     {% endif %}
 
+
+    {% if is_alumni_category == "true"%}
+    {% assign sorted_profiles = site.profiles | where: "is_alumni", is_alumni_category
+    | sort: "date_joined" | reverse %}
+    {% endif %}
+    {% if is_alumni_category == "false" %}
+    {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", is_alumni_category
+    |where_exp:"item","item.name != 'Marco Demaria'" | sort: "date_joined" | reverse %}
+    {% endif %}
+
+    {% assign role_profiles = site.profiles | where: 'role': role %}
+    {% if sorted_profiles.size != 0 or is_alumni_category=="true"%}
+
     <div class="container-xl">
         <div class="col-12">
             <h3 class="poppins my-3 ">{{role}}{% unless is_alumni_category =="true" %}s{% endunless%}</h3>
             <div class="row g-1 g-lg-2">
-                {% if is_alumni_category == "true"%}
-                {% assign sorted_profiles = site.profiles | where: "is_alumni", is_alumni_category
-                | sort: "date_joined" | reverse %}
-                {% endif %}
-                {% if is_alumni_category == "false" %}
-                {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", is_alumni_category
-                | sort: "date_joined" | reverse %}
-                {% endif %}
 
                 {% for profile in sorted_profiles %}
-                {% if profile.name != "Marco Demaria" %}
                 <div class="col-md-4 mb-3">
                     <a href="{{profile.url}}" class=" no-underline text-black ">
                         {% assign formatted_thumb = profile.thumbnail %}
@@ -98,11 +101,11 @@ order: 2
                         </div>
                     </a>
                 </div>
-                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
     <div class="b-divider m-0"></div>
+    {% endif %}
     {% endfor %}
 </div>
