@@ -280,8 +280,10 @@ layout: default
 {% assign members = site.profiles %}
 {% assign member = "" %}
 {% for profile in members %}
+{% if profile.name!="Marco Demaria" %}
 {% assign member = profile.last_name_initials | append: "," | append: profile.unaccented_name |append: ";" |
 append:member %}
+{% endif %}
 {% endfor %}
 <script>
   window.membersData =  {{ member | jsonify }};
