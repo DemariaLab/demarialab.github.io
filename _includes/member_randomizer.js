@@ -2,6 +2,7 @@ $(document).ready(function () {
     const members = [
         {% assign team = site.profiles | where: "is_alumni", false %}
         {% for member in team %}
+            {% if member.name != "Marco Demaria"   %}
             {% assign formatted_thumb = member.thumbnail %}
             {% assign thumb_size = formatted_thumb.size %}
             {% assign thumb_size_minus_two = thumb_size | minus:2 %}
@@ -16,6 +17,7 @@ $(document).ready(function () {
             {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append: '.webp' | replace: "'", "\\'" %}
             {% assign new_url = directory | append: new_filename %}
             { photo: "{{ new_url }}", name: "{{ member.name }}", country: "{{ member.country }}" }{% if forloop.last == false %},{% endif %}
+        {% endif %}
         {% endfor %}
     ].filter(member => member.photo !== "");
 
