@@ -29,10 +29,10 @@ welcome_templates = [
     [
         "Introducing {name} from {country}, who is now part of our team. {first_name} will be working on {keywords}. Welcome aboard and best of luck!",
         "Meet {name} from {country}, the newest member of our team. {first_name} will focus on {keywords}. Best wishes!",
-        "We're pleased to introduce {name} from {country}. {first_name} will contribute to {keywords}. Welcome to the team!"
+        "We're pleased to introduce {name} from {country}. {first_name} will research {keywords}. Welcome to the team!"
     ],
     [
-        "Join us in welcoming {name} from {country} to our team. {first_name} will contribute to {keywords}. We are glad to have you with us!",
+        "Join us in welcoming {name} from {country} to our team. {first_name} will study {keywords}. We are glad to have you with us!",
         "Let's all welcome {name} from {country} to our group. {first_name} will work on {keywords}. Happy to have you!",
         "Please welcome {name} from {country}. {first_name} will be focusing on {keywords}. Excited to have you on board!"
     ],
@@ -44,7 +44,7 @@ welcome_templates = [
     [
         "We happily welcome {name} from {country} to our lab. {first_name} is set to work on {keywords}. Here's to a productive journey together!",
         "A warm welcome to {name} from {country} to our team. {first_name} will be focusing on {keywords}. Looking forward to a productive time together!",
-        "Join us in welcoming {name} from {country}. {first_name} will contribute to {keywords}. Here's to a successful journey!"
+        "Join us in welcoming {name} from {country}. {first_name} will contribute to our understanding of {keywords}. Here's to a successful journey!"
     ],
     [
         "A big welcome to {name} from {country}, who has joined us this month. {first_name} will focus on {keywords}. Looking forward to your success!",
