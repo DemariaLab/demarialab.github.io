@@ -313,18 +313,14 @@ order: 0
                 <a class="no-underline d-none d-md-block " href="/members/">
                     <div class="row text-body gx-1 gx-lg-2 " id="teamSection">
                         <div class="text-body d-none d-md-flex  col-auto align-items-center justify-content-start ">
-                            <div class="text-start text-body">
-                                <h3 class="poppins text-body me-3 ms-0 ms-lg-3"  >
-                                    Meet our<br>team members<br>
-                                </h3>
-
-                                 <div class="d-none d-md-block mt-3 text-body col p-0 m-0 justify-content-end align-items-center">
-                    <a href="/members/" class="text-body no-underline no-text-selection h-100 d-flex align-items-center">
-                        <h4 class="px-3 ms-auto poppins">View all →</h4>
-                    </a>
-                </div>
-                            </div>
-
+                            <a href="/members/"
+                               class="text-body h-100 no-underline no-text-selection h-100 d-flex align-items-center">
+                                <div class="text-start text-body">
+                                    <h3 class="poppins text-body me-3 ms-0 ms-lg-3">
+                                        Meet our<br>team members<br>
+                                    </h3>
+                                </div>
+                            </a>
                         </div>
 
                         {% assign members_slice = '' | split: ',' %}

@@ -3,6 +3,12 @@ function onDOMReady() {
     const navItems = document.querySelectorAll('.nav-item');
     const activeItem = document.querySelector('.nav-item.active d');
 
+    function getElementBottomPosition(element) {
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const bottomPosition = rect.bottom + scrollTop;
+        return bottomPosition;
+    }
     function updateUnderline(item) {
         if (item) {
             underline.style.transform = 'scaleX(1)';
@@ -10,8 +16,7 @@ function onDOMReady() {
             if (itemRect.width > 0) {
                 underline.style.width = itemRect.width + 'px';
                 underline.style.left = itemRect.left + 'px';
-                underline.style.top = (itemRect.bottom) + 'px';
-                underline.style.display = 'block'; // Display the underline once its position is set
+                underline.style.top = getElementBottomPosition(item) + 'px';
             }
         } else {
             underline.style.transform = 'scaleX(0)';
