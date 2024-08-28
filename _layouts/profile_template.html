@@ -25,10 +25,10 @@ layout: modal_post
             <div class="col ms-0 ms-md-3 mb-0 mb-lg-4">
                 <div class="sticky-title ">
                     <h2 class="poppins px-3 px-lg-0">{{ page.name }}<p class="text-black-50 d-inline">{% if
-                        page.is_alumni %} {% else
+                        page.is_alumni or page.name=="Marco Demaria" %} {% else
                         %} ● {{page.qualification}}{% endif %}</p></h2>
                     <p class="card-text px-3 px-lg-0">
-                        {% if page.is_alumni %} {% else %}{{ page.role }}
+                        {% if page.is_alumni or page.name=="Marco Demaria" %} {% else %}{{ page.role }}
                         {% endif %}
                         {% if page.is_alumni %}
                     <div class="px-3 px-lg-0">

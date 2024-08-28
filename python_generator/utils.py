@@ -66,7 +66,7 @@ def blur_images_in_dir(input_dir, blur_radius=30, reduced_size=(56, 56)):
                 reduced_blurred_img.save(blurred_filepath, format='WEBP', quality=50)
 
 
-def reduce_images_in_dir(input_dir, sharpness_factor=0.6):
+def reduce_images_in_dir(input_dir, sharpness_factor=0.8):
     if not os.path.isdir(input_dir):
         return
 

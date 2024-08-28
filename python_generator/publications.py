@@ -154,7 +154,7 @@ def fetch_and_save_publications(data_dir, args):
     # Fetch new publications
     new_publications = []
     pubmed_ids = fetch_publications_by_term(
-        "(demaria[Author]) AND (groningen[Affiliation]) " + selected_pubmed_ids_search_appendix)
+        "((demaria[Author]) AND (groningen[Affiliation])) OR (demaria[Author] AND (Campisi[Author] OR Poli[Author])) " + selected_pubmed_ids_search_appendix)
     if len(existing_publications) != len(pubmed_ids):
         for pubmed_id in pubmed_ids:
             # Check if publication already exists
