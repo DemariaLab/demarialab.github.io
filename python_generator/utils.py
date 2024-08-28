@@ -93,7 +93,7 @@ def reduce_images_in_dir(input_dir, sharpness_factor=0.8):
                 reduced_filename = f'reduced_{os.path.splitext(filename)[0]}.webp'
                 reduced_filepath = os.path.join(input_dir, reduced_filename)
                 # Save the reduced and sharpened image in WebP format with medium quality
-                sharpened_img.save(reduced_filepath, format='WEBP', quality=60)
+                sharpened_img.save(reduced_filepath, format='WEBP', quality=min(100, int(sharpness_factor * 100)))
 
 
 def read_published_google_sheet(sheet_id):
