@@ -100,39 +100,51 @@ def parse_year(year_str):
             return datetime.strptime(year_str, "%Y")
 
 
+import time
+import requests
+
+
 def get_publication_details(pubmed_id):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
     summary_url = f"{base_url}esummary.fcgi?db=pubmed&id={pubmed_id}&retmode=json"
 
-    # Get publication summary
-    response = requests.get(summary_url)
-    if response.status_code == 200:
-        data = response.json()
-        try:
-            title = data['result'][pubmed_id]['title']
-            authors = data['result'][pubmed_id]['authors']
-            authors = [f["name"] for f in authors]
+    # Initialize variables for exponential backoff
+    sleep_time = 5 * 60  # Start with 5 minutes in seconds
+    max_sleep_time = 20 * 60  # Maximum sleep time of 20 minutes in seconds
 
-            year = data['result'][pubmed_id]['pubdate']
-            if " " not in year:
-                year = int(year)
+    while True:
+        response = requests.get(summary_url)
+        if response.status_code == 200:
+            data = response.json()
+            try:
+                title = data['result'][pubmed_id]['title']
+                authors = data['result'][pubmed_id]['authors']
+                authors = [f["name"] for f in authors]
 
-            if "Demaria" not in ", ".join(authors):
+                year = data['result'][pubmed_id]['pubdate']
+                if " " not in year:
+                    year = int(year)
+
+                if "Demaria" not in ", ".join(authors):
+                    return None
+                journal = data['result'][pubmed_id]['source']
+
+                return {
+                    'title': title,
+                    'authors': authors,
+                    'year': year,
+                    'journal': journal
+                }
+            except KeyError:
+                print(f"Publications: Error parsing publication details for PubMed ID: {pubmed_id}")
                 return None
-            journal = data['result'][pubmed_id]['source']
-
-            return {
-                'title': title,
-                'authors': authors,
-                'year': year,
-                'journal': journal
-            }
-        except KeyError:
-            print(f"Publications: Error parsing publication details for PubMed ID: {pubmed_id}")
+        elif response.status_code == 429:
+            print(f"Too many requests. Sleeping for {sleep_time // 60} minutes...")
+            time.sleep(sleep_time)
+            sleep_time = min(max_sleep_time, sleep_time * 2)  # Exponentially increase sleep time up to the max limit
+        else:
+            print(f"Publications: Error fetching publication details. Status code: {response.status_code}")
             return None
-    else:
-        print(f"Publications: Error fetching publication details. Status code: {response.status_code}")
-        return None
 
 
 def fetch_and_save_publications(data_dir, args):
