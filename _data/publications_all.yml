@@ -530,6 +530,14 @@
   title: A novel suicide gene therapy for the treatment of p16(Ink4a)-overexpressing
     tumors.
   year: 2018 Jan 26
+- authors: Chinta SJ, Woods G, Demaria M, Rane A, Zou Y, McQuade A, Rajagopalan S,
+    Limbad C, Madden DT, Campisi J, Andersen JK
+  is_selected: false
+  journal: Cell Rep
+  pubmed_id: '29386135'
+  title: Cellular Senescence Is Induced by the Environmental Neurotoxin Paraquat and
+    Contributes to Neuropathology Linked to Parkinson's Disease.
+  year: 2018 Jan 23
 - authors: Hernandez-Segura A, de Jong TV, Melov S, Guryev V, Campisi J, Demaria M
   is_selected: true
   journal: Curr Biol
@@ -579,6 +587,21 @@
   title: Clearance of senescent cells by ABT263 rejuvenates aged hematopoietic stem
     cells in mice.
   year: 2016 Jan
+- authors: Liu S, Uppal H, Demaria M, Desprez PY, Campisi J, Kapahi P
+  is_selected: false
+  journal: Sci Rep
+  pubmed_id: '26658759'
+  title: Simvastatin suppresses breast cancer cell proliferation induced by senescent
+    cells.
+  year: 2015 Dec 14
+- authors: Kang C, Xu Q, Martin TD, Li MZ, Demaria M, Aron L, Lu T, Yankner BA, Campisi
+    J, Elledge SJ
+  is_selected: false
+  journal: Science
+  pubmed_id: '26404840'
+  title: The DNA damage response induces inflammation and senescence by inhibiting
+    autophagy of GATA4.
+  year: 2015 Sep 25
 - authors: Velarde MC, Demaria M, Melov S, Campisi J
   is_selected: true
   journal: Proc Natl Acad Sci U S A
@@ -586,6 +609,41 @@
   title: Pleiotropic age-dependent effects of mitochondrial dysfunction on epidermal
     stem cells.
   year: 2015 Aug 18
+- authors: Laberge RM, Sun Y, Orjalo AV, Patil CK, Freund A, Zhou L, Curran SC, Davalos
+    AR, Wilson-Edell KA, Liu S, Limbad C, Demaria M, Li P, Hubbard GB, Ikeno Y, Javors
+    M, Desprez PY, Benz CC, Kapahi P, Nelson PS, Campisi J
+  is_selected: false
+  journal: Nat Cell Biol
+  pubmed_id: '26147250'
+  title: MTOR regulates the pro-tumorigenic senescence-associated secretory phenotype
+    by promoting IL1A translation.
+  year: 2015 Aug
+- authors: Chinta SJ, Woods G, Rane A, Demaria M, Campisi J, Andersen JK
+  is_selected: false
+  journal: Exp Gerontol
+  pubmed_id: '25281806'
+  title: Cellular senescence and the aging brain.
+  year: 2015 Aug
+- authors: Demaria M, Desprez PY, Campisi J, Velarde MC
+  is_selected: false
+  journal: J Invest Dermatol
+  pubmed_id: '25855157'
+  title: Cell Autonomous and Non-Autonomous Effects of Senescent Cells in the Skin.
+  year: 2015 Jul
+- authors: Christy B, Demaria M, Campisi J, Huang J, Jones D, Dodds SG, Williams C,
+    Hubbard G, Livi CB, Gao X, Weintraub S, Curiel T, Sharp ZD, Hasty P
+  is_selected: false
+  journal: Oncotarget
+  pubmed_id: '26158292'
+  title: p53 and rapamycin are additive.
+  year: 2015 Jun 30
+- authors: Neves J, Demaria M, Campisi J, Jasper H
+  is_selected: false
+  journal: Dev Cell
+  pubmed_id: '25584795'
+  title: 'Of flies, mice, and men: evolutionarily conserved tissue damage responses
+    and aging.'
+  year: 2015 Jan 12
 - authors: "Demaria M, Ohtani N, Youssef SA, Rodier F, Toussaint W, Mitchell JR, Laberge\
     \ RM, Vijg J, Van Steeg H, Doll\xE9 ME, Hoeijmakers JH, de Bruin A, Hara E, Campisi\
     \ J"
@@ -595,6 +653,32 @@
   title: An essential role for senescent cells in optimal wound healing through secretion
     of PDGF-AA.
   year: 2014 Dec 22
+- authors: Demaria M, Camporeale A, Poli V
+  is_selected: false
+  journal: Int J Cancer
+  pubmed_id: '24500994'
+  title: 'STAT3 and metabolism: how many ways to use a single molecule?'
+  year: 2014 Nov 1
+- authors: Camporeale A, Demaria M, Monteleone E, Giorgi C, Wieckowski MR, Pinton
+    P, Poli V
+  is_selected: false
+  journal: Cancers (Basel)
+  pubmed_id: '25089666'
+  title: 'STAT3 Activities and Energy Metabolism: Dangerous Liaisons.'
+  year: 2014 Jul 31
+- authors: Chinta SJ, Lieu CA, Demaria M, Laberge RM, Campisi J, Andersen JK
+  is_selected: false
+  journal: J Intern Med
+  pubmed_id: '23600398'
+  title: 'Environmental stress, ageing and glial cell senescence: a novel mechanistic
+    link to Parkinson''s disease?'
+  year: 2013 May
+- authors: Velarde MC, Demaria M, Campisi J
+  is_selected: false
+  journal: Interdiscip Top Gerontol
+  pubmed_id: '23503512'
+  title: Senescent cells and their secretory phenotype as targets for cancer therapy.
+  year: 2013
 - authors: Demaria M, Misale S, Giorgi C, Miano V, Camporeale A, Campisi J, Pinton
     P, Poli V
   is_selected: false
@@ -603,3 +687,72 @@
   title: STAT3 can serve as a hit in the process of malignant transformation of primary
     cells.
   year: 2012 Aug
+- authors: Demaria M, Campisi J
+  is_selected: false
+  journal: Aging (Albany NY)
+  pubmed_id: '22915708'
+  title: 'Matters of life and breath: A role for hypoxia in determining cell state.'
+  year: 2012 Aug
+- authors: Laberge RM, Zhou L, Sarantos MR, Rodier F, Freund A, de Keizer PL, Liu
+    S, Demaria M, Cong YS, Kapahi P, Desprez PY, Hughes RE, Campisi J
+  is_selected: false
+  journal: Aging Cell
+  pubmed_id: '22404905'
+  title: Glucocorticoids suppress selected components of the senescence-associated
+    secretory phenotype.
+  year: 2012 Aug
+- authors: Demaria M, Poli V
+  is_selected: false
+  journal: JAKSTAT
+  pubmed_id: '24058770'
+  title: "PKM2, STAT3 and HIF-1\u03B1: The Warburg's vicious circle."
+  year: 2012 Jul 1
+- authors: Pensa S, Demaria M, Avalle L, Barbieri I, Camporeale A, Poli V
+  is_selected: false
+  journal: Horm Mol Biol Clin Investig
+  pubmed_id: '25436678'
+  title: 'From tissue invasion to glucose metabolism: the many aspects of signal transducer
+    and activator of transcription 3 pro-oncogenic activities.'
+  year: 2012 Jun
+- authors: Freund A, Laberge RM, Demaria M, Campisi J
+  is_selected: false
+  journal: Mol Biol Cell
+  pubmed_id: '22496421'
+  title: Lamin B1 loss is a senescence-associated biomarker.
+  year: 2012 Jun
+- authors: Haines B, Demaria M, Mao X, Xie L, Campisi J, Jin K, Greenberg DA
+  is_selected: false
+  journal: Neurosci Lett
+  pubmed_id: '22342914'
+  title: Hypoxia-inducible factor-1 and neuroglobin expression.
+  year: 2012 Apr 18
+- authors: Demaria M, Poli V
+  is_selected: false
+  journal: Oncotarget
+  pubmed_id: '22535863'
+  title: Pro-malignant properties of STAT3 during chronic inflammation.
+  year: 2012 Apr
+- authors: Demaria M, Poli V
+  is_selected: false
+  journal: Cell Cycle
+  pubmed_id: '21926478'
+  title: 'From the nucleus to the mitochondria and back: the odyssey of a multitask
+    STAT3.'
+  year: 2011 Oct 1
+- authors: Demaria M, Giorgi C, Lebiedzinska M, Esposito G, D'Angeli L, Bartoli A,
+    Gough DJ, Turkson J, Levy DE, Watson CJ, Wieckowski MR, Provero P, Pinton P, Poli
+    V
+  is_selected: false
+  journal: Aging (Albany NY)
+  pubmed_id: '21084727'
+  title: A STAT3-mediated metabolic switch is involved in tumour transformation and
+    STAT3 addiction.
+  year: 2010 Nov
+- authors: Barbieri I, Pensa S, Pannellini T, Quaglino E, Maritano D, Demaria M, Voster
+    A, Turkson J, Cavallo F, Watson CJ, Provero P, Musiani P, Poli V
+  is_selected: false
+  journal: Cancer Res
+  pubmed_id: '20215508'
+  title: Constitutively active Stat3 enhances neu-mediated migration and metastasis
+    in mammary tumors via upregulation of Cten.
+  year: 2010 Mar 15
