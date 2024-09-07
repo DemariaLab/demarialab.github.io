@@ -415,7 +415,7 @@
     senescence: Time to act.'
   year: 2020 Jul
 - authors: Soto-Gamez A, Chen D, Nabuurs AGE, Quax WJ, Demaria M, Boersma YL
-  is_selected: true
+  is_selected: false
   journal: Cancers (Basel)
   pubmed_id: '32050662'
   title: A Bispecific Inhibitor of the EGFR/ADAM17 Axis Decreases Cell Proliferation
@@ -480,7 +480,7 @@
     intervertebral disc degeneration.
   year: 2019 Jun
 - authors: Hernandez-Segura A, Rubingh R, Demaria M
-  is_selected: true
+  is_selected: false
   journal: Aging Cell
   pubmed_id: '30710410'
   title: Identification of stable senescence-associated reference genes.
@@ -498,7 +498,7 @@
   title: Caloric restriction and cellular senescence.
   year: 2018 Dec
 - authors: Hernandez-Segura A, Brandenburg S, Demaria M
-  is_selected: true
+  is_selected: false
   journal: J Vis Exp
   pubmed_id: '29985363'
   title: Induction and Validation of Cellular Senescence in Primary Human Cells.
@@ -524,7 +524,7 @@
   title: Gene therapy for p16-overexpressing cells.
   year: 2018 Apr 19
 - authors: Kohli J, Campisi J, Demaria M
-  is_selected: true
+  is_selected: false
   journal: Oncotarget
   pubmed_id: '29484109'
   title: A novel suicide gene therapy for the treatment of p16(Ink4a)-overexpressing
@@ -603,7 +603,7 @@
     autophagy of GATA4.
   year: 2015 Sep 25
 - authors: Velarde MC, Demaria M, Melov S, Campisi J
-  is_selected: true
+  is_selected: false
   journal: Proc Natl Acad Sci U S A
   pubmed_id: '26240345'
   title: Pleiotropic age-dependent effects of mitochondrial dysfunction on epidermal
