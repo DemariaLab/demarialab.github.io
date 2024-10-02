@@ -6,6 +6,7 @@ layout: default
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>
         {% if page.name contains 'markdown' or page.name contains '.md' or page.name contains '.html' %}
         {{ page.title | default: site.title }}
