@@ -5,7 +5,7 @@ unaccented_name: "Myrthe Klaver"
 last_name_initials: Klaver M
 role: "PhD student"
 date_joined: "2022-07-01"
-
+date_leaving: "2026-06-30"
 keywords: "sex disparity; liver cancer"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"

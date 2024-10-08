@@ -5,7 +5,7 @@ unaccented_name: "Martijn Rutten"
 last_name_initials: Rutten M
 role: "PostDoc"
 date_joined: "2022-09-01"
-
+date_leaving: "2026-08-31"
 keywords: "hypoxia; hypoxia compounds"
 country: "the Netherlands 🇳🇱"
 qualification: "PhD"
