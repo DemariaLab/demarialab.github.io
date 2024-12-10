@@ -1,0 +1,12 @@
+[2024-09-10 12:39:17] [INFO]    [OmnipathR] Welcome to OmnipathR!
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] Reading JSON from `C:\Users\Eriba\AppData\Local\Cache\OmnipathR/cache.json` (encoding: UTF-8).
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-09-10 12:39:17] [INFO]    [OmnipathR] Initialized cache: `C:\Users\Eriba\AppData\Local\Cache\OmnipathR`.
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] Reading JSON from `C:/Users/Eriba/R-lib/OmnipathR/db/db_def.json` (encoding: UTF-8).
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] Reading JSON from `C:/Users/Eriba/R-lib/OmnipathR/internal/magic_bytes.json` (encoding: UTF-8).
+[2024-09-10 12:39:17] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-09-10 12:39:18] [TRACE]   [OmnipathR] Reading JSON from `C:/Users/Eriba/R-lib/OmnipathR/internal/urls.json` (encoding: UTF-8).
+[2024-09-10 12:39:18] [TRACE]   [OmnipathR] JSON validation successful: TRUE
+[2024-09-10 12:39:18] [TRACE]   [OmnipathR] Reading JSON from `C:/Users/Eriba/R-lib/OmnipathR/internal/id_types.json` (encoding: UTF-8).
+[2024-09-10 12:39:18] [TRACE]   [OmnipathR] JSON validation successful: TRUE
