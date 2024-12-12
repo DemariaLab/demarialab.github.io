@@ -606,7 +606,7 @@ nav:hover .underline {
 .b-divider {
     width: 100%;
     display: block;
-    border: 0.15em solid rgb(248, 249, 250) !important;
+    border: 0.05em solid rgb(248, 249, 250) !important;
 }
 
 .news-divider {
