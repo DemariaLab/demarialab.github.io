@@ -4,7 +4,7 @@ name: "Marco Demaria"
 unaccented_name: "Marco Demaria"
 last_name_initials: Demaria M
 role: "Other"
-date_joined: "2015-01-01"
+date_joined: "2015-09-01"
 
 keywords: ""
 country: "Italy 🇮🇹"

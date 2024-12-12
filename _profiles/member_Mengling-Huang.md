@@ -5,7 +5,7 @@ unaccented_name: "Mengling Huang"
 last_name_initials: Huang M
 role: "PhD student"
 date_joined: "2022-11-01"
-
+date_leaving: "2026-10-31"
 keywords: "killifish model"
 country: "China 🇨🇳"
 qualification: "MSc"

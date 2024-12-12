@@ -5,7 +5,7 @@ unaccented_name: "Yao Lin"
 last_name_initials: Lin Y
 role: "PhD student"
 date_joined: "2021-01-01"
-
+date_leaving: "2024-12-31"
 keywords: "multiomics analyses"
 country: "China 🇨🇳"
 qualification: "MSc"
