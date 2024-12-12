@@ -10,4 +10,5 @@ thumbnail: "/gallery/2022-09-19-Jamil's defence 2022-Harmony Building.webp"
  
 ![](/gallery/2022-09-19-Jamil's defence 2022-Harmony Building.webp)
 ![](/assets/posts/Jamil's defence 2022-1.png)
+![](/assets/posts/Jamil's defence 2022-2.png)
 
