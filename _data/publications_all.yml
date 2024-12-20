@@ -1,3 +1,15 @@
+- authors: "Laurent PA, Andr\xE9 F, Bobard A, Deandreis D, Demaria S, Depil S, Eichm\xFC\
+    ller SB, Fernandez-Palomo C, Foijer F, Galluzzi L, Galon J, Guckenberger M, Harrington\
+    \ KJ, Herrera FG, Huber PE, Italiano A, Karam SD, Kroemer G, Lambin P, Leuschner\
+    \ C, Mantovani A, Meylan E, Mondini M, Pittet MJ, Pouget JP, Remon J, S\xF8rensen\
+    \ CS, Sotiriou C, Vanpouille-Box C, Weichselbaum RR, Welsh JW, Zitvogel L, Formenti\
+    \ SC, Deutsch E"
+  is_selected: false
+  journal: Oncoimmunology
+  pubmed_id: '39696783'
+  title: 'Pushing the boundaries of radiotherapy-immunotherapy combinations: highlights
+    from the 7(th) immunorad conference.'
+  year: 2025 Dec
 - authors: Altulea A, Rutten MGS, Verdijk LB, Demaria M
   is_selected: false
   journal: Geroscience
