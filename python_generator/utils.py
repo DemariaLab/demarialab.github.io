@@ -33,8 +33,7 @@ def safe_file_name(input_string, replacement_char='_'):
     return safe_string
 
 
-import os
-from PIL import Image, ImageEnhance
+from PIL import ImageEnhance
 
 from PIL import Image, ImageFilter
 import os
@@ -154,25 +153,26 @@ def extract_urls_from_gdoc(doc_id, output_dir, checksum_file_name='checksum_cust
 
         urls = re.findall(r'(https?://[^\s"<>]+)', html_content)
         urls = [get_final_url_and_extract_doc_id(f) for f in urls]
+        if len(urls) > 0:
+            current_checksum = compute_checksum("\n".join(urls))
+            checksum_file = os.path.join(output_dir, checksum_file_name)
+            # Check if checksum file exists and read it
+            if os.path.exists(checksum_file):
+                with open(checksum_file, 'r', encoding='utf-8') as f:
+                    previous_checksum = f.read().strip()
+            else:
+                previous_checksum = None
 
-        current_checksum = compute_checksum("\n".join(urls))
-        checksum_file = os.path.join(output_dir, checksum_file_name)
-        # Check if checksum file exists and read it
-        if os.path.exists(checksum_file):
-            with open(checksum_file, 'r', encoding='utf-8') as f:
-                previous_checksum = f.read().strip()
+            if previous_checksum == current_checksum:
+                print("Document has not changed. Exiting.")
+                return []
+
+                # Save the current checksum to the file
+            with open(checksum_file, 'w', encoding='utf-8') as f:
+                f.write(current_checksum)
+            return urls if len(urls) > 0 else []
         else:
-            previous_checksum = None
-
-        if previous_checksum == current_checksum:
-            print("Document has not changed. Exiting.")
             return []
-
-            # Save the current checksum to the file
-        with open(checksum_file, 'w', encoding='utf-8') as f:
-            f.write(current_checksum)
-
-        return urls
     else:
         return []
 
