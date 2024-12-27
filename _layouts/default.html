@@ -9,11 +9,11 @@ layout: default
 
     <title>
         {% if page.name contains 'markdown' or page.name contains '.md' or page.name contains '.html' %}
-        {{ page.title | default: site.title }}
+            {{ page.title | default: site.title }} -
         {% else %}
-        {{ page.name }}
+            {{ page.name | default: page.title | default: site.title}} -
         {% endif %}
-        - DemariaLab
+        DemariaLab
     </title>
     <link rel="icon" type="image/svg+xml" href="/assets/icon/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/icon/favicon.png">
