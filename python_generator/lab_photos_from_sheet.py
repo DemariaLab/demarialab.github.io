@@ -1,4 +1,5 @@
 import os.path
+import shutil
 import traceback
 
 import requests
@@ -11,6 +12,7 @@ from python_generator.utils import remove_thumbnail_segment_from_url, read_publi
 
 def attempt_to_download_photo(photo_dict, site_dir, key="photo"):
     gallery_dir = get_dir_path(site_dir, constants.GALLERY_DIR)
+    shutil.rmtree(gallery_dir)
 
     photo = photo_dict.get(key)
     title = photo_dict.get("title")
