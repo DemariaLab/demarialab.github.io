@@ -17,10 +17,10 @@ def main(args_dict: dict):
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
 
+    process_photos(args_dict)
     process_publications(args_dict)
     process_members(args_dict)
     process_custom_news(args_dict)
-    process_photos(args_dict)
     process_research_page(args_dict)
     process_grants(args_dict)
     process_hero(args_dict)
