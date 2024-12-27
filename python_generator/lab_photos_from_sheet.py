@@ -12,7 +12,6 @@ from python_generator.utils import remove_thumbnail_segment_from_url, read_publi
 
 def attempt_to_download_photo(photo_dict, site_dir, key="photo"):
     gallery_dir = get_dir_path(site_dir, constants.GALLERY_DIR)
-    shutil.rmtree(gallery_dir)
 
     photo = photo_dict.get(key)
     title = photo_dict.get("title")
@@ -96,6 +95,9 @@ def process(args):
         site_dir = args[constants.ARG_SITE_DIR]
         data = read_published_google_sheet(args[constants.ARG_PHOTOS_SHEET_ID])["data"]
         data = [d for d in data if d.get("title") and d.get("photo") and d.get("date")]
+
+        gallery_dir = get_dir_path(site_dir, constants.GALLERY_DIR)
+        shutil.rmtree(gallery_dir)
 
         for entry in data:
             output_path_primary_photo = attempt_to_download_photo(entry, site_dir=site_dir)
