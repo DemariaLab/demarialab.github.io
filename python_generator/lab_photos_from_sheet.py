@@ -75,7 +75,7 @@ album: \"{title}\"
 thumbnail: \"{primary_photos}\"
 ---
 
- {f"{title} at {location}" if not description else f"{description}"}
+ {f"📌 {location}" if not description else f"{description}"}
  
 ![]({primary_photos})
 {additional_photo_contents}
