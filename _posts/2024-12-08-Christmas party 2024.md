@@ -6,7 +6,7 @@ album: "Christmas party 2024"
 thumbnail: "/gallery/2024-12-08-Christmas party 2024-Groningen.webp"
 ---
 
- Christmas party 2024 at Groningen
+ 📌 Groningen
  
 ![](/gallery/2024-12-08-Christmas party 2024-Groningen.webp)
 ![](/assets/posts/Christmas party 2024-1.webp)
