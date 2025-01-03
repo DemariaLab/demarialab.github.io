@@ -6,7 +6,6 @@ from datetime import datetime
 from urllib.parse import quote
 from urllib.parse import quote_plus
 
-import requests
 import yaml
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
@@ -77,7 +76,6 @@ def extract_year(year_string):
 def fetch_publications_by_term(search_term):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
     search_url = f"{base_url}esearch.fcgi?db=pubmed&term={quote_plus(search_term)}&retmode=json&retmax=10000"
-    # Perform the search
     response = requests.get(search_url)
     if response.status_code == 200:
         data = response.json()
@@ -91,7 +89,6 @@ def fetch_publications_by_term(search_term):
 def parse_year(year_str):
     year_str = str(year_str)
     try:
-        # Try to parse the date with different formats
         return datetime.strptime(year_str, "%Y %b %d")
     except ValueError:
         try:
@@ -108,7 +105,6 @@ def get_publication_details(pubmed_id):
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
     summary_url = f"{base_url}esummary.fcgi?db=pubmed&id={pubmed_id}&retmode=json"
 
-    # Initialize variables for exponential backoff
     sleep_time = 5 * 60  # Start with 5 minutes in seconds
     max_sleep_time = 20 * 60  # Maximum sleep time of 20 minutes in seconds
 
@@ -157,19 +153,16 @@ def fetch_and_save_publications(data_dir, args):
         selected_pubmed_ids_search_appendix = ""
     output_file = os.path.join(data_dir, constants.FILE_ALL_PUBLICATIONS)
 
-    # Load existing publications from YAML if it exists
     existing_publications = []
     if os.path.exists(output_file):
         with open(output_file, 'r') as f:
             existing_publications = yaml.safe_load(f) or []
 
-    # Fetch new publications
     new_publications = []
     pubmed_ids = fetch_publications_by_term(
         '(("demaria m"[Author] or "m demaria"[Author] or "Marco Demaria"[Author]) AND (groningen[Affiliation])) OR (demaria[Author] AND (Campisi[Author] OR Poli[Author]))' + selected_pubmed_ids_search_appendix)
     if len(existing_publications) != len(pubmed_ids):
         for pubmed_id in pubmed_ids:
-            # Check if publication already exists
             if any(pub['pubmed_id'] == pubmed_id for pub in existing_publications):
                 continue
             publication_details = get_publication_details(pubmed_id)
@@ -185,7 +178,6 @@ def fetch_and_save_publications(data_dir, args):
                 }
                 new_publications.append(publication)
 
-        # Append new publications to existing list
         existing_publications.extend(new_publications)
     else:
         print("Publications: No new items to add. Checking selected publications")
@@ -202,7 +194,6 @@ def fetch_and_save_publications(data_dir, args):
         key=lambda d: parse_year(d['year']),
         reverse=True  # Sort from newest to oldest
     )
-    # Write updated publications to YAML file
     with open(output_file, 'w', encoding="utf-8") as f:
         yaml.safe_dump(existing_publications, f, default_flow_style=False)
 
@@ -220,19 +211,15 @@ def export_news(site_dir):
         for pub in publications:
             match = date_pattern.match(str(pub['year']))
             if match:
-                # Add '01' if day is not specified
                 if len(match.group(0).split()) == 2:
                     pub['year'] += ' 01'
                 filtered_publications.append(pub)
         filtered_publications = [f for f in filtered_publications if str(f["authors"]).endswith("Demaria M")]
-        # Create markdown files
         for pub in filtered_publications:
-            # Parse the date
             date_str = pub['year']
             date_obj = datetime.strptime(date_str, '%Y %b %d')
             formatted_date = date_obj.strftime('%Y-%m-%d')
             sanitized_title = sanitize_title(pub['title'])
-            # Create the content for the markdown file
             content = f"""---
 layout: double
 title: \"New publication: {sanitized_title}\"
@@ -247,11 +234,9 @@ PubMed ID: {pub['pubmed_id']}
 [https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']}/](https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']})
 ![](/assets/posts/pubmed_{pub['pubmed_id']}.png)
 """
-            # Define the file name
             file_name = f"{formatted_date}-paper_{pub['pubmed_id']}.md"
             file_path = os.path.join(get_dir_path(site_dir, constants.POSTS_DIR), file_name)
 
-            # Save the markdown file
             with open(file_path, 'w', encoding="utf-8") as md_file:
                 md_file.write(content)
 
