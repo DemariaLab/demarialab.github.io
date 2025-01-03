@@ -4,3 +4,4 @@ Gemfile.lock
 vendor
 python_generator/__pycache__
 _site
+/test/
