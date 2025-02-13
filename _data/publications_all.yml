@@ -196,6 +196,14 @@
   pubmed_id: '35609537'
   title: Cellular senescence.
   year: 2022 May 23
+- authors: Wang B, Varela-Eirin M, Brandenburg SM, Hernandez-Segura A, van Vliet T,
+    Jongbloed EM, Wilting SM, Ohtani N, Jager A, Demaria M
+  is_selected: true
+  journal: EMBO J
+  pubmed_id: '34985783'
+  title: Pharmacological CDK4/6 inhibition reveals a p53-dependent senescent state
+    with restricted toxicity.
+  year: 2022 Mar 15
 - authors: Secomandi L, Borghesan M, Velarde M, Demaria M
   is_selected: false
   journal: Hum Reprod Update
