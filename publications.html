@@ -32,7 +32,7 @@ order: 3
             <div class="accordion research-accordion accordion-flush rounded-5 overflow-hidden " id="accordionBlock">
                 <div class="accordion-item {% unless forloop.last %} mb-1 mb-lg-2{% endunless %}">
                     <div class="accordion-header ">
-                        <h4 class="m-0">
+                        <h5 class="m-0">
                             <button class="accordion-button poppins rounded " type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -43,14 +43,14 @@ order: 3
                                 Selected publications
                                 <span class="badge ms-2 bg-dark text-light publications-counter">{{selected_items.size}}</span>
                             </button>
-                        </h4>
+                        </h5>
                     </div>
 
                     <div id="collapseOne" class="accordion-collapse collapse show" >
                         <div class="accordion-body p-0">
                             {% for year in years_selected %}
-                            <h4 class="poppins w-100 px-3 py-2 m-0 gradientBg no-text-selection text-black">
-                                {{year}}</h4>
+                            <h5 class="poppins w-100 px-3 py-2 m-0 gradientBg no-text-selection text-black">
+                                {{year}}</h5>
                             <hr>
                             {% for item in selected_items %}
                             {% assign item_year = item.year | split: ' ' %}
@@ -90,7 +90,7 @@ order: 3
                 </div>
                 <div class="accordion-item js-required-d-block">
                     <div class="accordion-header" id="disappearingAccordionHeader">
-                        <h4 class="m-0">
+                        <h5 class="m-0">
                             <button class="accordion-button disappearing-accordion-button collapsed poppins rounded"
                                     type="button"
                                     data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
@@ -103,12 +103,12 @@ order: 3
                                 <span class="badge ms-2 bg-dark text-light publications-counter">{{publications.size}}</span>
 
                             </button>
-                        </h4>
+                        </h5>
                     </div>
                     <div id="collapseTwo" class="accordion-collapse collapse" >
                         <div class="accordion-body p-0">
                             {% for year in years %}
-                            <h4 class="poppins w-100 px-3 py-3 m-0 gradientBg no-text-selection">{{year}}</h4>
+                            <h5 class="poppins w-100 px-3 py-3 m-0 gradientBg no-text-selection">{{year}}</h5>
                             <hr>
                             {% for item in site.data.publications_all %}
                             {% assign item_date_segments = item.year | split: ' ' %}

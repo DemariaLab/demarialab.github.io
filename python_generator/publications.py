@@ -49,7 +49,7 @@ def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
         driver.get(url)
 
         driver.execute_script(
-            "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner').forEach(element => element.remove());")
+            "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());")
 
         driver.save_screenshot(output_path)
     driver.quit()
