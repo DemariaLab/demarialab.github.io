@@ -11,7 +11,7 @@ let firstItemOffset = NaN;
 let isAnimating = false;
 
 function scrollToSlide(index) {
-    showSlides(index);
+    // showSlides(index);
 }
 
 function showSlides(index) {
