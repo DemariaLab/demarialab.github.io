@@ -256,9 +256,10 @@ layout: default
 
     </footer>
       <div class="w-100 bg-white ">
-            <p class="m-0 py-3 py-lg-2 px-3 text-muted text-body" style=" opacity:0.6">Last update: {{
-                site.time | date: '%Y-%m-%d' }}</p>
-        </div>
+          <p class="m-0 py-3 py-lg-2 px-3 text-muted text-body" style=" opacity:0.6">
+              Last update: {{ site.time | date: '%d-%B-%Y' }}
+          </p>
+      </div>
 </div>
 <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
 <!--    <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>-->
