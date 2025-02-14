@@ -122,50 +122,50 @@ function linkTo_UnCryptMailto(encoded) {
 }
 
 function applyCornerRadii() {
-    const roundedPanel = document.querySelector('div.rounded-panel');
-    if (roundedPanel == null) return;
-    const chips = Array.from(roundedPanel.querySelectorAll('div.rounded-chip'));
-    if (chips.length === 0) return;
-
-    // Initialize variables to find the extreme edges
-    let topLeftChip = chips[0];
-    let topRightChip = chips[0];
-    let bottomLeftChip = chips[0];
-    let bottomRightChip = chips[0];
-
-    chips.forEach(chip => {
-        // Reset all border radii to 5px
-        chip.style.borderRadius = '5px';
-
-        const rect = chip.getBoundingClientRect();
-
-        // Determine topmost, leftmost, bottommost, and rightmost chips
-        if (rect.top < topLeftChip.getBoundingClientRect().top ||
-            (rect.top === topLeftChip.getBoundingClientRect().top && rect.left < topLeftChip.getBoundingClientRect().left)) {
-            topLeftChip = chip;
-        }
-
-        if (rect.top < topRightChip.getBoundingClientRect().top ||
-            (rect.top === topRightChip.getBoundingClientRect().top && rect.right > topRightChip.getBoundingClientRect().right)) {
-            topRightChip = chip;
-        }
-
-        if (rect.bottom > bottomLeftChip.getBoundingClientRect().bottom ||
-            (rect.bottom === bottomLeftChip.getBoundingClientRect().bottom && rect.left < bottomLeftChip.getBoundingClientRect().left)) {
-            bottomLeftChip = chip;
-        }
-
-        if (rect.bottom > bottomRightChip.getBoundingClientRect().bottom ||
-            (rect.bottom === bottomRightChip.getBoundingClientRect().bottom && rect.right > bottomRightChip.getBoundingClientRect().right)) {
-            bottomRightChip = chip;
-        }
-    });
-
-    // Apply the border radii to the corner chips
-    topLeftChip.style.borderTopLeftRadius = '20px';
-    topRightChip.style.borderTopRightRadius = '20px';
-    bottomLeftChip.style.borderBottomLeftRadius = '20px';
-    bottomRightChip.style.borderBottomRightRadius = '20px';
+    // const roundedPanel = document.querySelector('div.rounded-panel');
+    // if (roundedPanel == null) return;
+    // const chips = Array.from(roundedPanel.querySelectorAll('div.rounded-chip'));
+    // if (chips.length === 0) return;
+    //
+    // // Initialize variables to find the extreme edges
+    // let topLeftChip = chips[0];
+    // let topRightChip = chips[0];
+    // let bottomLeftChip = chips[0];
+    // let bottomRightChip = chips[0];
+    //
+    // chips.forEach(chip => {
+    //     // Reset all border radii to 5px
+    //     chip.style.borderRadius = '5px';
+    //
+    //     const rect = chip.getBoundingClientRect();
+    //
+    //     // Determine topmost, leftmost, bottommost, and rightmost chips
+    //     if (rect.top < topLeftChip.getBoundingClientRect().top ||
+    //         (rect.top === topLeftChip.getBoundingClientRect().top && rect.left < topLeftChip.getBoundingClientRect().left)) {
+    //         topLeftChip = chip;
+    //     }
+    //
+    //     if (rect.top < topRightChip.getBoundingClientRect().top ||
+    //         (rect.top === topRightChip.getBoundingClientRect().top && rect.right > topRightChip.getBoundingClientRect().right)) {
+    //         topRightChip = chip;
+    //     }
+    //
+    //     if (rect.bottom > bottomLeftChip.getBoundingClientRect().bottom ||
+    //         (rect.bottom === bottomLeftChip.getBoundingClientRect().bottom && rect.left < bottomLeftChip.getBoundingClientRect().left)) {
+    //         bottomLeftChip = chip;
+    //     }
+    //
+    //     if (rect.bottom > bottomRightChip.getBoundingClientRect().bottom ||
+    //         (rect.bottom === bottomRightChip.getBoundingClientRect().bottom && rect.right > bottomRightChip.getBoundingClientRect().right)) {
+    //         bottomRightChip = chip;
+    //     }
+    // });
+    //
+    // // Apply the border radii to the corner chips
+    // topLeftChip.style.borderTopLeftRadius = '20px';
+    // topRightChip.style.borderTopRightRadius = '20px';
+    // bottomLeftChip.style.borderBottomLeftRadius = '20px';
+    // bottomRightChip.style.borderBottomRightRadius = '20px';
 
 }
 

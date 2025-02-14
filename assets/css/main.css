@@ -2,7 +2,7 @@
 
 :root {
     --bs-border-radius: 0.375rem;
-    --bs-border-radius-xxl:20px !important;
+    --bs-border-radius-xxl: 20px !important;
     --bs-navbar-brand-margin-end: 0px !important;
     --bs-primary: orange !important;
     --bs-secondary: #0d6efd !important;
@@ -160,12 +160,13 @@
     --bs-accordion-btn-focus-box-shadow: none !important;
     --bs-border-color: transparent !important;
     --bs-accordion-border-color: transparent !important;
-    --bs-accordion-bg:rgb(248,249,250) !important;
+    --bs-accordion-bg: rgb(248, 249, 250) !important;
     --bs-accordion-body-padding-x: 0 !important;
-  --bs-accordion-body-padding-y: 0 !important;
+    --bs-accordion-body-padding-y: 0 !important;
 }
-.news-accordion button{
-    background-color: rgb(248,249,250) !important
+
+.news-accordion button {
+    background-color: rgb(248, 249, 250) !important
 }
 
 /* Media query for small devices (sm) */
@@ -574,8 +575,8 @@ nav:hover .underline {
     content: attr(data-caption); /* Use the data-name attribute to display the member's name */
     position: absolute;
     width: 100%;
-    bottom: 0px; /* Adjust as needed */
-    left: 0%;
+    bottom: 0; /* Adjust as needed */
+    left: 0;
     color: white;
     font-size: 1rem;
     padding-left: 0.5em;
@@ -662,4 +663,27 @@ nav:hover .underline {
     --bs-accordion-active-bg: white !important;
     --bs-border-color: transparent !important;
     --bs-accordion-border-color: transparent !important;
+}
+
+
+.counter-box-radius-overlay {
+    position: relative;
+    background: #ffe0e0;
+}
+
+.counter-box-radius-overlay::before {
+    content: "";
+    position: absolute;
+    top: var(--bs-gutter-y);
+    left: var(--bs-gutter-y) 0;
+    width: calc(100% - var(--bs-gutter-y));
+    height: calc(100% - var(--bs-gutter-y));
+    background: transparent;
+    border-radius: var(--bs-border-radius-xxl);
+
+    box-shadow: 0 0 0 20px #ffe0e0;
+    clip-path: inset(-12px -9px -6px -10px round 10px);
+
+
+    pointer-events: none;
 }

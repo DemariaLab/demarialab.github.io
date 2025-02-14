@@ -137,10 +137,10 @@ layout: default
         </div>
         {{ content }}
     </main>
-    <footer class="bg-light pt-2 mt-auto" style="border-top: 1px solid #00000010;">
+    <footer class="bg-light pt-2 mt-auto" style="border-top: 1px solid #00000010;border-bottom: 1px solid #00000010;">
         <div class="container-xl px-0 ">
             <div class="row g-0">
-                <div class="col-lg-6 col-12 px-0 py-0 px-md-2 mb-3 mb-lg-0 d-flex justify-content-center justify-content-lg-start align-items-center mt-5 mt-lg-0">
+                <div class="col-lg-5 col-12 px-0 py-0 px-md-2 mb-3 mb-lg-0 d-flex justify-content-center justify-content-lg-start align-items-center mt-5 mt-lg-0">
                     <div class="poppins d-flex flex-column align-items-center mx-5 mx-md-2" style="opacity:0.7">
                         <div  class="w-100 px-5 img-fluid mb-3">
                               <svg xmlns="http://www.w3.org/2000/svg"
@@ -204,12 +204,13 @@ layout: default
                         <div class="text-center mt-2">Est. {{ site.year }}</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 px-0 py-0 px-md-2 col-12 footer-block mt-2  mt-lg-3">
+                <div class="col-lg-4 col-md-6 px-0 py-0 px-md-2 col-12 footer-block mt-2  mt-lg-3">
                     <div class="p-3 p-lg-0 ">
                         <h4 class="footer-heading poppins">Address</h4>
                         <ul class="list-unstyled">
                             <li><a href="https://maps.app.goo.gl/nwqgWRHfNp7D2uEs6" target="_blank" class="d-block">
                                 <img src="/assets/icon/map_location.png"
+                                     style="border: 1px solid #00000020"
                                      class="w-100 border-semi-transparent rounded mb-2" alt="Lab location on map"/>
                                 Ground floor<br>
                                 European Research Institute for the Biology of Ageing<br>
@@ -252,10 +253,12 @@ layout: default
                 </div>
             </div>
         </div>
-        <div class="w-100 bg-white "style="border-top: 2px solid #fcf1f1" >
-            <p class="m-0 py-3 py-lg-2 px-2 text-muted bold" style="font-size: 0.5rem; opacity:0.6">Last update: {{ site.time | date: '%Y-%m-%d' }}</p>
-        </div>
+
     </footer>
+      <div class="w-100 bg-white ">
+            <p class="m-0 py-3 py-lg-2 px-3 text-muted text-body" style=" opacity:0.6">Last update: {{
+                site.time | date: '%Y-%m-%d' }}</p>
+        </div>
 </div>
 <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
 <!--    <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>-->
