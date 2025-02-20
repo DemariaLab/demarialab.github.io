@@ -286,6 +286,11 @@ html {
     display: inline;
 }
 
+.position-sticky {
+    position: sticky;
+    top: 0;
+}
+
 .quote-author {
     margin-top: 10px;
     color: #6c757d;
@@ -300,6 +305,7 @@ html {
 #logo {
     --bs-navbar-brand-margin-end: 0px !important;
     --bs-navbar-brand-margin-start: 0px !important;
+    opacity: 0.7;
 }
 
 .line-container {
@@ -577,14 +583,14 @@ nav:hover .underline {
     width: 100%;
     bottom: 0; /* Adjust as needed */
     left: 0;
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 1rem;
     padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 3em;
     padding-bottom: 1em;
     border-radius: inherit; /* Inherit the border-radius from the parent div */
-    opacity: 0;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
     pointer-events: none; /* Prevent hover on the pseudo-element itself */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Gradient background */
@@ -603,6 +609,8 @@ nav:hover .underline {
 
 .captioned-div:hover::after, .captioned-div:active::after, .captioned-div:focus::after {
     opacity: 1;
+    color:white;
+
 }
 
 .b-divider {

@@ -60,9 +60,11 @@ order: 0
 
     .showcase-cover {
         position: relative;
+        min-height: 100vh;
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
+        background:  conic-gradient(from 180deg, #4c9fae, #92f8b2);;
     }
 
     .showcase-cover::before {
@@ -76,6 +78,13 @@ order: 0
         pointer-events: none;
         z-index: 0;
     }
+
+    .showcase-cover-parent::after {
+        content: "";
+        display: block;
+        height: 150px;
+    }
+
 
     .hero-card-indicator {
         position: relative;
@@ -120,8 +129,8 @@ order: 0
 
     {% assign hero_accordion = site.data.hero_accordion %}
     {% if hero_accordion.size > 0 %}
-    <div class="container-flex">
-        <section class="bg-dark py-3 p-lg-5 showcase-cover px-0 px-lg-3 m-0">
+    <div class="container-flex showcase-cover-parent  ">
+        <section class="bg-dark py-3 p-lg-5 showcase-cover px-0 px-lg-3 m-0 position-sticky">
 
             <div class="container p-0 p-lg-3 p-xl-5 my-0 my-lg-3 my-xl-5 ">
                 <div class="row g-5 d-none d-lg-flex ">
@@ -253,11 +262,11 @@ order: 0
         });
     </script>
     {% endif %}
-    <div class="container-flex bg-light">
+    <div class="container-flex bg-light  ">
         <section class="container-xl content p-0 ">
-            <h3 class="poppins p-3 m-0">
+            <h4 class="poppins p-3 m-0">
                 Latest news
-            </h3>
+            </h4>
 
             <div class="row g-0 rounded-5 overflow-hidden news-block">
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
@@ -307,18 +316,18 @@ order: 0
     <div class="container-fluid py-3" >
         <section class=" container-xl noPadding" id="section2">
             <div class="noPadding">
-                <h3 class="poppins d-flex d-md-none mt-3 mb-3 px-0 px-lg-3 text-body">
+                <h4 class="poppins d-flex d-md-none mt-3 mb-3 px-0 px-lg-3 text-body">
                     Meet our members
-                </h3>
+                </h4>
                 <a class="no-underline d-none d-md-block " href="/members/">
                     <div class="row text-body gx-1 gx-lg-2 " id="teamSection">
                         <div class="text-body d-none d-md-flex  col-auto align-items-center justify-content-start ">
                             <a href="/members/"
                                class="text-body h-100 no-underline no-text-selection h-100 d-flex align-items-center">
                                 <div class="text-start text-body">
-                                    <h3 class="poppins text-body me-3 ms-0 ms-lg-3">
+                                    <h4 class="poppins text-body me-3 ms-0 ms-lg-3">
                                         Meet our<br>team members<br>
-                                    </h3>
+                                    </h4>
                                 </div>
                             </a>
                         </div>
@@ -368,9 +377,9 @@ order: 0
 
     <div class="container-fluid p-3 m-0 js-required-d-block">
         <div class="container-xl content p-0 ">
-            <h3 class="poppins px-0 px-lg-3 pb-3 m-0">
+            <h4 class="poppins px-0 px-lg-3 pb-3 m-0">
                 Latest photos
-            </h3>
+            </h4>
         </div>
         <div id="carouselPhotos" class="no-text-selection carousel slide container-fluid p-0 m-0  rounded-5 overflow-hidden">
             <div class="photos-container m-0 p-0 w-100  position-relative">
@@ -442,9 +451,9 @@ order: 0
 
     <div class="container-fluid counting-panel py-2" style="background-color: #ffe0e0">
         <section class="container-xl  content px-0 pt-0 pb-3 ">
-            <h3 class="poppins px-3 pt-3 pb-2 m-0">
+            <h4 class="poppins px-3 pt-3 pb-2 m-0">
                 Our lab in numbers
-            </h3>
+            </h4>
 
             <div class="container-xl  p-0">
                 <div class="d-flex w-100 p-0 " >
