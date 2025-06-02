@@ -1,4 +1,10 @@
 - authors: Demaria M
+  is_selected: false
+  journal: Aging (Albany NY)
+  pubmed_id: '40448665'
+  title: Rethinking healthcare through aging biology.
+  year: 2025 May 29
+- authors: Demaria M
   is_selected: true
   journal: Nat Rev Cancer
   pubmed_id: '40016290'
