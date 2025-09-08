@@ -12,7 +12,7 @@ def main(args_dict: dict):
     from python_generator.lab_members_script_sheets import process as process_members
     from python_generator.lab_photos_from_sheet import process as process_photos
     from python_generator.publications import process as process_publications
-    from python_generator.research_page import process as process_research_page
+    # from python_generator.research_page import process as process_research_page
     from python_generator.hero_accordion_processor import process as process_hero
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
@@ -21,7 +21,7 @@ def main(args_dict: dict):
     process_publications(args_dict)
     process_members(args_dict)
     process_custom_news(args_dict)
-    process_research_page(args_dict)
+    # process_research_page(args_dict)
     process_hero(args_dict)
 
     site_dir = args_dict[constants.ARG_SITE_DIR]

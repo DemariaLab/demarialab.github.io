@@ -89,24 +89,19 @@ thumbnail: \"{primary_photos}\"
 
 
 def process(args):
-    try:
-        print("Processing photos")
+    print("Processing photos")
 
-        site_dir = args[constants.ARG_SITE_DIR]
-        data = read_published_google_sheet(args[constants.ARG_PHOTOS_SHEET_ID])["data"]
-        data = [d for d in data if d.get("title") and d.get("photo") and d.get("date")]
+    site_dir = args[constants.ARG_SITE_DIR]
+    data = read_published_google_sheet(args[constants.ARG_PHOTOS_SHEET_ID])["data"]
+    data = [d for d in data if d.get("title") and d.get("photo") and d.get("date")]
 
-        gallery_dir = get_dir_path(site_dir, constants.GALLERY_DIR)
-        shutil.rmtree(gallery_dir)
+    gallery_dir = get_dir_path(site_dir, constants.GALLERY_DIR)
+    shutil.rmtree(gallery_dir)
 
-        for entry in data:
-            output_path_primary_photo = attempt_to_download_photo(entry, site_dir=site_dir)
-            if output_path_primary_photo:
-                filtered_dict: dict = {k: v for k, v in entry.items() if "additional" in k and v}
-                if len(filtered_dict) > 0:
-                    write_photo_news_post(entry, output_path_primary_photo, filtered_dict.values(),
-                                          site_dir=site_dir)
-
-    except:
-        print("An error occurred in photos processor")
-        traceback.print_exc()
+    for entry in data:
+        output_path_primary_photo = attempt_to_download_photo(entry, site_dir=site_dir)
+        if output_path_primary_photo:
+            filtered_dict: dict = {k: v for k, v in entry.items() if "additional" in k and v}
+            if len(filtered_dict) > 0:
+                write_photo_news_post(entry, output_path_primary_photo, filtered_dict.values(),
+                                      site_dir=site_dir)

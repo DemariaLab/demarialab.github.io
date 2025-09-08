@@ -134,30 +134,26 @@ def attempt_to_download_photo(member_dict, site_dir):
 
 
 def process(args):
-    try:
-        print("Processing members")
+    print("Processing members")
 
-        site_dir = args[constants.ARG_SITE_DIR]
-        results = read_published_google_sheet(args[constants.ARG_MEMBERS_SHEET_ID])
-        data = results["data"]
-        data = [d for d in data if d.get("name")]
+    site_dir = args[constants.ARG_SITE_DIR]
+    results = read_published_google_sheet(args[constants.ARG_MEMBERS_SHEET_ID])
+    data = results["data"]
+    data = [d for d in data if d.get("name")]
 
-        for record in data:
-            if record["photo"]:
-                record["photo"] = attempt_to_download_photo(record, site_dir=site_dir)
+    for record in data:
+        if record["photo"]:
+            record["photo"] = attempt_to_download_photo(record, site_dir=site_dir)
 
-        delete_dir_contents(get_dir_path(site_dir, constants.MEMBERS_DIR))
-        posts_dir = get_dir_path(site_dir, constants.POSTS_DIR)
+    delete_dir_contents(get_dir_path(site_dir, constants.MEMBERS_DIR))
+    posts_dir = get_dir_path(site_dir, constants.POSTS_DIR)
 
-        # Check for existing files and delete them
-        pattern = os.path.join(posts_dir, f"*-Welcome-new-member-*.md")
-        existing_files = glob.glob(pattern)
-        for file in existing_files:
-            os.remove(file)
+    # Check for existing files and delete them
+    pattern = os.path.join(posts_dir, f"*-Welcome-new-member-*.md")
+    existing_files = glob.glob(pattern)
+    for file in existing_files:
+        os.remove(file)
 
-        for item in data:
-            generate_profile_post(item, site_dir=site_dir)
-            generate_welcome_posts(item, site_dir=site_dir)
-    except:
-        print("An error occurred in members processor")
-        traceback.print_exc()
+    for item in data:
+        generate_profile_post(item, site_dir=site_dir)
+        generate_welcome_posts(item, site_dir=site_dir)

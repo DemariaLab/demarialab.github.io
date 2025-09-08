@@ -242,12 +242,8 @@ PubMed ID: {pub['pubmed_id']}
 
 
 def process(args):
-    try:
-        print("Processing publications")
-        site_dir = args[constants.ARG_SITE_DIR]
-        fetch_and_save_publications(get_dir_path(site_dir, constants.DATA_DIR), args)
-        export_news(site_dir)
-        produce_screenshots(site_dir)
-    except:
-        print("An error occurred in publication news")
-        traceback.print_exc()
+    print("Processing publications")
+    site_dir = args[constants.ARG_SITE_DIR]
+    fetch_and_save_publications(get_dir_path(site_dir, constants.DATA_DIR), args)
+    export_news(site_dir)
+    produce_screenshots(site_dir)
