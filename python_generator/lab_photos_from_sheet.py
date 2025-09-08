@@ -1,13 +1,12 @@
 import os.path
 import shutil
-import traceback
 
 import requests
 
 from python_generator import constants
-from python_generator.utils import safe_file_name
 from python_generator.utils import remove_thumbnail_segment_from_url, read_published_google_sheet, download_pic, \
     get_dir_path
+from python_generator.utils import safe_file_name
 
 
 def attempt_to_download_photo(photo_dict, site_dir, key="photo"):

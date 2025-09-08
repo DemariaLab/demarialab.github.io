@@ -1,7 +1,7 @@
 import os
-import traceback
 
 import yaml
+
 from python_generator import constants
 from python_generator import utils
 

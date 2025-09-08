@@ -1,7 +1,6 @@
 import glob
 import os.path
 import re
-import traceback
 
 import pycountry
 import requests

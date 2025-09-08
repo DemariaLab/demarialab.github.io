@@ -1,8 +1,7 @@
 import os
-import traceback
 
-from python_generator import utils
 from python_generator import constants
+from python_generator import utils
 
 
 def save_research_doc_as_markdown(site_dir, doc_id):

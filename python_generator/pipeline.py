@@ -2,9 +2,9 @@ import argparse
 import os
 
 from python_generator import constants
-from python_generator.utils import reduce_images_in_dir
-from python_generator.utils import blur_images_in_dir
 from python_generator.export_date import export_build_date
+from python_generator.utils import blur_images_in_dir
+from python_generator.utils import reduce_images_in_dir
 
 
 def main(args_dict: dict):
@@ -17,11 +17,10 @@ def main(args_dict: dict):
 
     args_dict[constants.ARG_SITE_DIR] = os.path.abspath(args_dict[constants.ARG_SITE_DIR])
 
-    process_photos(args_dict)
     process_publications(args_dict)
+    process_photos(args_dict)
     process_members(args_dict)
     process_custom_news(args_dict)
-    # process_research_page(args_dict)
     process_hero(args_dict)
 
     site_dir = args_dict[constants.ARG_SITE_DIR]
