@@ -227,13 +227,17 @@ title: \"New publication: {sanitized_title}\"
 date: {pub['year']}
 thumbnail: "'/assets/posts/pubmed_{pub['pubmed_id']}.png'"
 ---
-<strong>"{pub['title']}"</strong> by <em>{pub['authors'].replace("Demaria M", "<strong>Demaria M</strong>")}</em>  has been just published in <em><strong><ins>{pub['journal']}</ins></strong></em>.
-Congratulations to the authors!
-    
-PubMed ID: {pub['pubmed_id']}
-    
-[https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']}/](https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']})
-![](/assets/posts/pubmed_{pub['pubmed_id']}.png)
+📖 <strong>Title:</strong> "{pub['title']}"  
+
+🖊️ <strong>Authors:</strong> <em>{pub['authors'].replace("D M", "<strong>D M</strong>")}</em>  
+
+🏛️ <strong>Published in:</strong> <em><strong><ins>{pub['journal']}</ins></strong></em>  
+
+🎉 Congratulations to the authors!  
+
+🔗 <a href="https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']}/">View on PubMed</a>  
+
+![Publication Image](/assets/posts/pubmed_{pub['pubmed_id']}.png)
 """
             file_name = f"{formatted_date}-paper_{pub['pubmed_id']}.md"
             file_path = os.path.join(get_dir_path(site_dir, constants.POSTS_DIR), file_name)
