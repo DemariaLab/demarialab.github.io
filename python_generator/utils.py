@@ -1,8 +1,10 @@
 import hashlib
+import os
 import random
 import re
 import shutil
 import string
+import time
 from datetime import datetime
 from io import BytesIO
 from urllib.parse import urlparse, unquote
@@ -10,7 +12,22 @@ from urllib.parse import urlparse, unquote
 import html2text
 import requests
 import unicodedata
+from PIL import Image, ImageFilter
+from PIL import ImageEnhance
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.firefox import GeckoDriverManager
+
+gecko_path = GeckoDriverManager().install()
+
+
+def get_gecko_path():
+    return gecko_path
 
 
 # Function to create a safe file name
@@ -31,12 +48,6 @@ def safe_file_name(input_string, replacement_char='_'):
         safe_string = safe_string[:max_length]
 
     return safe_string
-
-
-from PIL import ImageEnhance
-
-from PIL import Image, ImageFilter
-import os
 
 
 def blur_images_in_dir(input_dir, blur_radius=30, reduced_size=(56, 56)):
@@ -95,14 +106,166 @@ def reduce_images_in_dir(input_dir, sharpness_factor=0.8):
                 sharpened_img.save(reduced_filepath, format='WEBP', quality=min(100, int(sharpness_factor * 100)))
 
 
-def read_published_google_sheet(sheet_id):
-    url = f"https://docs.google.com/spreadsheets/d/e/{sheet_id}/pubhtml"
-    # Fetch the HTML content
-    response = requests.get(url)
-    response.raise_for_status()
+import logging
 
-    # Parse the HTML content
-    soup = BeautifulSoup(response.content, 'html.parser')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+
+
+def fetch_sheet_table_via_selenium(
+        sheet_id,
+        max_attempts=3,
+        per_attempt_timeout=20,
+        poll_interval=2,
+        stable_trials=1,
+        stable_interval=5,
+):
+    url = f"https://docs.google.com/spreadsheets/d/e/{sheet_id}/pubhtml"
+
+    options = Options()
+    options.headless = True
+    options.add_argument("--width=1920")
+    options.add_argument("--height=1080")
+    # options.set_preference("dom.ipc.processCount", 1)
+
+    service = FirefoxService(get_gecko_path())
+    driver = webdriver.Firefox(service=service, options=options)
+
+    try:
+        attempt = 0
+        while True:
+            attempt += 1
+            logging.info(f"Attempt {attempt}")
+            driver.get(url)
+
+            try:
+                logging.info(f"Waiting up to {per_attempt_timeout}s for <table> element...")
+
+                WebDriverWait(driver, per_attempt_timeout).until(
+                    EC.frame_to_be_available_and_switch_to_it((By.ID, "pageswitcher-content"))
+                )
+
+                chosen_el = WebDriverWait(driver, per_attempt_timeout).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "table.waffle"))
+                )
+
+                if not chosen_el:
+                    raise TimeoutError("No table element found after wait.")
+
+                logging.info("Table element detected on page (web element).")
+            except Exception as e:
+                logging.warning(f"No <table> found in attempt {attempt}: {e}")
+                if max_attempts and attempt >= max_attempts:
+                    logging.error("Max attempts reached. Raising TimeoutError.")
+                    raise TimeoutError(
+                        f"No <table> found after {attempt} attempts (per attempt timeout={per_attempt_timeout}s)."
+                    )
+                logging.info(f"Retrying after {poll_interval}s...")
+                time.sleep(poll_interval)
+                continue
+
+            # capture a canonical HTML snapshot from the browser (so comparisons use same source)
+            try:
+                last_table_html = chosen_el.get_attribute("outerHTML")
+            except Exception:
+                last_table_html = driver.page_source  # fallback; will be different but safe
+
+            # parse initial snapshot into BeautifulSoup for immediate use
+            soup = BeautifulSoup(driver.page_source, "html.parser")
+            table = soup.find("table")
+            logging.info("Extracted table from page source.")
+
+            has_rows = bool(table and table.find_all("tr"))
+            has_images = bool(table and table.find("img"))
+            logging.info(f"Table contains rows: {has_rows}, images: {has_images}")
+
+            if not (table and (has_rows or has_images)):
+                if max_attempts and attempt >= max_attempts:
+                    logging.error("Max attempts reached. Table is empty. Raising TimeoutError.")
+                    raise TimeoutError(
+                        f"Table appeared but did not contain rows/images after {attempt} attempts."
+                    )
+                logging.info(f"Table not valid yet. Retrying after {poll_interval}s...")
+                time.sleep(poll_interval)
+                continue
+
+            # At this point we have a valid table. Start stable-check loop:
+            logging.info(
+                "Valid table found. Entering stability-monitoring: "
+                f"require {stable_trials} trials spaced {stable_interval}s with no change."
+            )
+
+            stable_count = 0
+
+            # Keep monitoring until stable_count reaches stable_trials.
+            # If a change is detected during the 3-trial sequence, reset and start the 3 trials over.
+            while True:
+                # perform one trial sequence of up to `stable_trials` checks
+                change_detected_in_sequence = False
+                for trial in range(stable_trials):
+                    logging.debug(f"Stability check {trial + 1}/{stable_trials}: sleeping {stable_interval}s...")
+                    time.sleep(stable_interval)
+
+                    # give browser a chance to finish network/JS work
+                    try:
+                        WebDriverWait(driver, per_attempt_timeout).until(
+                            lambda d: d.execute_script("return document.readyState") == "complete"
+                        )
+                    except Exception:
+                        # it's okay if readyState doesn't become complete within timeout; continue to check DOM anyway
+                        logging.debug("document.readyState did not become 'complete' within timeout (continuing).")
+
+                    # re-query for table element in the live DOM (prefer waffle)
+                    try:
+                        current_tables = driver.find_elements(By.TAG_NAME, "table")
+                        current_html = None
+                        if current_tables:
+                            chosen_current = None
+                            for ct in current_tables:
+                                classes = ct.get_attribute("class") or ""
+                                if "waffle" in classes.split():
+                                    chosen_current = ct
+                                    break
+                            chosen_current = chosen_current or current_tables[0]
+                            current_html = chosen_current.get_attribute("outerHTML")
+                        else:
+                            current_html = None
+                    except Exception as e:
+                        logging.warning(f"Error while fetching table during stability check: {e}")
+                        current_html = None
+
+                    if current_html != last_table_html:
+                        logging.info("Change detected in table HTML. Resetting stability counter and repeating trials.")
+                        last_table_html = current_html
+                        stable_count = 0
+                        change_detected_in_sequence = True
+                        break  # break out of for-loop to restart the sequence
+                    else:
+                        stable_count += 1
+                        logging.info(f"No change detected ({stable_count}/{stable_trials}).")
+
+                # if one full sequence completed with no change (i.e. stable_count >= stable_trials), return result
+                if not change_detected_in_sequence and stable_count >= stable_trials:
+                    # refresh soup/table from latest page source to return the most up-to-date parsed objects
+                    soup = BeautifulSoup(driver.page_source, "html.parser")
+                    table = soup.find("table")
+                    logging.info(
+                        f"Table stable for {stable_trials} trials ({stable_interval}s interval). Returning results."
+                    )
+                    return soup, table
+
+                # otherwise, loop continues and we'll start another stability sequence
+
+    finally:
+        logging.info("Closing WebDriver...")
+        try:
+            driver.quit()
+            logging.info("WebDriver closed successfully.")
+        except Exception as e:
+            logging.warning(f"Error while closing WebDriver: {e}")
+
+
+def read_published_google_sheet(sheet_id):
+    soup, table = fetch_sheet_table_via_selenium(sheet_id)
 
     # Extract table rows
     table = soup.find('table')

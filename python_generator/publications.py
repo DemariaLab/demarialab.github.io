@@ -1,19 +1,21 @@
 import os
 import os.path
 import re
-import traceback
+import time
 from datetime import datetime
 from urllib.parse import quote
 from urllib.parse import quote_plus
 
+import requests
 import yaml
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from python_generator import constants
-from python_generator.utils import get_dir_path, sanitize_title
+from python_generator.utils import get_dir_path, sanitize_title, get_gecko_path
 from python_generator.utils import read_published_google_sheet
 
 
@@ -33,12 +35,11 @@ def resolve_final_url(url):
 
 
 def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
-    firefox_options = Options()
-    firefox_options.add_argument('--headless')
+    firefox_options = webdriver.FirefoxOptions()
 
     # firefox_options.set_preference("javascript.enabled", False)
 
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=firefox_options)
+    driver = webdriver.Firefox(service=FirefoxService(get_gecko_path()), options=firefox_options)
     driver.set_window_size(width, height)
     for pubmed_id in ids:
         output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.png")
@@ -48,8 +49,17 @@ def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
         url = f"https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}/"
         driver.get(url)
 
+        # Wait for main content to load
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "full-view-heading"))
+        )
+
         driver.execute_script(
-            "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());")
+            "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
+        )
+
+        # Small delay to allow JS to finish
+        time.sleep(2)
 
         driver.save_screenshot(output_path)
     driver.quit()
@@ -95,10 +105,6 @@ def parse_year(year_str):
             return datetime.strptime(year_str, "%Y %b")
         except ValueError:
             return datetime.strptime(year_str, "%Y")
-
-
-import time
-import requests
 
 
 def get_publication_details(pubmed_id):
