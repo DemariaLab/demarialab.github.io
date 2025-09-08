@@ -49,16 +49,9 @@ def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
         url = f"https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}/"
         driver.get(url)
 
-        # Wait for main content to load
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, "full-view-heading"))
-        )
-
         driver.execute_script(
             "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
         )
-
-        # Small delay to allow JS to finish
         time.sleep(2)
 
         driver.save_screenshot(output_path)
