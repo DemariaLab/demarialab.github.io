@@ -28,12 +28,16 @@ def save_custom_news_doc_as_markdown(doc_id, posts_dir):
 
 
 def process(args):
-    print("Processing custom news articles")
-    site_dir = args[constants.ARG_SITE_DIR]
-    posts_dir = utils.get_dir_path(site_dir, constants.POSTS_DIR)
-    custom_news_articles = utils.extract_urls_from_gdoc(args[constants.ARG_CUSTOM_NEWS_ARTICLES_ID],
-                                                        output_dir=posts_dir)
-    custom_news_articles = [f for f in custom_news_articles if f]
+    try:
+        print("Processing custom news articles")
+        site_dir = args[constants.ARG_SITE_DIR]
+        posts_dir = utils.get_dir_path(site_dir, constants.POSTS_DIR)
+        custom_news_articles = utils.extract_urls_from_gdoc(args[constants.ARG_CUSTOM_NEWS_ARTICLES_ID],
+                                                            output_dir=posts_dir)
+        custom_news_articles = [f for f in custom_news_articles if f]
 
-    for article in custom_news_articles:
-        save_custom_news_doc_as_markdown(article, posts_dir=posts_dir)
+        for article in custom_news_articles:
+            save_custom_news_doc_as_markdown(article, posts_dir=posts_dir)
+    except Exception:
+        print("An error occurred in custom news processor")
+        traceback.print_exc()
