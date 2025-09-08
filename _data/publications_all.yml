@@ -122,7 +122,7 @@
   year: 2024 Jan
 - authors: Lin Y, Postma DF, Steeneken LS, Melo Dos Santos LS, Kirkland JL, Espindola-Netto
     JM, Tchkonia T, Borghesan M, Bouma HR, Demaria M
-  is_selected: false
+  is_selected: true
   journal: Aging Cell
   pubmed_id: '37969056'
   title: Circulating monocytes expressing senescence-associated features are enriched
@@ -165,7 +165,7 @@
   year: 2023 Jun
 - authors: Nehme J, Yang D, Altulea A, Varela-Eirin M, Wang L, Hu S, Wu Y, Togo J,
     Niu C, Speakman JR, Demaria M
-  is_selected: false
+  is_selected: true
   journal: FEBS J
   pubmed_id: '34908245'
   title: High dietary protein and fat contents exacerbate hepatic senescence and SASP
@@ -246,7 +246,7 @@
     for senotherapeutic interventions.
   year: 2022 Feb 28
 - authors: Soto-Gamez A, Wang Y, Zhou X, Seras L, Quax W, Demaria M
-  is_selected: false
+  is_selected: true
   journal: Cancer Lett
   pubmed_id: '34728311'
   title: Enhanced extrinsic apoptosis of therapy-induced senescent cancer cells using
@@ -276,7 +276,7 @@
   title: A novel transcriptomic-based classifier for senescent cancer cells.
   year: 2021 Nov
 - authors: Talma N, Gerrits E, Wang B, Eggen BJL, Demaria M
-  is_selected: false
+  is_selected: true
   journal: Aging Cell
   pubmed_id: '34598318'
   title: Identification of distinct and age-dependent p16(High) microglia subtypes.
