@@ -229,9 +229,9 @@ thumbnail: "'/assets/posts/pubmed_{pub['pubmed_id']}.png'"
 ---
 📖 <strong>Title:</strong> "{pub['title']}"  
 
-🖊️ <strong>Authors:</strong> <em>{pub['authors'].replace("D M", "<strong>D M</strong>")}</em>  
+🖊️ <strong>Authors:</strong> <em>{pub['authors'].replace("Demaria M", "<strong>Demaria M</strong>")}</em>  
 
-🏛️ <strong>Published in:</strong> <em><strong><ins>{pub['journal']}</ins></strong></em>  
+🏛️ <strong>Published in:</strong> <em>{pub['journal']}</em>  
 
 🎉 Congratulations to the authors!  
 
