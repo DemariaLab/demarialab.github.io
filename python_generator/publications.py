@@ -214,7 +214,7 @@ def export_news(site_dir):
                 if len(match.group(0).split()) == 2:
                     pub['year'] += ' 01'
                 filtered_publications.append(pub)
-        filtered_publications = [f for f in filtered_publications if str(f["authors"]).endswith("Demaria M")]
+        filtered_publications = [f for f in filtered_publications if "Demaria M" in str(f["authors"])]
         for pub in filtered_publications:
             date_str = pub['year']
             date_obj = datetime.strptime(date_str, '%Y %b %d')
