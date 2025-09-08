@@ -4,6 +4,7 @@ import os
 from python_generator import constants
 from python_generator.utils import reduce_images_in_dir
 from python_generator.utils import blur_images_in_dir
+from python_generator.export_date import export_build_date
 
 
 def main(args_dict: dict):
@@ -30,6 +31,8 @@ def main(args_dict: dict):
     reduce_images_in_dir(os.path.join(site_dir, "assets", "members"))
 
     blur_images_in_dir(os.path.join(site_dir, "gallery"))
+
+    export_build_date(os.path.join(site_dir, constants.DATA_DIR))
 
 
 def run():
