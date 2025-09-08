@@ -36,6 +36,8 @@ def resolve_final_url(url):
 
 def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
     firefox_options = webdriver.FirefoxOptions()
+    firefox_options.add_argument('--headless')
+    firefox_options.add_argument("--headless=new")
 
     # firefox_options.set_preference("javascript.enabled", False)
 

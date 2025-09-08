@@ -125,6 +125,8 @@ def fetch_sheet_table_via_selenium(
     options.headless = True
     options.add_argument("--width=1920")
     options.add_argument("--height=1080")
+    options.add_argument('--headless')
+    options.add_argument("--headless=new")
     # options.set_preference("dom.ipc.processCount", 1)
 
     service = FirefoxService(get_gecko_path())
