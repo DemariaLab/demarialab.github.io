@@ -9,10 +9,7 @@ from urllib.parse import quote_plus
 import requests
 import yaml
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service as FirefoxService
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
 
 from python_generator import constants
 from python_generator.utils import get_dir_path, sanitize_title, get_gecko_path
@@ -34,7 +31,7 @@ def resolve_final_url(url):
         return url
 
 
-def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
+def take_screenshot_of_url(ids, output_dir, width=948, height=1100):
     firefox_options = webdriver.FirefoxOptions()
     firefox_options.add_argument('--headless')
     firefox_options.add_argument("--headless=new")
@@ -52,7 +49,7 @@ def take_screenshot_of_url(ids, output_dir, width=1920 / 2, height=1100):
         driver.get(url)
 
         driver.execute_script(
-            "document.querySelectorAll('.usa-banner, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
+            "document.querySelectorAll('.search-links-wrapper, .search-input, #article-page-header, .usa-banner,.actions-buttons .inline, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
         )
         time.sleep(2)
 
