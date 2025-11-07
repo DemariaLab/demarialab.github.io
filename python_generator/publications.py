@@ -237,7 +237,7 @@ thumbnail: "'/assets/posts/pubmed_{pub['pubmed_id']}.png'"
 
 🔗 <a href="https://pubmed.ncbi.nlm.nih.gov/{pub['pubmed_id']}/">View on PubMed</a>  
 
-![Publication Image](/assets/posts/pubmed_{pub['pubmed_id']}.png)
+![](/assets/posts/pubmed_{pub['pubmed_id']}.png)
 """
             file_name = f"{formatted_date}-paper_{pub['pubmed_id']}.md"
             file_path = os.path.join(get_dir_path(site_dir, constants.POSTS_DIR), file_name)
