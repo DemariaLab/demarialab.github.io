@@ -5,7 +5,7 @@ unaccented_name: "Jamil Nehme"
 last_name_initials: Nehme J
 role: "PostDoc"
 date_joined: "2017-05-01"
-date_leaving: "2025-12-31"
+date_leaving: "2027-06-30"
 keywords: "cell death; dietary interventions"
 country: "Lebanon 🇱🇧"
 qualification: "PhD"

@@ -5,7 +5,7 @@ unaccented_name: "Lotte Steeneken"
 last_name_initials: Steeneken L
 role: "PhD student"
 date_joined: "2023-02-01"
-date_leaving: "2027-01-31"
+date_leaving: "2027-05-31"
 keywords: "chemotherapy"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"
