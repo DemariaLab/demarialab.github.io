@@ -31,7 +31,7 @@ def resolve_final_url(url):
         return url
 
 
-def take_screenshot_of_url(ids, output_dir, width=948, height=1100):
+def take_screenshot_of_url(ids, output_dir, width=960, height=1100):
     firefox_options = webdriver.FirefoxOptions()
     firefox_options.add_argument('--headless')
     firefox_options.add_argument("--headless=new")
@@ -49,12 +49,21 @@ def take_screenshot_of_url(ids, output_dir, width=948, height=1100):
         driver.get(url)
 
         driver.execute_script(
-            "document.querySelectorAll('.search-links-wrapper, .search-input, #article-page-header, .usa-banner,.actions-buttons .inline, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
+            "document.querySelectorAll('.search-links-wrapper, .search-input, #article-page-header, .usa-banner,.actions-buttons, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
         )
         time.sleep(2)
 
         driver.save_screenshot(output_path)
     driver.quit()
+
+    for pubmed_id in ids:
+        output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.png")
+        if os.path.exists(output_path):
+            from PIL import Image
+            with Image.open(output_path) as img:
+                if img.width != 948:
+                    cropped = img.crop((0, 0, 948, img.height))
+                    cropped.save(output_path)
 
 
 def produce_screenshots(site_dir):
