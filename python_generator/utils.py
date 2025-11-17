@@ -286,6 +286,8 @@ def read_published_google_sheet(sheet_id):
                 column_name = "photo"
             if column_name.lower().startswith("keyword"):
                 column_name = "keywords"
+            if column_name.lower().startswith("previous") and "role" in column_name.lower():
+                column_name = "previous_roles"
             if column_name:
                 record[column_name] = extract_cell_data(cell)
         data.append(record)

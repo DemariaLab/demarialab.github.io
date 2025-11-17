@@ -38,33 +38,38 @@ layout: modal_post
                     {% endif %}
                     <ul class="member-info list-unstyled px-3 px-lg-0">
                         {% if page.date_joined and page.is_alumni == false %}
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
-                                 fill="#000000">
-                                <path d="M0 0h24v24H0V0z" fill="none"/>
-                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                            </svg>
-                            Joined {{ page.date_joined | date: "%B %Y"}}
-                        </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M160-200v-440 440-15 15Zm0 80q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v171q-18-13-38-22.5T800-508v-132H160v440h283q3 21 9 41t15 39H160Zm240-600h160v-80H400v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm20-208v-112h-40v128l86 86 28-28-74-74Z"/></svg>
+                               Joined {{ page.date_joined | date: "%B %Y"}}
+                            </li>
                         {% endif %}
+<!--                        -->
                         {% if page.is_alumni == true and page.date_leaving %}
-                        {% assign start_year_alumni = page.date_joined | date: "%Y" | plus: 0 %}
-                        {% assign end_year_alumni = page.date_leaving | date: "%Y" | plus: 0 %}
-                        {% assign years_spent = end_year_alumni | minus: start_year_alumni %}
-                        {% assign start_month_alumni = page.date_joined | date: "%m" | plus: 0 %}
-                        {% assign end_month_alumni = page.date_leaving | date: "%m" | plus: 0 %}
-                        {% assign total_months = end_month_alumni | minus: start_month_alumni %}
+                            {% assign start_year_alumni = page.date_joined | date: "%Y" | plus: 0 %}
+                            {% assign end_year_alumni = page.date_leaving | date: "%Y" | plus: 0 %}
+                            {% assign years_spent = end_year_alumni | minus: start_year_alumni %}
+                            {% assign start_month_alumni = page.date_joined | date: "%m" | plus: 0 %}
+                            {% assign end_month_alumni = page.date_leaving | date: "%m" | plus: 0 %}
+                            {% assign total_months = end_month_alumni | minus: start_month_alumni %}
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
+                                     fill="#000000">
+                                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                </svg>
+                                Spent {{years_spent}} years {% if total_months > 0 %} and {{total_months}} months {% endif
+                                %} in the lab, from {{ page.date_joined | date: "%B %Y"}} until {{ page.date_leaving | date:
+                                "%B %Y"}}
+                            </li>
+                        {% endif %}
+                        <!--                        -->
+                        {% if page.previous_roles %}
                         <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
-                                 fill="#000000">
-                                <path d="M0 0h24v24H0V0z" fill="none"/>
-                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                            </svg>
-                            Spent {{years_spent}} years {% if total_months > 0 %} and {{total_months}} months {% endif
-                            %} in the lab, from {{ page.date_joined | date: "%B %Y"}} until {{ page.date_leaving | date:
-                            "%B %Y"}}
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M480-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM240-40v-309q-38-42-59-96t-21-115q0-134 93-227t227-93q134 0 227 93t93 227q0 61-21 115t-59 96v309l-240-80-240 80Zm240-280q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70ZM320-159l160-41 160 41v-124q-35 20-75.5 31.5T480-240q-44 0-84.5-11.5T320-283v124Zm160-62Z"/></svg>
+                            Previously in our lab: {{ page.previous_roles"}}
                         </li>
                         {% endif %}
+<!--                        -->
                         {% if page.country %}
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"

@@ -31,6 +31,7 @@ def generate_profile_post(data: dict, site_dir):
     date_joined = data.get("date_joined", None)
     date_leaving = data.get("date_leaving", None)
     country = data.get("country", None)
+    previous_roles = data.get("previous_roles", None)
     keywords = data.get("keywords", None)
     biography = data.get("biography", None)
     is_alumni = is_date_older_than_now(date_leaving)
@@ -64,7 +65,7 @@ def generate_profile_post(data: dict, site_dir):
     role_template = f'role: "{role}"' if role else ""
     date_in_template = f'date_joined: "{date_joined}"' if date_joined else ""
     date_out_template = f'date_leaving: "{date_leaving}"' if date_leaving else ""
-
+    previous_roles_template = f'previous_roles: "{previous_roles}"' if previous_roles else ""
     keywords_template = f'keywords: "{keywords}"' if keywords_present else ""
     country_template = f'country: "{country}"' if country else ""
     qualification_template = f'qualification: "{qualification}"' if qualification else ""
@@ -82,6 +83,7 @@ unaccented_name: "{remove_accents(name)}"
 {role_template}
 {date_in_template}
 {date_out_template}
+{previous_roles_template}
 {keywords_template}
 {country_template}
 {qualification_template}
