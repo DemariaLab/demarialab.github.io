@@ -47,20 +47,28 @@ layout: modal_post
                         {% if page.is_alumni == true and page.date_leaving %}
                             {% assign start_year_alumni = page.date_joined | date: "%Y" | plus: 0 %}
                             {% assign end_year_alumni = page.date_leaving | date: "%Y" | plus: 0 %}
-                            {% assign years_spent = end_year_alumni | minus: start_year_alumni %}
                             {% assign start_month_alumni = page.date_joined | date: "%m" | plus: 0 %}
                             {% assign end_month_alumni = page.date_leaving | date: "%m" | plus: 0 %}
-                            {% assign total_months = end_month_alumni | minus: start_month_alumni %}
+
+                            {# inclusive month difference #}
+                            {% assign total_months = end_month_alumni | minus: start_month_alumni | plus: 1 %}
+
+                            {# convert 12+ months into extra years #}
+                            {% assign extra_years = total_months | divided_by: 12 %}
+                            {% assign years_spent = end_year_alumni | minus: start_year_alumni | plus: extra_years %}
+                            {% assign remaining_months = total_months | modulo: 12 %}
+    
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
                                      fill="#000000">
                                     <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                                 </svg>
-                                Spent {{years_spent}} years {% if total_months > 0 %} and {{total_months}} months {% endif
-                                %} in the lab, from {{ page.date_joined | date: "%B %Y"}} until {{ page.date_leaving | date:
-                                "%B %Y"}}
+                                Spent {{ years_spent }} years{% if remaining_months > 0 %} and {{ remaining_months }}
+                                months{% endif %} in the lab,
+                                from {{ page.date_joined | date: "%B %Y"}} until {{ page.date_leaving | date: "%B %Y"}}
                             </li>
                         {% endif %}
+
                         <!--                        -->
                         {% if page.previous_roles %}
                         <li>
