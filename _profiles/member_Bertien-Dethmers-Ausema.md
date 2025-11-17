@@ -6,6 +6,7 @@ last_name_initials: Dethmers-Ausema B
 role: "Technician"
 date_joined: "2024-10-14"
 
+
 keywords: "lab support; mouse work support"
 country: "the Netherlands 🇳🇱"
 qualification: "BSc"

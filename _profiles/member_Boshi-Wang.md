@@ -6,6 +6,7 @@ last_name_initials: Wang B
 role: "PostDoc"
 date_joined: "2016-02-01"
 
+previous_roles: "PhD student (2016-2020)"
 keywords: "CDK4/6; sex disparity; natural aging"
 country: "China 🇨🇳"
 qualification: "PhD"

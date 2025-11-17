@@ -6,6 +6,7 @@ last_name_initials: Maassen S
 role: "PostDoc"
 date_joined: "2022-10-01"
 date_leaving: "2025-04-30"
+
 keywords: "snRNA-seq; COPD"
 country: "the Netherlands 🇳🇱"
 qualification: "PhD"

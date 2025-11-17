@@ -6,6 +6,7 @@ last_name_initials: Talma N
 role: "PhD student"
 date_joined: "2017-09-01"
 date_leaving: "2022-04-20"
+
 keywords: "aging brain; microglia"
 country: "the Netherlands 🇳🇱"
 qualification: "MSc"

@@ -6,6 +6,7 @@ last_name_initials: Gheorghe T
 role: "PhD student"
 date_joined: "2021-11-01"
 date_leaving: "2025-10-31"
+
 keywords: "calcium signaling"
 country: "Romania 🇷🇴"
 qualification: "MSc"

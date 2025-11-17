@@ -6,6 +6,7 @@ last_name_initials: Piccolantonio A
 role: "PhD student"
 date_joined: "2023-12-01"
 date_leaving: "2027-11-30"
+
 keywords: "systemic sclerosis; fibrosis"
 country: "Italy 🇮🇹"
 qualification: "MSc"

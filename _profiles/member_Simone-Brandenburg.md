@@ -6,6 +6,7 @@ last_name_initials: Brandenburg S
 role: "Technician"
 date_joined: "2015-09-01"
 
+
 keywords: "lab management"
 country: "the Netherlands 🇳🇱"
 qualification: "BSc"

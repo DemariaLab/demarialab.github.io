@@ -6,6 +6,7 @@ last_name_initials: Mackedenski S
 role: "PhD student"
 date_joined: "2020-02-15"
 date_leaving: "2026-10-14"
+
 keywords: "non-coding RNA"
 country: "Canada 🇨🇦"
 qualification: "MSc"
