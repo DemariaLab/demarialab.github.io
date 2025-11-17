@@ -6,6 +6,7 @@ last_name_initials: Soto-Gamez A
 role: "PostDoc"
 date_joined: "2016-10-01"
 date_leaving: "2024-09-30"
+
 keywords: "radiotherapy"
 country: "Mexico 🇲🇽"
 qualification: "PhD"

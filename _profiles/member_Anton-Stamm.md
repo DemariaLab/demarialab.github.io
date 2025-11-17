@@ -6,6 +6,7 @@ last_name_initials: Stamm A
 role: "PhD student"
 date_joined: "2024-01-01"
 date_leaving: "2027-12-31"
+
 keywords: "idiopathic pulmonary fibrosis"
 country: "Germany 🇩🇪"
 qualification: "MSc"
