@@ -50,14 +50,12 @@ layout: modal_post
                             {% assign start_month_alumni = page.date_joined | date: "%m" | plus: 0 %}
                             {% assign end_month_alumni = page.date_leaving | date: "%m" | plus: 0 %}
 
-                            {# inclusive month difference #}
                             {% assign total_months = end_month_alumni | minus: start_month_alumni | plus: 1 %}
 
-                            {# convert 12+ months into extra years #}
                             {% assign extra_years = total_months | divided_by: 12 %}
                             {% assign years_spent = end_year_alumni | minus: start_year_alumni | plus: extra_years %}
                             {% assign remaining_months = total_months | modulo: 12 %}
-    
+
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px"
                                      fill="#000000">
