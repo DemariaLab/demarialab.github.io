@@ -41,10 +41,11 @@ order: 2
     {% assign is_alumni_category = "true" %}
     {% endif %}
 
-
     {% if is_alumni_category == "true"%}
-    {% assign sorted_profiles = site.profiles | where: "is_alumni", is_alumni_category
-    | sort: "date_joined" | reverse %}
+    {% assign sorted_profiles = site.profiles
+        | where: "is_alumni", is_alumni_category
+        | sort: "date_leaving"
+        | reverse %}
     {% endif %}
     {% if is_alumni_category == "false" %}
     {% assign sorted_profiles = site.profiles | where: "role", role | where: "is_alumni", is_alumni_category
@@ -69,7 +70,6 @@ order: 2
                         {% if first_char == "'" %}
                         {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
                         {% endif %}
-
 
                         {% assign path_parts = formatted_thumb | split: '/' %}
                         {% assign filename = path_parts | last %}
