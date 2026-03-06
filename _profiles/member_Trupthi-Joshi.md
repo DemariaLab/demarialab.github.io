@@ -6,7 +6,7 @@ last_name_initials: Joshi T
 role: "PhD student"
 date_joined: "2024-09-01"
 date_leaving: "2028-08-31"
-
+previous_roles: "Master's student (2024)"
 keywords: "cancer; chemotherapy; immune cells"
 country: "India 🇮🇳"
 qualification: "MSc"
