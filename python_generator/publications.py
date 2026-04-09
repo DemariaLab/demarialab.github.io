@@ -2,6 +2,8 @@ import os
 import os.path
 import re
 import time
+from pathlib import Path
+
 from PIL import Image
 from playwright.sync_api import sync_playwright
 from datetime import datetime
@@ -225,14 +227,23 @@ def fetch_and_save_publications(data_dir, args):
         yaml.safe_dump(existing_publications, f, default_flow_style=False)
 
 
+def delete_paper_files(site_dir):
+    posts_path = Path(get_dir_path(site_dir, constants.POSTS_DIR))
+    pattern = re.compile(r"\d{4}-\d{2}-\d{2}-paper_\d+\.md$")
+
+    for file_path in posts_path.iterdir():
+        if file_path.is_file() and pattern.match(file_path.name):
+            file_path.unlink()
+
+
 def export_news(site_dir):
     publications_file = os.path.join(get_dir_path(site_dir, constants.DATA_DIR), constants.FILE_ALL_PUBLICATIONS)
-
+    delete_paper_files(site_dir)
     if os.path.exists(publications_file):
         with open(publications_file, 'r') as file:
             publications = yaml.safe_load(file)
 
-        date_pattern = re.compile(r'^\d{4} \w{3}( \d{2})?$')
+        date_pattern = re.compile(r'^\d{4} \w{3}( \d{1,2})?$')
         # Filter publications
         filtered_publications = []
         for pub in publications:
@@ -241,7 +252,11 @@ def export_news(site_dir):
                 if len(match.group(0).split()) == 2:
                     pub['year'] += ' 01'
                 filtered_publications.append(pub)
-        filtered_publications = [f for f in filtered_publications if "Demaria M" in str(f["authors"])]
+        filtered_publications = [
+            f for f in filtered_publications
+            if f["authors"]
+               and f["authors"].split(",")[-1].strip().lower() == "demaria m"
+        ]
         for pub in filtered_publications:
             date_str = pub['year']
             date_obj = datetime.strptime(date_str, '%Y %b %d')
