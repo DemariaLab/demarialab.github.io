@@ -141,7 +141,6 @@ def fetch_sheet_table_via_playwright(
                     logging.info(f"Waiting up to {per_attempt_timeout}s for iframe and table element...")
 
                     frame = _get_pageswitcher_frame(page, timeout_ms)
-                    print(frame)
                     # Prefer the same target as the Selenium version
                     frame.wait_for_selector("table.waffle", timeout=timeout_ms)
                     chosen_el = frame.query_selector("table.waffle")
