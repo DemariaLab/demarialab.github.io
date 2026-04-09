@@ -13,4 +13,3 @@ def export_build_date(path):
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(f"date: '{date_str}'\n", encoding="utf-8")
 
-    print(f"Wrote last update to: {out_file}")
