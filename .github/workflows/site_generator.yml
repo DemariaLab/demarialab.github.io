@@ -3,9 +3,7 @@ name: build-website
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
-  
   schedule:
     - cron: "0 0 * * *"
 
@@ -17,39 +15,31 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Python dependencies
         run: |
           pip install -r python_generator/requirements.txt
 
-      - name: Install Firefox
+      - name: Install Playwright Chromium
         run: |
-          sudo snap remove firefox
-          sudo install -d -m 0755 /etc/apt/keyrings
-          wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-          echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-          echo '
-          Package: *
-          Pin: origin packages.mozilla.org
-          Pin-Priority: 1000
-          ' | sudo tee /etc/apt/preferences.d/mozilla
-          sudo apt update && sudo apt install -y --allow-downgrades firefox
+          python -m playwright install --with-deps chromium
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'  
+          ruby-version: "3.2"
 
       - name: Install Bundler and dependencies
         run: |
@@ -58,11 +48,11 @@ jobs:
 
       - name: Build Jekyll site
         run: bundle exec jekyll build --source . --baseurl ""
-     
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-        
+
       - name: Run Python generator
         env:
           CUSTOM_NEWS_ARTICLES_DOC_ID: ${{ secrets.CUSTOM_NEWS_ARTICLES_DOC_ID }}
@@ -72,14 +62,21 @@ jobs:
           RESEARCH_DOC_ID: ${{ secrets.RESEARCH_DOC_ID }}
           HERO_ACCORDION_ITEMS: ${{ secrets.HERO_ACCORDION_ITEMS }}
         run: |
-          python -m python_generator --site_dir ./ --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID --members_sheet_id $MEMBERS_SHEET_ID --photos_sheet_id $PHOTOS_SHEET_ID --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID --hero_accordion_id $HERO_ACCORDION_ITEMS --research_doc_id $RESEARCH_DOC_ID
-      
+          python -m python_generator \
+            --site_dir ./ \
+            --custom_news_articles_doc_id $CUSTOM_NEWS_ARTICLES_DOC_ID \
+            --members_sheet_id $MEMBERS_SHEET_ID \
+            --photos_sheet_id $PHOTOS_SHEET_ID \
+            --selected_publications_sheet_id $SELECTED_PUBLICATIONS_SHEET_ID \
+            --hero_accordion_id $HERO_ACCORDION_ITEMS \
+            --research_doc_id $RESEARCH_DOC_ID
 
       - name: Build with Jekyll
         run: |
-            bundle exec jekyll build --source . --baseurl "${{ steps.pages.outputs.base_path }}"
+          bundle exec jekyll build --source . --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
@@ -91,9 +88,9 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
           git add .
-          git commit -m 'Add generated files'
+          git commit -m 'Add generated files' || echo "No changes to commit"
           git push origin main
-          
+
   deploy:
     environment:
       name: github-pages

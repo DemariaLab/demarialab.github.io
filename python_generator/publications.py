@@ -2,17 +2,17 @@ import os
 import os.path
 import re
 import time
+from PIL import Image
+from playwright.sync_api import sync_playwright
 from datetime import datetime
 from urllib.parse import quote
 from urllib.parse import quote_plus
 
 import requests
 import yaml
-from selenium import webdriver
-from selenium.webdriver.firefox.service import Service as FirefoxService
 
 from python_generator import constants
-from python_generator.utils import get_dir_path, sanitize_title, get_gecko_path
+from python_generator.utils import get_dir_path, sanitize_title
 from python_generator.utils import read_published_google_sheet
 
 
@@ -31,39 +31,59 @@ def resolve_final_url(url):
         return url
 
 
-def take_screenshot_of_url(ids, output_dir, width=960, height=1100):
-    firefox_options = webdriver.FirefoxOptions()
-    firefox_options.add_argument('--headless')
-    firefox_options.add_argument("--headless=new")
+PUBMED_CLEANUP_SELECTORS = ",".join([
+    ".search-links-wrapper",
+    ".search-input",
+    "#article-page-header",
+    ".usa-banner",
+    ".actions-buttons",
+    ".ncbi-header",
+    ".u-lazy-ad-wrapper",
+    ".no-script-banner",
+    ".ncbi-alerts",
+])
 
-    # firefox_options.set_preference("javascript.enabled", False)
 
-    driver = webdriver.Firefox(service=FirefoxService(get_gecko_path()), options=firefox_options)
-    driver.set_window_size(width, height)
-    for pubmed_id in ids:
-        output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.png")
-        if os.path.exists(output_path):
-            continue
+def take_screenshot_of_url(ids, output_dir, width=960, height=1100, crop_width=948):
+    os.makedirs(output_dir, exist_ok=True)
 
-        url = f"https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}/"
-        driver.get(url)
-
-        driver.execute_script(
-            "document.querySelectorAll('.search-links-wrapper, .search-input, #article-page-header, .usa-banner,.actions-buttons, .ncbi-header,.u-lazy-ad-wrapper,.no-script-banner,.ncbi-alerts ').forEach(element => element.remove());"
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            viewport={"width": width, "height": height},
+            device_scale_factor=1,
         )
-        time.sleep(2)
+        page = context.new_page()
 
-        driver.save_screenshot(output_path)
-    driver.quit()
+        try:
+            for pubmed_id in ids:
+                output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.png")
+                if os.path.exists(output_path):
+                    continue
 
-    for pubmed_id in ids:
-        output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.png")
-        if os.path.exists(output_path):
-            from PIL import Image
-            with Image.open(output_path) as img:
-                if img.width != 948:
-                    cropped = img.crop((0, 0, 948, img.height))
-                    cropped.save(output_path)
+                page.goto(
+                    f"https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}/",
+                    wait_until="domcontentloaded",
+                    timeout=30000,
+                )
+
+                page.evaluate(
+                    """(selectors) => {
+                        document.querySelectorAll(selectors).forEach(el => el.remove());
+                    }""",
+                    PUBMED_CLEANUP_SELECTORS,
+                )
+
+                time.sleep(2)
+                page.screenshot(path=output_path)
+
+                with Image.open(output_path) as img:
+                    if img.width != crop_width:
+                        img.crop((0, 0, crop_width, img.height)).save(output_path)
+
+        finally:
+            context.close()
+            browser.close()
 
 
 def produce_screenshots(site_dir):
