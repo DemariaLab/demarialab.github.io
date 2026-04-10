@@ -1,6 +1,7 @@
 import os
 import os.path
 import re
+import subprocess
 import time
 from pathlib import Path
 
@@ -16,6 +17,7 @@ import yaml
 from python_generator import constants
 from python_generator.utils import get_dir_path, sanitize_title
 from python_generator.utils import read_published_google_sheet
+import tempfile
 
 
 def resolve_final_url(url):
@@ -43,7 +45,130 @@ PUBMED_CLEANUP_SELECTORS = ",".join([
     ".u-lazy-ad-wrapper",
     ".no-script-banner",
     ".ncbi-alerts",
+    ".conflict-of-interest",
+    "#publication-types",
+    ".similar-cited-articles",
+    ".similar-articles",
+    "#linkout",
+    "#ncbi-footer",
+    "#disclaimer",
+    ".ahead-of-print",
+    ".short-article-details",
+    "#related-links",
+    ".page-sidebar",
+    "#vdp",
+    ".related-db-links",
+    ".overlay"
 ])
+
+
+def take_svg_screenshot_of_url(ids, output_dir, width=960, height=1100):
+    os.makedirs(output_dir, exist_ok=True)
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            viewport={"width": width, "height": height},
+            device_scale_factor=1,
+            java_script_enabled=False,
+        )
+        page = context.new_page()
+
+        try:
+            for pubmed_id in ids:
+                output_path = os.path.join(output_dir, f"pubmed_{pubmed_id}.svg")
+                if os.path.exists(output_path):
+                    continue
+
+                page.goto(
+                    f"https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}/",
+                    wait_until="domcontentloaded",
+                    timeout=30000,
+                )
+                page.emulate_media(media="print")
+                page.evaluate(
+                    """(selectors) => {
+                        document.querySelectorAll(selectors).forEach(el => el.remove());
+                    }""",
+                    PUBMED_CLEANUP_SELECTORS,
+                )
+                page.evaluate("window.scrollTo(0, 0);")
+                page.add_style_tag(
+                    content="""
+                        .search-form.content-page-layout {
+                            padding-top: 1em;
+                            padding-right: 0;
+                            padding-bottom: 2em;
+                            padding-left: 2em;
+                        }
+                        a.usa-link--external::before,
+                        a.usa-link--external::after {
+                            content: none !important;
+                            display: none !important;
+                        }
+                        @media print {
+                            .article-top-actions-bar,
+                            .actions-buttons,
+                            .share-permalink,
+                            .page-navigator,
+                            .adjacent-navigation,
+                            .search-form,
+                            .similar-articles,
+                            .citedby-articles,
+                            .publication-types,
+                            .mesh-terms,
+                            .substances,
+                            .supplemental-data,
+                            .grants,
+                            .references,
+                            .conflict-of-interest,
+                            .back-to-top,
+                            .article-page .article-details > .heading .more-details,
+                            footer {
+                                display: inherit;
+                            }
+                        }
+                    """
+                )
+
+                page.evaluate("""
+                () => {
+                    const target = 'vulnerability';
+                    const walker = document.createTreeWalker(
+                        document.body,
+                        NodeFilter.SHOW_ELEMENT
+                    );
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        const text = node.innerText || '';
+                        if (text.toLowerCase().includes(target)) {
+                            node.style.display = 'none';
+                        }
+                    }
+                }
+                """)
+
+                with tempfile.TemporaryDirectory() as tmp:
+                    pdf_path = Path(tmp) / "page.pdf"
+                    page.pdf(
+                        scale=2,
+                        width="1040", height="1040",
+                        prefer_css_page_size=True,
+                        path=str(pdf_path),
+                        display_header_footer=False,
+                        print_background=True,
+                        page_ranges="1"
+                    )
+                    # pdf2svg usage: pdf2svg <input.pdf> <output.svg> [page no or "all"]
+                    # Convert all pages into SVG files in out_dir.
+                    subprocess.run(
+                        [r"pdf2svg", str(pdf_path), str(output_path),
+                         "all"],
+                        check=True,
+                    )
+        finally:
+            context.close()
+            browser.close()
 
 
 def take_screenshot_of_url(ids, output_dir, width=960, height=1100, crop_width=948):
