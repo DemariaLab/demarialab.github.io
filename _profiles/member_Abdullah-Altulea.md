@@ -5,7 +5,7 @@ unaccented_name: "Abdullah Altulea"
 last_name_initials: Altulea A
 role: "PhD student"
 date_joined: "2022-01-03"
-date_leaving: "2027-03-31"
+date_leaving: "2026-09-30"
 previous_roles: "Master's student (2020)"
 keywords: "injury models; (sc)RNA-seq analysis"
 country: "Iraq 🇮🇶"
