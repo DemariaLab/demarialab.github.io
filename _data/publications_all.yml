@@ -1,3 +1,19 @@
+- authors: "Demaria M, Ohtani N, Youssef SA, Rodier F, Toussaint W, Mitchell JR, Laberge\
+    \ RM, Vijg J, Van Steeg H, Doll\xE9 MET, Hoeijmakers JHJ, de Bruin A, Hara E,\
+    \ Campisi J"
+  is_selected: false
+  journal: Dev Cell
+  pubmed_id: '42412492'
+  title: An Essential Role for Senescent Cells in Optimal Wound Healing through Secretion
+    of PDGF-AA.
+  year: 2026 Jul 8
+- authors: Altulea A, Mackedenski S, Nehme J, Demaria M
+  is_selected: false
+  journal: EMBO J
+  pubmed_id: '42410256'
+  title: SenFlag gene signature identifies senescent cells in mouse and human tissues
+    through a conserved core transcriptional program.
+  year: 2026 Jul 6
 - authors: Lin Y, Altulea A, Demaria M
   is_selected: false
   journal: Ageing Res Rev
