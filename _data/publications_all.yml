@@ -1,6 +1,6 @@
 - authors: Wang B, Piccolantonio A, Altulea A, Huang M, Joshi T, Pagliarin F, Di Palma
     M, Lin Y, Mackedenski S, Ustyantsev K, Jager C, Berezikov E, Demaria M
-  is_selected: false
+  is_selected: true
   journal: Nat Aging
   pubmed_id: '42469443'
   title: "Disruption of CDK4/6-RAR\u03B1-NF-\u03BAB axis attenuates senescence-associated\
@@ -24,7 +24,7 @@
     of PDGF-AA.
   year: 2026 Jul 8
 - authors: Altulea A, Mackedenski S, Nehme J, Demaria M
-  is_selected: false
+  is_selected: true
   journal: EMBO J
   pubmed_id: '42410256'
   title: SenFlag gene signature identifies senescent cells in mouse and human tissues
