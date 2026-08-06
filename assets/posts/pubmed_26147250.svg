@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MTOR regulates the pro-tumorigenic senescence-associated secretory phenotype by promoting IL1A translation.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Nature cell biology</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2015 Aug</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">MTOR regulates the pro-tumorigenic senescence-associated secretory phenotype by promoting IL1A translation.</h1>
+    <p class="authors" id="authors"><span class="author">Remi-Martin Laberge</span>, <span class="author">Yu Sun</span>, <span class="author">Arturo V Orjalo</span>, <span class="author">Christopher K Patil</span>, <span class="author">Adam Freund</span>, <span class="author">Lili Zhou</span>, <span class="author">Samuel C Curran</span>, <span class="author">Albert R Davalos</span>, <span class="author">Kathleen A Wilson-Edell</span>, <span class="author">Su Liu</span>, <span class="author">Chandani Limbad</span>, <span class="author">Marco Demaria</span>, <span class="author">Patrick Li</span>, <span class="author">Gene B Hubbard</span>, <span class="author">Yuji Ikeno</span>, <span class="author">Martin Javors</span>, <span class="author">Pierre-Yves Desprez</span>, <span class="author">Christopher C Benz</span>, <span class="author">Pankaj Kapahi</span>, <span class="author">Peter S Nelson</span>, <span class="author">Judith Campisi</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>The TOR (target of rapamycin) kinase limits longevity by poorly understood mechanisms. Rapamycin suppresses the mammalian TORC1 complex, which regulates translation, and extends lifespan in diverse species, including mice. We show that rapamycin selectively blunts the pro-inflammatory phenotype of senescent cells. Cellular senescence suppresses cancer by preventing cell proliferation. However, as senescent cells accumulate with age, the senescence-associated secretory phenotype (SASP) can disrupt tissues and contribute to age-related pathologies, including cancer. MTOR inhibition suppressed the secretion of inflammatory cytokines by senescent cells. Rapamycin reduced IL6 and other cytokine mRNA levels, but selectively suppressed translation of the membrane-bound cytokine IL1A. Reduced IL1A diminished NF-κB transcriptional activity, which controls much of the SASP; exogenous IL1A restored IL6 secretion to rapamycin-treated cells. Importantly, rapamycin suppressed the ability of senescent fibroblasts to stimulate prostate tumour growth in mice. Thus, rapamycin might ameliorate age-related pathologies, including late-life cancer, by suppressing senescence-associated inflammation.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

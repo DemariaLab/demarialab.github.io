@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1118" viewBox="0 0 960 1118">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1118">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unravelling Heterogeneity of Amplified Human Amniotic Fluid Stem Cells Sub-Populations.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Cells</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2021 Jan 15</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Unravelling Heterogeneity of Amplified Human Amniotic Fluid Stem Cells Sub-Populations.</h1>
+    <p class="authors" id="authors"><span class="author">Francesca Casciaro</span>, <span class="author">Silvia Zia</span>, <span class="author">Mattia Forcato</span>, <span class="author">Manuela Zavatti</span>, <span class="author">Francesca Beretti</span>, <span class="author">Emma Bertucci</span>, <span class="author">Andrea Zattoni</span>, <span class="author">Pierluigi Reschiglian</span>, <span class="author">Francesco Alviano</span>, <span class="author">Laura Bonsi</span>, <span class="author">Matilde Yung Follo</span>, <span class="author">Marco Demaria</span>, <span class="author">Barbara Roda</span>, <span class="author">Tullia Maraldi</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Human amniotic fluid stem cells (hAFSCs) are broadly multipotent immature progenitor cells with high self-renewal and no tumorigenic properties. These cells, even amplified, present very variable morphology, density, intracellular composition and stemness potential, and this heterogeneity can hinder their characterization and potential use in regenerative medicine. Celector® (Stem Sel ltd.) is a new technology that exploits the Non-Equilibrium Earth Gravity Assisted Field Flow Fractionation principles to characterize and label-free sort stem cells based on their solely physical characteristics without any manipulation. Viable cells are collected and used for further studies or direct applications. In order to understand the intrapopulation heterogeneity, various fractions of hAFSCs were isolated using the Celector® profile and live imaging feature. The gene expression profile of each fraction was analysed using whole-transcriptome sequencing (RNAseq). Gene Set Enrichment Analysis identified significant differential expression in pathways related to Stemness, DNA repair, E2F targets, G2M checkpoint, hypoxia, EM transition, mTORC1 signalling, Unfold Protein Response and p53 signalling. These differences were validated by RT-PCR, immunofluorescence and differentiation assays. Interestingly, the different fractions showed distinct and unique stemness properties. These results suggest the existence of deep intra-population differences that can influence the stemness profile of hAFSCs. This study represents a proof-of-concept of the importance of selecting certain cellular fractions with the highest potential to use in regenerative medicine.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

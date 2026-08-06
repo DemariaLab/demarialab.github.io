@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cellular senescence as a potential mediator of COVID-19 severity in the elderly.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Aging cell</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2020 Oct</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Cellular senescence as a potential mediator of COVID-19 severity in the elderly.</h1>
+    <p class="authors" id="authors"><span class="author">Jamil Nehme</span>, <span class="author">Michela Borghesan</span>, <span class="author">Sebastian Mackedenski</span>, <span class="author">Thomas G Bird</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>SARS-CoV-2 is a novel betacoronavirus which infects the lower respiratory tract and can cause coronavirus disease 2019 (COVID-19), a complex respiratory distress syndrome. Epidemiological data show that COVID-19 has a rising mortality particularly in individuals with advanced age. Identifying a functional association between SARS-CoV-2 infection and the process of biological aging may provide a tractable avenue for therapy to prevent acute and long-term disease. Here, we discuss how cellular senescence-a state of stable growth arrest characterized by pro-inflammatory and pro-disease functions-can hypothetically be a contributor to COVID-19 pathogenesis, and a potential pharmaceutical target to alleviate disease severity. First, we define why older COVID-19 patients are more likely to accumulate high levels of cellular senescence. Second, we describe how senescent cells can contribute to an uncontrolled SARS-CoV-2-mediated cytokine storm and an excessive inflammatory reaction during the early phase of the disease. Third, we discuss the various mechanisms by which senescent cells promote tissue damage leading to lung failure and multi-tissue dysfunctions. Fourth, we argue that a high senescence burst might negatively impact on vaccine efficacy. Measuring the burst of cellular senescence could hypothetically serve as a predictor of COVID-19 severity, and targeting senescence-associated mechanisms prior and after SARS-CoV-2 infection might have the potential to limit a number of severe damages and to improve the efficacy of vaccinations.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

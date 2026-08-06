@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1203" viewBox="0 0 960 1203">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1203">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Link between increased cellular senescence and extracellular matrix changes in COPD.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">American journal of physiology. Lung cellular and molecular physiology</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2020 Jul 01</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Link between increased cellular senescence and extracellular matrix changes in COPD.</h1>
+    <p class="authors" id="authors"><span class="author">Roy R Woldhuis</span>, <span class="author">Maaike de Vries</span>, <span class="author">Wim Timens</span>, <span class="author">Maarten van den Berge</span>, <span class="author">Marco Demaria</span>, <span class="author">Brian G G Oliver</span>, <span class="author">Irene H Heijink</span>, <span class="author">Corry-Anke Brandsma</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Chronic obstructive pulmonary disease (COPD) is associated with features of accelerated aging, including cellular senescence, DNA damage, oxidative stress, and extracellular matrix (ECM) changes. We propose that these features are particularly apparent in patients with severe, early-onset (SEO)-COPD. Whether fibroblasts from COPD patients display features of accelerated aging and whether this is also present in relatively young SEO-COPD patients is unknown. Therefore, we aimed to determine markers of aging in (SEO)-COPD-derived lung fibroblasts and investigate the impact on ECM. Aging hallmarks and ECM markers were analyzed in lung fibroblasts from SEO-COPD and older COPD patients and compared with fibroblasts from matched non-COPD groups (n = 9-11 per group), both at normal culture conditions and upon Paraquat-induced senescence. COPD-related differences in senescence and ECM expression were validated in lung tissue. Higher levels of cellular senescence, including senescence-associated β-galactosidase (SA-β-gal)-positive cells (19% for COPD vs. 13% for control) and p16 expression, DNA damage (γ-H2A.X-positive nuclei), and oxidative stress (MGST1) were detected in COPD compared with control-derived fibroblasts. Most effects were also different in SEO-COPD, with SA-β-gal-positive cells only being significant in SEO-COPD vs. matched controls. Lower decorin expression in COPD-derived fibroblasts correlated with higher p16 expression, and this association was confirmed in lung tissue. Paraquat treatment induced cellular senescence along with clear changes in ECM expression, including decorin. Fibroblasts from COPD patients, including SEO-COPD, display higher levels of cellular senescence, DNA damage, and oxidative stress. The association between cellular senescence and ECM expression changes may suggest a link between accelerated aging and ECM dysregulation in COPD.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

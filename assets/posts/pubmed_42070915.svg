@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1119" viewBox="0 0 960 1119">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1119">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Role of CaV3.2 T-type calcium channels in normal hearing and acquired hearing loss.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Cell calcium</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2026 May</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">The Role of CaV3.2 T-type calcium channels in normal hearing and acquired hearing loss.</h1>
+    <p class="authors" id="authors"><span class="author">Zain Pardawala</span>, <span class="author">Dora Persic</span>, <span class="author">Kriti Rajda</span>, <span class="author">Teodora Gheorghe</span>, <span class="author">Marco Demaria</span>, <span class="author">Sonja J Pyott</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Calcium ion (Ca²⁺) dysregulation contributes to both noise-induced (NIHL) and age-related hearing loss (ARHL). Voltage-gated Ca²⁺ channels (VGCCs) regulate Ca²⁺ influx and are, therefore, candidate therapeutic targets for acquired hearing loss. The T-type channel CaV3.2 (CACNA1H) has been proposed to influence cochlear function and vulnerability. Here, we characterized the distribution and age-dependent expression of Cacna1h in the mouse cochlea, and tested whether CaV3.2 modulation could mitigate NIHL or ARHL using genetic deletion and/or pharmacological blockade. Transcriptomic analyses of isolated cochlear sensorineural and metabolic substructures showed that Cacna1h expression remains stable from 6 weeks to 2 years of age. Auditory brainstem responses together with immunofluorescence and quantitative image analyses revealed elevated wave I thresholds and reduced amplitudes in 6-week-old CaV3.2 knockout (KO) compared to wildtype (WT) and heterozygous (HET) mice, despite comparable inner hair cell (IHC), IHC afferent presynaptic ribbon, and outer hair cell (OHC) densities. After noise exposure, threshold shifts were similar across genotypes, with comparable hair cell and ribbon densities across the genotypes. At one year of age, CaV3.2 KO mice exhibited greater functional decline and OHC loss than WT and HET mice. Differences in cochlear function at 6 weeks were not explained by SGN subtype distribution or efferent terminal organization. In aged mice, mibefradil treatment reduced OHC loss but did not preserve cochlear function. These findings suggest that embryonic CaV3.2 deletion resulted in early baseline auditory deficits, consistent with their possible developmental requirement, and did not confer protection against noise-induced or age-related hearing loss.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

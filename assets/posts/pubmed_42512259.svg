@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CDK4/6 Inhibitor-Induced Senescence in Cancer: Mechanisms and Therapeutic Implications.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Cancers</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2026 Jul 08</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">CDK4/6 Inhibitor-Induced Senescence in Cancer: Mechanisms and Therapeutic Implications.</h1>
+    <p class="authors" id="authors"><span class="author">Simin Elif Türker</span>, <span class="author">Marco Demaria</span>, <span class="author">Boshi Wang</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Pharmacological cyclin-dependent kinase 4 and 6 (CDK4/6) inhibitors have reshaped the treatment landscape of HR-positive, HER2-negative (HR+/HER2-) breast cancer and are increasingly being explored across diverse malignancies. By preventing retinoblastoma (RB) phosphorylation and enforcing G1-S cell cycle arrest, these agents achieve durable tumour control with a more favourable toxicity profile than conventional chemotherapy. Beyond their canonical cytostatic effects, prolonged CDK4/6 inhibitor treatments induce cellular senescence, a stable, proliferative arrest accompanied by profound transcriptional, epigenetic, and secretory changes. This review summarises current knowledge on CDK4/6 inhibitor-induced senescence in both cancer and normal cells as a central biological mechanism that links tumour suppression and microenvironmental remodelling. Importantly, this process is highly context-dependent, differing between tumour and non-malignant cells, with a distinct senescence-associated secretory phenotype (SASP) that shapes immune responses and tissue homeostasis. We also discuss how CDK4/6 inhibitor-induced senescence influences the tumour microenvironment by modulating immune surveillance, stromal interactions, and cancer cell plasticity. Finally, we examine emerging resistance mechanisms and rational combination strategies for CDK4/6 inhibitors, including targeting compensatory signalling pathways, immune checkpoint blockades, and senescence-directed sequential therapies. Collectively, CDK4/6 inhibitor-induced senescence represents both a challenge and a therapeutic opportunity, underscoring the need to integrate cell cycle control with the modulation of cellular states.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

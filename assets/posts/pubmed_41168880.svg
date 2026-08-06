@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrative Omics Reveal Female-Specific Benefits of p16+ Cell Clearance in Aging Mice.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Advanced science (Weinheim, Baden-Wurttemberg, Germany)</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2026 Jan</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Integrative Omics Reveal Female-Specific Benefits of p16+ Cell Clearance in Aging Mice.</h1>
+    <p class="authors" id="authors"><span class="author">Yao Lin</span>, <span class="author">Boshi Wang</span>, <span class="author">Mengling Huang</span>, <span class="author">Justina C Wolters</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Aging is marked by the accumulation of cells expressing the cyclin-dependent kinase inhibitor p16Ink4a. These p16⁺ cells, largely senescent, contribute to inflammation and tissue dysfunction. While eliminating p16⁺ cells improves healthspan, sex-specific differences in their burden and clearance remain unclear. Through combined transcriptomic, proteomic, and functional analyses, we reveal distinct sex-dependent dynamics of p16⁺ cells during aging. Female mice accumulate significantly more p16⁺ cells across multiple tissues, particularly in the liver. In the p16-3MR model, selective ablation of these cells enhances grip strength, promotes skin regeneration, and reduces liver damage exclusively in females. Multi-omics profiling shows that p16⁺ cell removal shifts female liver expression toward youthful, health-associated profiles, marked by improved mitochondrial activity and reduced inflammatory signaling-molecular patterns resembling those induced by longevity interventions such as calorie restriction, rapamycin, and acarbose. Integrative analysis of our and independent datasets identifies a conserved transcriptional network involving Srm, Cd36, and Lrrfip1, suggesting shared mitochondrial-immune regulatory mechanisms. Overall, our findings establish p16⁺ cells as critical yet heterogeneous drivers of tissue aging, uncover sex-specific differences in their abundance and senolytic responsiveness, and support the development of precision senotherapeutics that consider sex as a key biological variable in aging and rejuvenation.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

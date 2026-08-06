@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guidelines for minimal information on cellular senescence experimentation in vivo.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Cell</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2024 Aug 08</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Guidelines for minimal information on cellular senescence experimentation in vivo.</h1>
+    <p class="authors" id="authors"><span class="author">Mikolaj Ogrodnik</span>, <span class="author">Juan Carlos Acosta</span>, <span class="author">Peter D Adams</span>, <span class="author">Fabrizio d'Adda di Fagagna</span>, <span class="author">Darren J Baker</span>, <span class="author">Cleo L Bishop</span>, <span class="author">Tamir Chandra</span>, <span class="author">Manuel Collado</span>, <span class="author">Jesus Gil</span>, <span class="author">Vassilis Gorgoulis</span>, <span class="author">Florian Gruber</span>, <span class="author">Eiji Hara</span>, <span class="author">Pidder Jansen-Dürr</span>, <span class="author">Diana Jurk</span>, <span class="author">Sundeep Khosla</span>, <span class="author">James L Kirkland</span>, <span class="author">Valery Krizhanovsky</span>, <span class="author">Tohru Minamino</span>, <span class="author">Laura J Niedernhofer</span>, <span class="author">João F Passos</span>, <span class="author">Nadja A R Ring</span>, <span class="author">Heinz Redl</span>, <span class="author">Paul D Robbins</span>, <span class="author">Francis Rodier</span>, <span class="author">Karin Scharffetter-Kochanek</span>, <span class="author">John M Sedivy</span>, <span class="author">Ewa Sikora</span>, <span class="author">Kenneth Witwer</span>, <span class="author">Thomas von Zglinicki</span>, <span class="author">Maximina H Yun</span>, <span class="author">Johannes Grillari</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Cellular senescence is a cell fate triggered in response to stress and is characterized by stable cell-cycle arrest and a hypersecretory state. It has diverse biological roles, ranging from tissue repair to chronic disease. The development of new tools to study senescence in vivo has paved the way for uncovering its physiological and pathological roles and testing senescent cells as a therapeutic target. However, the lack of specific and broadly applicable markers makes it difficult to identify and characterize senescent cells in tissues and living organisms. To address this, we provide practical guidelines called "minimum information for cellular senescence experimentation in vivo" (MICSE). It presents an overview of senescence markers in rodent tissues, transgenic models, non-mammalian systems, human tissues, and tumors and their use in the identification and specification of senescent cells. These guidelines provide a uniform, state-of-the-art, and accessible toolset to improve our understanding of cellular senescence in vivo.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

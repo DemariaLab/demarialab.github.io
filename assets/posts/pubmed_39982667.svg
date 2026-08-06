@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>International Consortium to Classify Ageing-related Pathologies (ICCARP) senescence definitions: achieving international consensus.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">GeroScience</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2025 Dec</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">International Consortium to Classify Ageing-related Pathologies (ICCARP) senescence definitions: achieving international consensus.</h1>
+    <p class="authors" id="authors"><span class="author">Emma Short</span>, <span class="author">Robert T R Huckstepp</span>, <span class="author">Kambiz Alavian</span>, <span class="author">Winfried M K Amoaku</span>, <span class="author">Thomas M Barber</span>, <span class="author">Edwin J R van Beek</span>, <span class="author">Emyr Benbow</span>, <span class="author">Sunil Bhandari</span>, <span class="author">Phillip Bloom</span>, <span class="author">Carlo Cota</span>, <span class="author">Paul Chazot</span>, <span class="author">Gary Christopher</span>, <span class="author">Marco Demaria</span>, <span class="author">Jorge D Erusalimsky</span>, <span class="author">David A Ferenbach</span>, <span class="author">Thomas Foster</span>, <span class="author">Gus Gazzard</span>, <span class="author">Richard Glassock</span>, <span class="author">Noordin Jamal</span>, <span class="author">Raj Kalaria</span>, <span class="author">Venkateswarlu Kanamarlapudi</span>, <span class="author">Adnan H Khan</span>, <span class="author">Yamini Krishna</span>, <span class="author">Christiaan Leeuwenburgh</span>, <span class="author">Ian van der Linde</span>, <span class="author">Antonello Lorenzini</span>, <span class="author">Andrea Britta Maier</span>, <span class="author">Reinhold J Medina</span>, <span class="author">Cecilia L Miotto</span>, <span class="author">Abhik Mukherjee</span>, <span class="author">Krishna Mukkanna</span>, <span class="author">James T Murray</span>, <span class="author">Alexander Nirenberg</span>, <span class="author">Donald B Palmer</span>, <span class="author">Graham Pawelec</span>, <span class="author">Venkat Reddy</span>, <span class="author">Arianna Caroline Rosa</span>, <span class="author">Andrew D Rule</span>, <span class="author">Paul G Shiels</span>, <span class="author">Carl Sheridan</span>, <span class="author">Jeremy Tree</span>, <span class="author">Dialechti Tsimpida</span>, <span class="author">Zoe C Venables</span>, <span class="author">Jack Wellington</span>, <span class="author">Stuart R G Calimport</span>, <span class="author">Barry L Bentley</span></p>
+
+    <section class="abstract" id="abstract-section" hidden="">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

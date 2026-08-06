@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1251" viewBox="0 0 960 1251">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1251">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Bispecific Inhibitor of the EGFR/ADAM17 Axis Decreases Cell Proliferation and Migration of EGFR-Dependent Cancer Cells.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Cancers</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2020 Feb 10</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">A Bispecific Inhibitor of the EGFR/ADAM17 Axis Decreases Cell Proliferation and Migration of EGFR-Dependent Cancer Cells.</h1>
+    <p class="authors" id="authors"><span class="author">Abel Soto-Gamez</span>, <span class="author">Deng Chen</span>, <span class="author">Anke G E Nabuurs</span>, <span class="author">Wim J Quax</span>, <span class="author">Marco Demaria</span>, <span class="author">Ykelien L Boersma</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Dysregulated epidermal growth factor receptor (EGFR) is an oncogenic driver of many human cancers, promoting aberrant cell proliferation, migration, and survival. Pharmacological targeting of EGFR is often challenged by acquired mechanisms of resistance. Ligand-dependent mechanisms in EGFR wild-type cells rely on ligand or receptor overexpression, allowing cells to outcompete inhibitors and perpetuate signaling in an autocrine manner. Importantly, EGFR ligands are synthesized as membrane-bound precursors that must be solubilized to enable receptor-ligand interactions. The A disintegrin and metalloproteinase 17 (ADAM17) is considered the main sheddase of several EGFR ligands, and a potential pharmacological target. However, its broad substrate range and ubiquitous expression complicate its therapeutic targeting. Here, we present a novel bispecific fusion protein construct consisting of the inhibitory prodomain of ADAM17 (TPD), fused to an EGFR-targeting designed ankyrin repeat protein (DARPin). TPD is a natural inhibitor of ADAM17, maintaining the protease in a zymogen-like form. Meanwhile, the high affinity anti-EGFR DARPin E01 binds to EGFR and inhibits ligand binding. The resulting fusion protein E01-GS-TPD retained binding ability to both molecular targets EGFR and ADAM17. The large difference in affinity for each target resulted in enrichment of the fusion protein in EGFR-positive cells compared to EGFR-negative cells, suggesting a possible application in autocrine signaling inhibition. Accordingly, E01-GS-TPD decreased migration and proliferation of EGFR-dependent cell lines with no significant increase in apoptotic cell death. Finally, inhibition of proliferation was observed through EGFR ligand-dependent mechanisms as growth inhibition was not observed in EGFR mutant or KRAS mutant cell lines. The use of bispecific proteins targeting the EGFR/ADAM17 axis could be an innovative strategy for the treatment of EGFR-dependent cancers.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1766" viewBox="0 0 960 1766">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1766">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The role of cellular senescence in female reproductive aging and the potential for senotherapeutic interventions.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Human reproduction update</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2022 Feb 28</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">The role of cellular senescence in female reproductive aging and the potential for senotherapeutic interventions.</h1>
+    <p class="authors" id="authors"><span class="author">Laura Secomandi</span>, <span class="author">Michela Borghesan</span>, <span class="author">Michael Velarde</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">BACKGROUND:</strong> Advanced maternal age is associated with decreased oocyte quantity and quality as well as uterine and placental dysfunctions. These changes lead to infertility, pregnancy complications and birth defects in the offspring. As the mean age of giving birth is increasing worldwide, prevention of age-associated infertility and pregnancy complications, along with the more frequent use of ART, become extremely important. Currently, significant research is being conducted to unravel the mechanisms underlying female reproductive aging. Among the potential mechanisms involved, recent evidence has suggested a contributing role for cellular senescence, a cellular state of irreversible growth arrest characterized by a hypersecretory and pro-inflammatory phenotype. Elucidating the role of senescence in female reproductive aging holds the potential for developing novel and less invasive therapeutic measures to prevent or even reverse female reproductive aging and increase offspring wellbeing.</p><p><strong class="abstract-label">OBJECTIVE AND RATIONALE:</strong> The review will summarize the positive and negative implications of cellular senescence in the pathophysiology of the female reproductive organs during aging and critically explore the use of novel senotherapeutics aiming to reverse and/or eliminate their detrimental effects. The focus will be on major senescence mechanisms of the ovaries, the uterus, and the placenta, as well as the potential and risks of using senotherapies that have been discovered in recent years.</p><p><strong class="abstract-label">SEARCH METHODS:</strong> Data for this review were identified by searches of MEDLINE, PubMed and Google Scholar. References from relevant articles using the search terms 'Cellular Senescence', 'Aging', 'Gestational age', 'Maternal Age', 'Anti-aging', 'Uterus', 'Pregnancy', 'Fertility', 'Infertility', 'Reproduction', 'Implant', 'Senolytic', 'Senostatic', 'Senotherapy' and 'Senotherapeutic' where selected. A total of 182 articles published in English between 2005 and 2020 were included, 27 of which focus on potential senotherapies for reproductive aging. Exclusion criteria were inclusion of the terms 'male' and 'plants'.</p><p><strong class="abstract-label">OUTCOMES:</strong> Aging is a major determinant of reproductive wellbeing. Cellular senescence is a basic aging mechanism, which can be exploited for therapeutic interventions. Within the last decade, several new strategies for the development and repurposing of drugs targeting senescent cells have emerged, such as modulators of the anti-inflammatory response, oxidative stress, DNA damage, and mitochondria and protein dysfunctions. Several studies of female reproductive aging and senotherapies have been discussed that show promising results for future interventions.</p><p><strong class="abstract-label">WIDER IMPLICATIONS:</strong> In most countries of the Organization for Economic Co-operation and Development, the average age at which women give birth is above 30 years. Currently, in countries such as the Netherlands, Australia, Spain, Finland, Germany and the UK, birth rates among 30- to 34-year-olds are now higher than in any other age groups. This review will provide new knowledge and scientific advancement on the senescence mechanisms during female reproductive aging, and benefit fundamental and clinical scientists and professionals in the areas of reproduction, cancer, immunobiology and fibrosis.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

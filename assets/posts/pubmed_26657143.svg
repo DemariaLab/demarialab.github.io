@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clearance of senescent cells by ABT263 rejuvenates aged hematopoietic stem cells in mice.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Nature medicine</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2016 Jan</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Clearance of senescent cells by ABT263 rejuvenates aged hematopoietic stem cells in mice.</h1>
+    <p class="authors" id="authors"><span class="author">Jianhui Chang</span>, <span class="author">Yingying Wang</span>, <span class="author">Lijian Shao</span>, <span class="author">Remi-Martin Laberge</span>, <span class="author">Marco Demaria</span>, <span class="author">Judith Campisi</span>, <span class="author">Krishnamurthy Janakiraman</span>, <span class="author">Norman E Sharpless</span>, <span class="author">Sheng Ding</span>, <span class="author">Wei Feng</span>, <span class="author">Yi Luo</span>, <span class="author">Xiaoyan Wang</span>, <span class="author">Nukhet Aykin-Burns</span>, <span class="author">Kimberly Krager</span>, <span class="author">Usha Ponnappan</span>, <span class="author">Martin Hauer-Jensen</span>, <span class="author">Aimin Meng</span>, <span class="author">Daohong Zhou</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Senescent cells (SCs) accumulate with age and after genotoxic stress, such as total-body irradiation (TBI). Clearance of SCs in a progeroid mouse model using a transgenic approach delays several age-associated disorders, suggesting that SCs play a causative role in certain age-related pathologies. Thus, a 'senolytic' pharmacological agent that can selectively kill SCs holds promise for rejuvenating tissue stem cells and extending health span. To test this idea, we screened a collection of compounds and identified ABT263 (a specific inhibitor of the anti-apoptotic proteins BCL-2 and BCL-xL) as a potent senolytic drug. We show that ABT263 selectively kills SCs in culture in a cell type- and species-independent manner by inducing apoptosis. Oral administration of ABT263 to either sublethally irradiated or normally aged mice effectively depleted SCs, including senescent bone marrow hematopoietic stem cells (HSCs) and senescent muscle stem cells (MuSCs). Notably, this depletion mitigated TBI-induced premature aging of the hematopoietic system and rejuvenated the aged HSCs and MuSCs in normally aged mice. Our results demonstrate that selective clearance of SCs by a pharmacological agent is beneficial in part through its rejuvenation of aged tissue stem cells. Thus, senolytic drugs may represent a new class of radiation mitigators and anti-aging agents.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

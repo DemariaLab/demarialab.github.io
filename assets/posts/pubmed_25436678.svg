@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1307" viewBox="0 0 960 1307">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1307">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From tissue invasion to glucose metabolism: the many aspects of signal transducer and activator of transcription 3 pro-oncogenic activities.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Hormone molecular biology and clinical investigation</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2012 Jun</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">From tissue invasion to glucose metabolism: the many aspects of signal transducer and activator of transcription 3 pro-oncogenic activities.</h1>
+    <p class="authors" id="authors"><span class="author">Sara Pensa</span>, <span class="author">Marco Demaria</span>, <span class="author">Lidia Avalle</span>, <span class="author">Isaia Barbieri</span>, <span class="author">Annalisa Camporeale</span>, <span class="author">Valeria Poli</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">UNLABELLED:</strong> Abstract Background: The pro-oncogenic transcription factor STAT3 is constitutively active in tumours of many different origins, which often become addicted to its activity. STAT3 is believed to contribute to the initial survival of pre-cancerous cells as well as to hyper-proliferation and, later, metastasis.</p><p><strong class="abstract-label">MATERIALS AND METHODS:</strong> To evaluate the contribution of enhanced STAT3 activation in a controlled model system, we generated knock-in mice in which a mutant constitutively active Stat3C allele replaces the endogenous wild-type allele and analysed its contribution to breast tumorigenesis. Moreover, we generated Stat3C/C MEF cells and analysed their gene expression and metabolic profiles.</p><p><strong class="abstract-label">RESULTS:</strong> Constitutively active STAT3 could enhance the tumorigenic power of the rat Neu oncogene in MMTV-Neu transgenic mice and trigger the production of earlier onset and more invasive mammary tumours. Tumour-derived cell lines displayed higher migrating, invading and metastatic ability and showed disrupted distribution of cell-cell junction markers. These features were mediated by STAT3-dependent over-expression of the C-terminal tensin-like (Cten) focal adhesion protein. Moreover, STAT3C alone was able to induce aerobic glycolysis and down-regulate mitochondrial activity, both in primary fibroblasts and in STAT3-dependent tumour cell lines, acting via both HIF-1α-dependent and independent mechanisms.</p><p><strong class="abstract-label">CONCLUSIONS:</strong> STAT3 can induce a metabolic switch that predisposes cells to aberrant survival, enhanced proliferation and, finally, tumour transformation. Later, enhanced Cten expression contributes to tissue infiltration and metastasis. While not excluding the contribution of many other tumour-specific STAT3 target genes, our data provide a unifying explanation of several pro-oncogenic STAT3 activities.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

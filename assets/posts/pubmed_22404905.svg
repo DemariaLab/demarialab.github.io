@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1146" viewBox="0 0 960 1146">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1146">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glucocorticoids suppress selected components of the senescence-associated secretory phenotype.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Aging cell</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2012 Aug</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Glucocorticoids suppress selected components of the senescence-associated secretory phenotype.</h1>
+    <p class="authors" id="authors"><span class="author">Remi-Martin Laberge</span>, <span class="author">Lili Zhou</span>, <span class="author">Melissa R Sarantos</span>, <span class="author">Francis Rodier</span>, <span class="author">Adam Freund</span>, <span class="author">Peter L J de Keizer</span>, <span class="author">Su Liu</span>, <span class="author">Marco Demaria</span>, <span class="author">Yu-Sheng Cong</span>, <span class="author">Pankaj Kapahi</span>, <span class="author">Pierre-Yves Desprez</span>, <span class="author">Robert E Hughes</span>, <span class="author">Judith Campisi</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Cellular senescence suppresses cancer by arresting the proliferation of cells at risk for malignant transformation. Recently, senescent cells were shown to secrete numerous cytokines, growth factors, and proteases that can alter the tissue microenvironment and may promote age-related pathology. To identify small molecules that suppress the senescence-associated secretory phenotype (SASP), we developed a screening protocol using normal human fibroblasts and a library of compounds that are approved for human use. Among the promising library constituents was the glucocorticoid corticosterone. Both corticosterone and the related glucocorticoid cortisol decreased the production and secretion of selected SASP components, including several pro-inflammatory cytokines. Importantly, the glucocorticoids suppressed the SASP without reverting the tumor suppressive growth arrest and were efficacious whether cells were induced to senesce by ionizing radiation or strong mitogenic signals delivered by oncogenic RAS or MAP kinase kinase 6 overexpression. Suppression of the prototypical SASP component IL-6 required the glucocorticoid receptor, which, in the presence of ligand, inhibited IL-1α signaling and NF-κB transactivation activity. Accordingly, co-treatments combining glucocorticoids with the glucocorticoid antagonist RU-486 or recombinant IL-1α efficiently reestablished NF-κB transcriptional activity and IL-6 secretion. Our findings demonstrate feasibility of screening for compounds that inhibit the effects of senescent cells. They further show that glucocorticoids inhibit selected components of the SASP and suggest that corticosterone and cortisol, two FDA-approved drugs, might exert their effects in part by suppressing senescence-associated inflammation.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

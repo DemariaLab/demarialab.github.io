@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1352" viewBox="0 0 960 1352">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1352">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brain irradiation drives remote liver changes via senescence-independent mechanisms.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Radiotherapy and oncology : journal of the European Society for Therapeutic Radiology and Oncology</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2026 Mar</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Brain irradiation drives remote liver changes via senescence-independent mechanisms.</h1>
+    <p class="authors" id="authors"><span class="author">Yuting Jiang</span>, <span class="author">Daniëlle C Voshart</span>, <span class="author">Alessandro Gustinelli</span>, <span class="author">Ayla C Scholma</span>, <span class="author">Eline Hageman</span>, <span class="author">Luiza Reali Nazario</span>, <span class="author">Uilke Brouwer</span>, <span class="author">Marco Demaria</span>, <span class="author">Rob P Coppes</span>, <span class="author">Lara Barazzuol</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">BACKGROUND AND PURPOSE:</strong> Although radiotherapy is essential for treating brain tumors, it often damages surrounding healthy brain tissue, causing long-term neurocognitive dysfunction. Cellular senescence, a stable state of cell cycle arrest triggered by various stressors including radiation-induced DNA damage, has been implicated in aging- and neurodegeneration-associated cognitive decline via its pro-inflammatory secretome and has been reported to exert paracrine effects on distant organs. However, whether brain irradiation, particularly through the induction of cellular senescence, can trigger changes in peripheral tissues remains largely unknown.</p><p><strong class="abstract-label">MATERIALS AND METHODS:</strong> Adult male rats received 14 Gy X-ray irradiation to the brain. Senescence-associated markers were assessed in the brain at 6 and 12 weeks post-irradiation and in peripheral tissues, including the kidney, small intestine, skeletal muscle, and liver, at 17 weeks post-irradiation. Liver samples were further examined for proliferation and fibrosis markers, as well as for liver enzyme activity. The senolytic ABT263 was administered to eliminate senescent cells.</p><p><strong class="abstract-label">RESULTS:</strong> Brain irradiation induced senescence-like features in the brain but did not trigger p21-dependent senescence in the tested peripheral tissues. However, brain-irradiated rats exhibited increased proliferation, elevated GFAP levels, and enhanced ALT and AST activity in the liver. These hepatic changes were likely independent of cellular senescence, as they were not reversed by treatment with ABT263.</p><p><strong class="abstract-label">CONCLUSION:</strong> Brain irradiation induces liver proliferation, increased GFAP levels, and altered ALT and AST activity, via mechanisms likely independent of senescence. Future investigation of blood GFAP levels is needed to determine whether the enhanced hepatic GFAP levels originate from the brain.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

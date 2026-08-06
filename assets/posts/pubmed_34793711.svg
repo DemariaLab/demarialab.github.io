@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1106" viewBox="0 0 960 1106">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1106">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A recurrent chromosomal inversion suffices for driving escape from oncogene-induced senescence via subTAD reorganization.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Molecular cell</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2021 Dec 02</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">A recurrent chromosomal inversion suffices for driving escape from oncogene-induced senescence via subTAD reorganization.</h1>
+    <p class="authors" id="authors"><span class="author">Christos P Zampetidis</span>, <span class="author">Panagiotis Galanos</span>, <span class="author">Andriani Angelopoulou</span>, <span class="author">Yajie Zhu</span>, <span class="author">Aikaterini Polyzou</span>, <span class="author">Timokratis Karamitros</span>, <span class="author">Athanassios Kotsinas</span>, <span class="author">Nefeli Lagopati</span>, <span class="author">Ioanna Mourkioti</span>, <span class="author">Reza Mirzazadeh</span>, <span class="author">Alexandros Polyzos</span>, <span class="author">Silvano Garnerone</span>, <span class="author">Athanasia Mizi</span>, <span class="author">Eduardo G Gusmao</span>, <span class="author">Konstantinos Sofiadis</span>, <span class="author">Zita Gál</span>, <span class="author">Dorthe H Larsen</span>, <span class="author">Dafni-Eleftheria Pefani</span>, <span class="author">Marco Demaria</span>, <span class="author">Aristotelis Tsirigos</span>, <span class="author">Nicola Crosetto</span>, <span class="author">Apolinar Maya-Mendoza</span>, <span class="author">Angelos Papaspyropoulos</span>, <span class="author">Konstantinos Evangelou</span>, <span class="author">Jiri Bartek</span>, <span class="author">Argyris Papantonis</span>, <span class="author">Vassilis G Gorgoulis</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Oncogene-induced senescence (OIS) is an inherent and important tumor suppressor mechanism. However, if not removed timely via immune surveillance, senescent cells also have detrimental effects. Although this has mostly been attributed to the senescence-associated secretory phenotype (SASP) of these cells, we recently proposed that "escape" from the senescent state is another unfavorable outcome. The mechanism underlying this phenomenon remains elusive. Here, we exploit genomic and functional data from a prototypical human epithelial cell model carrying an inducible CDC6 oncogene to identify an early-acquired recurrent chromosomal inversion that harbors a locus encoding the circadian transcription factor BHLHE40. This inversion alone suffices for BHLHE40 activation upon CDC6 induction and driving cell cycle re-entry of senescent cells, and malignant transformation. Ectopic overexpression of BHLHE40 prevented induction of CDC6-triggered senescence. We provide strong evidence in support of replication stress-induced genomic instability being a causative factor underlying "escape" from oncogene-induced senescence.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

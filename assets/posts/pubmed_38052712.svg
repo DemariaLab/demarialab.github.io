@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1184" viewBox="0 0 960 1184">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1184">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Change in telomere length and cardiovascular risk factors in testicular cancer survivors.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Urologic oncology</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2024 Jan</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Change in telomere length and cardiovascular risk factors in testicular cancer survivors.</h1>
+    <p class="authors" id="authors"><span class="author">Ellen L D Volders</span>, <span class="author">Coby Meijer</span>, <span class="author">Lotte S Steeneken</span>, <span class="author">Sjoukje Lubberts</span>, <span class="author">Nynke Zwart</span>, <span class="author">Arie M van Roon</span>, <span class="author">Joop D Lefrandt</span>, <span class="author">Igle J de Jong</span>, <span class="author">M Demaria</span>, <span class="author">Janine Nuver</span>, <span class="author">Jourik A Gietema</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">BACKGROUND:</strong> Testicular cancer (TC) survivors cured with chemotherapy (CT) are prone to develop cardiovascular diseases, as part of an accelerated aging phenotype. A mechanism contributing to these events can be telomere shortening.</p><p><strong class="abstract-label">PATIENTS AND METHODS:</strong> In a prospective cohort of patients with disseminated TC who received cisplatin-based CT, mean absolute leukocyte telomere length (TL) was measured before and 1 year after start of treatment. Cardiovascular risk factors, including development of the metabolic syndrome and hypogonadism, were assessed before and up to 5 years after CT.</p><p><strong class="abstract-label">RESULTS:</strong> For the whole group (n = 55), TL did not change 1 year after CT (5.7 (2.2-13.4) vs. 5.8 kb (1.6-19.2), P = 0.335). At baseline, patients with a BMI &gt;30 kg/m2 (n = 12) had shorter TL (4.9 (2.2-13.4) vs. 6.3 kb (3.1-12.9), P = 0.045), while no age-dependent differences were measured. Patients with TL shortening after 1 year (n = 7) showed a significant increase in diastolic blood pressure (P = 0.007) and triglycerides (P = 0.003), compared to those with unchanged TL. There was no association between telomere shortening after 1 year or short TL at baseline (n = 7+11) and development of metabolic syndrome (25% vs. 21%; P = 0.777), or hypogonadism (38% vs. 17%; P = 0.120) after 5 years.</p><p><strong class="abstract-label">CONCLUSIONS:</strong> A small subset of TC patients treated with cisplatin-based CT showed telomere shortening 1 year after treatment. This shortening was associated to a rise in diastolic blood pressure and triglycerides, but not to newly developed metabolic syndrome and hypogonadism after 5 years.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

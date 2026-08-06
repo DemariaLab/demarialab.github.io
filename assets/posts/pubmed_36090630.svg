@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1439" viewBox="0 0 960 1439">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1439">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prognostic implications of cellular senescence in resected non-small cell lung cancer.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Translational lung cancer research</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2022 Aug</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Prognostic implications of cellular senescence in resected non-small cell lung cancer.</h1>
+    <p class="authors" id="authors"><span class="author">Andreas Domen</span>, <span class="author">Christophe Deben</span>, <span class="author">Ines De Pauw</span>, <span class="author">Christophe Hermans</span>, <span class="author">Hilde Lambrechts</span>, <span class="author">Jasper Verswyvel</span>, <span class="author">Vasiliki Siozopoulou</span>, <span class="author">Patrick Pauwels</span>, <span class="author">Marco Demaria</span>, <span class="author">Mick van de Wiel</span>, <span class="author">Annelies Janssens</span>, <span class="author">Jeroen M H Hendriks</span>, <span class="author">Paul Van Schil</span>, <span class="author">Jan B Vermorken</span>, <span class="author">Timon Vandamme</span>, <span class="author">Hans Prenen</span>, <span class="author">Marc Peeters</span>, <span class="author">Filip Lardon</span>, <span class="author">An Wouters</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">BACKGROUND:</strong> Cure and long-term survival for non-small cell lung cancer (NSCLC) remains hard to achieve. Cellular senescence, an emerging hallmark of cancer, is considered as an endogenous tumor suppressor mechanism. However, senescent cancer cells can paradoxically affect the surrounding tumor microenvironment (TME), ultimately leading to cancer relapse and metastasis. As such, the role of cellular senescence in cancer is highly controversial.</p><p><strong class="abstract-label">METHODS:</strong> In 155 formalin-fixed paraffin-embedded (FFPE) samples from surgically resected NSCLC patients with pathological tumor-node-metastasis (pTNM) stages I-IV (8th edition), cellular senescence was assessed using a combination of four immunohistochemical senescence markers, i.e., lipofuscin, p16INK4a, p21WAF1/Cip1 and Ki67, and correlated to clinicopathological parameters and outcomes, including overall survival (OS) and disease-free survival (DFS).</p><p><strong class="abstract-label">RESULTS:</strong> A tumoral senescence signature (SS) was present in 48 out of 155 NSCLC patients, but did not correlate to any clinicopathological parameter, except for p53 mutation status. In a histologically homogenous patient cohort of 100 patients who fulfilled the following criteria: (I) one type of histology, i.e., adenocarcinoma, (II) without known epidermal growth factor receptor (EGFR) mutation, (III) curative (R0) resection and (IV) no neoadjuvant systemic therapy or radiotherapy, the median OS and DFS for patients with a tumoral SS (n=30, 30.0%) compared to patients without a tumoral SS (n=70, 70.0%) was 53 versus 141 months (P=0.005) and 45 versus 55 months (P=0.25), respectively. In multiple Cox proportional hazards (Cox PH) model analysis correcting for age, pTNM stage I-III and adjuvant therapy, a tumoral SS remained a significant prognostic factor for OS (HR =2.03; P=0.014).</p><p><strong class="abstract-label">CONCLUSIONS:</strong> The presence of a tumoral SS particularly based on high p16INK4a expression significantly affects OS in NSCLC adenocarcinoma. In this light, adjuvant senolytic therapy could be an interesting strategy for NSCLC patients harboring a tumoral SS, ultimately to improve survival of these patients.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

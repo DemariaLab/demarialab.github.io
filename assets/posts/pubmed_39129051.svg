@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1289" viewBox="0 0 960 1289">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1289">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sport and longevity: an observational study of international athletes.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">GeroScience</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2025 Apr</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Sport and longevity: an observational study of international athletes.</h1>
+    <p class="authors" id="authors"><span class="author">Abdullah Altulea</span>, <span class="author">Martijn G S Rutten</span>, <span class="author">Lex B Verdijk</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>The human lifespan is influenced by various factors, with physical activity being a significant contributor. Despite the clear benefit of exercise on health and longevity, the association between different types of sports and lifespan is yet to be considered. Accordingly, we aimed to study this association in a large international cohort of former athletes using a robust linear regression model. We collected data on athletes from public sources, accumulating a total of 95,210 observations, 95.5% of which were accounted for by males. The dataset represented athletes born between 1862 and 2002 from 183 countries across 44 sports disciplines. We calculated the change in lifespan by measuring the difference in age between athletes and the corresponding reference populations, while accounting for variations caused by sex, year of death, and country. The results revealed that various sports impacted lifespan differently, with male athletes being more likely to experience benefits from sports than female athletes. Among male athletes, pole vaulting and gymnastics were linked to the highest extension in lifespan (8.4 years, 95% CI [6.8, 9.9] and 8.2 years, 95% CI [7.4, 9], respectively), while volleyball and sumo wrestling were the most negatively associated with lifespan (- 5.4 years, 95% CI [- 7, - 3.8]; - 9.8 years, 95% CI [- 11, - 8.6], respectively). The association between lifespan and popular team sports in males was positive for cricket, rowing, baseball, water polo, Australian rules, hurling, lacrosse, field hockey, minimal for rugby, canoeing and kayaking, basketball, gridiron football, and football (soccer), and negative for handball and volleyball. Racquet sports (i.e., tennis and badminton) exhibited a consistent and positive association in both male and female athletes, as shown by an extended lifespan of up to 5.7 years in males (95% CI [5, 6.5]) and 2.8 years in females (95% CI [1.8, 3.9]). Although lacking conclusive evidence, we theorize that the observed results may be attributed to the aerobic and anaerobic characteristics of each sport, with mixed sports yielding the maximum benefits for the lifespan. While results from female athletes should be cautiously interpreted, our study highlights the complex interplay between sports and lifespan and contributes to the growing body of knowledge on the multifaceted relationship between physical activity and human longevity.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

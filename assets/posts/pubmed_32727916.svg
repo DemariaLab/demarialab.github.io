@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1117" viewBox="0 0 960 1117">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1117">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cellular senescence impairs the reversibility of pulmonary arterial hypertension.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Science translational medicine</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2020 Jul 29</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Cellular senescence impairs the reversibility of pulmonary arterial hypertension.</h1>
+    <p class="authors" id="authors"><span class="author">Diederik E van der Feen</span>, <span class="author">Guido P L Bossers</span>, <span class="author">Quint A J Hagdorn</span>, <span class="author">Jan-Renier Moonen</span>, <span class="author">Kondababu Kurakula</span>, <span class="author">Robert Szulcek</span>, <span class="author">James Chappell</span>, <span class="author">Francesco Vallania</span>, <span class="author">Michele Donato</span>, <span class="author">Klaas Kok</span>, <span class="author">Jaskaren S Kohli</span>, <span class="author">Arjen H Petersen</span>, <span class="author">Tom van Leusden</span>, <span class="author">Marco Demaria</span>, <span class="author">Marie-José T H Goumans</span>, <span class="author">Rudolf A De Boer</span>, <span class="author">Purvesh Khatri</span>, <span class="author">Marlene Rabinovitch</span>, <span class="author">Rolf M F Berger</span>, <span class="author">Beatrijs Bartelds</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Pulmonary arterial hypertension (PAH) in congenital cardiac shunts can be reversed by hemodynamic unloading (HU) through shunt closure. However, this reversibility potential is lost beyond a certain point in time. The reason why PAH becomes irreversible is unknown. In this study, we used MCT+shunt-induced PAH in rats to identify a dichotomous reversibility response to HU, similar to the human situation. We compared vascular profiles of reversible and irreversible PAH using RNA sequencing. Cumulatively, we report that loss of reversibility is associated with a switch from a proliferative to a senescent vascular phenotype and confirmed markers of senescence in human PAH-CHD tissue. In vitro, we showed that human pulmonary endothelial cells of patients with PAH are more vulnerable to senescence than controls in response to shear stress and confirmed that the senolytic ABT263 induces apoptosis in senescent, but not in normal, endothelial cells. To support the concept that vascular cell senescence is causal to the irreversible nature of end-stage PAH, we targeted senescence using ABT263 and induced reversal of the hemodynamic and structural changes associated with severe PAH refractory to HU. The factors that drive the transition from a reversible to irreversible pulmonary vascular phenotype could also explain the irreversible nature of other PAH etiologies and provide new leads for pharmacological reversal of end-stage PAH.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>

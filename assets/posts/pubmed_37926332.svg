@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1456" viewBox="0 0 960 1456">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1456">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mesenchymal stem cell-derived HGF attenuates radiation-induced senescence in salivary glands via compensatory proliferation.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">Radiotherapy and oncology : journal of the European Society for Therapeutic Radiology and Oncology</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2024 Jan</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Mesenchymal stem cell-derived HGF attenuates radiation-induced senescence in salivary glands via compensatory proliferation.</h1>
+    <p class="authors" id="authors"><span class="author">A Soto-Gamez</span>, <span class="author">M van Es</span>, <span class="author">E Hageman</span>, <span class="author">S A Serna-Salas</span>, <span class="author">H Moshage</span>, <span class="author">M Demaria</span>, <span class="author">S Pringle</span>, <span class="author">R P Coppes</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p><strong class="abstract-label">BACKGROUND &amp; AIM:</strong> Irradiation of the salivary glands during head and neck cancer treatment induces cellular senescence in response to DNA damage and contributes to radiation-induced hyposalivation by affecting the salivary gland stem/progenitor cell (SGSC) niche. Cellular senescence, such as that induced by radiation, is a state of cell-cycle arrest, accompanied by an altered pro-inflammatory secretome known as the senescence-associated secretory phenotype (SASP) with potential detrimental effects on the surrounding microenvironment. We hypothesized that the pro-regenerative properties of mesenchymal stem cells (MSCs) may attenuate cellular senescence post-irradiation. Therefore, here we evaluated the effects of adipose-derived MSCs (ADSCs) on the radiation-induced response of salivary gland organoids (SGOs).</p><p><strong class="abstract-label">METHODS:</strong> Proteomic analyses to identify soluble mediators released by ADSCs co-cultured with SGOS revealed secretion of hepatocyte growth factor (HGF) in ADSCs, suggesting a possible role in the stem cell crosstalk. Next, the effect of recombinant HGF in the culture media of ex vivo grown salivary gland cells was tested in 2D monolayers and 3D organoid models.</p><p><strong class="abstract-label">RESULTS:</strong> Treatment with HGF robustly increased salivary gland cell proliferation. Importantly, HGF supplementation post-irradiation enhanced proliferation at lower doses of radiation (0, 3, 7 Gy), but not at higher doses (10, 14 Gy) where most cells stained positive for senescence-associated beta-galactosidase. Furthermore, HGF had no effect on the senescence-associated secretory phenotype (SASP) of irradiated SGOs, suggesting there may be compensatory proliferation by cell-division competent cells instead of a reversal of cellular senescence after irradiation.</p><p><strong class="abstract-label">CONCLUSION:</strong> ADSCs may positively influence radiation recovery through HGF secretion and can promote the ex vivo expansion of salivary gland stem/progenitor cells to enhance the effects of co-transplanted SGSC.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>
