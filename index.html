@@ -271,19 +271,33 @@ order: 0
             <div class="row g-0 rounded-5 overflow-hidden news-block">
                 {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
                 {% for post in sorted_posts limit: 5 %}
-                {% assign formatted_thumb = post.thumbnail  %}
+
+                {% assign formatted_thumb = post.thumbnail %}
                 {% assign thumb_size = formatted_thumb.size %}
-                {% assign thumb_size_minus_two = thumb_size | minus:2 %}
+                {% assign thumb_size_minus_two = thumb_size | minus: 2 %}
                 {% assign first_char = formatted_thumb | slice: 0 %}
+
                 {% if first_char == "'" %}
-                {% assign formatted_thumb = formatted_thumb | slice: 1,thumb_size_minus_two %}
+                {% assign formatted_thumb = formatted_thumb | slice: 1, thumb_size_minus_two %}
                 {% endif %}
+
                 {% assign path_parts = formatted_thumb | split: '/' %}
                 {% assign filename = path_parts | last %}
                 {% assign directory = formatted_thumb | remove: filename %}
-                {% assign new_filename = 'reduced_' | append: filename | split: '.' | first | append:
-                '.webp' | replace: "'", "\\'" %}
+                {% assign extension = filename | split: '.' | last | downcase %}
+
+                {% if extension == 'svg' %}
+                {% assign new_url = formatted_thumb %}
+                {% else %}
+                {% assign filename_without_extension = filename | split: '.' | first %}
+                {% assign new_filename = 'reduced_'
+                | append: filename_without_extension
+                | append: '.webp'
+                | replace: "'", "\\'"
+                %}
                 {% assign new_url = directory | append: new_filename %}
+                {% endif %}
+
                 <a href="{{ post.url }}"
                    class="col-12 mx-0 mt-0 {% unless forloop.last %}mb-1 mb-lg-2 {% endunless %} no-underline rounded interaction-bg-color text-current-color bg-white">
                     <div class="d-flex flex-row px-0 ">

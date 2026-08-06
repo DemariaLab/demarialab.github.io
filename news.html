@@ -30,8 +30,18 @@ order: 6
                     {% assign path_parts = formatted_thumb | split: '/' %}
                     {% assign filename = path_parts | last %}
                     {% assign directory = formatted_thumb | remove: filename %}
-                    {% assign new_url = directory | append: 'reduced_' | append: filename | replace: '.jpg', '.webp'|
-                    replace: '.png', '.webp' %}
+                    {% assign extension = filename | split: '.' | last | downcase %}
+
+                    {% if extension == 'svg' %}
+                    {% assign new_url = formatted_thumb %}
+                    {% else %}
+                    {% assign filename_without_extension = filename | split: '.' | first %}
+                    {% assign new_url = directory
+                    | append: 'reduced_'
+                    | append: filename_without_extension
+                    | append: '.webp'
+                    %}
+                    {% endif %}
 
                     <a href="{{ post.url }}"
                        class="col-12 mx-0 mt-0 front {% unless forloop.last %} mb-1 mb-lg-2{% endunless %} no-underline rounded text-current-color">
