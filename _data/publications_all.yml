@@ -1,3 +1,22 @@
+- abstract: []
+  authors: Gems D, Demaria M
+  details_fetched: true
+  display_authors:
+  - David Gems
+  - Marco Demaria
+  doi: 10.18632/aging.206412
+  is_selected: false
+  issue: '1'
+  journal: Aging (Albany NY)
+  journal_title: Aging
+  pages: 934-939
+  publication_type: Journal Article
+  publication_types:
+  - Journal Article
+  pubmed_id: '42565761'
+  title: 'Misha Blagosklonny: a life of ideas.'
+  volume: '18'
+  year: 2026 Aug 06
 - abstract:
   - label: ''
     text: Identifying senescent cells via single-cell transcriptome profiling data
