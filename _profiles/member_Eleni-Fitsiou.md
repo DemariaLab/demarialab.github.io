@@ -12,10 +12,10 @@ country: "Greece 🇬🇷"
 qualification: "PhD"
 
 publications: "36564381; 33775830; 33349436"
-thumbnail: "/assets/members/member_Eleni Fitsiou.webp"
+thumbnail: "https://docs.google.com/sheets-images-rt/AO43MLYXYImt7WkAZu5oKLAR0uOdWnVeLWg9A9bWJEC_kSvWT0NWPSmARddSkYwpddI670LwmH9kvREFhy-ESEkethy1-MvCcfufHwfMr-n1LQBTaxIaneudSduU-zi1DOR6xR9eEQ9fGNxjq89ps8LYfCjdnvYoKHO6P3EpjS1wcw"
 is_alumni: true
 ---
 
- ![](/assets/members/member_Eleni Fitsiou.webp)
+ ![](https://docs.google.com/sheets-images-rt/AO43MLYXYImt7WkAZu5oKLAR0uOdWnVeLWg9A9bWJEC_kSvWT0NWPSmARddSkYwpddI670LwmH9kvREFhy-ESEkethy1-MvCcfufHwfMr-n1LQBTaxIaneudSduU-zi1DOR6xR9eEQ9fGNxjq89ps8LYfCjdnvYoKHO6P3EpjS1wcw)
 
  

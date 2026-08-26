@@ -12,10 +12,10 @@ country: "the Netherlands 🇳🇱"
 qualification: "MSc"
 biography: "I was born in the ‘kop van Overijssel’ but moved to Groningen to obtain both my BSc and MSc in Biomedical Sciences at the University of Groningen. During my bachelor's I got captivated by cellular senescence, which brought me to Marco’s group for my first master internship. Here I examined the effect of histone deacetylase inhibitors on the induction of senescence. After graduating, I worked at the Radiotherapy and Molecular Cell Biology department of the UMCG for a year. As of July 2022, I’m happy to join Marco’s lab once again for a PhD project. This time I will work on a project that focuses on liver senescence."
 
-thumbnail: "/assets/members/member_Myrthe Klaver.webp"
+thumbnail: "https://docs.google.com/sheets-images-rt/AO43MLYwI9BDrNgHzb6VdzOZJOQH0BNtA2ej-CHZ-vruqYMG4Lt2ZZx0XtgMxum37Cg7zm8KpBdGYuneBS8-T4wI4zWrImGMKb2Gx_MmMC6SDdYy95Dq32onZob1FHGnyGknV1COV5edWU5kT2ZzuN-sVK8zD2Dp6v3yWy-gkJc53A"
 is_alumni: false
 ---
 
- ![](/assets/members/member_Myrthe Klaver.webp)
+ ![](https://docs.google.com/sheets-images-rt/AO43MLYwI9BDrNgHzb6VdzOZJOQH0BNtA2ej-CHZ-vruqYMG4Lt2ZZx0XtgMxum37Cg7zm8KpBdGYuneBS8-T4wI4zWrImGMKb2Gx_MmMC6SDdYy95Dq32onZob1FHGnyGknV1COV5edWU5kT2ZzuN-sVK8zD2Dp6v3yWy-gkJc53A)
 
  
