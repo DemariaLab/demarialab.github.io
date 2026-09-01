@@ -12,10 +12,10 @@ country: "the Netherlands 🇳🇱"
 qualification: "MSc"
 
 publications: "34985783; 33823141; 33556549; 33056980; 29575469"
-thumbnail: "/assets/members/member_Thijmen van Vliet.webp"
+thumbnail: "https://docs.google.com/sheets-images-rt/AO43MLbzeWPMrkFHlPZng4RZaFcwRUsdgfcOREes_HA8WUtdLRvDvLHHdyGiSCMwQ-4WKI1TPfEM7ABlCwZpFvgRfTrKmi0iicURTJk4yqPegXXpo_sjzBXG1KF5aVVnyzwJL082C-SdfDtFt6uBAA"
 is_alumni: true
 ---
 
- ![](/assets/members/member_Thijmen van Vliet.webp)
+ ![](https://docs.google.com/sheets-images-rt/AO43MLbzeWPMrkFHlPZng4RZaFcwRUsdgfcOREes_HA8WUtdLRvDvLHHdyGiSCMwQ-4WKI1TPfEM7ABlCwZpFvgRfTrKmi0iicURTJk4yqPegXXpo_sjzBXG1KF5aVVnyzwJL082C-SdfDtFt6uBAA)
 
  
