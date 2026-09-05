@@ -1,4 +1,55 @@
 - abstract: []
+  authors: Cerrato A, Farsetti A, Bordoni L, Martins RR, Bengoetxea de Tena I, Vrhovac
+    Madunic I, Mammadova M, Raviola S, Rima M, Ozturk M, Spinelli R, Moisoi N, Nicoli
+    F, Pangrazzi L, Wouters A, Albrakati A, Abdellatif M, Harries LW, Martini G, Missirlis
+    Y, Mongiardi B, de Pascual-Teresa S, Moreno-Blas D, Cakir Gungor A, Cunha-Reis
+    D, Bishop CL, Grillari J, Maffia P, Demaria M
+  details_fetched: true
+  display_authors:
+  - Aniello Cerrato
+  - Antonella Farsetti
+  - Laura Bordoni
+  - Raquel Rua Martins
+  - Iker Bengoetxea de Tena
+  - Ivana Vrhovac Madunic
+  - Marziyya Mammadova
+  - Stefano Raviola
+  - Mohamad Rima
+  - Minenur Ozturk
+  - Rosa Spinelli
+  - Nicoleta Moisoi
+  - Francesco Nicoli
+  - Luca Pangrazzi
+  - An Wouters
+  - Ashraf Albrakati
+  - Mahmoud Abdellatif
+  - Lorna W Harries
+  - Giuseppe Martini
+  - Yannis Missirlis
+  - Brunella Mongiardi
+  - Sonia de Pascual-Teresa
+  - Daniel Moreno-Blas
+  - Ayse Cakir Gungor
+  - Diana Cunha-Reis
+  - Cleo L Bishop
+  - Johannes Grillari
+  - Pasquale Maffia
+  - Marco Demaria
+  doi: 10.1038/s43587-026-01222-y
+  is_selected: false
+  issue: ''
+  journal: Nat Aging
+  journal_title: Nature aging
+  pages: 10.1038/s43587-026-01222-y
+  publication_type: Journal Article
+  publication_types:
+  - Journal Article
+  pubmed_id: '42693291'
+  title: A consensus roadmap from the SENESCENCE2030 network towards precision senescence
+    medicine.
+  volume: ''
+  year: 2026 Sep 03
+- abstract: []
   authors: Gems D, Demaria M
   details_fetched: true
   display_authors:
