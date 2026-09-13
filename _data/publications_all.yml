@@ -1,4 +1,23 @@
 - abstract: []
+  authors: Picallos Rabina P, Demaria M
+  details_fetched: true
+  display_authors:
+  - Pilar Picallos Rabina
+  - Marco Demaria
+  doi: 10.1038/s41422-026-01295-9
+  is_selected: false
+  issue: ''
+  journal: Cell Res
+  journal_title: Cell research
+  pages: 10.1038/s41422-026-01295-9
+  publication_type: Journal Article
+  publication_types:
+  - Journal Article
+  pubmed_id: '42728324'
+  title: Metabolism licenses the senescence secretome.
+  volume: ''
+  year: 2026 Sep 11
+- abstract: []
   authors: Cerrato A, Farsetti A, Bordoni L, Martins RR, Bengoetxea de Tena I, Vrhovac
     Madunic I, Mammadova M, Raviola S, Rima M, Ozturk M, Spinelli R, Moisoi N, Nicoli
     F, Pangrazzi L, Wouters A, Albrakati A, Abdellatif M, Harries LW, Martini G, Missirlis
