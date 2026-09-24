@@ -509,18 +509,22 @@ order: 0
                             </div>
                         </div>
 
-
+                        {% assign current_members = phd_students | concat: postdocs %}
                         {% assign countries = "" | split: "," %}
-                        {% for profile in site.profiles %}
-                        {% assign countries = countries | push: profile.country %}
+                        
+                        {% for profile in current_members %}
+                            {% if profile.country %}
+                                {% assign countries = countries | push: profile.country %}
+                            {% endif %}
                         {% endfor %}
+                        
                         {% assign unique_countries = countries | uniq %}
-
-                        <div class="col d-flex flex-column ">
+                        
+                        <div class="col d-flex flex-column">
                             <div class="d-flex rounded-chip text-center justify-content-center rounded"
-                                 style="flex: 1; align-items: center;  background-color: #fff9f8;">
-                                <div class="d-block p-3  py-lg-4 px-lg-5">
-                                    <div class="poppins count-text ">{{unique_countries.size}}</div>
+                                 style="flex: 1; align-items: center; background-color: #fff9f8;">
+                                <div class="d-block p-3 py-lg-4 px-lg-5">
+                                    <div class="poppins count-text">{{ unique_countries.size }}</div>
                                     <h5 class="poppins m-0">Nationalities</h5>
                                 </div>
                             </div>
