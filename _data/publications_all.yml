@@ -1,3 +1,44 @@
+- abstract:
+  - label: ''
+    text: Cellular senescence has undergone a remarkable conceptual evolution since
+      its discovery in 1961. Initially described by Hayflick and Moorhead as the finite
+      proliferative lifespan of cultured human cells, senescence was first viewed
+      as a consequence of cellular aging. The identification of telomere shortening,
+      senescence biomarkers, and oncogene- and damage-induced senescence subsequently
+      established its molecular basis and role as a tumor-suppressive stress response.
+      The discovery of the senescence-associated secretory phenotype (SASP) further
+      transformed the field by revealing that senescent cells actively communicate
+      with and remodel their tissue environment. Genetic mouse models later demonstrated
+      causal roles for senescent cells in tissue repair, aging, and age-related disease,
+      while senotherapeutics established senescence as a therapeutic target. Here,
+      we trace the major conceptual transitions that shaped the field, from replicative
+      endpoint to stress-response program, regulator of tissue homeostasis, driver
+      of chronic pathology, and clinically actionable process. We discuss the discoveries,
+      controversies, and technological advances underlying these transitions and how
+      emerging single-cell technologies, precision biomarkers, and targeted interventions
+      are shaping the next era of senescence research.
+  authors: Klaver M, Steeneken LS, Veeningen N, Altulea A, Demaria M
+  details_fetched: true
+  display_authors:
+  - Myrthe Klaver
+  - Lotte Sophie Steeneken
+  - Naomi Veeningen
+  - Abdullah Altulea
+  - Marco Demaria
+  doi: 10.1038/s44318-026-00922-w
+  is_selected: false
+  issue: ''
+  journal: EMBO J
+  journal_title: The EMBO journal
+  pages: 10.1038/s44318-026-00922-w
+  publication_type: Journal Article
+  publication_types:
+  - Journal Article
+  - Review
+  pubmed_id: '42827203'
+  title: 'Cellular senescence: six decades of discovery and reinvention.'
+  volume: ''
+  year: 2026 Oct 02
 - abstract: []
   authors: Picallos Rabina P, Demaria M
   details_fetched: true

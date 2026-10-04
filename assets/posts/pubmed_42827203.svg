@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1100" viewBox="0 0 960 1100">
+  <rect width="100%" height="100%" fill="white"/>
+  <foreignObject x="0" y="0" width="960" height="1100">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cellular senescence: six decades of discovery and reinvention.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #171a1f;
+      --muted: #52606d;
+      --accent: #145da0;
+      --badge-background: #e7edf4;
+      --rule: #d9e0e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .publication {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 42px 58px 68px;
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .publication-type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 14px;
+      background: var(--badge-background);
+      color: #344454;
+      font-size: 15px;
+      line-height: 1.25;
+      border-radius: 2px;
+    }
+
+    .journal {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .meta-separator {
+      color: var(--muted);
+    }
+
+    .publication-date {
+      color: var(--muted);
+    }
+
+    .publication-title {
+      margin: 54px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .abstract {
+      margin-top: 48px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .abstract-title {
+      margin: 0 0 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.15;
+    }
+
+    .abstract-content {
+      font-size: 18px;
+      line-height: 1.58;
+    }
+
+    .abstract-content p {
+      margin: 0 0 22px;
+    }
+
+    .abstract-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .abstract-label {
+      font-weight: 700;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .publication {
+        padding: 34px 28px 54px;
+      }
+
+      .publication-title {
+        margin-top: 42px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="publication" id="publication">
+    <div class="publication-meta" id="publication-meta">
+      <span class="publication-type" id="publication-type">Journal Article</span>
+      <span class="journal" id="journal">The EMBO journal</span>
+      <span class="meta-separator" id="meta-separator" aria-hidden="true">·</span>
+      <span class="publication-date" id="publication-date">2026 Oct 02</span>
+    </div>
+
+    <h1 class="publication-title" id="publication-title">Cellular senescence: six decades of discovery and reinvention.</h1>
+    <p class="authors" id="authors"><span class="author">Myrthe Klaver</span>, <span class="author">Lotte Sophie Steeneken</span>, <span class="author">Naomi Veeningen</span>, <span class="author">Abdullah Altulea</span>, <span class="author">Marco Demaria</span></p>
+
+    <section class="abstract" id="abstract-section">
+      <h2 class="abstract-title">Abstract</h2>
+      <div class="abstract-content" id="abstract-content"><p>Cellular senescence has undergone a remarkable conceptual evolution since its discovery in 1961. Initially described by Hayflick and Moorhead as the finite proliferative lifespan of cultured human cells, senescence was first viewed as a consequence of cellular aging. The identification of telomere shortening, senescence biomarkers, and oncogene- and damage-induced senescence subsequently established its molecular basis and role as a tumor-suppressive stress response. The discovery of the senescence-associated secretory phenotype (SASP) further transformed the field by revealing that senescent cells actively communicate with and remodel their tissue environment. Genetic mouse models later demonstrated causal roles for senescent cells in tissue repair, aging, and age-related disease, while senotherapeutics established senescence as a therapeutic target. Here, we trace the major conceptual transitions that shaped the field, from replicative endpoint to stress-response program, regulator of tissue homeostasis, driver of chronic pathology, and clinically actionable process. We discuss the discoveries, controversies, and technological advances underlying these transitions and how emerging single-cell technologies, precision biomarkers, and targeted interventions are shaping the next era of senescence research.</p></div>
+    </section>
+  </main>
+
+
+</body></html>
+  </foreignObject>
+</svg>
