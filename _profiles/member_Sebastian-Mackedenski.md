@@ -5,7 +5,7 @@ unaccented_name: "Sebastian Mackedenski"
 last_name_initials: Mackedenski S
 role: "PhD student"
 date_joined: "2020-02-15"
-date_leaving: "2028-06-30"
+date_leaving: "2027-10-31"
 
 keywords: "non-coding RNA"
 country: "Canada 🇨🇦"
